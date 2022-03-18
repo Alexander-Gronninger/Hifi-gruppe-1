@@ -12,7 +12,7 @@ const sass = gulpSass(sassImport)
 
 function html() {
     return gulp.src("src/html/*.html")
-        .pipe(gulp.dest("build/html"))
+        .pipe(gulp.dest("build"))
         .pipe(connect.reload())
 }
 
