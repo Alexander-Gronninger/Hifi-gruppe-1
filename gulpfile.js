@@ -5,7 +5,7 @@ import concat from "gulp-concat";
 import uglifyjs from "gulp-uglify";
 import imagemin from "gulp-imagemin";
 import connect from "gulp-connect";
-import sassImport from "sass"
+import sassImport from "sass";
 import gulpSass from "gulp-sass";
 
 const sass = gulpSass(sassImport)
