@@ -4,7 +4,7 @@
 Sørg for at "npm install" for at få dependencies etc
 
 # Definition of done
-Peer review / testing
+Peer review / testing<br>
 BEM
 BEM camelcase
 Prettier ?
