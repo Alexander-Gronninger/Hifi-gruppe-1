@@ -19,6 +19,11 @@ html {
 
 img {
   width: 100%;
+}
+
+ul {
+  list-style: none;
+
   display: block;
 }
 
@@ -32,4 +37,9 @@ select {
 a {
   text-decoration: none;
   color: currentColor;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
 }

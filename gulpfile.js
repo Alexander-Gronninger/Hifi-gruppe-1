@@ -35,7 +35,7 @@ function js() {
 
 function images() {
   return gulp
-    .src("src/images/*")
+    .src("src/images/**/*")
     .pipe(imagemin())
     .pipe(gulp.dest("build/images"))
     .pipe(connect.reload());
@@ -43,7 +43,7 @@ function images() {
 
 function watchHTML() {
   gulp.watch(
-    "src/html/*.html",
+    "src/html/**/*.html",
     {
       events: "all",
       ignoreInitial: false,
@@ -57,7 +57,7 @@ function watchHTML() {
 
 function watchCSS() {
   gulp.watch(
-    "src/styles/*.scss",
+    "src/styles/**/*.scss",
     {
       events: "all",
       ignoreInitial: false,
@@ -71,7 +71,7 @@ function watchCSS() {
 
 function watchJS() {
   gulp.watch(
-    "src/js/*.js",
+    "src/js/**/*.js",
     {
       events: "all",
       ignoreInitial: false,
@@ -85,7 +85,7 @@ function watchJS() {
 
 function watchIMG() {
   gulp.watch(
-    "src/images/*",
+    "src/images/**/*",
     {
       events: "all",
       ignoreInitial: false,
