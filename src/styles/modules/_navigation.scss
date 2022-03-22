@@ -1,4 +1,15 @@
 .navigation{
     display: flex;
-    background-color: red;
+    background-color: tomato;
+    justify-content: space-between;
+}
+.navigation__menu{
+    display: flex;
+    gap: 31px;
+}
+.menu__item{
+    list-style: none;
+}
+.menu__link{
+    text-decoration: none;
 }

@@ -18,7 +18,6 @@ function html() {
 
 function css() {
     return gulp.src("src/styles/**/*.scss")
-        .pipe(concat("style.scss"))
         .pipe(sass().on("error", sass.logError))
         .pipe(gulp.dest("build/styles"))
         .pipe(connect.reload())
@@ -40,7 +39,7 @@ function images() {
 }
 
 function watchHTML() {
-    gulp.watch("src/html/*.html", {
+    gulp.watch("src/html/**/*.html", {
         events: "all",
         ignoreInitial: false
     }, function (cb) {
@@ -50,7 +49,7 @@ function watchHTML() {
 }
 
 function watchCSS() {
-    gulp.watch("src/styles/*.scss", {
+    gulp.watch("src/styles/**/*.scss", {
         events: "all",
         ignoreInitial: false
     }, function (cb) {
@@ -60,7 +59,7 @@ function watchCSS() {
 }
 
 function watchJS() {
-    gulp.watch("src/js/*.js", {
+    gulp.watch("src/js/**/*.js", {
         events: "all",
         ignoreInitial: false
     }, function (cb) {
