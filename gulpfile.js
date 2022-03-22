@@ -35,7 +35,7 @@ function js() {
 
 function images() {
   return gulp
-    .src("src/images/*")
+    .src("src/images/**/*")
     .pipe(imagemin())
     .pipe(gulp.dest("build/images"))
     .pipe(connect.reload());
@@ -43,7 +43,7 @@ function images() {
 
 function watchHTML() {
   gulp.watch(
-    "src/html/*.html",
+    "src/html/**/*.html",
     {
       events: "all",
       ignoreInitial: false,
