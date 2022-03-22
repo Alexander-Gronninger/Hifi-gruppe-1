@@ -1,0 +1,16 @@
+.form__input {
+  height: 56px;
+  background: #e8e8e8;  
+  box-shadow: 0px 4px 15px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  border: none; 
+}
+.paymentform__form {
+  background-color: #ffffff;
+  display: grid;
+  max-width: 635px;
+  width: 100%;
+  padding-top: 40px;
+  padding-left: 61px;
+  padding-right: 61px;
+}

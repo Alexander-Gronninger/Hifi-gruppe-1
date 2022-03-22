@@ -57,7 +57,7 @@ function watchHTML() {
 
 function watchCSS() {
   gulp.watch(
-    "src/styles/*.scss",
+    "src/styles/**/*.scss",
     {
       events: "all",
       ignoreInitial: false,
@@ -71,7 +71,7 @@ function watchCSS() {
 
 function watchJS() {
   gulp.watch(
-    "src/js/*.js",
+    "src/js/**/*.js",
     {
       events: "all",
       ignoreInitial: false,
@@ -85,7 +85,7 @@ function watchJS() {
 
 function watchIMG() {
   gulp.watch(
-    "src/images/*",
+    "src/images/**/*",
     {
       events: "all",
       ignoreInitial: false,
