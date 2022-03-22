@@ -1,0 +1,33 @@
+form{
+    width: 80rem;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.inputGroup{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+input{
+    background-color: #F4F4F2;
+    border: none;
+    border-radius: 5px;
+}
+
+.errorMessage{
+    display: none;
+}
+
+.successMessage{
+    display: none;
+}
+
+#message{
+    width: 500px;
+    height: 300px;
+}
+
+body{
+    background-color: #E8E8E8;
+}

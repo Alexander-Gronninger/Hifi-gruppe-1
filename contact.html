@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <form class="form">
+        <div class="inputGroup">
+         <label for="name">Your name:</label>
+         <input type="text" id="name" name="name">
+         <span class="errorMessage name">Insert Name!</span>
+        </div>
+        <div class="inputGroup">
+            <label for="email">Your e-mail:</label>
+            <input type="email" name="email" id="email">
+            <span class="errorMessage email">Insert Email!</span>
+        <div class="inputGroup">
+            <div class="inputGroup">
+                <label for="subject">Subject:</label>
+                <input type="text" name="subject" id="subject">
+                <span class="errorMessage email">Declare Subject!</span>
+            <div class="inputGroup">
+            <label for="message">Message:</label>
+            <input type="text" name="message" id="message">
+            <span class="errorMessage message">Insert Message!</span>
+        </div>
+        <div>
+            <button class="Cancel">Cancel</button>
+        </div>
+        <div>
+            <button type="submit" class="Submit">Submit</button>
+            <span class="successMessage">Your message has been sent</span>
+        </div>
+    </form>
+
+
+    <script src="contact.js" defer></script>
+
+</body>
+</html>
