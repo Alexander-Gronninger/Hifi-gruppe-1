@@ -1,1 +1,0 @@
-const API_URL="",productMainGrid__element=document.getElementsByClassName("productMain__grid")[0],getFromAPI={getProducts:function(){fetch("/api/products").then(t=>t.json()).then(t=>console.log(t))}};getFromAPI.getProducts();export default getProducts;
