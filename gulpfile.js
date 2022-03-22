@@ -11,22 +11,21 @@ import gulpSass from "gulp-sass";
 const sass = gulpSass(sassImport)
 
 function html() {
-    return gulp.src("src/html/*.html")
+    return gulp.src("src/html/**/*.html")
         .pipe(gulp.dest("build"))
         .pipe(connect.reload())
 }
 
 function css() {
-    return gulp.src("src/styles/*.scss")
-        //.pipe(concat("style.scss"))
-
+    return gulp.src("src/styles/**/*.scss")
+        .pipe(concat("style.scss"))
         .pipe(sass().on("error", sass.logError))
         .pipe(gulp.dest("build/styles"))
         .pipe(connect.reload())
 }
 
 function js() {
-    return gulp.src("src/js/*.js")
+    return gulp.src("src/js/**/*.js")
         //.pipe(concat("javascript.js"))
         .pipe(uglifyjs())
         .pipe(gulp.dest("build/js"))
