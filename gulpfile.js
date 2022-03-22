@@ -40,7 +40,7 @@ function images() {
 }
 
 function watchHTML() {
-    gulp.watch("src/html/*.html", {
+    gulp.watch("src/html/**/*.html", {
         events: "all",
         ignoreInitial: false
     }, function (cb) {
@@ -50,7 +50,7 @@ function watchHTML() {
 }
 
 function watchCSS() {
-    gulp.watch("src/styles/*.scss", {
+    gulp.watch("src/styles/**/*.scss", {
         events: "all",
         ignoreInitial: false
     }, function (cb) {

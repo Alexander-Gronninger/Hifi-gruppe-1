@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html,
@@ -26,12 +27,79 @@ a {
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.productMain__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product__compareBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compareBtn__icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+.product {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+}
+
+.btn {
+  background: #ff6900;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: white;
+}
+
+.product__cartStockContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.product__price {
+  text-align: center;
+}
+
+.productMain__primaryHeading {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+}
+
+.productMain__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product__cartStockContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html,
@@ -56,4 +124,43 @@ a {
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.btn {
+  background: #ff6900;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: white;
+}
+
+.compareBtn__icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+.product {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+}
+
+.productMain__primaryHeading {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.product__compareBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product__heading {
+  text-align: center;
+}
+
+.product__price {
+  text-align: center;
 }
