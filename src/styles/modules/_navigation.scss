@@ -1,15 +1,47 @@
+.header{
+    padding: 21px 34px;
+    background-color: $tertiaryBackgroundColor;
+}
 .navigation{
     display: flex;
-    background-color: $primaryBackgroundColor;
     justify-content: space-between;
 }
 .navigation__menu{
     display: flex;
+    align-items: center;
     gap: 31px;
 }
 .menu__item{
     list-style: none;
+    color: $primaryTextColor;
 }
 .menu__link{
     text-decoration: none;
+}
+.searchField{
+    background-color: $primaryDetailColor;
+    border-radius: 2px;
+    padding: 6px;
+}
+.menu__input{
+    border: none;
+    width: 200px;
+    background-color: $primaryDetailColor;
+    font-family: 'Open Sans', sans-serif;;
+}
+.fa-magnifying-glass{
+    color: $secondaryIconColor;
+}
+.cart{
+    position: relative;
+}
+.cart__amount{
+    background-color: $primaryButtonColor;
+    border-radius: 50px;
+    padding: 1px 6px;
+    font-size: 0.7em;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    right: 20px;
 }
