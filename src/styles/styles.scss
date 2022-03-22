@@ -1,29 +1,31 @@
 ///////////// variables /////////////
 @import "variables";
 
+///////////// themes /////////////
+@import "themes/font";
+
 ///////////// base /////////////
 @import "base/resets";
 
 ///////////// layout /////////////
 
 // product_list
-@import "layout/productMain__grid";
-@import "layout/product__cartStockContainer";
+@import "layout/productList/product__cartStockContainer";
+@import "layout/productList/product";
+@import "layout/productList/productMain__grid";
 
 ///////////// modules /////////////
 
-// navigation
-@import "modules/navigation";
+// global
+@import "modules/global/btn";
+@import "modules/global/navigation";
 
 // product_list
-@import "module/product__compareBtn";
-@import "module/compareBtn__icon";
-@import "module/product";
-@import "module/btn";
-@import "module/product__price";
-@import "module/_productMain__primaryHeading";
+@import "modules/productList/compareBtn__icon";
+@import "modules/productList/product__compareBtn";
+@import "modules/productList/product__heading";
+@import "modules/productList/product__price";
+@import "modules/productList/product";
+@import "modules/productList/productMain__primaryHeading";
 
-///////////// state /////////////
-
-///////////// theme /////////////
-
+///////////// states /////////////
