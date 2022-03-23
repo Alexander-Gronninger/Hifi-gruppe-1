@@ -1,65 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
     <script src="/js/javascript.js" defer></script>
 
     <!--font awesome link-->
-    <script src="https://kit.fontawesome.com/377d53b4a7.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/377d53b4a7.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navigation">
-            <ul class="navigation__menu">
-                <li class="menu__item"><img src="/src/images/logo_sml 1.png" alt=""></li>
-                <li class="menu__item"><a href="">SHOP</a></li>
-                <li class="menu__item"><a href="">ABOUT US</a></li>
-                <li class="menu__item"><a href="">NEWS</a></li>
-                <li class="menu__item"><a href="">CONTACT US</a></li>
-            </ul>
-            <div class="navigation__menu">
-                <div class="menu__item">
-                    <input type="text">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <a href=""><i class="fa-solid fa-user menu__item"></i></a>
-                <a href=""><i class="fa-solid fa-cart-shopping menu__item"></i></a>
-            </div>
-        </nav>
+      <nav class="navigation">
+        <ul class="navigation__menu">
+          <li class="menu__item">
+            <img src="/src/images/logo_sml 1.png" alt="" />
+          </li>
+          <li class="menu__item"><a href="">SHOP</a></li>
+          <li class="menu__item"><a href="">ABOUT US</a></li>
+          <li class="menu__item"><a href="">NEWS</a></li>
+          <li class="menu__item"><a href="">CONTACT US</a></li>
+        </ul>
+        <div class="navigation__menu">
+          <div class="menu__item">
+            <input type="text" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <a href=""><i class="fa-solid fa-user menu__item"></i></a>
+          <a href=""><i class="fa-solid fa-cart-shopping menu__item"></i></a>
+        </div>
+      </nav>
     </header>
     <main>
-        <section class="paymentform">
-            <h1 class="paymenform__title"></h1>
-            <form class="paymentform__form" action="">
+      <section class="paymentform">
+        <h1 class="paymentform__title">Your info</h1>
+        <form class="paymentform__form" action="">
+          <label for="form__name" class="form__label form__big"
+            >Full name</label
+          >
+          <input type="text" id="form__name" class="form__input form__big" />
 
-                <label for="form__name" class="form__label form__big">Full name</label>
-                <input type="text" id="form__name" class="form__input form__big">
+          <label for="form__city" class="form__label form__medium">City</label>
+          <label for="form__postalcode" class="form__label form__small"
+            >Postalcode</label
+          >
 
-                <label for="form__city" class="form__label form__medium">City</label>
-                <label for="form__postalcode" class="form__label form__small">Postalcode</label>
+          <input type="text" id="form__city" class="form__input form__medium" />
+          <input
+            type="text"
+            id="form__postalcode"
+            class="form__input form__small"
+          />
 
-                <input type="text" id="form__city" class="form__input form__medium">
-                <input type="text" id="form__postalcode" class="form__input form__small">
+          <label for="form__address" class="form__label form__big"
+            >Address</label
+          >
+          <input type="text" id="form__address" class="form__input form__big" />
 
-                <label for="form__address" class="form__label form__big">Address</label>
-                <input type="text" id="form__address" class="form__input form__big">
-                
-                <label for="form__useremail" class="form__label form__big">Email</label>
-                <input type="text" id="form__useremail" class="form__input form__big">
+          <label for="form__useremail" class="form__label form__big"
+            >Email</label
+          >
+          <input
+            type="text"
+            id="form__useremail"
+            class="form__input form__big"
+          />
 
-                <label for="form__phonenr" class="form__label form__big">Phone nr.</label>
-                <input type="text" id="form__phonenr" class="form__input form__big">
-            </form>
-        </section>
+          <label for="form__phonenr" class="form__label form__big"
+            >Phone nr.</label
+          >
+          <input type="text" id="form__phonenr" class="form__input form__big" />
+        </form>
+      </section>
     </main>
-    <footer>
-    </footer>
-</body>
-
+    <footer></footer>
+  </body>
 </html>
