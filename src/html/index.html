@@ -15,27 +15,91 @@
     <title>Document</title>
   </head>
 
-<body>
+  <body>
     <header class="header">
-        <nav class="navigation">
-            <ul class="navigation__menu">
-                <li class="menu__item"><img src="/images/logo.png" alt=""></li>
-                <li class="menu__item"><a class="menu__link" href="">SHOP</a></li>
-                <li class="menu__item"><a class="menu__link" href="">ABOUT US</a></li>
-                <li class="menu__item"><a class="menu__link" href="">NEWS</a></li>
-                <li class="menu__item"><a class="menu__link" href="">CONTACT US</a></li>
-            </ul>
-            <div class="navigation__menu">
-                <div class="menu__item searchField">
-                    <input class="menu__input" type="text" placeholder="Search product...">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <a href=""><i class="fa-solid fa-user menu__item"></i></a>
-                <a href=""><i class="fa-solid fa-cart-shopping menu__item cart"></i></a>
-                <a class="menu__item cart__amount" href="">2</a>
-            </div>
-        </nav>
+      <nav class="navigation">
+        <ul class="navigation__menu">
+          <li class="menu__item menu__logo">
+            <img src="/images/logo.png" alt="" />
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="">SHOP</a>
+          </li>
+          <li class="menu__item"><a class="menu__link" href="">ABOUT US</a></li>
+          <li class="menu__item">
+            <a class="menu__link menu__link--active" href="">NEWS</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="">CONTACT US</a>
+          </li>
+        </ul>
+        <div class="navigation__tools">
+          <div class="tools__inputContainer">
+            <input
+              class="tools__input"
+              type="text"
+              placeholder="Search product..."
+              id="tools__input"
+            />
+            <label for="tools__input"
+              ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
+            ></label>
+          </div>
+          <a href="" class="tools__link"
+            ><i class="tools__icon fa-solid fa-user"></i
+          ></a>
+          <a href="" class="tools__link tools__cart"
+            ><i class="tools__icon fa-solid fa-cart-shopping"></i>
+            <p class="cart__amount">99+</p>
+          </a>
+        </div>
+      </nav>
     </header>
-    <main></main>
+    <main>
+      <div class="wrapper">
+        <section class="companyinfo">
+          <article class="companyinfo__about">
+            <h3 class="about__title">What we do</h3>
+            <p class="about__text">
+              We look forward to customising a system to meet your needs.
+            </p>
+            <p class="about__text">
+              We don’t favour one manufacturer over another – the only thing we
+              do favour is making sure our customers get the right product that
+              suits their needs and listening preferences. We will ask many
+              questions in order to ensure that what you buy from us is tailored
+              to you and you alone.
+            </p>
+            <p class="about__text">
+              If you are looking for a product not found in our demonstration
+              showrooms or our online site, don’t fret as we have access to
+              hundreds of brands.
+            </p>
+            <p class="about__text">
+              One of our biggest pleasures of working in this industry is to see
+              the smile on our customers’ faces when they finally hear and see
+              the system of their dreams.
+            </p>
+          </article>
+          <article class="companyinfo__openingHours">
+            <h3 class="openingHours__title">Opening Hours</h3>
+            <h4 class="openingHours__city">Edinburgh</h4>
+            <address class="openingHours__address">2 Joppa Rd,Edinburgh, EH15 2EU</address>
+            <ul>
+              <li class="openingHours__text">Monday to Friday: 10:00am - 5:30pm</li>
+              <li class="openingHours__text">Saturday: 10:00am - 5:30pm</li>
+              <li class="openingHours__text">Sunday: Closed</li>
+            </ul>
+            <h4 class="openingHours__city">Falkirk</h4>
+            <address class="openingHours__address">44 Cow Wynd, Falkirk, Central Region, FK1 1PU</address>
+            <ul>
+              <li class="openingHours__text">Monday to Friday: 10:00am - 5:30pm</li>
+              <li class="openingHours__text">Saturday - By appointment only</li>
+              <li class="openingHours__text">Sunday: Closed</li>
+            </ul>            
+          </article>
+        </section>
+      </div>
+    </main>
   </body>
 </html>

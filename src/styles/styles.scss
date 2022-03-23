@@ -23,14 +23,27 @@
 @import "modules/global/btn";
 @import "modules/global/navigation";
 
+//index
+@import "modules/index/companyinfo";
+
+//paymentform
+@import "modules/payment/paymentform";
+
 // product_list
-@import "modules/productList/compareBtn__icon";
-@import "modules/productList/product__compareBtn";
-@import "modules/productList/product__heading";
-@import "modules/productList/product__price";
+@import "modules/productList/addToCart__button";
+@import "modules/productList/availability__icon";
+@import "modules/productList/product__compare";
 @import "modules/productList/product";
+@import "modules/productList/productCard__txt";
 @import "modules/productList/productMain__primaryHeading";
+@import "modules/productList/cartStockContainer__availability";
+@import "modules/productList/product__img";
 
 
 
 ///////////// states /////////////
+@import "modules/global/btn";
+
+///////////// state /////////////
+
+///////////// theme /////////////
