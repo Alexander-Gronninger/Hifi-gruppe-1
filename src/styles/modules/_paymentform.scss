@@ -1,9 +1,10 @@
 .form__input {
   height: 56px;
-  background: #e8e8e8;
+  background: $primaryDetailColor;
   box-shadow: 0px 4px 15px -1px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   border: none;
+  margin-bottom: 20px;
 }
 
 .form__small {
@@ -22,13 +23,16 @@
 }
 
 .form__label {
+  color: $tertiaryIconColor;
+  font-size: 26px;
+  font-weight: 400;
 }
 
 .paymentform__form {
-  background-color: #ffffff;
+  background-color: $primaryTextColor;
   display: grid;
   grid-template-columns: 55% 45%;
-  column-gap: 10%;
+  column-gap: 6%;
   max-width: 635px;
   width: 100%;
   padding-top: 40px;
