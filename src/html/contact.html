@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="src/styles/styles.scss" />
+    <link rel="stylesheet" href="/styles/styles.css" />
 </head>
+
 <body>
     <header class="header">
         <nav class="navigation">
@@ -28,37 +30,41 @@
             </div>
         </nav>
     </header>
-    <form class="form">
-        <div class="inputGroup">
-         <label for="name">Your name:</label>
-         <input type="text" id="name" name="name">
-         <span class="errorMessage name">Insert Name!</span>
-        </div>
-        <div class="inputGroup">
-            <label for="email">Your e-mail:</label>
-            <input type="email" name="email" id="email">
-            <span class="errorMessage email">Insert Email!</span>
-        <div class="inputGroup">
-            <div class="inputGroup">
-                <label for="subject">Subject:</label>
-                <input type="text" name="subject" id="subject">
-                <span class="errorMessage email">Declare Subject!</span>
-            <div class="inputGroup">
-            <label for="message">Message:</label>
-            <input type="text" name="message" id="message">
-            <span class="errorMessage message">Insert Message!</span>
-        </div>
-        <div>
-            <button class="Cancel">Cancel</button>
-        </div>
-        <div>
-            <button type="submit" class="Submit">Submit</button>
-            <span class="successMessage">Your message has been sent</span>
-        </div>
-    </form>
+    <main class="wrapper">
 
+
+        <form class="contactForm">
+            <div class="inputGroup">
+                <label for="name">Your name:</label>
+                <input class="Contactinput" type="text" id="name" name="name">
+                <span class="errorMessage name">Insert Name!</span>
+            </div>
+            <div class="inputGroup">
+                <label for="email">Your e-mail:</label>
+                <input class="Contactinput" type="email" name="email" id="email">
+                <span class="errorMessage email">Insert Email!</span>
+                <div class="inputGroup">
+                    <div class="inputGroup">
+                        <label for="subject">Subject:</label>
+                        <input class="Contactinput" type="text" name="subject" id="subject">
+                        <span class="errorMessage email">Declare Subject!</span>
+                        <div class="inputGroup">
+                            <label for="message">Message:</label>
+                            <input class="Contactinput" type="text" name="message" id="message">
+                            <span class="errorMessage message">Insert Message!</span>
+                        </div>
+                        <div>
+                            <button class="Cancel"><a href="index.html">Cancel</a></button>
+                        </div>
+                        <div>
+                            <button type="submit" class="Submit">Submit</button>
+                            <span class="successMessage">Your message has been sent</span>
+                        </div>
+        </form>
+    </main>
 
     <script src="contact.js" defer></script>
 
 </body>
+
 </html>

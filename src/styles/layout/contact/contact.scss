@@ -1,4 +1,4 @@
-form{
+.contactForm{
     width: 80rem;
     margin: 0 auto;
     background-color: white;
@@ -9,7 +9,7 @@ form{
     padding: 0 auto;
 }
 
-input{
+.contactInput{
     background-color: #F4F4F2;
     border: none;
     border-radius: 5px;
@@ -27,7 +27,10 @@ input{
     width: 500px;
     height: 300px;
 }
+.cancel{
+    text-decoration: none;
+}
 
 body{
-    background-color: $primaryDetailColor;
+    background-color: #e8e8e8;
 }
