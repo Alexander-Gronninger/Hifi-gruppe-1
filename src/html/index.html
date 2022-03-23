@@ -15,27 +15,26 @@
     <title>Document</title>
   </head>
 
-  <body>
-    <header>
-      <nav class="navigation">
-        <ul class="navigation__menu">
-          <li class="menu__item">
-            <img src="/src/images/logo_sml 1.png" alt="" />
-          </li>
-          <li class="menu__item"><a href="">SHOP</a></li>
-          <li class="menu__item"><a href="">ABOUT US</a></li>
-          <li class="menu__item"><a href="">NEWS</a></li>
-          <li class="menu__item"><a href="">CONTACT US</a></li>
-        </ul>
-        <div class="navigation__menu">
-          <div class="menu__item">
-            <input type="text" />
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-          <a href=""><i class="fa-solid fa-user menu__item"></i></a>
-          <a href=""><i class="fa-solid fa-cart-shopping menu__item"></i></a>
-        </div>
-      </nav>
+<body>
+    <header class="header">
+        <nav class="navigation">
+            <ul class="navigation__menu">
+                <li class="menu__item"><img src="/images/logo.png" alt=""></li>
+                <li class="menu__item"><a class="menu__link" href="">SHOP</a></li>
+                <li class="menu__item"><a class="menu__link" href="">ABOUT US</a></li>
+                <li class="menu__item"><a class="menu__link" href="">NEWS</a></li>
+                <li class="menu__item"><a class="menu__link" href="">CONTACT US</a></li>
+            </ul>
+            <div class="navigation__menu">
+                <div class="menu__item searchField">
+                    <input class="menu__input" type="text" placeholder="Search product...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <a href=""><i class="fa-solid fa-user menu__item"></i></a>
+                <a href=""><i class="fa-solid fa-cart-shopping menu__item cart"></i></a>
+                <a class="menu__item cart__amount" href="">2</a>
+            </div>
+        </nav>
     </header>
     <main></main>
   </body>
