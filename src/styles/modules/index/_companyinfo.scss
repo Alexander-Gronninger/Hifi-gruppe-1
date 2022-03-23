@@ -1,0 +1,47 @@
+.companyinfo{
+    margin-top:68px;
+    display:grid;
+    grid-template-columns: 64% 36%;
+    background-color: $secondaryIconColor;
+    padding-top: 109px;
+    padding-bottom:94px;
+}
+
+.companyinfo__about{
+    color:$primaryTextColor;
+    max-width:504px;
+    margin-left: 5%;
+}
+
+.about__title,.openingHours__title{
+    font-size:24px;
+}
+
+.about__title{
+    margin-bottom: 17px;
+}
+
+.about__text{
+    margin-bottom: 19.07px;
+}
+
+.openingHours__title{
+    margin-bottom: 36px;
+}
+
+.openingHours__city{
+    margin-top: 19.07px;
+}
+
+.about__text,.openingHours__text,.openingHours__address{
+    font-size:14px;
+    line-height: 19.07px;
+}
+
+.openingHours__address{
+    font-style: normal;
+}
+
+.companyinfo__openingHours{
+    color: $primaryTextColor
+}
