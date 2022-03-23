@@ -19,28 +19,39 @@
     <header class="header">
       <nav class="navigation">
         <ul class="navigation__menu">
-          <li class="menu__item"><img src="/images/logo.png" alt="" /></li>
-          <li class="menu__item"><a class="menu__link" href="">SHOP</a></li>
+          <li class="menu__item menu__logo">
+            <img src="/images/logo.png" alt="" />
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="">SHOP</a>
+          </li>
           <li class="menu__item"><a class="menu__link" href="">ABOUT US</a></li>
-          <li class="menu__item"><a class="menu__link" href="">NEWS</a></li>
+          <li class="menu__item">
+            <a class="menu__link menu__link--active" href="">NEWS</a>
+          </li>
           <li class="menu__item">
             <a class="menu__link" href="">CONTACT US</a>
           </li>
         </ul>
-        <div class="navigation__menu">
-          <div class="menu__item searchField">
+        <div class="navigation__tools">
+          <div class="tools__inputContainer">
             <input
-              class="menu__input"
+              class="tools__input"
               type="text"
               placeholder="Search product..."
+              id="tools__input"
             />
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <label for="tools__input"
+              ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
+            ></label>
           </div>
-          <a href=""><i class="fa-solid fa-user menu__item"></i></a>
-          <a href=""
-            ><i class="fa-solid fa-cart-shopping menu__item cart"></i
+          <a href="" class="tools__link"
+            ><i class="tools__icon fa-solid fa-user"></i
           ></a>
-          <a class="menu__item cart__amount" href="">2</a>
+          <a href="" class="tools__link tools__cart"
+            ><i class="tools__icon fa-solid fa-cart-shopping"></i>
+            <p class="cart__amount">99+</p>
+          </a>
         </div>
       </nav>
     </header>
