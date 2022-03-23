@@ -1,14 +1,31 @@
-// variables
+///////////// variables /////////////
 @import "variables";
 
-// base
+///////////// themes /////////////
+@import "themes/font";
+
+///////////// base /////////////
 @import "base/resets";
 
-// layout
+///////////// layout /////////////
 
-// modules
-@import "modules/navigation";
+// product_list
+@import "layout/productList/product__cartStockContainer";
+@import "layout/productList/product";
+@import "layout/productList/productMain__grid";
 
-// state
+///////////// modules /////////////
 
-// theme
+// global
+@import "modules/global/btn";
+@import "modules/global/navigation";
+
+// product_list
+@import "modules/productList/compareBtn__icon";
+@import "modules/productList/product__compareBtn";
+@import "modules/productList/product__heading";
+@import "modules/productList/product__price";
+@import "modules/productList/product";
+@import "modules/productList/productMain__primaryHeading";
+
+///////////// states /////////////
