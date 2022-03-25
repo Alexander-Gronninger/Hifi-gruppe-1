@@ -1,0 +1,26 @@
+.whiteBackground {
+  @include whiteBackground();
+}
+
+.faq__subTitle,
+.faq__subSubTitle {
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.faq__text {
+  line-height: 1.5;
+}
+
+.faq__text:not(:last-child) {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.inputField {
+  @include inputField();
+}
+
+.button {
+  @include button();
+}
