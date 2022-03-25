@@ -10,7 +10,10 @@ async function getProducts() {
   json.forEach((element) => {
     const NEW_ITEM = document.createElement("article");
     NEW_ITEM.classList.add("product");
-    NEW_ITEM.innerHTML = `    <a class="product__compareBtn" href=""
+    NEW_ITEM.addEventListener("click", function () {
+      window.location.href = `/product_details.html?id=${element.id}`;
+    });
+    NEW_ITEM.innerHTML = `<a class="product__compareBtn" href=""
     >Compare
     <img
       class="compareBtn__icon"
@@ -35,7 +38,7 @@ async function getProducts() {
     let stockIcons = NEW_ITEM.querySelector(".availability__icon");
     if (element.stock < 2) {
       stockIcons.style.backgroundColor = "red";
-      stockIcons.parentElement.innerHTML += "No Stock";
+      stockIcons.parentElement.innerHTML += "Out of stock";
     } else if (element.stock < 20) {
       stockIcons.style.backgroundColor = "orange";
       stockIcons.parentElement.innerHTML += "Few In Stock";
