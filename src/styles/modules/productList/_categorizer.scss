@@ -1,5 +1,8 @@
 .categorizer {
   grid-area: 1/1/3/2;
+  row-gap: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .categorizer__primaryHeading {
@@ -72,6 +75,172 @@
   padding: 0.5rem 1rem;
   justify-content: space-between;
   width: 100%;
+}
+
+.range__minMax {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content__range {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-price {
+  width: 220px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.price-title {
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.2em;
+  font-weight: 400;
+  background: #d58e32;
+  padding: 10px;
+}
+
+.price-container {
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-left: 57px;
+  width: 100px;
+}
+
+.price-field {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-left: 0px;
+}
+
+.price-field input[type="range"] {
+  position: absolute;
+}
+
+/* Reset style for input range */
+
+.price-field input[type="range"] {
+  width: 100%;
+  height: 7px;
+  outline: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  pointer-events: none;
+  -webkit-appearance: none;
+  background-color: #ff6900;
+}
+
+.price-field input[type="range"]::-webkit-slider-thumb {
+  /* WebKit/Blink */
+  position: relative;
+  -webkit-appearance: none;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background-color: #fff;
+  cursor: pointer;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 100;
+
+  margin-top: -13px;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+}
+
+.price-field input[type="range"]::-moz-range-thumb {
+  /* Firefox */
+  position: relative;
+  appearance: none;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  margin-top: -5px;
+  background-color: #fff;
+  cursor: pointer;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 100;
+
+  margin-top: -13px;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+}
+
+.price-field input[type="range"]::-ms-thumb {
+  /* IE */
+  position: relative;
+  appearance: none;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  background-color: #242424;
+  cursor: pointer;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 100;
+
+  margin-top: -13px;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+}
+
+/* Style track input range */
+
+.price-field input[type="range"]::-webkit-slider-runnable-track {
+  /* WebKit/Blink */
+  width: 188px;
+  height: 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.price-field input[type="range"]::-moz-range-track {
+  /* Firefox */
+  width: 188px;
+  height: 2px;
+  cursor: pointer;
+  background: #242424;
+  border-radius: 5px;
+}
+
+.rangeContainer {
+  width: 100%;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+  display: flex;
+  &__input {
+    margin-top: 0.5rem;
+    display: flex;
+    & label {
+      margin-right: 0.2rem;
+    }
+    & input {
+      width: 100%;
+      padding: 0.1rem 0.5rem;
+      border: none;
+      outline: none;
+    }
+  }
 }
 
 //input[type="checkbox"] {

@@ -53,27 +53,63 @@
               </li>
             </ul>
           </div>
+
           <div class="dropdown">
-            <div class="dropdown">
-              <div class="dropdown__text">
-                <h2>Color</h2>
-                <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
-              </div>
-              <ul class="dropdown__content">
-                <li class="content__list">
-                  Silver
-                  <div class="dropdown__checkbox">
-                    <img class="checkbox__img" src="/images/check.svg" alt="" />
-                  </div>
-                </li>
-                <li class="content__list">
-                  Blue
-                  <div class="dropdown__checkbox dropdown__checkboxChecked">
-                    <img class="checkbox__img" src="/images/check.svg" alt="" />
-                  </div>
-                </li>
-              </ul>
+            <div class="dropdown__text">
+              <h2>Color</h2>
+              <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
             </div>
+            <ul class="dropdown__content">
+              <li class="content__list">
+                Silver
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li class="content__list">
+                Blue
+                <div class="dropdown__checkbox dropdown__checkboxChecked">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown__text">
+              <h2>Wallet thickness</h2>
+              <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
+            </div>
+            <ul class="dropdown__content">
+              <li class="content__list content__range">
+                <div class="price-field">
+                  <input
+                    type="range"
+                    min="100"
+                    max="500"
+                    value="135"
+                    id="lower"
+                  />
+                  <input
+                    type="range"
+                    min="100"
+                    max="500"
+                    value="500"
+                    id="upper"
+                  />
+                </div>
+                <div class="rangeContainer">
+                  <div class="rangeContainer__input">
+                    <label for="one">£</label>
+                    <input id="one" />
+                  </div>
+                  <div class="rangeContainer__input">
+                    <label for="two">£</label>
+                    <input id="two" />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </article>
       </section>
     </main>
