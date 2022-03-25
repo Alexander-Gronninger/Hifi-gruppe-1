@@ -2,7 +2,7 @@
     margin-top:68px;
     display:grid;
     grid-template-columns: 64% 36%;
-    background-color: $secondaryIconColor;
+    background-color: $tertiaryBackgroundColor;
     padding-top: 109px;
     padding-bottom:94px;
 }
@@ -22,7 +22,7 @@
 }
 
 .about__text{
-    margin-bottom: 19.07px;
+    margin-bottom: 19px;
 }
 
 .openingHours__title{
@@ -30,12 +30,12 @@
 }
 
 .openingHours__city{
-    margin-top: 19.07px;
+    margin-top: 19px;
 }
 
 .about__text,.openingHours__text,.openingHours__address{
     font-size:14px;
-    line-height: 19.07px;
+    line-height: 19px;
 }
 
 .openingHours__address{
