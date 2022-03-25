@@ -1,4 +1,6 @@
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -6,11 +8,73 @@
     <link rel="stylesheet" href="/styles/styles.css" />
   </head>
   <body>
-    
     <main class="wrapper productMain">
       <h1 class="productMain__primaryHeading">Products</h1>
       <section class="productMain__grid">
-        
+        <article class="categorizer">
+          <h2 class="categorizer__primaryHeading">Sort by</h2>
+          <div class="dropdown">
+            <div class="dropdown__text">
+              <h2>Brand</h2>
+              <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
+            </div>
+            <ul class="dropdown__content">
+              <li class="content__list">
+                Creek
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li class="content__list">
+                EXP
+                <div class="dropdown__checkbox dropdown__checkboxChecked">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown__text">
+              <h2>Category</h2>
+              <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
+            </div>
+            <ul class="dropdown__content">
+              <li class="content__list">
+                CD Players
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li class="content__list">
+                DVD Players
+                <div class="dropdown__checkbox dropdown__checkboxChecked">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown">
+              <div class="dropdown__text">
+                <h2>Color</h2>
+                <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
+              </div>
+              <ul class="dropdown__content">
+                <li class="content__list">
+                  Silver
+                  <div class="dropdown__checkbox">
+                    <img class="checkbox__img" src="/images/check.svg" alt="" />
+                  </div>
+                </li>
+                <li class="content__list">
+                  Blue
+                  <div class="dropdown__checkbox dropdown__checkboxChecked">
+                    <img class="checkbox__img" src="/images/check.svg" alt="" />
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </article>
       </section>
     </main>
     <script src="/js/productList/productList.js" type="module"></script>
