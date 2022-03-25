@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/styles.css" />
-    <script src="/js/javascript.js" defer></script>
+    <script src="/js/productDetails/productDetails.js" defer></script>
 
     <!--font awesome link-->
     <script
@@ -57,19 +57,67 @@
     </header>
     <main>
       <div class="wrapper">
-        <div class="productwrapper">
+        <article class="productContainer">
+          <p class="pageTitle">PRODUCT</p>
+          <a class="product__compareBtn" href=""
+            >Compare
+            <img
+              class="compareBtn__icon"
+              src="images/sliders.svg"
+              alt="Compare icon"
+          /></a>
+          <div class="product__background">
             <div class="product__gallery">
-                <img src="printedfromurl.png">
-                <i class="gallery__leftarrow"></i>
-                <i class="gallery__rightarrow"></i>
-                <div class="dotslol">
-                    1-3 dots
-                </div>
+              <img class="gallery__image" src="printedfromurl.png" />
+              <i class="gallery__leftarrow fa-solid fa-chevron-left"></i>
+              <i class="gallery__rightarrow fa-solid fa-chevron-right"></i>
+              <div class="gallery__dots"></div>
             </div>
-        </div>
-
-        
+            <article class="product__details">
+              <h1 class="details__title">productnameprintedfrom data</h1>
+              <p class="details__type">PRODUKT TYPE</p>
+              <p class="details__description">
+                product beskrivelse printed from data product beskrivelse
+                printed from data product beskrivelse printed from data product
+                beskrivelse printed from data product beskrivelse printed from
+                data product beskrivelse printed from data product beskrivelse
+                printed from data product beskrivelse printed from data product
+                beskrivelse printed from data product beskrivelse printed from
+                data
+              </p>
+              <p class="details__description">
+                product beskrivelse printed from data product beskrivelse
+                printed from data product beskrivelse printed from data product
+                beskrivelse printed from data product beskrivelse printed from
+                data product beskrivelse printed from data product beskrivelse
+                printed from data product beskrivelse printed from data product
+                beskrivelse printed from data product beskrivelse printed from
+                data
+              </p>
+              <div class="details__colors"></div>
+              <div class="details__price">
+                <h2 class="price__amount">£price printed from database.00</h2>
+                <p
+                  class="cartStockContainer__availability details__stockStatus"
+                >
+                  <span class="availability__icon"></span>
+                </p>
+              </div>
+              <div class="details__cartUI">
+                <i class="details__minus fa-solid fa-minus"></i>
+                <div class="details__currentContainer">
+                  <p class="currentContainer__counter">1</p>
+                </div>
+                <i class="details__plus fa-solid fa-plus"></i>
+                <button class="details__addToCartBtn btn">Add to cart</button>
+              </div>
+            </article>
+            <!--end of product__details-->
+          </div>
+        </article>
+        <!--end of productWrapper -->
       </div>
+      <!--end of wrapper-->
     </main>
   </body>
 </html>
