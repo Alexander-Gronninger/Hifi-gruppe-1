@@ -5,6 +5,7 @@
 
 .footerTop{
     justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #BBBFCA;
 }
 
@@ -25,6 +26,10 @@
 .blackFooter a, h2{
     font-size: 18px;
     font-weight: 400;
+}
+
+.blackFooter a:hover{
+    font-weight: bold;
 }
 
 .blackFooter p{
