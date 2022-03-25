@@ -17,8 +17,7 @@ plusBtn.forEach(function (Btn) {
 // adds or subtracts to the counter, based on which number element it is
 function counterFunction(event) {
   if (event.target.classList.contains("counter__minus")) {
-    console.log("working");
-    if (counter[minusBtn.indexOf(event.target)].innerHTML > "0") {
+    if (counter[minusBtn.indexOf(event.target)].innerHTML > "1") {
       let value = Number(counter[minusBtn.indexOf(event.target)].innerHTML) - 1;
       counter[minusBtn.indexOf(event.target)].innerHTML = value;
     }
