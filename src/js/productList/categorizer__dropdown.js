@@ -30,5 +30,3 @@ for (let i = 0; i < dropdownElements.length; i++) {
       }
     });
 }
-
-export default categorizer__dropdown;
