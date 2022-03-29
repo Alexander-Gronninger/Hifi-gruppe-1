@@ -75,6 +75,10 @@
   padding: 0.5rem 1rem;
   justify-content: space-between;
   width: 100%;
+  cursor: pointer;
+  &:hover {
+    background-color: #e2e2e2;
+  }
 }
 
 .range__minMax {

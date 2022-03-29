@@ -2,10 +2,14 @@ const API_URL = `http://23.88.41.248:3000/products`;
 const productMainGrid__element =
   document.getElementsByClassName("productMain__grid")[0];
 
+export let localDatabase;
+
 async function getProducts() {
   let response = await fetch(API_URL);
   let json = await response.json();
   console.log(json);
+
+  localDatabase = json;
 
   json.forEach(function (productData) {
     printProduct(productData)
@@ -14,9 +18,7 @@ async function getProducts() {
 }
 
 
-
-
-function printProduct(data) {
+export function printProduct(data) {
   const NEW_ITEM = document.createElement("article");
   NEW_ITEM.classList.add("product");
   NEW_ITEM.addEventListener("click", function () {

@@ -19,15 +19,15 @@
               <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
             </div>
             <ul class="dropdown__content">
-              <li class="content__list">
+              <li data-category="brand" class="content__list categoryItem">
                 Creek
                 <div class="dropdown__checkbox">
                   <img class="checkbox__img" src="/images/check.svg" alt="" />
                 </div>
               </li>
-              <li class="content__list">
+              <li data-category="brand" class="content__list categoryItem">
                 EXP
-                <div class="dropdown__checkbox dropdown__checkboxChecked">
+                <div class="dropdown__checkbox">
                   <img class="checkbox__img" src="/images/check.svg" alt="" />
                 </div>
               </li>
@@ -39,15 +39,15 @@
               <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
             </div>
             <ul class="dropdown__content">
-              <li class="content__list">
+              <li data-category="category" class="content__list categoryItem">
                 CD Players
                 <div class="dropdown__checkbox">
                   <img class="checkbox__img" src="/images/check.svg" alt="" />
                 </div>
               </li>
-              <li class="content__list">
+              <li data-category="category" class="content__list categoryItem">
                 DVD Players
-                <div class="dropdown__checkbox dropdown__checkboxChecked">
+                <div class="dropdown__checkbox">
                   <img class="checkbox__img" src="/images/check.svg" alt="" />
                 </div>
               </li>
@@ -60,15 +60,15 @@
               <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
             </div>
             <ul class="dropdown__content">
-              <li class="content__list">
+              <li data-category="color" class="content__list categoryItem">
                 Silver
                 <div class="dropdown__checkbox">
                   <img class="checkbox__img" src="/images/check.svg" alt="" />
                 </div>
               </li>
-              <li class="content__list">
+              <li data-category="color" class="content__list categoryItem">
                 Blue
-                <div class="dropdown__checkbox dropdown__checkboxChecked">
+                <div class="dropdown__checkbox">
                   <img class="checkbox__img" src="/images/check.svg" alt="" />
                 </div>
               </li>
@@ -99,12 +99,12 @@
                 </div>
                 <div class="rangeContainer">
                   <div class="rangeContainer__input">
-                    <label for="one">£</label>
-                    <input id="one" />
+                    <label for="minValue">£</label>
+                    <input type="number" id="minValue" />
                   </div>
                   <div class="rangeContainer__input">
-                    <label for="two">£</label>
-                    <input id="two" />
+                    <label for="maxValue">£</label>
+                    <input type="number" id="maxValue" />
                   </div>
                 </div>
               </li>
@@ -115,6 +115,6 @@
     </main>
     <script src="/js/productList/productList.js" type="module"></script>
     <script src="/js/productList/categorizer__dropdown.js"></script>
-    <script src="/js/productList/categorize.js"></script>
+    <script src="/js/productList/categorize.js" type="module"></script>
   </body>
 </html>
