@@ -15,24 +15,30 @@ sliders.forEach(function (slider) {
 //adding the checkmark through toggle method
 Array.from(categorizerItems).forEach(function (item) {
     item.addEventListener("click", function () {
-        item.children[0].classList.toggle("dropdown__checkboxChecked");
-        updateProducts()
+        item.children[0].classList.toggle("dropdown__checkboxChecked");            
+        if (item.children[0].classList.contains("dropdown__checkboxChecked")){
+            console.log(item.dataset.category);
+            console.log(item.dataset.value);
+            }
+        updateProducts(item)
     })
 
 })
 
+
 //updating the products
-function updateProducts() {
+function updateProducts(check) {    
     console.log("UPDATING PRODUCTS")
     let productContainers = document.querySelectorAll(".product")
     productContainers.forEach(productContainer => productContainer.remove())
-
     localDatabase.forEach(function (product) {
-        console.log(product)
-        printProduct(product)
+        console.log(check.dataset.value); 
+        if (check.dataset.value.toLowerCase() === product.category.toLowerCase() ||
+         check.dataset.value.toLowerCase() === product.colors.forEach().toLowerCase() || 
+         check.dataset.value.toLowerCase() === product.brand.toLowerCase()){
+        printProduct(product)  
+        }
     })
-
-
 
 }
 

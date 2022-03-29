@@ -8,7 +8,6 @@ async function getProducts() {
   let response = await fetch(API_URL);
   let json = await response.json();
   console.log(json);
-
   localDatabase = json;
 
   json.forEach(function (productData) {
