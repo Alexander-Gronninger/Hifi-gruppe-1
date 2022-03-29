@@ -25,3 +25,7 @@ Dokumentation / kommentarer<br>
 5. skriv npm install i konsollen (ALTID)
 6. Skriv din kode
 7. HUSK at @importer dine scss filer i "styles.scss"
+
+# TIL NÆSTE SPRINT:
+
+-

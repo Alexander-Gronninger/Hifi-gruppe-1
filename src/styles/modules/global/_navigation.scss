@@ -1,47 +1,151 @@
-.header{
-    padding: 21px 34px;
-    background-color: $tertiaryBackgroundColor;
+.header {
+  padding: 21px 34px;
+  background-color: $tertiaryBackgroundColor;
 }
-.navigation{
-    display: flex;
-    justify-content: space-between;
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.navigation__menu{
-    display: flex;
-    align-items: center;
-    gap: 31px;
+
+.menu__item {
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
 }
-.menu__item{
-    list-style: none;
-    color: $primaryTextColor;
+.menu__link {
+  text-decoration: none;
+  color: $primaryTextColor;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: 5px 15px;
+  margin-inline: 5px;
+  transition: color 0.2s ease-in-out;
 }
-.menu__link{
-    text-decoration: none;
+
+.menu__link--active:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid $primaryButtonColor;
 }
-.searchField{
-    background-color: $primaryDetailColor;
-    border-radius: 2px;
-    padding: 6px;
+
+.menu__link:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  border-bottom: solid 2px;
 }
-.menu__input{
-    border: none;
-    width: 200px;
-    background-color: $primaryDetailColor;
-    font-family: 'Open Sans', sans-serif;;
+
+.menu__link:before {
+  left: 0;
 }
-.fa-magnifying-glass{
-    color: $secondaryIconColor;
+
+.menu__link:hover {
+  color: $primaryButtonColor;
 }
-.cart{
-    position: relative;
+
+.menu__link:hover:before {
+  width: 100%;
 }
-.cart__amount{
-    background-color: $primaryButtonColor;
-    border-radius: 50px;
-    padding: 1px 6px;
-    font-size: 0.7em;
-    font-weight: bold;
-    position: absolute;
-    top: 30px;
-    right: 20px;
+
+.menu__link:before {
+  transition: width 0.2s ease-in-out;
+}
+
+.menu__logo {
+  padding-right: 20px;
+}
+
+.tools__inputContainer {
+  background-color: $primaryDetailColor;
+  border-radius: 2px;
+  padding: 6px;
+  margin-right: 20px;
+}
+.tools__input {
+  border: none;
+  outline: none;
+  width: 200px;
+  background-color: $primaryDetailColor;
+  font-size: 0.8em;
+}
+.tools__searchIcon {
+  color: $secondaryIconColor;
+  cursor: pointer;
+}
+
+.tools__searchIcon:hover {
+  color: $primaryButtonColor;
+}
+
+.tools__inputContainer,
+.tools__link {
+  display: inline-block;
+  -vertical-align: middle;
+}
+
+.tools__icon {
+  vertical-align: middle;
+}
+
+.tools__link {
+  text-decoration: none;
+  color: $primaryTextColor;
+  cursor: pointer;
+  position: relative;
+  padding: 5px 8px;
+  margin-inline: 12px;
+  transition: color 0.2s ease-in-out;
+}
+
+.tools__link--active:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid $primaryButtonColor;
+}
+
+.tools__link:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  border-bottom: solid 2px;
+}
+
+.tools__link:before {
+  left: 0;
+}
+
+.tools__link:hover {
+  color: $primaryButtonColor;
+}
+
+.tools__link:hover:before {
+  width: 100%;
+}
+
+.tools__link:before {
+  transition: width 0.2s ease-in-out;
+}
+
+.cart__amount {
+  background-color: $primaryButtonColor;
+  color: $primaryTextColor;
+  border-radius: 50px;
+  padding: 1px 6px;
+  font-size: 0.7em;
+  font-weight: bold;
+  position: absolute;
+  top: -2px;
+  left: 18px;
 }
