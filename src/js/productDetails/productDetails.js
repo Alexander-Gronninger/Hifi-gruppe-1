@@ -29,6 +29,7 @@ async function getProduct() {
   console.log(response);
   productTitle.innerHTML = response[0].brand + " " + response[0].name;
   productImage.src = response[0].images.default;
+  productImage.alt = response[0].brand + " " + response[0].name;
   productType.innerHTML = response[0].category;
   //productDescription.innerHTML = response[0].description;
   productPrice.innerHTML = "£ " + response[0].price;
