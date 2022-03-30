@@ -17,10 +17,7 @@
   margin-bottom: 10px;
 }
 
-.inputField {
-  @include inputField();
-}
-
-.button {
-  @include button();
+.faq__list {
+  list-style: disc;
+  margin-left: 35px;
 }
