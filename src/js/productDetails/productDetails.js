@@ -6,7 +6,7 @@ const productImage = document.querySelector(".gallery__image");
 const productType = document.querySelector(".details__type");
 const productDescription = document.querySelector(".details__description");
 const productColors = document.querySelector(".details__colors");
-const galleryDots = document.querySelector(".gallery__dots");
+const galleryDotsContainer = document.querySelector(".gallery__dots");
 
 const arrowLeft = document.querySelector(".gallery__leftarrow");
 const arrowRight = document.querySelector(".gallery__rightarrow");
@@ -14,12 +14,12 @@ const arrowRight = document.querySelector(".gallery__rightarrow");
 const productPrice = document.querySelector(".price__amount");
 
 let searchParams = new URLSearchParams(window.location.search);
-let id = searchParams.get("id");
+let productID = searchParams.get("id");
 
 getProduct();
 
 async function getProduct() {
-  let response = await (await fetch(API_URL + `?id_like=${id}`)).json();
+  let response = await (await fetch(API_URL + `?id_like=${productID}`)).json();
   productTitle.innerHTML = response[0].brand + " " + response[0].name;
   productImage.src = response[0].images.default;
   productImage.alt = response[0].brand + " " + response[0].name;
@@ -33,7 +33,7 @@ async function getProduct() {
   if (response[0].images.length < 3) {
     arrowRight.style.display = "none";
     arrowLeft.style.display = "none";
-    galleryDots.style.display = "none";
+    galleryDotsContainer.style.display = "none";
   }
 
   // add color buttons
@@ -83,7 +83,7 @@ async function getProduct() {
 chooseColor();
 
 async function chooseColor() {
-  let response = await (await fetch(API_URL + `?id_like=${id}`)).json();
+  let response = await (await fetch(API_URL + `?id_like=${productID}`)).json();
   let color = "";
   if (this.classList == undefined) {
     color = productColors.children[0].children[1].innerHTML;
@@ -92,16 +92,25 @@ async function chooseColor() {
   }
   localStorage.setItem("color", color);
   let colorImageList = response[0].images[color];
-  galleryDots.innerHTML = "";
+  galleryDotsContainer.innerHTML = "";
+
+  if (colorImageList.length < 2) {
+    arrowRight.style.display = "none";
+    arrowLeft.style.display = "none";
+  } else {
+    arrowRight.style.display = "block";
+    arrowLeft.style.display = "block";
+  }
+
   for (let i = 0; i < colorImageList.length; i++) {
     if (i == 0) {
       const galleryDot = `
-    <div class="gallery__dot gallery__dot--current imageColor__${color}"></div>`;
-      galleryDots.innerHTML += galleryDot;
+    <div class="gallery__dot gallery__dot--current"></div>`;
+      galleryDotsContainer.innerHTML += galleryDot;
     } else {
       const galleryDot = `
-    <div class="gallery__dot imageColor__${color}"></div>`;
-      galleryDots.innerHTML += galleryDot;
+    <div class="gallery__dot"></div>`;
+      galleryDotsContainer.innerHTML += galleryDot;
     }
   }
   productImage.src = response[0].images[color][0];
@@ -120,23 +129,42 @@ arrowRight.addEventListener("click", changeImage);
 
 let imgIndex = 0;
 async function changeImage() {
-  let response = await (await fetch(API_URL + `?id_like=${id}`)).json();
+  let response = await (await fetch(API_URL + `?id_like=${productID}`)).json();
   let color = localStorage.getItem("color");
+  document
+    .querySelector(".gallery__dot--current")
+    .classList.remove("gallery__dot--current");
+  let galleryDots = document.querySelectorAll(".gallery__dot");
   if (this.classList.contains("gallery__rightarrow")) {
     if (imgIndex == response[0].images[color].length - 1) {
       imgIndex = 0;
       productImage.src = response[0].images[color][imgIndex];
+      galleryDots[imgIndex].classList.add("gallery__dot--current");
     } else {
       imgIndex++;
       productImage.src = response[0].images[color][imgIndex];
+      galleryDots[imgIndex].classList.add("gallery__dot--current");
     }
   } else {
     if (imgIndex == 0) {
       imgIndex = response[0].images[color].length - 1;
       productImage.src = response[0].images[color][imgIndex];
+      galleryDots[imgIndex].classList.add("gallery__dot--current");
     } else {
       imgIndex--;
       productImage.src = response[0].images[color][imgIndex];
+      galleryDots[imgIndex].classList.add("gallery__dot--current");
     }
   }
+}
+
+//localStorage
+document
+  .querySelector(".details__addToCartBtn")
+  .addEventListener("click", toStorage);
+  
+  async function toStorage() {
+  const productAmountNumber = document.querySelector(".counter__amount").innerHTML
+  console.log("product amount is " + productAmountNumber);
+  localStorage.setItem("productID", productID);
 }
