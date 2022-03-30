@@ -1,5 +1,5 @@
-//const API_URL = `http://23.88.41.248:3000/products`; //Benjamins server
-const API_URL = `http://localhost:3000/products`; //lokal json server
+const API_URL = `http://23.88.41.248:3000/products`; //Benjamins server
+//const API_URL = `http://localhost:3000/products`; //lokal json server
 
 const productTitle = document.querySelector(".details__title");
 const productImage = document.querySelector(".gallery__image");
@@ -202,18 +202,21 @@ async function toStorage() {
 
   // we fetch the cart, as we need to know it's length
   let items = JSON.parse(localStorage.getItem("cart")) || [];
-
-  let storageItemIndex = undefined;
-  if (items.some((item) => item.id === productID)) {
-    storageItemIndex = items.findIndex((item) => item.id === productID);
+console.log(items)
+  let updatedItems = [];
+  if (items.some((item) => item.id == productID)) {
+    updatedItems = items.map((item) => {
+      if (productID == item.id) {
+        console.log("updateNumber");
+        return { ...item, quantity: productAmountNumber };
+      }
+    });
   }
 
+  console.log(updatedItems);
   // we know productID from the top of the document, when we fetch it from the URL
   // ... is spread operator
-  let updatedItems = [];
-  if (storageItemIndex !== undefined) {
-    updatedItems = [...items, (items[storageItemIndex].quantity = productAmountNumber)];
-  } else {
+  if (updatedItems.length < 1) {
     updatedItems = [
       ...items,
       {
