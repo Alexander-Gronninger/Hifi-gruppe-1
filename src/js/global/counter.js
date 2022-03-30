@@ -15,15 +15,15 @@ plusBtn.forEach(function (Btn) {
 });
 
 // adds or subtracts to the counter, based on which number element it is
-function counterFunction(event) {
-  if (event.target.classList.contains("counter__minus")) {
-    if (counter[minusBtn.indexOf(event.target)].innerHTML > "1") {
-      let value = Number(counter[minusBtn.indexOf(event.target)].innerHTML) - 1;
-      counter[minusBtn.indexOf(event.target)].innerHTML = value;
+async function counterFunction() {
+  if (this.classList.contains("counter__minus")) {
+    if (counter[minusBtn.indexOf(this)].innerHTML > "1") {
+      let value = Number(counter[minusBtn.indexOf(this)].innerHTML) - 1;
+      counter[minusBtn.indexOf(this)].innerHTML = value;
     }
   } else {
-    let value = Number(counter[plusBtn.indexOf(event.target)].innerHTML) + 1;
+    let value = Number(counter[plusBtn.indexOf(this)].innerHTML) + 1;
 
-    counter[plusBtn.indexOf(event.target)].innerHTML = value;
+    counter[plusBtn.indexOf(this)].innerHTML = value;
   }
 }

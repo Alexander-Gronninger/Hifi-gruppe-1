@@ -201,11 +201,26 @@ async function toStorage() {
     document.querySelector(".counter__amount").innerHTML;
 
   // we fetch the cart, as we need to know it's length
-  //let item = JSON.parse(localStorage.getItem("cart"));
+  let items = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let storageItemIndex = undefined;
+  if (items.some((item) => item.id === productID)) {
+    storageItemIndex = items.findIndex((item) => item.id === productID);
+  }
 
   // we know productID from the top of the document, when we fetch it from the URL
-  let item = {
-    product: { id: productID, quantity: productAmountNumber },
-  };
-  localStorage.setItem("cart", JSON.stringify(item));
+  // ... is spread operator
+  let updatedItems = [];
+  if (storageItemIndex !== undefined) {
+    updatedItems = [...items, (items[storageItemIndex].quantity = productAmountNumber)];
+  } else {
+    updatedItems = [
+      ...items,
+      {
+        id: productID,
+        quantity: productAmountNumber,
+      },
+    ];
+  }
+  localStorage.setItem("cart", JSON.stringify(updatedItems));
 }
