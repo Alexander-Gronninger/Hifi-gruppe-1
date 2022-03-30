@@ -53,7 +53,6 @@ function updateProductsWithPrice() {
             printProduct(product)
         }
     })
-
 }
 
 

@@ -36,7 +36,7 @@ export function printProduct(data) {
     class="product__img"
   />
   <h2 class="product__heading">${data.brand} ${data.name}</h2>
-  <strong class="product__price">£ ${data.price}.00</strong>
+  <strong class="product__price">£ ${data.price}</strong>
   <div class="product__cartStockContainer">
     <button class="cartStockContainer__btn btn">Add to cart</button>
     <p class="cartStockContainer__availability">
