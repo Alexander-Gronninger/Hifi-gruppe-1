@@ -115,10 +115,10 @@
   padding: 2px;
   height: 29px;
   width: 29px;
-  background-color: $tertiaryBackgroundColor;
   border-radius: 50%;
   background-clip: content-box;
   border: 2px solid $secondaryBackgroundColor;
+  background-image: linear-gradient(#000000b3, #ffffff00)
 }
 .color__icon--current {
   border: 2px solid $secondaryIconColor;
@@ -174,4 +174,5 @@
 
 .currentContainer__counter {
   text-align: center;
+  line-height: 37px;
 }

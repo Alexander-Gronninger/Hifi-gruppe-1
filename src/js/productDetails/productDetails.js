@@ -49,6 +49,8 @@ async function getProduct() {
       </div>`;
       productColors.innerHTML += colorContainer;
     }
+    let colorIconElements = document.querySelectorAll(".color__icon");
+    colorIconElements[i].style.backgroundColor = response[0].colors[i]
   }
 
   // in stock
@@ -202,19 +204,22 @@ async function toStorage() {
 
   // we fetch the cart, as we need to know it's length
   let items = JSON.parse(localStorage.getItem("cart")) || [];
-console.log(items)
+  // empty variable so we can use it globally
   let updatedItems = [];
-  if (items.some((item) => item.id == productID)) {
+  // we check if any items match current product id && color
+  if (items.some((item) => item.id == productID && item.color == sessionStorage.getItem("color"))) {
+    // we go through each item to find the one that matches
     updatedItems = items.map((item) => {
-      if (productID == item.id) {
-        console.log("updateNumber");
-        return { ...item, quantity: productAmountNumber };
+      if (productID == item.id && item.color == sessionStorage.getItem("color")) {
+        // we make our changes to said items
+        // '...items' means it'll return all other items unmodified
+        return { ...item, quantity: Number(item.quantity) + Number(productAmountNumber) };
+        // and return the others
       } else return item;
     });
   }
 
-  console.log(updatedItems);
-  // we know productID from the top of the document, when we fetch it from the URL
+  // if we're not modifying an already existing item
   // ... is spread operator
   if (updatedItems.length < 1) {
     updatedItems = [
@@ -222,6 +227,7 @@ console.log(items)
       {
         id: productID,
         quantity: productAmountNumber,
+        color: sessionStorage.getItem("color")
       },
     ];
   }
