@@ -7,12 +7,23 @@ import imagemin from "gulp-imagemin";
 import connect from "gulp-connect";
 import sassImport from "sass";
 import gulpSass from "gulp-sass";
+import rename from "gulp-rename";
+import include from "gulp-file-include";
 
 const sass = gulpSass(sassImport);
 
 function html() {
   return gulp
     .src("src/html/**/*.html")
+    .pipe(include())
+    .pipe(
+      rename(function (path) {
+        if (path.basename != "index") {
+          path.dirname = path.dirname + "/" + path.basename;
+          path.basename = "index";
+        }
+      })
+    )
     .pipe(gulp.dest("build"))
     .pipe(connect.reload());
 }

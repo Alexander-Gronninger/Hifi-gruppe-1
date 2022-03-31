@@ -14,7 +14,7 @@ async function getProducts() {
     >Compare
     <img
       class="compareBtn__icon"
-      src="images/sliders.svg"
+      src="/images/sliders.svg"
       alt="Compare icon"
   /></a>
   <img
