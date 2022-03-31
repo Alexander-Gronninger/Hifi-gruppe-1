@@ -17,8 +17,11 @@
 ///////////// modules /////////////
 
 // global
-@import "modules/global/btn";
 @import "modules/global/navigation";
+@import "modules/global/footer";
+@import "modules/global/whiteBackground";
+@import "modules/global/inputField";
+@import "modules/global/button";
 
 //index
 @import "modules/index/companyinfo";
@@ -37,8 +40,10 @@
 @import "modules/productList/product__img";
 @import "modules/productList/categorizer";
 
+// faq
+@import "modules/faq/faq";
+
 ///////////// states /////////////
-@import "modules/global/btn";
 
 ///////////// state /////////////
 

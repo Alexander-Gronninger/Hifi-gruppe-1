@@ -1,0 +1,18 @@
+@mixin whiteBackground(
+  $max-width: 1124px,
+  $padding: 30px,
+  $margin-block: 50px
+) {
+  background-color: $secondaryBackgroundColor;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  width: 100%;
+  max-width: $max-width;
+  padding: $padding;
+  margin-block: $margin-block;
+  margin-inline: auto;
+}
+
+.g-whiteBackground {
+  @include whiteBackground();
+}
