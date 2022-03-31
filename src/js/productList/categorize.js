@@ -1,3 +1,6 @@
+import { localDatabase } from "./getProducts.js"
+import { printProduct } from "./getProducts.js"
+
 
 //declaring variables
 let categorizerItems = document.getElementsByClassName('categoryItem')
@@ -26,9 +29,45 @@ Array.from(categorizerItems).forEach(function (item) {
 
 })
 
+let activeValues;
+export default function selectedCategories() {
+    let productContainers = document.querySelectorAll(".product")
+    //productContainers.forEach(productContainer => productContainer.remove())
+    activeValues = {
+        brand: ["Creek", "Exp", "Pro-Ject"],
+        category: ["CD Player", "DVD Player", "Preamps"],
+        colors: ["silver", "yellow"],
+        price: []
+    };
+
+    Array.from(categorizerItems).forEach(function (dataCategory) {
+        if (dataCategory.children[0].classList.contains("dropdown__checkboxChecked")) {
+            activeValues[dataCategory.dataset.category].push(dataCategory.dataset.value)
+        }
+    })
+}
+
+//product.brand.includes(activeValues.brand) &&
+
+function filterr() {
+    selectedCategories()
+    console.log("det filterered")
+    let filtered = localDatabase.filter(product =>
+        activeValues.brand.includes(product.brand) &&
+        activeValues.category.includes(product.category) &&
+        product.colors.every(color => activeValues.colors.indexOf(color) !== -1))
+
+    console.log(filtered)
+}
+
+setTimeout(() => {
+    filterr()
+}, 500);
+
 
 //updating the products
 function updateProducts(check) {
+    console.log(check)
     console.log("UPDATING PRODUCTS")
     let productContainers = document.querySelectorAll(".product")
     productContainers.forEach(productContainer => productContainer.remove())
@@ -54,11 +93,6 @@ function updateProductsWithPrice() {
         }
     })
 }
-
-
-
-import { localDatabase } from "./getProducts.js"
-import { printProduct } from "./getProducts.js"
 
 
 
