@@ -7,35 +7,53 @@ import imagemin from "gulp-imagemin";
 import connect from "gulp-connect";
 import sassImport from "sass";
 import gulpSass from "gulp-sass";
+import rename from "gulp-rename";
+import include from "gulp-file-include";
 
 const sass = gulpSass(sassImport);
 
 function html() {
   return gulp
-    .src("src/html/**/*.html")
+    .src("src/html/*.html")
+    .pipe(include())
+    .pipe(
+      rename(function (path) {
+        if (path.basename != "index") {
+          path.dirname = path.dirname + "/" + path.basename;
+          path.basename = "index";
+        }
+      })
+    )
     .pipe(gulp.dest("build"))
     .pipe(connect.reload());
 }
 
 function css() {
-  return gulp
-    .src("src/styles/**/*.scss")
-    .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("build/styles"))
-    .pipe(connect.reload());
+  return (
+    gulp
+      .src("src/styles/*.scss")
+      //.pipe(concat("style.scss"))
+
+      .pipe(sass().on("error", sass.logError))
+      .pipe(gulp.dest("build/styles"))
+      .pipe(connect.reload())
+  );
 }
 
 function js() {
-  return gulp
-    .src("src/js/**/*.js")
-    .pipe(uglifyjs())
-    .pipe(gulp.dest("build/js"))
-    .pipe(connect.reload());
+  return (
+    gulp
+      .src("src/js/*.js")
+      //.pipe(concat("javascript.js"))
+      .pipe(uglifyjs())
+      .pipe(gulp.dest("build/js"))
+      .pipe(connect.reload())
+  );
 }
 
 function images() {
   return gulp
-    .src("src/images/**/*")
+    .src("src/images/*")
     .pipe(imagemin())
     .pipe(gulp.dest("build/images"))
     .pipe(connect.reload());
@@ -57,7 +75,7 @@ function watchHTML() {
 
 function watchCSS() {
   gulp.watch(
-    "src/styles/**/*.scss",
+    "src/styles/*.scss",
     {
       events: "all",
       ignoreInitial: false,
@@ -71,7 +89,7 @@ function watchCSS() {
 
 function watchJS() {
   gulp.watch(
-    "src/js/**/*.js",
+    "src/js/*.js",
     {
       events: "all",
       ignoreInitial: false,
@@ -85,7 +103,7 @@ function watchJS() {
 
 function watchIMG() {
   gulp.watch(
-    "src/images/**/*",
+    "src/images/*",
     {
       events: "all",
       ignoreInitial: false,
