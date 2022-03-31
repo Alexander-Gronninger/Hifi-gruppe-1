@@ -11,16 +11,18 @@
 
 .faq__text {
   line-height: 1.5;
+  font-size: 0.875rem;
 }
 
 .faq__text:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.inputField {
-  @include inputField();
+.faq__text--largeText {
+  font-size: 1.5rem;
 }
 
-.button {
-  @include button();
+.faq__list {
+  list-style: disc;
+  margin-left: 35px;
 }
