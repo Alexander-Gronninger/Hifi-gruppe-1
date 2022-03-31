@@ -1,5 +1,6 @@
 # Hifi-gruppe-1
 
+# gulp_concat
 # TO START PROJECT
 
 Make sure to have nodejs and gulp installed
@@ -10,6 +11,16 @@ Run "gulp" or "npm run dev" in the terminal
 
 Site address: http://localhost:8080/
 
+#FEATURES
+
+Automatically combines scss to a single styles.css
+Has gulp-include-file which allows for partial HTML
+Renames all but index.html to filename/index.html, for "smarter" looking urls
+Reduces .js size
+Reduces image sizes
+Creates a live server
+
+Runs all of the above when files are saved, and reloads in the browser
 
 
 # Definition of done

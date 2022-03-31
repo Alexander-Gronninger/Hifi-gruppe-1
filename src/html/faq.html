@@ -15,53 +15,40 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="header">
-      <nav class="navigation">
-        <ul class="navigation__menu">
-          <li class="menu__item menu__logo">
-            <img src="/images/logo.png" alt="" />
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="">SHOP</a>
-          </li>
-          <li class="menu__item"><a class="menu__link" href="">ABOUT US</a></li>
-          <li class="menu__item">
-            <a class="menu__link menu__link--active" href="">NEWS</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="">CONTACT US</a>
-          </li>
-        </ul>
-        <div class="navigation__tools">
-          <div class="tools__inputContainer">
-            <input
-              class="tools__input"
-              type="text"
-              placeholder="Search product..."
-              id="tools__input"
-            />
-            <label for="tools__input"
-              ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
-            ></label>
-          </div>
-          <a href="" class="tools__link"
-            ><i class="tools__icon fa-solid fa-user"></i
-          ></a>
-          <a href="" class="tools__link tools__cart"
-            ><i class="tools__icon fa-solid fa-cart-shopping"></i>
-            <p class="cart__amount">99+</p>
-          </a>
-        </div>
-      </nav>
-    </header>
+    @@include("./partials/nav.html");
     <div class="wrapper">
       <main>
         <h1 id="page__title">FAQ</h1>
         <article class="faq whiteBackground">
-          <p class="faq__text">
+          <p class="faq__text faq__text--largeText">
             Here at Hi-Fi Corner, our trained product specialists aim to provide
             the right product for you. We take great care with all of our orders
             to ensure you are fully happy with the product.
+          </p>
+
+          <p class="faq__text">
+            We aim to resolve any problems to your satisfaction. Please contact
+            us directly, if, for any reason, you have an issue with your order,
+            your product or any other service provided. OUR GUARANTEE All items
+            excluding ex-display and secondhand goods are covered by at least 12
+            months warranty; this is detailed on your receipt. Any secondhand or
+            ex-display product is covered by at least 3 months warranty as noted
+            in the original listing. Hi-Fi Corner cannot guarantee against any
+            misuse (i.e. blown speakers etc.), commercial use, wear and tear,
+            erosion of parts, loss of data stored on any form of writeable/hard
+            drive devices, dead pixels of an amount not covered by the
+            manufacturer’s specifications or where you have not allowed repairs
+            of goods to be carried out by authorised agents. If it has been more
+            than 30 days since you have received a product and discovered a
+            fault, we will still repair the goods free of charge or, if you
+            prefer, replace them provided that you report the fault within 12
+            months of purchase. If we are unable to repair or replace the
+            item(s) we will provide you with a full refund instead.
+          </p>
+          <p class="faq__text">
+            Please note that if it is after the initial 30 days of purchase you
+            must be able to certify the fault was present upon delivery and not
+            by misuse.
           </p>
 
           <section id="section__refunds">
@@ -135,6 +122,43 @@
               please sign for the delivery as ‘damaged’ and let us know as soon
               as possible.
             </p>
+            <p class="faq__text">
+              Goods that are usually in stock supplied within the UK will
+              normally be delivered within 1 – 3 working days of acceptance of
+              order.
+            </p>
+            <p class="faq__text">
+              All orders in the UK over £99 will be sent free of charge.
+              Delivery time 1-3 working days.
+            </p>
+            <p class="faq__text">
+              For EU countries please contact us for a shipping quote prior to
+              purchase.
+            </p>
+            <p class="faq__text">
+              All other countries outwith the UK and EU please email us for
+              delivery charges.
+            </p>
+            <p class="faq__text">
+              Custom charges may apply to goods delivered outwith the UK. The
+              Buyer is responsible for the payment of these charges.
+            </p>
+            <p class="faq__text">
+              You shall use reasonable endeavours to meet any date agreed for
+              delivery. In any event time of delivery shall not be of the
+              essence and we shall not be liable for any losses, costs, damages
+              or expenses incurred by you or any third party arising directly or
+              indirectly out of any failure to meet any estimated delivery date.
+            </p>
+            <p class="faq__text">
+              Delivery of the Goods shall be made to your address specified in
+              the order and you shall make all arrangements necessary to take
+              delivery of the Goods whenever they are tendered for delivery.
+              Risk in the Goods shall pass to you upon delivery of the Goods, or
+              where you fail to take delivery at the agreed time, at the time
+              delivery was attempted. Title in the Goods shall not pass to you
+              until payment of the price has been made in full.
+            </p>
           </section>
           <section id="section__returns">
             <h2 class="faq__subTitle">Returns process/your statutory rights</h2>
@@ -194,7 +218,123 @@
               detailing the reason for exchange.
             </p>
           </section>
-          <section>
+          <section id="section__privacyPolicy">
+            <h2 class="faq__subTitle">Privacy Policy</h2>
+
+            <p class="faq__text">
+              This privacy policy sets out how this website uses and protects
+              any information that you give Hi-Fi Corner while using this
+              website. Hi-Fi Corner is committed to ensuring that your privacy
+              is protected. Should we ask you to provide certain information by
+              which you can be identified when using this website, then you can
+              be assured that it will only be used in accordance with this
+              privacy statement. We may change this policy from time to time by
+              updating this page. You should check this page from time to time
+              to ensure that you are happy with any changes.
+            </p>
+            <p class="faq__text">
+              It is our policy to conform to the General Data Protection
+              Regulation (GDPR) as of 25th May 2018.
+            </p>
+            <p class="faq__text">
+              We would like to inform you about your data that we hold and its
+              retention and use.
+            </p>
+            <p class="faq__text">
+              More information can be found about GDPR and what it means here.
+            </p>
+            <p class="faq__text">
+              Our data is kept secure and is restricted to your address, phone
+              number and/or email.
+            </p>
+            <p class="faq__text">
+              We do not store any payment details for security purposes and will
+              not share this with any third-party organisation. Unless legally
+              required, we will not share any of your personal data. If you have
+              agreed for us to use your email you will be added to our customer
+              database.
+            </p>
+            <p>We use this database to;</p>
+            <ul class="faq__list">
+              <li>inform you in the low risk of a product recall</li>
+              <li>
+                contact you about your order status, enquiry or appointment
+              </li>
+              <li>send a digital copy of your proof of purchase</li>
+              <li>provide you with tracking details of an order</li>
+              <li>invite you to promotions and special offers</li>
+            </ul>
+
+            <p class="faq__text">
+              If you do not wish to receive promotional material such as offers,
+              newsletters, special discounts or announcements, you can
+              unsubscribe at any time through the 'Unsubscribe' link in any
+              promotional emails.
+            </p>
+            <p class="faq__text">
+              Your address is retained for your product guaranteed warranty and
+              for verifying payment methods and shipments. We may also use your
+              email or phone number when you contact us to confirm
+              appointments.Please email us should you wish to have your details
+              amended or deleted at any time, or if you have any further
+              queries.
+            </p>
+
+            <h3 class="faq__subSubTitle">What we collect</h3>
+            <p>We may collect the following information:</p>
+            <ul class="faq__list">
+              <li>name</li>
+              <li>contact information including email address</li>
+              <li>
+                demographic information such as postcode, preferences and
+                interests
+              </li>
+              <li>
+                other information relevant to customer surveys and/or offers
+              </li>
+            </ul>
+            <p class="faq__text">
+              For the exhaustive list of cookies we collect see the List of
+              cookies we collect section.
+            </p>
+
+            <h3 class="faq__subSubTitle">
+              What we do with the information we gather
+            </h3>
+            <p>
+              We require this information to understand your needs and provide
+              you with a better service, and in particular for the following
+              reasons:
+            </p>
+            <ul class="faq__list">
+              <li>Internal record keeping.</li>
+              <li>
+                We may use the information to improve our products and services.
+              </li>
+              <li>
+                We may periodically send promotional emails about new products,
+                special offers or other information which we think you may find
+                interesting using the email address which you have provided.
+              </li>
+              <li>
+                From time to time, we may also use your information to contact
+                you for market research purposes. We may contact you by email,
+                phone, fax or mail. We may use the information to customise the
+                website according to your interests.
+              </li>
+            </ul>
+
+            <h3 class="faq__subSubTitle">Security</h3>
+
+            <p class="faq__text">
+              We are committed to ensuring that your information is secure. In
+              order to prevent unauthorised access or disclosure, we have put in
+              place suitable physical, electronic and managerial procedures to
+              safeguard and secure the information we collect online.
+            </p>
+          </section>
+
+          <section id="section__termsConditions">
             <h2 class="faq__subTitle">Terms & Conditions</h2>
             <h3 class="faq__subSubTitle">Definitions</h3>
             <ul>
@@ -292,5 +432,6 @@
         </article>
       </main>
     </div>
+    @@include("./partials/footer.html");
   </body>
 </html>
