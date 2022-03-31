@@ -2,8 +2,6 @@ const API_URL = `http://23.88.41.248:3000/products`;
 const productMainGrid__element =
   document.getElementsByClassName("productMain__grid")[0];
 
-export let localDatabase;
-
 async function getProducts() {
   let response = await fetch(API_URL);
   let json = await response.json();
@@ -61,3 +59,4 @@ export function printProduct(data) {
 }
 
 export default getProducts;
+export let localDatabase;
