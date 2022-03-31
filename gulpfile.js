@@ -15,7 +15,7 @@ const sass = gulpSass(sassImport);
 function html() {
   return gulp
     .src("src/html/**/*.html")
-    .pipe(fileinclude())
+    .pipe(include())
     .pipe(
       rename(function (path) {
         if (path.basename != "index") {
