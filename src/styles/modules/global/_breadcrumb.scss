@@ -1,0 +1,48 @@
+.breadcrumb {
+  margin: 60px auto 40px;
+  display: grid;
+  grid-template: 1fr / 1fr;
+  max-width: fit-content;
+}
+
+.breadcrumb__line {
+  grid-area: 1/1/-1/-1;
+  place-self: center;
+  width: 390px;
+  height: 36px;
+  background-color: $tertiaryDetailColor;
+}
+
+.breadcrumb__item {
+  grid-area: 1/1/-1/-1;
+  width: 70px;
+  height: 70px;
+  background-color: $primaryDetailColor;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breadcrumb__cart {
+  place-self: center start;
+}
+
+.breadcrumb__payment {
+  place-self: center;
+}
+
+.breadcrumb__cart,
+.breadcrumb__payment {
+  font-size: 1.5rem;
+}
+
+.breadcrumb__invoice {
+  place-self: center end;
+  font-size: 1.6rem;
+}
+
+.breadcrumb__item--active {
+  background-color: $quaternaryDetailColor;
+  color: $primaryBackgroundColor;
+}
