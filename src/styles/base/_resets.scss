@@ -41,3 +41,11 @@ a {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+#page__title {
+  color: $secondaryTextColor;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-left: 35px;
+  font-size: 3rem;
+}
