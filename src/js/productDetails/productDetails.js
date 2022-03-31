@@ -209,7 +209,7 @@ console.log(items)
       if (productID == item.id) {
         console.log("updateNumber");
         return { ...item, quantity: productAmountNumber };
-      }
+      } else return item;
     });
   }
 

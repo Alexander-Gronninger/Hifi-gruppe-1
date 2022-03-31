@@ -1,8 +1,16 @@
 # Hifi-gruppe-1
 
-# GULP
+# TO START PROJECT
 
-Sørg for at "npm install" for at få dependencies etc
+Make sure to have nodejs and gulp installed
+
+Install packages with "npm install"
+
+Run "gulp" or "npm run dev" in the terminal
+
+Site address: http://localhost:8080/
+
+
 
 # Definition of done
 
