@@ -34,11 +34,23 @@ export default function selectedCategories() {
     let productContainers = document.querySelectorAll(".product")
     //productContainers.forEach(productContainer => productContainer.remove())
     activeValues = {
-        brand: ["Creek", "Exp", "Pro-Ject"],
-        category: ["CD Player", "DVD Player", "Preamps"],
-        colors: ["silver", "yellow"],
+        brand: ["Pro-ject"],
+        category: [],
+        colors: ["black"],
         price: []
     };
+
+    // allValues = {
+    //     brand: [],
+    //     category: [],
+    //     colors: []
+    // };
+
+    // Array.from(categorizerItems).forEach(function (cat) {
+    //     allValues[cat.dataset.category].push(cat.dataset.value);
+    // })
+
+    // console.log(allValues)
 
     Array.from(categorizerItems).forEach(function (dataCategory) {
         if (dataCategory.children[0].classList.contains("dropdown__checkboxChecked")) {
@@ -47,15 +59,52 @@ export default function selectedCategories() {
     })
 }
 
+
+
 //product.brand.includes(activeValues.brand) &&
 
 function filterr() {
     selectedCategories()
-    console.log("det filterered")
-    let filtered = localDatabase.filter(product =>
-        activeValues.brand.includes(product.brand) &&
-        activeValues.category.includes(product.category) &&
-        product.colors.every(color => activeValues.colors.indexOf(color) !== -1))
+    console.log(activeValues)
+
+
+    // let filtered = localDatabase.filter(product =>
+    //     activeValues.brand.includes(product.brand) &&
+    //     activeValues.category.includes(product.category))
+
+    let filtered;
+
+    //ONLY BRAND
+    if (activeValues.brand.length > 0 && !activeValues.category.length > 0 && !activeValues.colors.length > 0) {
+        filtered = localDatabase.filter(product => activeValues.brand.includes(product.brand))
+    }
+    //ONLY CATEGORY
+    if (!activeValues.brand.length > 0 && activeValues.category.length > 0 && !activeValues.colors.length > 0) {
+        console.log("kun category")
+        filtered = localDatabase.filter(product => activeValues.category.includes(product.category))
+    }
+    //ONLY COLOR
+    if (!activeValues.brand.length > 0 && !activeValues.category.length > 0 && activeValues.colors.length > 0) {
+        filtered = localDatabase.filter(product => activeValues.colors.includes(product.colors.toString()))
+    }
+
+    //BRAND AND CATEGORY
+    if (activeValues.brand.length > 0 && activeValues.category.length > 0) {
+        filtered = localDatabase.filter(product => activeValues.brand.includes(product.brand))
+        filtered = filtered.filter(product => activeValues.category.includes(product.category))
+        if (activeValues.colors.length > 0) {
+            filtered = filtered.filter(product => activeValues.colors.includes(product.colors.toString()))
+        }
+    }
+
+    //BRAND AND COLOR
+    if (activeValues.brand.length > 0 && activeValues.color.length > 0) {
+        console.log("brand og color")
+        filtered = localDatabase.filter(product => activeValues.brand.includes(product.brand))
+        filtered = filtered.filter(product => activeValues.colors.includes(product.colors.toString()))
+    }
+
+    //CATEGORY AND COLOR
 
     console.log(filtered)
 }
@@ -67,8 +116,6 @@ setTimeout(() => {
 
 //updating the products
 function updateProducts(check) {
-    console.log(check)
-    console.log("UPDATING PRODUCTS")
     let productContainers = document.querySelectorAll(".product")
     productContainers.forEach(productContainer => productContainer.remove())
     localDatabase.forEach(function (product) {

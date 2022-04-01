@@ -1,219 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HiFi Corner</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HiFi Corner</title>
-  <link rel="stylesheet" href="/styles/styles.css" />
-</head>
-
-<body>
-  <main class="wrapper productMain">
-    <h1 class="productMain__primaryHeading">Products</h1>
-    <section class="productMain__grid">
-      <article class="categorizer">
-        <h2 class="categorizer__primaryHeading">Sort by</h2>
-        <div class="dropdown">
-          <div class="dropdown__text">
-            <h2>Brand</h2>
-            <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
-          </div>
-          <ul class="dropdown__content">
-            <li data-value="creek" class="content__list categoryItem">
-              Creek
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="exp" class="content__list categoryItem">
-              EXP
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="exposure" class="content__list categoryItem">
-              Exposure
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="parasound" class="content__list categoryItem">
-              Parasound
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="manley" class="content__list categoryItem">
-              Manley
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="pro-ject" class="content__list categoryItem">
-              Pro-Ject
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="boesendorfer" class="content__list categoryItem">
-              Boesendorfer
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="epos" class="content__list categoryItem">
-              Epos
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="harbeth" class="content__list categoryItem">
-              Harbeth
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="jolida" class="content__list categoryItem">
-              Jolida
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <div class="dropdown__text">
-            <h2>Category</h2>
-            <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
-          </div>
-          <ul class="dropdown__content">
-            <li data-value="cd player" class="content__list categoryItem">
-              CD Players
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="dvd player" class="content__list categoryItem">
-              DVD Players
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="power amplifier" class="content__list categoryItem">
-              Power Amplifiers
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="preamps" class="content__list categoryItem">
-              Power Amplifiers
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="speakers" class="content__list categoryItem">
-              Speakers
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="integrated amplifier" class="content__list categoryItem">
-              Integrated Amplifiers
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="turntables" class="content__list categoryItem">
-              Turntables
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="tube amplifier" class="content__list categoryItem">
-              Tube Amplifiers
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="dropdown">
-          <div class="dropdown__text">
-            <h2>Color</h2>
-            <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
-          </div>
-          <ul class="dropdown__content">
-            <li data-value="silver" class="content__list categoryItem">
-              Silver
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="blue" class="content__list categoryItem">
-              Blue
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="black" class="content__list categoryItem">
-              Black
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="grey" class="content__list categoryItem">
-              Grey
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="wood" class="content__list categoryItem">
-              Wood
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-            <li data-value="yellow" class="content__list categoryItem">
-              Yellow
-              <div class="dropdown__checkbox">
-                <img class="checkbox__img" src="/images/check.svg" alt="" />
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <div class="dropdown__text">
-            <h2>Price</h2>
-            <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
-          </div>
-          <ul class="dropdown__content">
-            <li class="content__list content__range">
-              <div class="price-field">
-                <input type="range" min="100" max="1000" value="100" id="lower" />
-                <input type="range" min="100" max="1000" value="1000" id="upper" />
-              </div>
-              <div class="rangeContainer">
-                <div class="rangeContainer__input">
-                  <label for="minValue">£</label>
-                  <input type="number" id="minValue" />
+  <body>
+    <main class="wrapper productMain">
+      <h1 class="productMain__primaryHeading">Products</h1>
+      <section class="productMain__grid">
+        <article class="categorizer">
+          <h2 class="categorizer__primaryHeading">Sort by</h2>
+          <div class="dropdown">
+            <div class="dropdown__text">
+              <h2>Brand</h2>
+              <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
+            </div>
+            <ul class="dropdown__content">
+              <li
+                data-value="creek"
+                data-category="brand"
+                class="content__list categoryItem"
+              >
+                Creek
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
                 </div>
-                <div class="rangeContainer__input">
-                  <label for="maxValue">£</label>
-                  <input type="number" id="maxValue" />
+              </li>
+              <li
+                data-value="exp"
+                data-category="brand"
+                class="content__list categoryItem"
+              >
+                EXP
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
                 </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </article>
-    </section>
-  </main>
-  <script src="/js/productList/productList.js" type="module"></script>
-  <script src="/js/productList/categorizer__dropdown.js"></script>
-  <script src="/js/productList/categorize.js" type="module"></script>
-</body>
+              </li>
+              <li
+                data-value="exposure"
+                data-category="brand"
+                class="content__list categoryItem"
+              >
+                Exposure
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="parasound"
+                data-category="brand"
+                class="content__list categoryItem"
+              >
+                Parasound
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="manley"
+                data-category="brand"
+                class="content__list categoryItem"
+              >
+                Manley
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="pro-ject"
+                data-category="brand"
+                class="content__list categoryItem"
+              >
+                Pro-Ject
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="boesendorfer"
+                data-category="brand"
+                class="content__list categoryItem"
+              >
+                Boesendorfer
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="epos"
+                data-category="brand"
+                class="content__list categoryItem"
+              >
+                Epos
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="harbeth"
+                data-category="brand"
+                class="content__list categoryItem"
+              >
+                Harbeth
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="jolida"
+                data-category="brand"
+                class="content__list categoryItem"
+              >
+                Jolida
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown__text">
+              <h2>Category</h2>
+              <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
+            </div>
+            <ul class="dropdown__content">
+              <li
+                data-value="cd player"
+                data-category="category"
+                class="content__list categoryItem"
+              >
+                CD Players
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="dvd player"
+                data-category="category"
+                class="content__list categoryItem"
+              >
+                DVD Players
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="power amplifier"
+                data-category="category"
+                class="content__list categoryItem"
+              >
+                Power Amplifiers
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="preamps"
+                data-category="category"
+                class="content__list categoryItem"
+              >
+                Power Amplifiers
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="speakers"
+                data-category="category"
+                class="content__list categoryItem"
+              >
+                Speakers
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="integrated amplifier"
+                data-category="category"
+                class="content__list categoryItem"
+              >
+                Integrated Amplifiers
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="turntables"
+                data-category="category"
+                class="content__list categoryItem"
+              >
+                Turntables
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="tube amplifier"
+                data-category="category"
+                class="content__list categoryItem"
+              >
+                Tube Amplifiers
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
 
+          <div class="dropdown">
+            <div class="dropdown__text">
+              <h2>Color</h2>
+              <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
+            </div>
+            <ul class="dropdown__content">
+              <li
+                data-value="silver"
+                data-category="colors"
+                class="content__list categoryItem"
+              >
+                Silver
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="blue"
+                data-category="colors"
+                class="content__list categoryItem"
+              >
+                Blue
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="black"
+                data-category="colors"
+                class="content__list categoryItem"
+              >
+                Black
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="grey"
+                data-category="colors"
+                class="content__list categoryItem"
+              >
+                Grey
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="wood"
+                data-category="colors"
+                class="content__list categoryItem"
+              >
+                Wood
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+              <li
+                data-value="yellow"
+                data-category="colors"
+                class="content__list categoryItem"
+              >
+                Yellow
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <div class="dropdown__text">
+              <h2>Price</h2>
+              <img src="/images/arrow-down.svg" alt="Dropdown Arrow Icon" />
+            </div>
+            <ul class="dropdown__content">
+              <li class="content__list content__range">
+                <div class="price-field">
+                  <input
+                    type="range"
+                    min="100"
+                    max="1000"
+                    value="100"
+                    id="lower"
+                  />
+                  <input
+                    type="range"
+                    min="100"
+                    max="1000"
+                    value="1000"
+                    id="upper"
+                  />
+                </div>
+                <div class="rangeContainer">
+                  <div class="rangeContainer__input">
+                    <label for="minValue">£</label>
+                    <input type="number" id="minValue" />
+                  </div>
+                  <div class="rangeContainer__input">
+                    <label for="maxValue">£</label>
+                    <input type="number" id="maxValue" />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="/js/productList/productList.js" type="module"></script>
+    <script src="/js/productList/categorizer__dropdown.js"></script>
+    <script src="/js/productList/categorize.js" type="module"></script>
+  </body>
 </html>
