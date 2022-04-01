@@ -1,0 +1,28 @@
+.whiteBackground {
+  @include whiteBackground();
+}
+
+.faq__subTitle,
+.faq__subSubTitle {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.faq__text {
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+.faq__text:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.faq__text--largeText {
+  font-size: 1.5rem;
+}
+
+.faq__list {
+  list-style: disc;
+  margin-left: 35px;
+}

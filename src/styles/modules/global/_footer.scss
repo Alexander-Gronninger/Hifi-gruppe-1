@@ -1,0 +1,53 @@
+.flexBox {
+  display: flex;
+}
+
+.footerTop {
+  justify-content: space-between;
+  border-bottom: 1px solid #bbbfca;
+}
+
+.footerTop i {
+  padding-bottom: 21px;
+  font-size: 20px;
+}
+
+.blackFooter {
+  padding: 48px 34px;
+  color: white;
+  background-color: black;
+}
+
+.blackFooter li,
+.blackFooter p {
+  padding: 7px 0px;
+}
+
+.blackFooter a,
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.blackFooter a:hover {
+  opacity: 80%;
+}
+
+.blackFooter p {
+  font-size: 14px;
+}
+
+.blackFooter i {
+  padding-right: 10px;
+}
+
+.footerBottom {
+  padding-top: 21px;
+  justify-content: space-between;
+  gap: 15%;
+  align-items: flex-end;
+}
+
+.footerBottom i {
+  font-size: 57px;
+}
