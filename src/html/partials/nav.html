@@ -1,41 +1,89 @@
+<header class="header">
+  <nav class="navigation">
+    <ul class="navigation__menu">
+      <li class="menu__item menu__logo">
+        <img src="/images/logo.png" alt="" />
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="">SHOP</a>
+      </li>
+      <li class="menu__item"><a class="menu__link" href="">ABOUT US</a></li>
+      <li class="menu__item">
+        <a class="menu__link menu__link--active" href="">NEWS</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="">CONTACT US</a>
+      </li>
+    </ul>
 
-    <header class="header">
-        <nav class="navigation">
-          <ul class="navigation__menu">
-            <li class="menu__item menu__logo">
-              <img src="/images/logo.png" alt="" />
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="">SHOP</a>
-            </li>
-            <li class="menu__item"><a class="menu__link" href="">ABOUT US</a></li>
-            <li class="menu__item">
-              <a class="menu__link menu__link--active" href="">NEWS</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="">CONTACT US</a>
-            </li>
-          </ul>
-  
-          <div class="navigation__tools">
-            <div class="tools__inputContainer">
-              <input
-                class="tools__input"
-                type="text"
-                placeholder="Search product..."
-                id="tools__input"
-              />
-              <label for="tools__input"
-                ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
-              ></label>
+    <div class="navigation__tools">
+      <div class="tools__inputContainer">
+        <input
+          class="tools__input"
+          type="text"
+          placeholder="Search product..."
+          id="tools__input"
+        />
+        <label for="tools__input"
+          ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
+        ></label>
+      </div>
+      <a href="" class="tools__link"
+        ><i class="tools__icon fa-solid fa-user"></i
+      ></a>
+      <a href="" class="tools__link tools__cart"
+        ><i class="tools__icon fa-solid fa-cart-shopping"></i>
+        <p class="cart__amount">99+</p>
+      </a>
+
+      <div class="shoppingDropdown">
+        <h2 class="cartTitle">CART <span>($ items)</span></h2>
+        <ul>
+          <article class="shoppingDropdown_item">
+            <button class="cartRemove"><i class="fa-solid fa-x"></i></button>
+            <div class="shoppingDropdown_product">
+              <div class="shoppingDropdown_productTop">
+                <img
+                  class="productImage"
+                  src="../images/hojtalere/harbeth_hl7es2.jpg"
+                  alt=""
+                />
+                <div>
+                  <h2 class="productName">Placeholder</h2>
+                  <p class="cartStockContainer__availability">
+                    In Stock <span class="availability__icon"></span>
+                  </p>
+                </div>
+              </div>
+              <div class="shoppingDropdown_productBottom">
+                <div class="shoppingDropdown_productAmount">
+                  <button class="counter__minus">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <p class="counter__amount"></p>
+                  <button class="counter__plus">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <div class="productPrice">
+                  <p>$Price</p>
+                </div>
+              </div>
             </div>
-            <a href="" class="tools__link"
-              ><i class="tools__icon fa-solid fa-user"></i
-            ></a>
-            <a href="" class="tools__link tools__cart"
-              ><i class="tools__icon fa-solid fa-cart-shopping"></i>
-              <p class="cart__amount">99+</p>
-            </a>
+          </article>
+        </ul>
+
+        <div class="shoppingDropdown_overview">
+          <div class="shoppingDropdown_overviewSum">
+            <p>Sum:</p>
+            <p>$Price</p>
           </div>
-        </nav>
-      </header>
+          <div class="shoppingDropdown_overviewButtons">
+            <a href="#" class="g-button">Go to cart</a>
+            <a href="#" class="g-button">Go to payment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
