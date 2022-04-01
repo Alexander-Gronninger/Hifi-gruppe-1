@@ -18,6 +18,8 @@
   width: 70px;
   height: 70px;
   background-color: $primaryDetailColor;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
 
   display: flex;
   align-items: center;
@@ -45,4 +47,7 @@
 .breadcrumb__item--active {
   background-color: $quaternaryDetailColor;
   color: $primaryBackgroundColor;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 80px;
+  height: 80px;
 }

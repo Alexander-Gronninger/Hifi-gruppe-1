@@ -1,12 +1,17 @@
 <div class="breadcrumb">
   <div class="breadcrumb__line"></div>
-  <div class="breadcrumb__item breadcrumb__item--active breadcrumb__cart">
+  <div class="@@activeCart breadcrumb__item breadcrumb__cart">
     <i class="fa-solid fa-cart-shopping"></i>
   </div>
-  <div class="breadcrumb__item breadcrumb__payment">
+  <div class="@@activePayment breadcrumb__item breadcrumb__payment">
     <i class="fa-solid fa-credit-card"></i>
   </div>
-  <div class="breadcrumb__item breadcrumb__invoice">
+  <div class="@@activeInvoice breadcrumb__item breadcrumb__invoice">
     <i class="fa-solid fa-receipt"></i>
   </div>
 </div>
+
+<!-- 
+  Include with, change activeXXXX to the active variable name:
+  @@include("./partials/breadcrumb.html", { "activeXXXX":
+        "breadcrumb__item--active" }) -->
