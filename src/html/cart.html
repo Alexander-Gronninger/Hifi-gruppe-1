@@ -17,11 +17,15 @@
   <body>
     @@include("./partials/nav.html")
     <div class="wrapper">
-      <main>
+      <main class="cart">
         @@include("./partials/breadcrumb.html", {"activeCart":
         "breadcrumb__item--active"})
-        <h1>Cart</h1>
-        <article></article>
+        <h1 class="cart__title">Cart</h1>
+        <article class="cart__items"></article>
+        <p class="cart__subTotal">
+          Sub total<span class="cart__totalSubAmount">23.00</span>
+        </p>
+        <button class="g-button">Go to payment</button>
       </main>
     </div>
     @@include("./partials/footer.html")
