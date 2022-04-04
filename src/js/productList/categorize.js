@@ -68,9 +68,9 @@ function filterr() {
     console.log(activeValues)
 
 
-    // let filtered = localDatabase.filter(product =>
-    //     activeValues.brand.includes(product.brand) &&
-    //     activeValues.category.includes(product.category))
+        // let filtered = localDatabase.filter(product =>
+        //     activeValues.brand.includes(product.brand) &&
+        //     activeValues.category.includes(product.category))
 
     let filtered;
 
@@ -104,10 +104,16 @@ function filterr() {
         filtered = filtered.filter(product => activeValues.colors.includes(product.colors.toString()))
     }
 
-    //CATEGORY AND COLOR
 
+
+    //CATEGORY AND COLOR
+    if (activeValues.category.length > 0 && activeValues.color.length > 0) {
+        filtered = localDatabase.filter(product => activeValues.category.includes(product.category))
+        filtered = filtered.filter(product => activeValues.colors.includes(product.colors.toString()))
+    }
     console.log(filtered)
 }
+
 
 setTimeout(() => {
     filterr()
