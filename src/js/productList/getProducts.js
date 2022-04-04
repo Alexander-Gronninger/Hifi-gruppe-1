@@ -11,7 +11,6 @@ async function getProducts() {
   json.forEach(function (productData) {
     printProduct(productData)
   })
-
 }
 
 
