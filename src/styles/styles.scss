@@ -22,6 +22,7 @@
 @import "modules/global/whiteBackground";
 @import "modules/global/inputField";
 @import "modules/global/button";
+@import "modules/global/breadcrumb";
 
 //index
 @import "modules/index/companyinfo";
@@ -38,6 +39,7 @@
 @import "modules/productList/productMain__primaryHeading";
 @import "modules/productList/cartStockContainer__availability";
 @import "modules/productList/product__img";
+@import "modules/productList/categorizer";
 
 // product_details
 @import "modules/productDetails/productDetails";

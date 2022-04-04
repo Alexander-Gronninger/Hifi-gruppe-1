@@ -15,46 +15,7 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="header">
-      <nav class="navigation">
-        <ul class="navigation__menu">
-          <li class="menu__item menu__logo">
-            <img src="/images/logo.png" alt="" />
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="">SHOP</a>
-          </li>
-          <li class="menu__item"><a class="menu__link" href="">ABOUT US</a></li>
-          <li class="menu__item">
-            <a class="menu__link menu__link--active" href="">NEWS</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="">CONTACT US</a>
-          </li>
-        </ul>
-
-        <div class="navigation__tools">
-          <div class="tools__inputContainer">
-            <input
-              class="tools__input"
-              type="text"
-              placeholder="Search product..."
-              id="tools__input"
-            />
-            <label for="tools__input"
-              ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
-            ></label>
-          </div>
-          <a href="" class="tools__link"
-            ><i class="tools__icon fa-solid fa-user"></i
-          ></a>
-          <a href="" class="tools__link tools__cart"
-            ><i class="tools__icon fa-solid fa-cart-shopping"></i>
-            <p class="cart__amount">99+</p>
-          </a>
-        </div>
-      </nav>
-    </header>
+    @@include("./partials/nav.html")
     <div class="wrapper">
       <main>
         <h1 id="page__title">Our History</h1>
@@ -190,63 +151,6 @@
         </article>
       </main>
     </div>
-    <footer class="blackFooter">
-      <div class="flexBox footerTop">
-        <div>
-          <ul class="footer">
-            <li class="footer__list-item"><a href="#">Home</a></li>
-            <li class="footer__list-item"><a href="#">Shop</a></li>
-            <li class="footer__list-item"><a href="#">About us</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <ul class="footer">
-            <li class="footer__list-item">
-              <a href="faq.html/#section__refunds">Returns and Refunds</a>
-            </li>
-            <li class="footer__list-item">
-              <a href="faq.html/#section__delivery">Delivery</a>
-            </li>
-            <li class="footer__list-item">
-              <a href="faq.html/#section__privacyPolicy">Privacy Policy</a>
-            </li>
-            <li class="footer__list-item">
-              <a href="faq.html/#section__termsConditions"
-                >Terms & Conditions</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="firstRow">
-          <h2>Contact</h2>
-          <p>2 Joppa Rd, Edinburgh, EH1 2EU</p>
-          <p><i class="fa-solid fa-phone"></i> 0131 556 7901</p>
-          <p>44 Cow Wynd, Falkirk, Centreal Region, FK1 1PU</p>
-          <p><i class="fa-solid fa-phone"></i> 01324 629 011</p>
-          <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube-square"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter-square"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
-        </div>
-      </div>
-
-      <div class="flexBox footerBottom">
-        <div>
-          <i class="fa-brands fa-cc-stripe"></i>
-          <i class="fa-brands fa-cc-visa"></i>
-          <i class="fa-brands fa-cc-mastercard"></i>
-          <p>
-            Hi Fi Corner (Edinburgh) Ltd is registered in Scotland. No:
-            SC049298. Registered office: 2 Joppa Rd, Edinburgh EH15 2EU
-          </p>
-        </div>
-
-        <div>
-          <p>Built by WU07 :)</p>
-        </div>
-      </div>
-    </footer>
+    @@include("./partials/footer.html")
   </body>
 </html>
