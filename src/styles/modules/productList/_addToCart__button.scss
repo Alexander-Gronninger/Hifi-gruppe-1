@@ -1,3 +1,11 @@
 .btn.cartStockContainer__btn {
+  transition: all ease 0.2s;
   padding: 0.5rem 10%;
+
+  &:hover {
+    scale: 1.1;
+    background-color: #fff;
+    outline: 2px solid $primaryButtonColor;
+    color: $primaryButtonColor;
+  }
 }

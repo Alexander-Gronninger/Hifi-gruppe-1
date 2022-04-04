@@ -3,10 +3,14 @@
   font-weight: 400;
   font-size: 1rem;
   text-align: center;
+  transition: all 0.2s ease;
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .product__price {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.2rem;
   text-align: center;
   margin: 2rem 0;
