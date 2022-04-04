@@ -1,5 +1,5 @@
-const API_URL = `http://23.88.41.248:3000/products`; //Benjamins server
-//const API_URL = `http://localhost:3000/products`; //lokal json server
+//const API_URL = `http://23.88.41.248:3000/products`; //Benjamins server
+const API_URL = `http://localhost:3000/products`; //lokal json server
 
 const productTitle = document.querySelector(".details__title");
 const productImage = document.querySelector(".gallery__image");
@@ -15,6 +15,9 @@ const productPrice = document.querySelector(".price__amount");
 
 let searchParams = new URLSearchParams(window.location.search);
 let productID = searchParams.get("id");
+
+//globally declared variable
+let price = ""
 
 // get product details from database
 getProduct();
@@ -71,6 +74,9 @@ async function getProduct() {
   colorContainers.forEach((test) => {
     test.addEventListener("click", chooseColor);
   });
+
+  //change global variable, so we dont have to make another API call when we send price to storage
+  price = response[0].price
 }
 
 // changing product colors
@@ -227,7 +233,8 @@ async function toStorage() {
       {
         id: productID,
         quantity: productAmountNumber,
-        color: sessionStorage.getItem("color")
+        color: sessionStorage.getItem("color"),
+        price: price
       },
     ];
   }
