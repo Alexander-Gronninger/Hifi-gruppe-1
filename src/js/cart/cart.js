@@ -1,6 +1,3 @@
-const $cartItemsContainer = document.querySelector(".cart__items");
-console.log($cartItemsContainer);
-
 const productLineHTML = `
     <div href="product.html?productId={{PRODUCT_ID}}" title="Gå til produktside for {{PRODUCT_TITLE}}" data-product-id="{{PRODUCT_ID}}">
         <section class="product">
@@ -36,8 +33,8 @@ const productLineHTML = `
     </div>`;
 
 const $productsContainer = document.querySelector(".cart__items");
-const cartButton = document.querySelector(".cart__ button");
-const cartTitle = document.querySelector(".ccart__title");
+const cartButton = document.querySelector(".cart__button");
+const cartTitle = document.querySelector(".cart__title");
 //const paymentBreadcrumb = document.querySelector(".breadcrumb__payment");
 
 // Add eventListeners on document since we render and rerender element all the time
@@ -49,6 +46,9 @@ function renderCart() {
   const cartRaw = localStorage.getItem("cart");
   const cart = cartRaw ? JSON.parse(cartRaw) : [];
 
+  console.log(cartRaw);
+  console.log(cart);
+
   if (cart.length === 0) {
     // Make payment breadcrumb unclickable when cart is empty
     //paymentBreadcrumb.style.pointerEvents = "none";
@@ -58,29 +58,29 @@ function renderCart() {
 
     // When cart is empty replace go to payment with go to all products button
     cartButton.textContent = "Se alle produkter";
-    cartButton.href = "products.html";
+    cartButton.href = "product_list.html";
 
     $productsContainer.innerHTML = ``;
     return;
   }
 
   // Create a dictionary of the products, so we dont have to loop for every cart product
-  const productsDict = window.products.reduce((acc, curr) => {
-    return {
-      ...acc,
-      [curr.id]: curr,
-    };
-  }, {});
+  // const productsDict = window.products.reduce((acc, curr) => {
+  //   return {
+  //     ...acc,
+  //     [curr.id]: curr,
+  //   };
+  // }, {});
 
   // Enrich the cart with products data
-  const enrichedCart = cart.map((cartProduct) => {
-    const product = productsDict[cartProduct.productId];
+  // const enrichedCart = cart.map((cartProduct) => {
+  //   const product = productsDict[cartProduct.productId];
 
-    return {
-      ...cartProduct,
-      product,
-    };
-  });
+  //   return {
+  //     ...cartProduct,
+  //     product,
+  //   };
+  // });
 
   // Create all the HTML to append to productsContainer
   const productsContainerHTML = enrichedCart.reduce((acc, cartProduct) => {
