@@ -81,13 +81,6 @@ async function getProduct() {
   price = response[0].price;
 
   //product specs
-
-  let tableTop = `
-<tr>
-  <td class="table__top"></td>
-</tr>`;
-  specTable.innerHTML += tableTop;
-
   let tableSpecs = `
 <tr>
   <td class="table__name">Name</td>
@@ -135,12 +128,6 @@ async function getProduct() {
   </tr>  `;
     specTable.innerHTML += tableSpecs;
   }
-
-  let tableBottom = `
-<tr>
-  <td class="table__bottom"></td>
-</tr>`;
-  specTable.innerHTML += tableBottom;
 }
 
 // changing product colors

@@ -199,34 +199,31 @@
   margin-bottom: 174px;
   margin-left: 50px;
 }
-
-.table__top,
-.table__bottom {
-  height: 10px;
-}
 .table__name,
 .table__top,
 .table__bottom {
-  border-right: 1px solid black;
+  border-right: 1px solid $secondaryDetailColor;
   width: 213px;
 }
 
 .table__name {
   font-weight: 700;
+  padding-left: 62px;
 }
 
 .table__value {
   width: 287px;
+  padding-left: 130px;
 }
 
 .table__value,
 .table__name {
-  text-align: center;
   font-size: 14px;
   line-height: 19px;
   height: 42px;
 }
-.table__value::first-letter, .table__name::first-letter {
+.table__value::first-letter,
+.table__name::first-letter {
   text-transform: uppercase;
 }
 
