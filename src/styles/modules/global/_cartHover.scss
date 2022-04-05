@@ -1,0 +1,142 @@
+.navigation__tools {
+    position: relative;
+  }
+  
+  .shoppingDropdown::before {
+    z-index: 10;
+    position: absolute;
+    display: block;
+    content: "";
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    top: -5px;
+    right: 43px;
+  }
+  
+  .shoppingDropdown {
+    display: none;
+    z-index: 9;
+    position: absolute;
+    padding: 12px;
+    top: 50px;
+    right: -20px;
+    background-color: white;
+    height: auto;
+    width: 310px;
+  }
+  
+  .shoppingDropdown_item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 15px 0px;
+    width: 100%;
+    border-bottom: 1px solid #d2d2d2;
+  }
+  
+  .cartRemove {
+    padding-right: 10px;
+  }
+  
+  .shoppingDropdown_product {
+    width: 100%;
+  }
+  
+  .shoppingDropdown h2 {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .shoppingDropdown .cartTitle {
+    font-size: 24px;
+  }
+  
+  .shoppingDropdown .fa-x {
+    font-size: 14px;
+  }
+  
+  .shoppingDropdown img {
+    width: 80px;
+    height: 40px;
+    object-fit: cover;
+  }
+  
+  .shoppingDropdown_item {
+    display: flex;
+  }
+  
+  .shoppingDropdown_productTop {
+    display: flex;
+  }
+  
+  .shoppingDropdown_productTop div {
+    padding-left: 10px;
+  }
+  
+  .shoppingDropdown .cartStockContainer__availability {
+    font-size: 12px;
+    text-align: left;
+    flex-direction: row;
+  }
+  
+  .shoppingDropdown .availability__icon {
+    height: 10px;
+    width: 10px;
+  }
+  
+  .shoppingDropdown_productBottom,
+  .shoppingDropdown_overviewSum,
+  .shoppingDropdown_overviewButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .shoppingDropdown_productBottom {
+    padding-top: 10px;
+  }
+  
+  .shoppingDropdown_overviewSum {
+    padding: 18px 0px;
+  }
+  
+  .shoppingDropdown_productAmount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .shoppingDropdown_productAmount p {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #e8e8e8;
+    border: none;
+    z-index: 10;
+  }
+  
+  .shoppingDropdown button {
+    z-index: 10; //do not touch, ellers kan knappen ikke klikkes
+    border: none;
+    background-color: transparent;
+  }
+  
+  .shoppingDropdown button:active {
+    opacity: 50%;
+  }
+  
+  .shoppingDropdown .g-button {
+    font-size: 14px;
+  }
+
+  .shoppingDropdown:hover,
+  
+  nav .tools__link:hover ~ .shoppingDropdown {
+    display: block;
+  }
+  
