@@ -16,18 +16,19 @@
     <title>Document</title>
   </head>
   <body>
-    @@include("./partials/nav.html")
+    @@include("./partials/nav.html", {"activeCart": "tools__link--active"})
     <div class="wrapper">
       <main class="cart">
         @@include("./partials/breadcrumb.html", {"activeCart":
         "breadcrumb__item--active"})
         <h1 class="cart__title">Cart</h1>
         <article class="cart__items">
-          <section class="cart__item">
+          <section class="cart__item whiteBackground">
             <img class="item__img" src="" alt="" title="" />
             <div>
               <h2>Auralic Aries G2.1 Streamer</h2>
             </div>
+            @@include("./partials/counter.html")
             <p>£ 4,799.00</p>
           </section>
         </article>
