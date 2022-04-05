@@ -1,6 +1,10 @@
 .navigation__tools {
     position: relative;
   }
+
+.tools__cart{
+    display: inline-block;
+}
   
   .shoppingDropdown::before {
     z-index: 10;
@@ -20,7 +24,6 @@
     z-index: 9;
     position: absolute;
     padding: 12px;
-    top: 50px;
     right: -20px;
     background-color: white;
     height: auto;
@@ -135,8 +138,7 @@
   }
 
   .shoppingDropdown:hover,
-  
-  nav .tools__link:hover ~ .shoppingDropdown {
+  .tools__cart:hover ~ .shoppingDropdown {
     display: block;
   }
   
