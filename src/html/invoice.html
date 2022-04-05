@@ -16,7 +16,7 @@
   <body>
     @@include("./partials/nav.html")
     <main>
-        @@include("./partials/breadcrumb.html")
+        @@include("./partials/breadcrumb.html", {"activeInvoice": "breadcrumb__item--active"})
         <h1 id="page__title" class="invoice__title">Thank you for your order!</h1>
         <article class="invoice">
             <div class="invoice__companySalesInfo"></div>
