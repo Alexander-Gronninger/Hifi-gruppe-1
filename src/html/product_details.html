@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    @@include("./partials/nav.html");
+    @@include("./partials/nav.html", {"activeShop": "menu__link--active"})
     <main>
       <div class="wrapper">
         <article class="productContainer">
@@ -30,58 +30,76 @@
               alt="Compare icon"
           /></a>
           <div class="product__background">
-            <div class="product__gallery">
-              <img class="gallery__image" src="printedfromurl.png" alt="shittyextension"/>
-              <i class="gallery__leftarrow fa-solid fa-chevron-left"></i>
-              <i class="gallery__rightarrow fa-solid fa-chevron-right"></i>
-              <div class="gallery__dots"></div>
-            </div>
-            <article class="product__details">
-              <h2 class="details__title">productnameprintedfrom data</h2>
-              <p class="details__type">PRODUKT TYPE</p>
-              <p class="details__description">
-                product beskrivelse printed from data product beskrivelse
-                printed from data product beskrivelse printed from data product
-                beskrivelse printed from data product beskrivelse printed from
-                data product beskrivelse printed from data product beskrivelse
-                printed from data product beskrivelse printed from data product
-                beskrivelse printed from data product beskrivelse printed from
-                data
-              </p>
-              <p class="details__description">
-                product beskrivelse printed from data product beskrivelse
-                printed from data product beskrivelse printed from data product
-                beskrivelse printed from data product beskrivelse printed from
-                data product beskrivelse printed from data product beskrivelse
-                printed from data product beskrivelse printed from data product
-                beskrivelse printed from data product beskrivelse printed from
-                data
-              </p>
-              <div class="details__colors"></div>
-              <div class="details__price">
-                <h3 class="price__amount">£price printed from database.00</h3>
-                <p
-                  class="cartStockContainer__availability details__stockStatus"
-                >
-                  <span class="availability__icon"></span>
+            <div class="product__gallery_details">
+              <div class="product__gallery">
+                <img
+                  class="gallery__image"
+                  src="printedfromurl.png"
+                  alt="shittyextension"
+                />
+                <i class="gallery__leftarrow fa-solid fa-chevron-left"></i>
+                <i class="gallery__rightarrow fa-solid fa-chevron-right"></i>
+                <div class="gallery__dots"></div>
+              </div>
+              <article class="product__details">
+                <h2 class="details__title">productnameprintedfrom data</h2>
+                <p class="details__type">PRODUKT TYPE</p>
+                <p class="details__description">
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data
                 </p>
-              </div>
-              <div class="details__cartUI">
-                <i class="details__minus fa-solid fa-minus counter__minus"></i>
-                <div class="details__currentContainer">
-                  <p class="currentContainer__counter counter__amount">1</p>
+                <p class="details__description">
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data
+                </p>
+                <div class="details__colors"></div>
+                <div class="details__price">
+                  <h3 class="price__amount">£price printed from database.00</h3>
+                  <p
+                    class="cartStockContainer__availability details__stockStatus"
+                  >
+                    <span class="availability__icon"></span>
+                  </p>
                 </div>
-                <i class="details__plus fa-solid fa-plus counter__plus"></i>
-                <button class="details__addToCartBtn g-button">Add to cart</button>
-              </div>
-            </article>
-            <!--end of product__details-->
+                <div class="details__cartUI">
+                  <i
+                    class="details__minus fa-solid fa-minus counter__minus"
+                  ></i>
+                  <div class="details__currentContainer">
+                    <p class="currentContainer__counter counter__amount">1</p>
+                  </div>
+                  <i class="details__plus fa-solid fa-plus counter__plus"></i>
+                  <button class="details__addToCartBtn g-button">
+                    Add to cart
+                  </button>
+                </div>
+              </article>
+              <!--end of product__details-->
+            </div>
+            <hr class="product__divider" />
+            <div class="product__spec">
+              <h3 class="spec__title">PRODUCT SPECIFICATIONS</h3>
+              <table class="spec__table">
+                <tbody></tbody>
+              </table>
+            </div>
           </div>
+          <!-- end of whitebackground -->
         </article>
         <!--end of productWrapper -->
       </div>
       <!--end of wrapper-->
     </main>
-    @@include("./partials/footer.html");
+    @@include("./partials/footer.html")
   </body>
 </html>

@@ -13,8 +13,13 @@ const arrowRight = document.querySelector(".gallery__rightarrow");
 
 const productPrice = document.querySelector(".price__amount");
 
+const specTable = document.querySelector(".spec__table tbody");
+
 let searchParams = new URLSearchParams(window.location.search);
 let productID = searchParams.get("id");
+
+//globally declared variable
+let price = "";
 
 // get product details from database
 getProduct();
@@ -50,7 +55,7 @@ async function getProduct() {
       productColors.innerHTML += colorContainer;
     }
     let colorIconElements = document.querySelectorAll(".color__icon");
-    colorIconElements[i].style.backgroundColor = response[0].colors[i]
+    colorIconElements[i].style.backgroundColor = response[0].colors[i];
   }
 
   // in stock
@@ -71,6 +76,58 @@ async function getProduct() {
   colorContainers.forEach((test) => {
     test.addEventListener("click", chooseColor);
   });
+
+  //change global variable, so we dont have to make another API call when we send price to storage
+  price = response[0].price;
+
+  //product specs
+  let tableSpecs = `
+<tr>
+  <td class="table__name">Name</td>
+  <td class="table__value">${response[0].name}</td>
+</tr>  `;
+  specTable.innerHTML += tableSpecs;
+
+  tableSpecs = `
+<tr>
+  <td class="table__name">Brand</td>
+  <td class="table__value">${response[0].brand}</td>
+</tr>  `;
+  specTable.innerHTML += tableSpecs;
+
+  tableSpecs = `
+<tr>
+  <td class="table__name">Category</td>
+  <td class="table__value">${response[0].category}</td>
+</tr>  `;
+  specTable.innerHTML += tableSpecs;
+
+  tableSpecs = `
+<tr>
+  <td class="table__name">Price</td>
+  <td class="table__value">${response[0].price}</td>
+</tr>  `;
+  specTable.innerHTML += tableSpecs;
+
+  tableSpecs = `
+<tr>
+  <td class="table__name">Warranty</td>
+  <td class="table__value">${response[0].warranty}</td>
+</tr>  `;
+  specTable.innerHTML += tableSpecs;
+
+  for (let i = 0; i < Array.from(Object.keys(response[0].specs)).length; i++) {
+    tableSpecs = `
+  <tr>
+    <td class="table__name">${
+      Array.from(Object.keys(response[0].specs))[i]
+    }</td>
+    <td class="table__value">${
+      Array.from(Object.values(response[0].specs))[i]
+    }</td>
+  </tr>  `;
+    specTable.innerHTML += tableSpecs;
+  }
 }
 
 // changing product colors
@@ -207,13 +264,24 @@ async function toStorage() {
   // empty variable so we can use it globally
   let updatedItems = [];
   // we check if any items match current product id && color
-  if (items.some((item) => item.id == productID && item.color == sessionStorage.getItem("color"))) {
+  if (
+    items.some(
+      (item) =>
+        item.id == productID && item.color == sessionStorage.getItem("color")
+    )
+  ) {
     // we go through each item to find the one that matches
     updatedItems = items.map((item) => {
-      if (productID == item.id && item.color == sessionStorage.getItem("color")) {
+      if (
+        productID == item.id &&
+        item.color == sessionStorage.getItem("color")
+      ) {
         // we make our changes to said items
         // '...items' means it'll return all other items unmodified
-        return { ...item, quantity: Number(item.quantity) + Number(productAmountNumber) };
+        return {
+          ...item,
+          quantity: Number(item.quantity) + Number(productAmountNumber),
+        };
         // and return the others
       } else return item;
     });
@@ -227,7 +295,8 @@ async function toStorage() {
       {
         id: productID,
         quantity: productAmountNumber,
-        color: sessionStorage.getItem("color")
+        color: sessionStorage.getItem("color"),
+        price: price,
       },
     ];
   }
