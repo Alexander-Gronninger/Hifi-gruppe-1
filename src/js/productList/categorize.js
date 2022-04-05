@@ -76,8 +76,3 @@ setTimeout(() => {
     upperRange.max = highestProductPrice;
     lowerRange.max = highestProductPrice;
 }, 750);
-
-
-if (!activeValues){
-    lazyLoadProducts(0, 4)
-}
