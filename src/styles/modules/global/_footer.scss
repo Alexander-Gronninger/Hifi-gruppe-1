@@ -1,13 +1,13 @@
-.flexBox {
+footer .flexBox {
   display: flex;
 }
 
-.footerTop {
+footer .footerTop {
   justify-content: space-between;
   border-bottom: 1px solid #bbbfca;
 }
 
-.footerTop i {
+footer .footerTop i {
   padding-bottom: 21px;
   font-size: 20px;
 }
@@ -24,7 +24,7 @@
 }
 
 .blackFooter a,
-h2 {
+footer h2 {
   font-size: 18px;
   font-weight: 400;
 }
