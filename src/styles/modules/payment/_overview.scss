@@ -1,0 +1,22 @@
+.payment__overview{
+    max-width:450px;
+    padding:32px;
+    @include whiteBackground($max-width:450px, $margin-inline: unset)
+}
+
+.overview__title{
+    font-size:26px;
+    font-weight: 700;
+    color: $secondaryTextColor;
+    grid-row:1/2;
+    grid-column:1/2;
+}
+.overview__productinfo{
+    display:grid;
+}
+.productinfo__name{
+    grid-column:1/2;
+}
+.total__bold{
+    font-weight: 700;
+}
