@@ -119,12 +119,10 @@ async function getProduct() {
   for (let i = 0; i < Array.from(Object.keys(response[0].specs)).length; i++) {
     tableSpecs = `
   <tr>
-    <td class="table__name">${
-      Array.from(Object.keys(response[0].specs))[i]
-    }</td>
-    <td class="table__value">${
-      Array.from(Object.values(response[0].specs))[i]
-    }</td>
+    <td class="table__name">${Array.from(Object.keys(response[0].specs))[i]
+      }</td>
+    <td class="table__value">${Array.from(Object.values(response[0].specs))[i]
+      }</td>
   </tr>  `;
     specTable.innerHTML += tableSpecs;
   }
@@ -301,4 +299,5 @@ async function toStorage() {
     ];
   }
   localStorage.setItem("cart", JSON.stringify(updatedItems));
+  console.log(updatedItems)
 }
