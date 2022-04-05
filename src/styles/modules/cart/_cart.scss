@@ -1,0 +1,50 @@
+.cart__item {
+  display: grid;
+  grid-template-columns: 220px 1fr auto 1fr auto;
+
+  @include whiteBackground($padding: 20px, $margin-block: 20px);
+}
+
+.item__imgContainer {
+  display: grid;
+}
+
+.item__img,
+.item__info,
+.counter,
+.item__price {
+  place-self: center;
+}
+
+.item__title {
+  font-size: 0.875rem;
+}
+
+.item__stock {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+}
+
+.stock__color {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+.cart__subTotal {
+  text-align: end;
+  font-size: 1rem;
+}
+.cart__totalSubAmount {
+  margin-left: 10px;
+  color: $tertiaryTextColor;
+}
+
+.cart__button {
+  -max-width: fit-content;
+  display: block;
+  margin-left: auto;
+}
