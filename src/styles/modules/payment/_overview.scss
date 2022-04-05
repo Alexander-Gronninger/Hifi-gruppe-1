@@ -1,7 +1,11 @@
+
 .payment__overview{
-    max-width:450px;
     padding:32px;
+    position: fixed;
+    right:2%;
+    top:22%;
     @include whiteBackground($max-width:450px, $margin-inline: unset)
+    
 }
 
 .overview__title{
@@ -44,4 +48,12 @@
 }
 .total__bold{
     font-weight: 700;
+}
+
+.payment__button{
+    position:fixed;
+    top:86%;
+    right:2%;
+    height:60px;
+    @include button($max-width:179px)
 }

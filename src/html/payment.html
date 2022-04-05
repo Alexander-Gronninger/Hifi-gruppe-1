@@ -19,6 +19,7 @@
   <body>
     @@include("./partials/nav.html", {"activeCart": "tools__link--active"})
     <main>
+      <div class="wrapper">
       <section class="paymentform">
         <h1 class="paymentform__title">Your info</h1>
         <form class="paymentform__form" action="">
@@ -59,23 +60,17 @@
           <input type="text" id="form__phonenr" class="form__input form__big" />
         </form>
       </section>
+      <div class="container__payment">
       <section class="payment__overview ">
         <h2 class="overview__title">Payment overview</h2>
         <ul class="overview__productinfo">
-          <li class="productinfo__name">Auralic Aries G2.1 Streamer</li>
-          <li class="productinfo__price">£4,799.00</li>
-          <li class="productinfo__name">Auralic Aries G2.1 Streamer</li>
-          <li class="productinfo__price">£4,799.00</li>
-          <li class="productinfo__total">Price <span class="total__bold">£9,598.00</span></li>
-          <hr class="productinfo__line">
-          <li class="productinfo__delprice">Delivery price</li>
-          <li class="productinfo__price">£4.00</li>
-          <li class="productinfo__vat">VAT</li>
-          <li class="productinfo__price">$1,919.60</li>
-          <li class="productinfo__total">Total price <span class="total__bold">£9,598.00</span></li>
+          
+          
         </ul>
       </section>
-
+      <button class="payment__button g-button">Checkout</button>
+    </div>
+    </div>
     </main>
     @@include("./partials/footer.html")
   </body>
