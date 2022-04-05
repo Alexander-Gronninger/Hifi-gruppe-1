@@ -1,8 +1,9 @@
-#page__title .invoice__title {
+.invoice__title {
   font-weight: 700;
   font-size: 26px;
   line-height: 35px;
   text-align: center;
+  color: $secondaryTextColor;
 }
 
 .invoice{
