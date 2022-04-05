@@ -44,7 +44,11 @@
 }
 
 .cart__button {
-  -max-width: fit-content;
-  display: block;
   margin-left: auto;
+  margin: 40px 0px 60px auto;
+}
+
+.cart__content {
+  max-width: 1124px;
+  margin-inline: auto;
 }

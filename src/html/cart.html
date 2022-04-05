@@ -21,95 +21,35 @@
       <main class="cart">
         @@include("./partials/breadcrumb.html", {"activeCart":
         "breadcrumb__item--active"})
-        <h1 class="cart__title">Cart</h1>
-        <article class="cart__items">
-          <section class="cart__item">
-            <div class="item__imgContainer">
-              <img
-                class="item__img"
-                src="https://picsum.photos/id/1/500/300"
-                alt=""
-                title=""
-              />
-            </div>
+        <div class="cart__content">
+          <h1 class="cart__title">Cart</h1>
+          <article class="cart__items">
+            <section class="cart__item">
+              <div class="item__imgContainer">
+                <img
+                  class="item__img"
+                  src="https://picsum.photos/id/1/500/300"
+                  alt=""
+                  title=""
+                />
+              </div>
 
-            <div class="item__info">
-              <h2 class="item__title">Auralic Aries G2.1 Streamer</h2>
-              <p class="item__stock">
-                <span class="stock__color"></span> few in stock
-              </p>
-            </div>
-            @@include("./partials/counter.html", {"amount": 20})
-            <p class="item__price">£ 4,799.00</p>
-            <i class="fa-solid fa-xmark item__delete"></i>
-          </section>
-
-          <section class="cart__item">
-            <div class="item__imgContainer">
-              <img
-                class="item__img"
-                src="https://picsum.photos/id/1/500/300"
-                alt=""
-                title=""
-              />
-            </div>
-
-            <div class="item__info">
-              <h2 class="item__title">Auralic Aries G2.1 Streamer</h2>
-              <p class="item__stock">
-                <span class="stock__color"></span> few in stock
-              </p>
-            </div>
-            @@include("./partials/counter.html", {"amount": 30000})
-            <p class="item__price">£ 100,799.00</p>
-            <i class="fa-solid fa-xmark item__delete"></i>
-          </section>
-          <section class="cart__item">
-            <div class="item__imgContainer">
-              <img
-                class="item__img"
-                src="https://picsum.photos/id/1/500/300"
-                alt=""
-                title=""
-              />
-            </div>
-
-            <div class="item__info">
-              <h2 class="item__title">Auralic Aries G2.1 Streamer</h2>
-              <p class="item__stock">
-                <span class="stock__color"></span> few in stock
-              </p>
-            </div>
-            @@include("./partials/counter.html", {"amount": 20})
-            <p class="item__price">£ 4,799.00</p>
-            <i class="fa-solid fa-xmark item__delete"></i>
-          </section>
-
-          <section class="cart__item">
-            <div class="item__imgContainer">
-              <img
-                class="item__img"
-                src="https://picsum.photos/id/1/500/300"
-                alt=""
-                title=""
-              />
-            </div>
-
-            <div class="item__info">
-              <h2 class="item__title">Auralic Aries G2.1 Streamer</h2>
-              <p class="item__stock">
-                <span class="stock__color"></span> few in stock
-              </p>
-            </div>
-            @@include("./partials/counter.html", {"amount": 30000})
-            <p class="item__price">£ 100,799.00</p>
-            <i class="fa-solid fa-xmark item__delete"></i>
-          </section>
-        </article>
-        <p class="cart__subTotal">
-          Sub total<span class="cart__totalSubAmount">£299.00</span>
-        </p>
-        <button class="cart__button g-button">Go to payment</button>
+              <div class="item__info">
+                <h2 class="item__title">Auralic Aries G2.1 Streamer</h2>
+                <p class="item__stock">
+                  <span class="stock__color"></span> few in stock
+                </p>
+              </div>
+              @@include("./partials/counter.html")
+              <p class="item__price">£ 4,799.00</p>
+              <i class="fa-solid fa-xmark item__delete"></i>
+            </section>
+          </article>
+          <p class="cart__subTotal">
+            Sub total<span class="cart__totalSubAmount">£299.00</span>
+          </p>
+          <button class="cart__button g-button">Go to payment</button>
+        </div>
       </main>
     </div>
     @@include("./partials/footer.html")
