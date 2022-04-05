@@ -2,17 +2,16 @@
   <nav class="navigation">
     <ul class="navigation__menu">
       <li class="menu__item menu__logo">
-        <img src="/images/logo.png" alt="" />
+        <a href="/"><img src="/images/logo.png" alt="" /></a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" href="/product_list">SHOP</a>
-      </li>
-      <li class="menu__item"><a class="menu__link" href="">ABOUT US</a></li>
-      <li class="menu__item">
-        <a class="menu__link menu__link--active" href="">NEWS</a>
+        <a class="menu__link @@activeShop" href="/product_list">SHOP</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" href="">CONTACT US</a>
+        <a class="menu__link @@activeAboutUs" href="/our_history">ABOUT US</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link @@activeContactUs" href="/contact">CONTACT US</a>
       </li>
     </ul>
 
@@ -28,10 +27,10 @@
           ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
         ></label>
       </div>
-      <a href="" class="tools__link"
+      <a href="" class="tools__link @@activeUser"
         ><i class="tools__icon fa-solid fa-user"></i
       ></a>
-      <a href="" class="tools__link tools__cart"
+      <a href="/cart" class="tools__link tools__cart @@activeCart"
         ><i class="tools__icon fa-solid fa-cart-shopping"></i>
         <p class="cart__amount">99+</p>
       </a>
