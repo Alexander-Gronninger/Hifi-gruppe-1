@@ -52,3 +52,14 @@
   max-width: 1124px;
   margin-inline: auto;
 }
+
+.item__delete {
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+  place-self: start center;
+}
+
+.item__delete:hover {
+  color: $tertiaryTextColor;
+  transform: scale(1.3);
+}

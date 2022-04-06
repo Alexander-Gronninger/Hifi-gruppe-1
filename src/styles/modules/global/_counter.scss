@@ -4,18 +4,15 @@
   max-width: fit-content;
 }
 
-// .counter__amountContainer {
-//   width: 37px;
-//   height: 37px;
-//   background: $primaryIconColor;
-//   border-radius: 2px;
-//   -margin: 0 12px;
-// }
-
 .counter__minus,
 .counter__plus {
+  cursor: pointer;
   width: 37px;
-  text-align: center;
+  height: 37px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .counter__amount {
