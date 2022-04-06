@@ -5,40 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="/styles/styles.css"/>
 </head>
 <body>
-    <form class="form">
-        <div class="inputGroup">
-         <label for="name">Your name:</label>
-         <input type="text" id="name" name="name">
-         <span class="errorMessage name">Insert Name!</span>
-        </div>
-        <div class="inputGroup">
-            <label for="email">Your e-mail:</label>
-            <input type="email" name="email" id="email">
-            <span class="errorMessage email">Insert Email!</span>
-        <div class="inputGroup">
-            <div class="inputGroup">
-                <label for="subject">Subject:</label>
-                <input type="text" name="subject" id="subject">
-                <span class="errorMessage email">Declare Subject!</span>
-            <div class="inputGroup">
-            <label for="message">Message:</label>
-            <input type="text" name="message" id="message">
-            <span class="errorMessage message">Insert Message!</span>
-        </div>
-        <div>
-            <button class="Cancel">Cancel</button>
-        </div>
-        <div>
-            <button type="submit" class="Submit">Submit</button>
-            <span class="successMessage">Your message has been sent</span>
-        </div>
-    </form>
+    @@include("./partials/nav.html", {"activeAboutUs": "menu__link--active"})
+    <div class="wrapper g-whiteBackground">
+        <main>
+            <h1 id="page__title">Get in touch with us</h1>
+            <form class="contact__form">
+                <div class="input__group">
+                    <label class="label" for="name">Full name <span style="color: red;" >*</span> </label>
+                    <input class="contact__input g-inputField" type="text" id="name" name="name">
+                    <span class="error__message name">Insert Name!</span>
+                </div>
+                <div class="input__group">
+                    <label class="label" for="email">Email <span style="color: red;" >*</span> </label>
+                    <input class="contact__input g-inputField" type="email" name="email" id="email">
+                    <span class="error__message email">Insert Email!</span>
+                </div>
+                
+                <div class="input__group">
+                    <label class="label" for="subject">Subject <span style="color: red;" >*</span> </label>
+                    <input class="contact__input g-inputField" type="t" name="subject" id="subject">
+                    <span class="error__message email">Declare Subject!</span>
+                </div>
+                <div class="input__group">
+                    <label class="label" for="message">Message <span style="color: red;" >*</span> </label>
+                    <textarea class="g-inputField" name="message" type="text" id="message" cols="30" rows="10" style="resize: none;"></textarea>
+                    <span class="error__message message">Insert Message!</span>
+                </div>
+                <div class="contact__btn">
+                    <span class="success__message">Your message has been sent</span>
+                    <button type="submit" class="contact__submit g-button">Submit</button>
+                </div>
+            </form>
+            <p class="contact__p">Visit our sister companies <a href="#" class="contact__a">Home Sound</a> and <a href="#" class="contact__a">The Movie Rooms</a> part of the Hi-Fi Corner Group. </p>
+        </main>
+    </div>
 
+    @@include("./partials/footer.html")
 
-    <script src="contact.js" defer></script>
+    <script src="/js/contact/contact.js" defer></script>
 
 </body>
 </html>

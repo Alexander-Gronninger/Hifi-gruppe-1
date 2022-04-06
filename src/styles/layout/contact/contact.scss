@@ -1,33 +1,72 @@
-form{
-    width: 80rem;
+.contact__header{
+    text-transform: uppercase;
+    color: #495464;
+    margin-left: 30px;
+    font-size: 48px;
+}
+
+.contact__form{
     margin: 0 auto;
-    background-color: white;
+    padding-top: 50px;
 }
 
-.inputGroup{
-    margin: 0 auto;
-    padding: 0 auto;
+.input__group{
+    display: flex;
+    flex-direction: column;
+    margin: 0 250px;
+    width: 275px;
+    padding: 5px;
 }
 
-input{
-    background-color: #F4F4F2;
-    border: none;
-    border-radius: 5px;
+.contact__input{
+    height: 38px;
 }
 
-.errorMessage{
+.label{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.error__message{
     display: none;
+    color: red;
+    font-size: 14px;
 }
 
-.successMessage{
+.success__message{
     display: none;
+    margin-left: 100px;
 }
 
 #message{
-    width: 500px;
-    height: 300px;
+    width: 737px;
+    height: 374px;
+}
+.cancel{
+    text-decoration: none;
 }
 
-body{
-    background-color: #E8E8E8;
+.contact__p{
+    margin-left: 15%;
+}
+.contact__a{
+    text-decoration: none;
+    font-size: 24px;
+    color: orange;
+}
+ 
+.contact__btn{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 444px;
+    padding-top: 25px;
+    padding-bottom: 100px;
+}
+.contact__submit{
+    width: 135px;
+    height: 45px;
+    border-radius: 3.5px;
+    color: white;
+    border: none;
+    box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.5);
 }
