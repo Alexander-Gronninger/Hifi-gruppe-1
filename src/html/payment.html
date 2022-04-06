@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/styles.css" />
     <script src="/js/payment/paymentFormValidation.js" defer></script>
     <script src="/js/payment/overviewinfo.js" defer></script>
+    <script src="/js/payment/orderstojson.js" defer></script>
 
     <!--font awesome link-->
     <script
@@ -22,7 +23,7 @@
       <div class="wrapper">
       <section class="paymentform">
         <h1 class="paymentform__title">Your info</h1>
-        <form class="paymentform__form" action="">
+        <form class="paymentform__form" action="" id="checkout">
           <label for="form__name" class="form__label form__big"
             >Full name</label
           >
@@ -68,7 +69,7 @@
           
         </ul>
       </section>
-      <button class="payment__button g-button">Checkout</button>
+      <button class="payment__button g-button" type="submit" form="checkout">Checkout</button>
     </div>
     </div>
     </main>
