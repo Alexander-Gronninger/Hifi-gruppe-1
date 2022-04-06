@@ -1,5 +1,5 @@
-//const API_URL = `http://23.88.41.248:3000`; //Benjamins server
-const API_URL = `http://localhost:3000`; //lokal json server
+const API_URL = `http://23.88.41.248:3000`; //Benjamins server
+//const API_URL = `http://localhost:3000`; //lokal json server
 
 const customerNameElement = document.querySelector(".customerInfo__name");
 const customerAddressElement = document.querySelector(".customerInfo__address");
