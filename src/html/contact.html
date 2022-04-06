@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="/styles/styles.css"/>
+    <link rel="stylesheet" href="/styles/styles.css" />
 </head>
+
 <body>
     @@include("./partials/nav.html", {"activeAboutUs": "menu__link--active"})
+    <h1 id="page__title" style="margin-left: 385px;">Get in touch with us</h1>
     <div class="wrapper g-whiteBackground">
+        
         <main>
-            <h1 id="page__title">Get in touch with us</h1>
+            
             <form class="contact__form">
-                <div class="input__group">
-                    <label class="label" for="name">Full name <span style="color: red;" >*</span> </label>
+                <div class="contact__inputGroup">
+                    <label class="contact__label" for="name">Full name <span style="color: red;">*</span> </label>
                     <input class="contact__input g-inputField" type="text" id="name" name="name">
-                    <span class="error__message name">Insert Name!</span>
+                    <span class="contact__errorMessage">Insert Name!</span>
                 </div>
-                <div class="input__group">
-                    <label class="label" for="email">Email <span style="color: red;" >*</span> </label>
+                <div class="contact__inputGroup">
+                    <label class="contact__label" for="email">Email <span style="color: red;">*</span> </label>
                     <input class="contact__input g-inputField" type="email" name="email" id="email">
-                    <span class="error__message email">Insert Email!</span>
+                    <span class="contact__errorMessage">Insert Email!</span>
                 </div>
-                
-                <div class="input__group">
-                    <label class="label" for="subject">Subject <span style="color: red;" >*</span> </label>
+
+                <div class="contact__inputGroup">
+                    <label class="contact__label" for="subject">Subject <span style="color: red;">*</span> </label>
                     <input class="contact__input g-inputField" type="t" name="subject" id="subject">
-                    <span class="error__message email">Declare Subject!</span>
+                    <span class="contact__errorMessage">Declare Subject!</span>
                 </div>
-                <div class="input__group">
-                    <label class="label" for="message">Message <span style="color: red;" >*</span> </label>
-                    <input class="g-inputField" name="message" type="text" id="message" cols="30" rows="10" style="resize: none;"></input>
-                    <span class="error__message message">Insert Message!</span>
+                <div class="contact__inputGroup">
+                    <label class="contact__label" for="message">Message <span style="color: red;">*</span> </label>
+                    <input class="g-inputField" name="message" type="text" id="message" cols="30" rows="10"
+                        style="resize: none;"></input>
+                    <span class="contact__errorMessage">Insert Message!</span>
                 </div>
-                <div class="contact__btn">
-                    <span class="success__message">Your message has been sent</span>
+                <div class="contact__button">
+                    <span class="contact__successMessage">Your message has been sent</span>
                     <button type="submit" class="contact__submit g-button">Submit</button>
                 </div>
             </form>
-            <p class="contact__p">Visit our sister companies <a href="#" class="contact__a">Home Sound</a> and <a href="#" class="contact__a">The Movie Rooms</a> part of the Hi-Fi Corner Group. </p>
+            <p class="contact__text">Visit our sister companies <a href="#" class="contact__link">Home Sound</a> and <a
+                    href="#" class="contact__link">The Movie Rooms</a> part of the Hi-Fi Corner Group. </p>
         </main>
     </div>
 
@@ -48,4 +54,5 @@
     <script src="/js/contact/contact.js" defer></script>
 
 </body>
+
 </html>

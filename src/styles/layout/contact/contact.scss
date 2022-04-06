@@ -1,19 +1,12 @@
-.contact__header{
-    text-transform: uppercase;
-    color: #495464;
-    margin-left: 30px;
-    font-size: 48px;
-}
-
 .contact__form{
     margin: 0 auto;
     padding-top: 50px;
 }
 
-.input__group{
+.contact__inputGroup{
     display: flex;
     flex-direction: column;
-    margin: 0 250px;
+    margin: 0 100px;
     width: 275px;
     padding: 5px;
 }
@@ -22,18 +15,18 @@
     height: 38px;
 }
 
-.label{
+.contact__label{
     font-size: 18px;
     font-weight: bold;
 }
 
-.error__message{
+.contact__errorMessage{
     display: none;
     color: red;
     font-size: 14px;
 }
 
-.success__message{
+.contact__successMessage{
     display: none;
     margin-left: 100px;
 }
@@ -42,23 +35,20 @@
     width: 737px;
     height: 374px;
 }
-.cancel{
-    text-decoration: none;
-}
 
-.contact__p{
+.contact__text{
     margin-left: 15%;
 }
-.contact__a{
+.contact__link{
     text-decoration: none;
     font-size: 24px;
     color: orange;
 }
  
-.contact__btn{
+.contact__button{
     display: flex;
     justify-content: flex-end;
-    margin-right: 444px;
+    margin-right: 220px;
     padding-top: 25px;
     padding-bottom: 100px;
 }
