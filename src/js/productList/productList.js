@@ -1,3 +1,3 @@
-import getProducts from "/js/getProducts.js"
-
-getProducts()
+import getProducts from "/js/productList/getProducts.js";
+import { } from "/js/productList/priceSlider.js"
+getProducts();

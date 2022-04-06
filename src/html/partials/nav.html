@@ -1,0 +1,39 @@
+<header class="header">
+  <nav class="navigation">
+    <ul class="navigation__menu">
+      <li class="menu__item menu__logo">
+        <a href="/"><img src="/images/logo.png" alt="" /></a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link @@activeShop" href="/product_list">SHOP</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link @@activeAboutUs" href="/our_history">ABOUT US</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link @@activeContactUs" href="/contact">CONTACT US</a>
+      </li>
+    </ul>
+
+    <div class="navigation__tools">
+      <div class="tools__inputContainer">
+        <input
+          class="tools__input"
+          type="text"
+          placeholder="Search product..."
+          id="tools__input"
+        />
+        <label for="tools__input"
+          ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
+        ></label>
+      </div>
+      <a href="" class="tools__link @@activeUser"
+        ><i class="tools__icon fa-solid fa-user"></i
+      ></a>
+      <a href="/cart" class="tools__link tools__cart @@activeCart"
+        ><i class="tools__icon fa-solid fa-cart-shopping"></i>
+        <p class="cart__amount">99+</p>
+      </a>
+    </div>
+  </nav>
+</header>

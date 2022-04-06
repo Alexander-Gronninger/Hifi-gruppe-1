@@ -1,0 +1,17 @@
+.product__compareBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  font-size:0.875rem;
+  justify-self: end;
+  &:hover .compareBtn__icon {
+    transform: scale(1.1);
+  }
+}
+
+.compareBtn__icon {
+  height: 2rem;
+  width: 2rem;
+  transition: all ease 0.2s;
+}

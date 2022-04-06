@@ -7,12 +7,32 @@ import imagemin from "gulp-imagemin";
 import connect from "gulp-connect";
 import sassImport from "sass";
 import gulpSass from "gulp-sass";
+import rename from "gulp-rename";
+import include from "gulp-file-include";
+import htmlmin from "gulp-htmlmin";
+import sourcemaps from "gulp-sourcemaps";
 
 const sass = gulpSass(sassImport);
 
 function html() {
   return gulp
     .src("src/html/**/*.html")
+    .pipe(sourcemaps.init())
+    .pipe(include())
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+      })
+    )
+    .pipe(
+      rename(function (path) {
+        if (path.basename != "index") {
+          path.dirname = path.dirname + "/" + path.basename;
+          path.basename = "index";
+        }
+      })
+    )
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build"))
     .pipe(connect.reload());
 }
@@ -20,7 +40,9 @@ function html() {
 function css() {
   return gulp
     .src("src/styles/**/*.scss")
+    .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build/styles"))
     .pipe(connect.reload());
 }
@@ -28,7 +50,9 @@ function css() {
 function js() {
   return gulp
     .src("src/js/**/*.js")
+    .pipe(sourcemaps.init())
     .pipe(uglifyjs())
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build/js"))
     .pipe(connect.reload());
 }
