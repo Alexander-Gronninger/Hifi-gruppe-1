@@ -79,43 +79,79 @@ async function renderCart() {
         return response.json();
       })
     )
-  )
-    .then((data) => {
-      data.map((item) => {
-        console.log(item);
+  ).then((data) => {
+    productsContainerHTML = data.reduce((acc, item) => {
+      let amount;
+      item = item[0];
 
-        let productLineHTML = `
-      <section class="cart__item">
-        <a href="/product_details?id=${item[0].id}" class="item__imgContainer">
-          <img
-            class="item__img"
-            src="https://picsum.photos/id/1/500/300"
-            alt=""
-            title=""/>
-        </a>
-      
-        <div class="item__info">
-          <a href="/product_details?id=700">
-            <h2 class="item__title">Auralic Aries G2.1 Streamer</h2>
-          </a>
-          <p class="item__stock">
-            <span class="stock__color"></span> few in stock
-          </p>
-        </div>
-        @@include("./partials/counter.html")
-        <p class="item__price">£ 4,799.00</p>
-        <div class="item__delete">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-      </section>
-      `;
-
-        console.log(productLineHTML);
-
-        productsContainerHTML = productsContainerHTML + productLineHTML;
+      // Get product amount from cart
+      cart.forEach((product) => {
+        if (item.id == product.id) {
+          amount = product.quantity;
+        }
       });
-    })
-    .then(console.log(productsContainerHTML));
+
+      console.log(item);
+
+      return (acc += `
+        <section class="cart__item">
+          <a href="/product_details?id=${
+            item.id
+          }" class="item__imgContainer" title="Go to ${item.name}">
+            <img
+              class="item__img"
+              src="${item.images.default}"
+              alt="${item.name}"
+              title="${item.name}"/>
+          </a>
+        
+          <div class="item__info">
+            <a href="/product_details?id=${item.id}" title="Go to ${item.name}">
+              <h2 class="item__title">${item.name}</h2>
+            </a>
+            <p class="item__stock">
+              ${getStockElement(item.stock)}
+            </p>
+          </div>
+          <div class="counter">
+          <div class="counter__minus">
+            <i class="fa-solid fa-minus"></i>
+          </div>
+          <div class="counter__amountContainer">
+            <p class="counter__amount">${amount}</p>
+          </div>
+          <div class="counter__plus">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+        </div>
+          <p class="item__price">£ ${item.price * amount}.00</p>
+          <div class="item__delete">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </section>
+        `);
+    }, "");
+
+    $productsContainer.innerHTML = productsContainerHTML.trim();
+  });
+
+  function getStockElement(number) {
+    let stockColor;
+    let stockText;
+
+    if (number < 2) {
+      stockColor = "red";
+      stockText = "Out of stock";
+    } else if (number < 20) {
+      stockColor = "orange";
+      stockText = "Few in stock";
+    } else {
+      stockColor = "green";
+      stockText = "In stock";
+    }
+
+    return `<span class="stock__color" style="background-color: ${stockColor}"></span> ${stockText}`;
+  }
 
   // cart.map((item) => {
   //   // return response = await (await fetch(`${API_URL}?id_like=${700}`)).json();
