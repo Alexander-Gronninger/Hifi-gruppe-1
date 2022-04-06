@@ -1,36 +1,36 @@
-const productLineHTML = `
-    <div href="product.html?productId={{PRODUCT_ID}}" title="Gå til produktside for {{PRODUCT_TITLE}}" data-product-id="{{PRODUCT_ID}}">
-        <section class="product">
-            <!-- product image -->
-            <div class="product__image-container">
-                <img
-                    class="product__image"
-                    src="{{PRODUCT_IMG_URL}}"
-                    alt="{{PRODUCT_TITLE}}"
-                    title="{{PRODUCT_TITLE}}" />
-            </div>
+// const productLineHTML = `
+//     <div href="product.html?productId={{PRODUCT_ID}}" title="Gå til produktside for {{PRODUCT_TITLE}}" data-product-id="{{PRODUCT_ID}}">
+//         <section class="product">
+//             <!-- product image -->
+//             <div class="product__image-container">
+//                 <img
+//                     class="product__image"
+//                     src="{{PRODUCT_IMG_URL}}"
+//                     alt="{{PRODUCT_TITLE}}"
+//                     title="{{PRODUCT_TITLE}}" />
+//             </div>
 
-            <!-- product details -->
-            <div class="product__details">
-                <h3 class="product__title">{{PRODUCT_TITLE}}</h3>
-                <p class="product__description">{{PRODUCT_SUBTITLE}}</p>
-            </div>
+//             <!-- product details -->
+//             <div class="product__details">
+//                 <h3 class="product__title">{{PRODUCT_TITLE}}</h3>
+//                 <p class="product__description">{{PRODUCT_SUBTITLE}}</p>
+//             </div>
 
-            <!-- product counter -->
-            <div class="counter">
-                <div class="counter__subtract">-</div>
-                <div class="counter__amount">{{PRODUCT_AMOUNT}}</div>
-                <div class="counter__add">+</div>
-            </div>
+//             <!-- product counter -->
+//             <div class="counter">
+//                 <div class="counter__subtract">-</div>
+//                 <div class="counter__amount">{{PRODUCT_AMOUNT}}</div>
+//                 <div class="counter__add">+</div>
+//             </div>
 
-            <!-- product prices -->
-            <div class="product__prices">
-                <p class="product__price">{{PRODUCT_PRICE}} kr</p>
-            </div>
+//             <!-- product prices -->
+//             <div class="product__prices">
+//                 <p class="product__price">{{PRODUCT_PRICE}} kr</p>
+//             </div>
 
-            <i class="product__remove fas fa-times"></i>
-        </section>
-    </div>`;
+//             <i class="product__remove fas fa-times"></i>
+//         </section>
+//     </div>`;
 
 const $productsContainer = document.querySelector(".cart__items");
 const cartButton = document.querySelector(".cart__button");
@@ -67,6 +67,8 @@ async function renderCart() {
     return;
   }
 
+  let productsContainerHTML = "";
+
   Promise.all(
     cart.map((item) =>
       fetch(`${API_URL}?id_like=${item.id}`).then(function (response) {
@@ -77,9 +79,43 @@ async function renderCart() {
         return response.json();
       })
     )
-  ).then((data) => {
-    console.log(data);
-  });
+  )
+    .then((data) => {
+      data.map((item) => {
+        console.log(item);
+
+        let productLineHTML = `
+      <section class="cart__item">
+        <a href="/product_details?id=${item[0].id}" class="item__imgContainer">
+          <img
+            class="item__img"
+            src="https://picsum.photos/id/1/500/300"
+            alt=""
+            title=""/>
+        </a>
+      
+        <div class="item__info">
+          <a href="/product_details?id=700">
+            <h2 class="item__title">Auralic Aries G2.1 Streamer</h2>
+          </a>
+          <p class="item__stock">
+            <span class="stock__color"></span> few in stock
+          </p>
+        </div>
+        @@include("./partials/counter.html")
+        <p class="item__price">£ 4,799.00</p>
+        <div class="item__delete">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </section>
+      `;
+
+        console.log(productLineHTML);
+
+        productsContainerHTML = productsContainerHTML + productLineHTML;
+      });
+    })
+    .then(console.log(productsContainerHTML));
 
   // cart.map((item) => {
   //   // return response = await (await fetch(`${API_URL}?id_like=${700}`)).json();
