@@ -10,8 +10,8 @@ console.log(cartitems);
     let totalitemprice = Number(cartitems[i].price * cartitems[i].quantity)
     totalpriceofitems = totalitemprice + totalpriceofitems
     overviewul.innerHTML += `
-    <li class="productinfo__name">${cartitems[i].name}
-    <li class="productinfo__price">£${totalitemprice}
+    <li class="productinfo__name">${cartitems[i].name} x${cartitems[i].quantity}</li>
+    <li class="productinfo__price">£${totalitemprice}</li>
     
     `}
     vatforitems = totalpriceofitems * 0.25
