@@ -43,6 +43,16 @@ async function getOrder() {
   orderDateElement.innerHTML = orderResponse[0].orderDate;
   orderCurrencyElement.innerHTML = orderResponse[0].currency;
 
+  const invoiceSummeryElement = document.querySelector(".invoice__summery tbody");
+
+  invoiceSummeryElement.innerHTML += `
+<tr class="summery__titles">
+  <th class="titles__desc">ITEM DESCRIPTION</th>
+  <th>PRICE</th>
+  <th>QUANTITY</th>
+  <th>TOTAL</th>
+</tr>`;
+
   let subPrice = 0;
   for (let i = 0; i < orderResponse[0].products.length; i++) {
     productPrice =
@@ -50,29 +60,26 @@ async function getOrder() {
       orderResponse[0].products[i].productAmount;
     subPrice = productPrice + subPrice;
 
-    invoiceSummeryElement.innerHTML = `
+    invoiceSummeryElement.innerHTML += `
     <tr class="summery__item">
-      <td class="item__name"${orderResponse[0].products[i].productName} - ${orderResponse[0].products[i].color}</td>
-      <td class="item__price">${orderResponse[0].products[i].productPrice}</td>
-      <td class="item__quantity">${orderResponse[0].products[i].productAmount}</td>
-      <td class="item__total">test</td>
+      <td class="item__productName">${orderResponse[0].products[i].productName} - ${
+      orderResponse[0].products[i].color
+    }</td>
+      <td class="item__productPrice">&pound; ${
+        orderResponse[0].products[i].productPrice
+      }</td>
+      <td class="item__productAmount">${orderResponse[0].products[i].productAmount}</td>
+      <td class="item__productTotal">&pound; ${
+        orderResponse[0].products[i].productAmount *
+        orderResponse[0].products[i].productPrice
+      }</td>
     </tr>`;
   }
   let vatPrice = subPrice * 0.2;
   let totalPrice = subPrice + vatPrice + orderResponse[0].deliveryPrice;
-  subPriceElement.innerHTML = "&pound; &nbsp;" + subPrice;
-  vatPriceElement.innerHTML = "&pound; &nbsp;" + vatPrice;
+  subPriceElement.innerHTML = "&pound; " + subPrice;
+  vatPriceElement.innerHTML = "&pound; " + vatPrice;
   deliveryPriceElement.innerHTML =
     "&pound; &nbsp;" + orderResponse[0].deliveryPrice;
-  totalPriceElement.innerHTML = "&pound; &nbsp;" + totalPrice;
+  totalPriceElement.innerHTML = "&pound; " + totalPrice;
 }
-
-const invoiceSummeryElement = document.querySelector(".invoice__summery");
-
-invoiceSummeryElement.innerHTML += `
-<tr class="summery__titles">
-  <th>ITEM DESCRIPTION</th>
-  <th>PRICE</th>
-  <th>QUANTITY</th>
-  <th>TOTAL</th>
-</tr>`;

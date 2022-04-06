@@ -92,7 +92,7 @@
   margin-left: 5px;
 }
 
-.invoice__orderInfo{
+.invoice__orderInfo {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   max-width: 280px;
@@ -130,16 +130,15 @@
   line-height: 16px;
 }
 
-
 .orderInfo__numberData,
 .orderInfo__dateData,
-.orderInfo__currencyData{
+.orderInfo__currencyData {
   width: 100px;
 }
 
 .orderInfo__number,
 .orderInfo__date,
-.orderInfo__currency{
+.orderInfo__currency {
   width: 150px;
 }
 
@@ -154,6 +153,38 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
+}
+
+.titles__desc {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.summery__item:nth-child(odd) {
+  background-color: $primaryDetailColor;
+}
+
+.item__productName,
+.item__productPrice,
+.item__productAmount,
+.item__productTotal {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 41px;
+  height: 41px;
+}
+
+.item__productPrice {
+  width: 100px;
+  padding-left: 25px;
+}
+
+.item__productAmount {
+  text-align: center;
+}
+.item__productTotal {
+  width: 100px;
+  padding-left: 25px;
 }
 
 .invoice__total {
