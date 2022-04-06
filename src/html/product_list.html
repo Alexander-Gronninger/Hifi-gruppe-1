@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HiFi Corner</title>
     <link rel="stylesheet" href="/styles/styles.css" />
+
+    <!--font awesome link-->
+    <script
+      src="https://kit.fontawesome.com/377d53b4a7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>HiFi Corner</title>
   </head>
 
   <body>
-    @@include("./partials/nav.html")
+    @@include("./partials/nav.html", {"activeShop": "menu__link--active"})
     <main class="wrapper productMain">
-      <h1 class="productMain__primaryHeading">Products</h1>
+      <h1 class="productMain__primaryHeading global__title">PRODUCTS</h1>
       <section class="productMain__grid">
         <article class="categorizer">
           <h2 class="categorizer__primaryHeading">Sort by</h2>
@@ -278,6 +285,16 @@
                   <img class="checkbox__img" src="/images/check.svg" alt="" />
                 </div>
               </li>
+              <li
+                data-value="red"
+                data-category="colors"
+                class="content__list categoryItem"
+              >
+                Red
+                <div class="dropdown__checkbox">
+                  <img class="checkbox__img" src="/images/check.svg" alt="" />
+                </div>
+              </li>
             </ul>
           </div>
           <div class="dropdown">
@@ -288,18 +305,12 @@
             <ul class="dropdown__content">
               <li class="content__list content__range">
                 <div class="price-field">
+                  <input type="range" min="1" max="2000" value="1" id="lower" />
                   <input
                     type="range"
-                    min="100"
-                    max="1000"
-                    value="100"
-                    id="lower"
-                  />
-                  <input
-                    type="range"
-                    min="100"
-                    max="1000"
-                    value="1000"
+                    min="1"
+                    max="2000"
+                    value="2000"
                     id="upper"
                   />
                 </div>

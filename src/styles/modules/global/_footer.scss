@@ -1,14 +1,18 @@
-.flexBox {
+.blackFooter .flexBox {
   display: flex;
 }
 
-.footerTop {
+.blackFooter .footerTop {
   justify-content: space-between;
   border-bottom: 1px solid #bbbfca;
 }
 
-.footerTop i {
+.footerTop .blackFooter__i {
   padding-bottom: 21px;
+}
+
+.phone__i,
+.footerTop .blackFooter__i {
   font-size: 20px;
 }
 
@@ -18,26 +22,26 @@
   background-color: black;
 }
 
-.blackFooter li,
-.blackFooter p {
+.footer__list-item,
+.blackFooter__p {
   padding: 7px 0px;
 }
 
-.blackFooter a,
-h2 {
+.blackFooter__a,
+.footer__h2 {
   font-size: 18px;
   font-weight: 400;
 }
 
-.blackFooter a:hover {
+.blackFooter__a:hover {
   opacity: 80%;
 }
 
-.blackFooter p {
+.blackFooter__p {
   font-size: 14px;
 }
 
-.blackFooter i {
+.blackFooter__i {
   padding-right: 10px;
 }
 
@@ -48,6 +52,6 @@ h2 {
   align-items: flex-end;
 }
 
-.footerBottom i {
+.footerBottom__i {
   font-size: 57px;
 }
