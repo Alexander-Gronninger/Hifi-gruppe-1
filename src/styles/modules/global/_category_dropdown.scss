@@ -1,14 +1,23 @@
 .categoryDropdown{
     position: absolute;
     color: red;
-    transition: 0.2s ease;
     transform: translateY(2.3rem);
     background-color: white;
-    padding: 4rem 2rem;
-    display: none;
+    visibility: hidden;
+    display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
     left: 0;
+    z-index: 1000;
+    max-height: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    box-shadow: (0px 4px 10px rgba(0, 0, 0, 0.1));
+    border-radius: 0.1875rem;
+
+    &__column{
+      padding: 4rem 2rem;
+    }
 }
 
 .column{

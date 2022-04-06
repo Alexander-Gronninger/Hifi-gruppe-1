@@ -1,10 +1,14 @@
 const navShopElement = document.getElementsByClassName("menu__item")[1]
 const categoryDropdown = document.getElementsByClassName("categoryDropdown")[0]
 
-navShopElement.addEventListener("mouseover", function(){
-    categoryDropdown.style.display = "grid"
+navShopElement.addEventListener("mouseover", function () {
+    categoryDropdown.style.visibility = "visible"
+    categoryDropdown.style.maxHeight = categoryDropdown.scrollHeight + "px"
 })
 
-categoryDropdown.addEventListener("mouseleave", function(){
-    categoryDropdown.style.display = "none"
+categoryDropdown.addEventListener("mouseleave", function () {
+    categoryDropdown.style.visibility = "hidden"
+    categoryDropdown.style.maxHeight = "0"
 })
+
+console.log(categoryDropdown)
