@@ -7,6 +7,7 @@
   column-gap: 15px;
   padding: 15px;
   margin: 20px 0;
+  height: 120px;
 }
 .compare__selectedProduct {
   display: none;
@@ -51,6 +52,38 @@
 .compare__infoBox {
   grid-row: 1 / 2;
   grid-column: 3 / 4;
+  display: grid;
+}
+
+.infoBox__arrow,
+.infoBox__text {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.infoBox__arrow {
+  background: #c4c4c4;
+  transform: rotate(45deg);
+  width: 9.26px;
+  height: 9.12px;
+  margin-left: 53px;
+  margin-top: 55px;
+  z-index: 100;
+}
+
+.infoBox__text {
+  width: 261px;
+  height: 40px;
+  margin-top: auto;
+  margin-left: auto;
+  background-color: #c4c4c4;
+  border-radius: 2px;
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+  color: $primaryTextColor;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
 }
 
 .compare__compareButton {
