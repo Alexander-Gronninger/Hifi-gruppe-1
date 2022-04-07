@@ -1,30 +1,37 @@
+// variables for various DOM elements, need to be global but have to declare in async function as they are JS generated
 let productContainers = "";
-let storageIDButtons = "";
+let compareButtonElements = "";
 let productID = "";
 
 const compareContainer = document.querySelector(".compare");
 
+// loadElements is run from productList/getProducts.js every time the product list is loaded / updated
 async function loadElements() {
   productContainers = Array.from(
     document.querySelectorAll(".compare__selectedProduct")
   );
 
-  storageIDButtons = Array.from(
+  compareButtonElements = Array.from(
     document.querySelectorAll(".product__compareBtn")
   );
 
-  for (let i = 0; i < storageIDButtons.length; i++) {
-    storageIDButtons[i].addEventListener("click", addProduct);
+  // eventListener for all the compare buttons
+  for (let i = 0; i < compareButtonElements.length; i++) {
+    compareButtonElements[i].addEventListener("click", addProduct);
   }
 }
 
 const API_URL = `http://23.88.41.248:3000/products`; //Benjamins server
 
+// exporting function for use in getProducts.js
 export default loadElements;
 
+// function is run when the page is loaded, so we get any items from storage into the UI, for cross page compatibility
 document.addEventListener("DOMContentLoaded", addProduct);
 async function addProduct(event) {
+  // only run if its a click event, needed as function is run once on DOMContentLoaded
   if (event.type === "click") {
+    // there are two click events possible, with one or two parent steps to the element which contains productID
     if (event.target.parentElement.classList.contains("product__compareBtn")) {
       productID = event.target.parentElement.parentElement.dataset.id;
     } else {
@@ -34,25 +41,27 @@ async function addProduct(event) {
 
   let response = await (await fetch(API_URL + `?id_like=${productID}`)).json();
 
+  // array of all product comparison containers, so we can index them
   productContainers = Array.from(
     document.querySelectorAll(".compare__selectedProduct")
   );
+  // fetching localStorage list of compared items, OR making empty array
   let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
+  // if there are less than 3 items currently in comparison UI, we can add a new item
   if (productContainers.length < 3 || storageIDs.length < 3) {
-    //console.log("productCotainer under 3");
-    //console.log("ID=" + productID);
+    // if the amount of items in the HTML is not the same as the amount of items in localStorage
     if (storageIDs.length != productContainers.length) {
-      //console.log("current containers and storage don't match up");
-      //console.log("ID=" + productID);
+      // if there are localStorage items
       if (storageIDs.length > 0) {
-        //console.log("storageIDs over 0");
-        //console.log("ID=" + productID);
+        // for each localStorage item
         for (let i = 0; i < storageIDs.length; i++) {
+          // localStorage only contains product IDs
           productID = storageIDs[i].id;
+          // we fetch for each ID in storage
           response = await (
             await fetch(API_URL + `?id_like=${productID}`)
           ).json();
-          //console.log("adding compare products from storage");
+          // and add it to the compare UI
           compareContainer.innerHTML += `
             <div class="compare__selectedProduct">
               <img class="selectedProduct__image" src="${
@@ -64,24 +73,25 @@ async function addProduct(event) {
               }</p>
               <p class="selectedProduct__price">${response[0].price}</p>
             </div>`;
+          // we add dataset to the remove buttons, so we can identify which product is being removed
+          // this is needed down the road to remove it from localStorage as well as the UI
           const elementRemoveBtns = Array.from(
             document.querySelectorAll(".selectedProduct__removeBtn")
           );
-          elementRemoveBtns[elementRemoveBtns.length - 1].dataset.id = productID;
+          // arrays start a 0, but .length doesn't account for that
+          elementRemoveBtns[elementRemoveBtns.length - 1].dataset.id =
+            productID;
         }
       }
     }
+    // if the clicked product is already in the comparison UI, then do nothing
     if (
       storageIDs.some(
         (storageID) => storageID.id == productID || storageID.length == 3
       )
     ) {
-      //console.log("match found");
-      //console.log("ID=" + productID);
+      // else if productID has an actual value, we can add it
     } else if (productID != "") {
-      //console.log("match not found");
-      //console.log("ID=" + productID);
-      //console.log("adding new compare product");
       compareContainer.innerHTML += `
       <div class="compare__selectedProduct">
         <img class="selectedProduct__image" src="${
@@ -93,20 +103,23 @@ async function addProduct(event) {
         }</p>
         <p class="selectedProduct__price">${response[0].price}</p>
       </div>`;
+      // we create productID array for localStorage
       storageIDs = [
         ...storageIDs,
         {
           id: productID,
         },
       ];
+      // we add the productID of the added product to the remove button
       const elementRemoveBtns = Array.from(
         document.querySelectorAll(".selectedProduct__removeBtn")
       );
+      // arrays start a 0, but .length doesn't account for that
       elementRemoveBtns[elementRemoveBtns.length - 1].dataset.id = productID;
     }
+    // if ID has been set, add it to localStorage
     if (productID != "") {
       localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
     }
   }
-  //console.log("compare UI full")
 }
