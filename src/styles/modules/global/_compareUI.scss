@@ -1,0 +1,68 @@
+.compare {
+  position: sticky;
+  bottom: 0;
+  background-color: $primaryDetailColor;
+  display: grid;
+  grid-template-columns: 319px 319px 319px 168px;
+  column-gap: 15px;
+  padding: 15px;
+  margin: 20px 0;
+}
+.compare__selectedProduct {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 17px auto 22px;
+  @include whiteBackground($padding: 10px, $margin-block: 0px);
+  height: 120px;
+  grid-row: 1 / 2;
+}
+
+.compare__selectedProduct:nth-child(3) {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+}
+
+.selectedProduct__image {
+  grid-row: 1 / 4;
+  margin: auto auto;
+  width: 80%;
+  height: auto;
+}
+
+.selectedProduct__removeBtn {
+  margin-left: auto;
+}
+
+.selectedProduct__name {
+  max-width: 80px;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+  margin: auto 0;
+}
+
+.selectedProduct__price {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  margin-left: 40px;
+}
+
+.compare__infoBox {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+}
+
+.compare__compareButton {
+  grid-row: 1 / 2;
+  grid-column: 4 / 5;
+  display: flex;
+  @include button($width: 100%, $height: 100%);
+  align-items: center;
+}
+
+.compareButton__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 32px;
+}
