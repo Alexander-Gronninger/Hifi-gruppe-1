@@ -3,7 +3,7 @@
     padding-top: 50px;
 }
 
-.contact__inputGroup{
+.contact__input{
     display: flex;
     flex-direction: column;
     margin: 0 100px;
@@ -11,22 +11,22 @@
     padding: 5px;
 }
 
-.contact__input{
+.input__inputField{
     height: 38px;
 }
 
-.contact__label{
+.input__label{
     font-size: 18px;
     font-weight: bold;
 }
 
-.contact__errorMessage{
+.input__errorMessage{
     display: none;
     color: red;
     font-size: 14px;
 }
 
-.contact__successMessage{
+.input__successMessage{
     display: none;
     margin-left: 100px;
 }

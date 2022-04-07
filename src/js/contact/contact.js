@@ -13,8 +13,8 @@ function handleSubmit(event) {
 
     if (success) {
         form.reset()
-        form.querySelector(".contact__successMessage").style.display = "inline"
-        form.querySelector(".contact__successMessage").style.marginRight = "100px";
+        form.querySelector(".input__successMessage").style.display = "inline"
+        form.querySelector(".input__successMessage").style.marginRight = "100px";
     }
 }
 
@@ -42,11 +42,11 @@ function validateInput(element) {
 
 function showError(element) {
     success = false
-    form.querySelector(`#${element.id} + .contact__errorMessage`)
+    form.querySelector(`#${element.id} + .input__errorMessage`)
                 .style.display = "inline"
 }
 
 function hideError(element) {
-    form.querySelector(`#${element.id} + .contact__errorMessage`)
+    form.querySelector(`#${element.id} + .input__errorMessage`)
                 .style.display = "none"
 }
