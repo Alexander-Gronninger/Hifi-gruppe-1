@@ -1,75 +1,42 @@
-// const productLineHTML = `
-//     <div href="product.html?productId={{PRODUCT_ID}}" title="Gå til produktside for {{PRODUCT_TITLE}}" data-product-id="{{PRODUCT_ID}}">
-//         <section class="product">
-//             <!-- product image -->
-//             <div class="product__image-container">
-//                 <img
-//                     class="product__image"
-//                     src="{{PRODUCT_IMG_URL}}"
-//                     alt="{{PRODUCT_TITLE}}"
-//                     title="{{PRODUCT_TITLE}}" />
-//             </div>
-
-//             <!-- product details -->
-//             <div class="product__details">
-//                 <h3 class="product__title">{{PRODUCT_TITLE}}</h3>
-//                 <p class="product__description">{{PRODUCT_SUBTITLE}}</p>
-//             </div>
-
-//             <!-- product counter -->
-//             <div class="counter">
-//                 <div class="counter__subtract">-</div>
-//                 <div class="counter__amount">{{PRODUCT_AMOUNT}}</div>
-//                 <div class="counter__add">+</div>
-//             </div>
-
-//             <!-- product prices -->
-//             <div class="product__prices">
-//                 <p class="product__price">{{PRODUCT_PRICE}} kr</p>
-//             </div>
-
-//             <i class="product__remove fas fa-times"></i>
-//         </section>
-//     </div>`;
-
 const $productsContainer = document.querySelector(".cart__items");
-const cartButton = document.querySelector(".cart__button");
-const cartTitle = document.querySelector(".cart__title");
+const $cartButton = document.querySelector(".cart__button");
+const $cartTitle = document.querySelector(".cart__title");
+const $cartAmount = document.querySelector(".cart__amount");
+const $cartSubTotal = document.querySelector(".cart__totalSubAmount");
+const $cartSubTotalContainer = document.querySelector(".cart__subTotal");
 const API_URL = `http://23.88.41.248:3000/products`; //Benjamins server
-//const paymentBreadcrumb = document.querySelector(".breadcrumb__payment");
-
-// // Add eventListeners on document since we render and rerender element all the time
-// document.addEventListener("click", onSubtractClick);
-// document.addEventListener("click", onAddClick);
-// document.addEventListener("click", removeProductFromCart);
-
-renderCart();
 
 async function renderCart() {
+  // Get raw cart data from localstorage
   const cartRaw = localStorage.getItem("cart");
+
+  // Parse the raw data if it exists or just default to empty array
   const cart = cartRaw ? JSON.parse(cartRaw) : [];
 
-  // console.log(cartRaw);
-  // console.log(cart);
-
+  // If cart is empty
   if (cart.length === 0) {
-    // Make payment breadcrumb unclickable when cart is empty
-    //paymentBreadcrumb.style.pointerEvents = "none";
-
     // Replace title with cart is empty title
-    cartTitle.textContent = "Indkøbskurven er tom";
+    $cartTitle.textContent = "Your cart is empty";
 
     // When cart is empty replace go to payment with go to all products button
-    cartButton.textContent = "Se alle produkter";
-    cartButton.href = "product_list.html";
+    $cartButton.textContent = "See all products";
+    $cartButton.addEventListener("click", () => {
+      window.location.href = "/product_list";
+    });
+
+    // Remove sub total
+    $cartSubTotalContainer.style.display = "None";
 
     $productsContainer.innerHTML = ``;
     return;
   }
 
   let productsContainerHTML = "";
+  let cartAmount = 0;
+  let cartSubTotal = 0;
 
   Promise.all(
+    // Fetch cart items from database
     cart.map((item) =>
       fetch(`${API_URL}?id_like=${item.id}`).then(function (response) {
         if (response.status !== 200) {
@@ -80,6 +47,7 @@ async function renderCart() {
       })
     )
   ).then((data) => {
+    //
     productsContainerHTML = data.reduce((acc, item) => {
       let amount;
       item = item[0];
@@ -91,23 +59,31 @@ async function renderCart() {
         }
       });
 
-      console.log(item);
+      // Count products in cart
+      cartAmount += +amount;
+
+      // Count sub total
+      cartSubTotal += item.price * +amount;
 
       return (acc += `
-        <section class="cart__item">
+        <section class="cart__item" data-product-id="${item.id}">
           <a href="/product_details?id=${
             item.id
-          }" class="item__imgContainer" title="Go to ${item.name}">
+          }" class="item__imgContainer" title="Go to ${
+        item.brand + " " + item.name
+      }">
             <img
               class="item__img"
               src="${item.images.default}"
-              alt="${item.name}"
-              title="${item.name}"/>
+              alt="${item.brand + " " + item.name}"
+              title="${item.brand + " " + item.name}"/>
           </a>
         
           <div class="item__info">
-            <a href="/product_details?id=${item.id}" title="Go to ${item.name}">
-              <h2 class="item__title">${item.name}</h2>
+            <a href="/product_details?id=${item.id}" title="Go to ${
+        item.brand + " " + item.name
+      }">
+              <h2 class="item__title">${item.brand + " " + item.name}</h2>
             </a>
             <p class="item__stock">
               ${getStockElement(item.stock)}
@@ -124,7 +100,9 @@ async function renderCart() {
             <i class="fa-solid fa-plus"></i>
           </div>
         </div>
-          <p class="item__price">£ ${item.price * amount}.00</p>
+          <p class="item__price"><span class="price__poundSymbol">£</span> ${
+            item.price * +amount
+          }.00</p>
           <div class="item__delete">
             <i class="fa-solid fa-xmark"></i>
           </div>
@@ -133,6 +111,32 @@ async function renderCart() {
     }, "");
 
     $productsContainer.innerHTML = productsContainerHTML.trim();
+
+    // Add eventListeners
+    $subtractButtons = document.querySelectorAll(".counter__minus");
+    $subtractButtons.forEach((button) =>
+      button.addEventListener("click", (e) => onSubtractClick(e))
+    );
+
+    $addButtons = document.querySelectorAll(".counter__plus");
+    $addButtons.forEach((button) =>
+      button.addEventListener("click", (e) => onAddClick(e))
+    );
+
+    $deleteButtons = document.querySelectorAll(".item__delete");
+    $deleteButtons.forEach((button) =>
+      button.addEventListener("click", (e) => removeProductFromCart(e))
+    );
+
+    // Set cart amount
+    if (cartAmount > 99) {
+      $cartAmount.textContent = "99+";
+    } else {
+      $cartAmount.textContent = cartAmount;
+    }
+
+    // Set sub total
+    $cartSubTotal.innerHTML = `£ ${cartSubTotal}.00`;
   });
 
   function getStockElement(number) {
@@ -152,172 +156,109 @@ async function renderCart() {
 
     return `<span class="stock__color" style="background-color: ${stockColor}"></span> ${stockText}`;
   }
-
-  // cart.map((item) => {
-  //   // return response = await (await fetch(`${API_URL}?id_like=${700}`)).json();
-
-  //   console.log(item);
-  //   console.log(item.id);
-  //   console.log(item.color);
-  //   console.log(item.quantity);
-  // });
-
-  // let response = await (await fetch(`${API_URL}?id_like=${700}`)).json();
-
-  // console.log(response);
-
-  // cart.forEach((item) => {
-
-  //   console.log(response);
-  //   console.log(item.id);
-  // });
-
-  // Create a dictionary of the products, so we dont have to loop for every cart product
-  // const productsDict = window.products.reduce((acc, curr) => {
-  //   return {
-  //     ...acc,
-  //     [curr.id]: curr,
-  //   };
-  // }, {});
-
-  // Enrich the cart with products data
-  // const enrichedCart = cart.map((cartProduct) => {
-  //   const product = productsDict[cartProduct.productId];
-
-  //   return {
-  //     ...cartProduct,
-  //     product,
-  //   };
-  // });
-
-  // // Create all the HTML to append to productsContainer
-  // const productsContainerHTML = enrichedCart.reduce((acc, cartProduct) => {
-  //   return (acc += productLineHTML
-  //     .replaceAll("{{PRODUCT_ID}}", cartProduct.productId)
-  //     .replaceAll("{{PRODUCT_TITLE}}", cartProduct.product.title)
-  //     .replaceAll("{{PRODUCT_SUBTITLE}}", cartProduct.product.subtitle)
-  //     .replaceAll("{{PRODUCT_IMG_URL}}", cartProduct.product.images[0])
-  //     .replaceAll("{{PRODUCT_AMOUNT}}", cartProduct.amount)
-  //     .replaceAll(
-  //       "{{PRODUCT_PRICE}}",
-  //       cartProduct.product.price * cartProduct.amount
-  //     ));
-  // }, "");
-
-  // // Append the new HTML
-  // $productsContainer.innerHTML = productsContainerHTML.trim();
 }
 
-// function onSubtractClick(e) {
-//   // Check if we clicked on a subtract button
-//   if (!e.target || !e.target.classList.contains("counter__subtract")) {
-//     return;
-//   }
+function onSubtractClick(e) {
+  // Get the productId
+  const productId = +e.target
+    .closest("[data-product-id]")
+    .getAttribute("data-product-id");
 
-//   // Get the productId
-//   const productId = +e.target
-//     .closest("[data-product-id]")
-//     .getAttribute("data-product-id");
+  console.log("productId: ", productId);
 
-//   // Get raw cart data from localstorage
-//   const cartRaw = localStorage.getItem("cart");
+  // Get raw cart data from localstorage
+  const cartRaw = localStorage.getItem("cart");
 
-//   // Parse the raw data if it exists or just default to empty array
-//   const cart = cartRaw ? JSON.parse(cartRaw) : [];
+  // Parse the raw data if it exists or just default to empty array
+  const cart = cartRaw ? JSON.parse(cartRaw) : [];
 
-//   // Get the index of the product in cart, of the product we clicked on
-//   const cartProductIndex = cart.findIndex(
-//     (cartProduct) => cartProduct.productId === productId
-//   );
+  // Get the index of the product in cart, of the product we clicked on
+  const cartProductIndex = cart.findIndex(
+    (cartProduct) => +cartProduct.id === productId
+  );
 
-//   // Get the product
-//   const cartProduct = cart[cartProductIndex];
+  console.log("cartProductIndex: ", cartProductIndex);
+  // // Get the product
+  const cartProduct = cart[cartProductIndex];
 
-//   // Subtract amount if it doesn't reach zero, else remove the product entirely
-//   const newCart =
-//     cartProduct.amount - 1 > 0
-//       ? Object.assign(cart.slice(), {
-//           [cartProductIndex]: {
-//             ...cartProduct,
-//             amount: cartProduct.amount - 1,
-//           },
-//         })
-//       : cart.filter((cartProduct) => cartProduct.productId !== productId);
+  console.log("cartProduct: ", cartProduct);
 
-//   // Save new cart to localStorage
-//   localStorage.setItem("cart", JSON.stringify(newCart));
+  // Subtract amount if it doesn't reach zero, else remove the product entirely
+  const newCart =
+    cartProduct.quantity - 1 > 0
+      ? Object.assign(cart.slice(), {
+          [cartProductIndex]: {
+            ...cartProduct,
+            quantity: (cartProduct.quantity - 1).toString(),
+          },
+        })
+      : cart.filter((cartProduct) => +cartProduct.id !== productId);
 
-//   // Rerender the cart
-//   renderCart();
-// }
+  console.log(newCart);
 
-// function onAddClick(e) {
-//   // Check if we clicked on a subtract button
-//   if (!e.target || !e.target.classList.contains("counter__add")) {
-//     return;
-//   }
+  // Save new cart to localStorage
+  localStorage.setItem("cart", JSON.stringify(newCart));
 
-//   // Get the productId
-//   const productId = +e.target
-//     .closest("[data-product-id]")
-//     .getAttribute("data-product-id");
+  // Rerender the cart
+  renderCart();
+}
 
-//   // Get raw cart data from localstorage
-//   const cartRaw = localStorage.getItem("cart");
+function onAddClick(e) {
+  // Get the productId
+  const productId = +e.target
+    .closest("[data-product-id]")
+    .getAttribute("data-product-id");
 
-//   // Parse the raw data if it exists or just default to empty array
-//   const cart = cartRaw ? JSON.parse(cartRaw) : [];
+  // Get raw cart data from localstorage
+  const cartRaw = localStorage.getItem("cart");
 
-//   // Get the index of the product in cart, of the product we clicked on
-//   const cartProductIndex = cart.findIndex(
-//     (cartProduct) => cartProduct.productId === productId
-//   );
+  // Parse the raw data if it exists or just default to empty array
+  const cart = cartRaw ? JSON.parse(cartRaw) : [];
 
-//   // Get the product
-//   const cartProduct = cart[cartProductIndex];
+  // Get the index of the product in cart, of the product we clicked on
+  const cartProductIndex = cart.findIndex(
+    (cartProduct) => +cartProduct.id === productId
+  );
 
-//   // Add 1 to the product amount
-//   const newCart = Object.assign(cart.slice(), {
-//     [cartProductIndex]: {
-//       ...cartProduct,
-//       amount: cartProduct.amount + 1,
-//     },
-//   });
+  // Get the product
+  const cartProduct = cart[cartProductIndex];
 
-//   // Save new cart to localStorage
-//   localStorage.setItem("cart", JSON.stringify(newCart));
+  // Add 1 to the product amount
+  const newCart = Object.assign(cart.slice(), {
+    [cartProductIndex]: {
+      ...cartProduct,
+      quantity: (+cartProduct.quantity + 1).toString(),
+    },
+  });
 
-//   // Rerender cart
-//   renderCart();
-// }
+  // Save new cart to localStorage
+  localStorage.setItem("cart", JSON.stringify(newCart));
 
-// function removeProductFromCart(e) {
-//   // Check if we clicked on a x button
-//   if (!e.target || !e.target.classList.contains("product__remove")) {
-//     return;
-//   }
+  // Rerender cart
+  renderCart();
+}
 
-//   const productId = +e.target
-//     .closest("[data-product-id]")
-//     .getAttribute("data-product-id");
+function removeProductFromCart(e) {
+  // Get the productId
+  const productId = +e.target
+    .closest("[data-product-id]")
+    .getAttribute("data-product-id");
 
-//   // Get raw cart data from localstorage
-//   const cartRaw = localStorage.getItem("cart");
+  // Get raw cart data from localstorage
+  const cartRaw = localStorage.getItem("cart");
 
-//   // Parse the raw data if it exists or just default to empty array
-//   const cart = cartRaw ? JSON.parse(cartRaw) : [];
+  // Parse the raw data if it exists or just default to empty array
+  const cart = cartRaw ? JSON.parse(cartRaw) : [];
 
-//   // Remove the product from cart array
-//   const newCart = cart.filter(
-//     (cartProduct) => cartProduct.productId !== productId
-//   );
+  // Remove the product from cart array
+  const newCart = cart.filter((cartProduct) => +cartProduct.id !== productId);
 
-//   // Save new cart to localStorage
-//   localStorage.setItem("cart", JSON.stringify(newCart));
+  // Save new cart to localStorage
+  localStorage.setItem("cart", JSON.stringify(newCart));
 
-//   // Rerender cart
-//   renderCart();
-// }
+  // Rerender cart
+  renderCart();
+}
 
-// // Initial render of the cart
-// renderCart();
+// Initial render of the cart
+renderCart();

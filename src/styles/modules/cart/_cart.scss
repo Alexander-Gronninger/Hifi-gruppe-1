@@ -1,6 +1,7 @@
 .cart__item {
   display: grid;
   grid-template-columns: 220px 1fr auto 1fr auto;
+  -grid-template-rows: 150px;
 
   @include whiteBackground($padding: 20px, $margin-block: 20px);
 }
@@ -9,11 +10,25 @@
   display: grid;
 }
 
+.item__img {
+  height: 150px;
+  object-fit: contain;
+}
+
 .item__img,
-.item__info,
 .counter,
 .item__price {
   place-self: center;
+}
+
+.price__poundSymbol {
+  font-weight: 300;
+  color: $secondaryTextColor;
+}
+
+.item__info {
+  place-self: center start;
+  margin-left: 80px;
 }
 
 .item__title {
