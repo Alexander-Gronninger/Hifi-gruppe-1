@@ -18,7 +18,7 @@ async function renderCart() {
     // Replace title with cart is empty title
     $cartTitle.textContent = "Your cart is empty";
 
-    // When cart is empty replace go to payment with go to all products button
+    // When cart is empty replace go to payment with go to see all products button
     $cartButton.textContent = "See all products";
     $cartButton.addEventListener("click", () => {
       window.location.href = "/product_list";
@@ -27,6 +27,7 @@ async function renderCart() {
     // Remove sub total
     $cartSubTotalContainer.style.display = "None";
 
+    // Set product container to empty when last product is removed and cart is empty
     $productsContainer.innerHTML = ``;
     return;
   }
@@ -36,18 +37,17 @@ async function renderCart() {
   let cartSubTotal = 0;
 
   Promise.all(
-    // Fetch cart items from database
+    // Fetch localstorage cart items from database
     cart.map((item) =>
       fetch(`${API_URL}?id_like=${item.id}`).then(function (response) {
         if (response.status !== 200) {
-          console.log("næhæh!"); // TODO: bedre brugerbeskeder
           return [];
         }
         return response.json();
       })
     )
   ).then((data) => {
-    //
+    // Generate product cards
     productsContainerHTML = data.reduce((acc, item) => {
       let amount;
       item = item[0];
@@ -62,9 +62,10 @@ async function renderCart() {
       // Count products in cart
       cartAmount += +amount;
 
-      // Count sub total
+      // Count sub total price
       cartSubTotal += item.price * +amount;
 
+      // Return product card
       return (acc += `
         <section class="cart__item" data-product-id="${item.id}">
           <a href="/product_details?id=${
@@ -110,19 +111,22 @@ async function renderCart() {
         `);
     }, "");
 
+    // Print product cards to page
     $productsContainer.innerHTML = productsContainerHTML.trim();
 
-    // Add eventListeners
+    // Add eventListeners to minus icon on counter
     $subtractButtons = document.querySelectorAll(".counter__minus");
     $subtractButtons.forEach((button) =>
       button.addEventListener("click", (e) => onSubtractClick(e))
     );
 
+    // Add eventListeners to plus icon on counter
     $addButtons = document.querySelectorAll(".counter__plus");
     $addButtons.forEach((button) =>
       button.addEventListener("click", (e) => onAddClick(e))
     );
 
+    // Add eventListeners to delete icon on card
     $deleteButtons = document.querySelectorAll(".item__delete");
     $deleteButtons.forEach((button) =>
       button.addEventListener("click", (e) => removeProductFromCart(e))
@@ -135,10 +139,11 @@ async function renderCart() {
       $cartAmount.textContent = cartAmount;
     }
 
-    // Set sub total
+    // Set sub total price
     $cartSubTotal.innerHTML = `£ ${cartSubTotal}.00`;
   });
 
+  // Get stock state based on product quantity available
   function getStockElement(number) {
     let stockColor;
     let stockText;
@@ -154,6 +159,7 @@ async function renderCart() {
       stockText = "In stock";
     }
 
+    // Return stock element
     return `<span class="stock__color" style="background-color: ${stockColor}"></span> ${stockText}`;
   }
 }
@@ -163,8 +169,6 @@ function onSubtractClick(e) {
   const productId = +e.target
     .closest("[data-product-id]")
     .getAttribute("data-product-id");
-
-  console.log("productId: ", productId);
 
   // Get raw cart data from localstorage
   const cartRaw = localStorage.getItem("cart");
@@ -177,11 +181,9 @@ function onSubtractClick(e) {
     (cartProduct) => +cartProduct.id === productId
   );
 
-  console.log("cartProductIndex: ", cartProductIndex);
-  // // Get the product
+  // Get the product
   const cartProduct = cart[cartProductIndex];
-
-  console.log("cartProduct: ", cartProduct);
+  console.log(cartProduct);
 
   // Subtract amount if it doesn't reach zero, else remove the product entirely
   const newCart =
@@ -193,8 +195,6 @@ function onSubtractClick(e) {
           },
         })
       : cart.filter((cartProduct) => +cartProduct.id !== productId);
-
-  console.log(newCart);
 
   // Save new cart to localStorage
   localStorage.setItem("cart", JSON.stringify(newCart));
