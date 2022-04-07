@@ -7,18 +7,19 @@
   column-gap: 15px;
   padding: 15px;
   margin: 20px 0;
-  height: 120px;
+  height: 150px;
 }
 .compare__selectedProduct {
-  display: none;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 17px auto 22px;
   @include whiteBackground($padding: 10px, $margin-block: 0px);
   height: 120px;
   grid-row: 1 / 2;
+  z-index: 3;
 }
 
-.compare__selectedProduct:nth-child(3) {
+.compare__selectedProduct:nth-of-type(5) {
   grid-row: 1 / 2;
   grid-column: 3 / 4;
 }
@@ -26,8 +27,10 @@
 .selectedProduct__image {
   grid-row: 1 / 4;
   margin: auto auto;
-  width: 80%;
+  width: auto;
+  max-width: 120px;
   height: auto;
+  max-height: 100px;
 }
 
 .selectedProduct__removeBtn {
@@ -67,8 +70,8 @@
   width: 9.26px;
   height: 9.12px;
   margin-left: 53px;
-  margin-top: 55px;
-  z-index: 100;
+  margin-top: 90px;
+  z-index: 2;
 }
 
 .infoBox__text {
