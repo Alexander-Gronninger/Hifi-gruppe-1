@@ -53,6 +53,8 @@ async function addProduct(event) {
     if (storageIDs.length != productContainers.length) {
       // if there are localStorage items
       if (storageIDs.length > 0) {
+        // we show the UI, its hidden by default
+        compareContainer.style.display = "grid";
         // for each localStorage item
         for (let i = 0; i < storageIDs.length; i++) {
           // localStorage only contains product IDs
@@ -71,7 +73,7 @@ async function addProduct(event) {
               <p class="selectedProduct__name">${
                 response[0].brand + " " + response[0].name
               }</p>
-              <p class="selectedProduct__price">${response[0].price}</p>
+              <p class="selectedProduct__price">&pound; ${response[0].price}</p>
             </div>`;
           // we add dataset to the remove buttons, so we can identify which product is being removed
           // this is needed down the road to remove it from localStorage as well as the UI
@@ -92,6 +94,9 @@ async function addProduct(event) {
     ) {
       // else if productID has an actual value, we can add it
     } else if (productID != "") {
+      // we show the UI, its hidden by default
+      compareContainer.style.display = "grid";
+
       compareContainer.innerHTML += `
       <div class="compare__selectedProduct">
         <img class="selectedProduct__image" src="${
@@ -122,6 +127,16 @@ async function addProduct(event) {
       localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
     }
   }
+
+  // hiding the infobox
+  const infoBox = document.querySelector(".compare__infoBox");
+  console.log(infoBox);
+  console.log(productContainers.length);
+  if (productContainers.length == 2) {
+    infoBox.style.display = "none";
+  }
+
+  // arraying all x buttons so we can put eevntListeners on them
   const elementRemoveBtns = Array.from(
     document.querySelectorAll(".selectedProduct__removeBtn")
   );
@@ -132,14 +147,24 @@ async function addProduct(event) {
 }
 
 async function removeItem(event) {
+  // showing the infobox
+  const infoBox = document.querySelector(".compare__infoBox");
+  infoBox.style.display = "grid";
+
+  // we need array of buttons so we can tell which one was clicked
   const elementRemoveBtns = Array.from(
     document.querySelectorAll(".selectedProduct__removeBtn")
   );
+  // we get local storage IDs
   let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
 
+  // we set i to the index of the clicked item in the element array
   let i = elementRemoveBtns.indexOf(event.target);
+  // we remove equivalent entry from storage array
   storageIDs.splice(i, 1);
 
+  // we set localStorage to the updated array
   localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
+  // we remove the product comparison that was clicked on
   event.target.parentElement.remove();
 }
