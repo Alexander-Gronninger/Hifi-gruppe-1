@@ -1,0 +1,29 @@
+.counter {
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
+}
+
+.counter__minus,
+.counter__plus {
+  cursor: pointer;
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter__amount {
+  height: 37px;
+  min-width: 37px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-inline: 10px;
+  background: $primaryIconColor;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
