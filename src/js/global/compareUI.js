@@ -135,14 +135,11 @@ async function removeItem(event) {
   const elementRemoveBtns = Array.from(
     document.querySelectorAll(".selectedProduct__removeBtn")
   );
-  let newStorageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
+  let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
 
   let i = elementRemoveBtns.indexOf(event.target);
-  console.log(i);
-  delete newStorageIDs[i];
+  storageIDs.splice(i, 1);
 
-  console.log(newStorageIDs);
-
-  //localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
-  //event.target.parentElement.remove();
+  localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
+  event.target.parentElement.remove();
 }
