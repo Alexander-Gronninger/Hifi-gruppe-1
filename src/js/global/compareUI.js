@@ -122,4 +122,26 @@ async function addProduct(event) {
       localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
     }
   }
+  const elementRemoveBtns = Array.from(
+    document.querySelectorAll(".selectedProduct__removeBtn")
+  );
+
+  for (let i = 0; i < elementRemoveBtns.length; i++) {
+    elementRemoveBtns[i].addEventListener("click", removeItem);
+  }
+}
+
+function removeItem(event) {
+  let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
+  storageIDs.map((storageID) => {
+    if (storageID.id === event.target.dataset.id) {
+      console.log(storageIDs)
+      console.log(storageID)
+      console.log(storageIDs.delete('storageID'))
+      return { ...storageID };
+    } else return storageID;
+  });
+  localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
+
+  event.target.parentElement.remove();
 }
