@@ -183,7 +183,6 @@ function onSubtractClick(e) {
 
   // Get the product
   const cartProduct = cart[cartProductIndex];
-  console.log(cartProduct);
 
   // Subtract amount if it doesn't reach zero, else remove the product entirely
   const newCart =
@@ -194,7 +193,12 @@ function onSubtractClick(e) {
             quantity: (cartProduct.quantity - 1).toString(),
           },
         })
-      : cart.filter((cartProduct) => +cartProduct.id !== productId);
+      : Object.assign(cart.slice(), {
+          [cartProductIndex]: {
+            ...cartProduct,
+            quantity: cartProduct.quantity.toString(),
+          },
+        });
 
   // Save new cart to localStorage
   localStorage.setItem("cart", JSON.stringify(newCart));
