@@ -7,7 +7,7 @@
 }
 
 .invoice {
-  @include whiteBackground($max-width: 780px);
+  @include whiteBackground($max-width: 780px, $margin-block: 24px);
   padding: 45px;
   display: grid;
   grid-template-columns: 6fr 4fr;

@@ -1,6 +1,7 @@
 const API_URL = `http://23.88.41.248:3000`; //Benjamins server
 //const API_URL = `http://localhost:3000`; //lokal json server
 
+// getting all the elements
 const customerNameElement = document.querySelector(".customerInfo__name");
 const customerAddressElement = document.querySelector(".customerInfo__address");
 const customerCountryElement = document.querySelector(".customerInfo__country");
@@ -14,17 +15,23 @@ const vatPriceElement = document.querySelector(".total__vatPrice");
 const deliveryPriceElement = document.querySelector(".total__deliveryPrice");
 const totalPriceElement = document.querySelector(".total__totalPrice");
 
+// fetching order numer from URL
 let searchParams = new URLSearchParams(window.location.search);
 let orderID = searchParams.get("id");
 
+// getting the order information
 getOrder();
 async function getOrder() {
+  // fetching order info
   let orderResponse = await (
     await fetch(API_URL + `/orders/?id_like=${orderID}`)
   ).json();
+  // fetching customer info
   let customerResponse = await (
     await fetch(API_URL + `/customers/?id_like=${orderResponse[0].customerId}`)
   ).json();
+  
+  // inserting information into HTML
   customerNameElement.innerHTML = customerResponse[0].username;
   customerAddressElement.innerHTML =
     customerResponse[0].address.apartment +
@@ -43,8 +50,10 @@ async function getOrder() {
   orderDateElement.innerHTML = orderResponse[0].orderDate;
   orderCurrencyElement.innerHTML = orderResponse[0].currency;
 
+  // table content needs to be inside tbody element
   const invoiceSummeryElement = document.querySelector(".invoice__summery tbody");
 
+  // putting in table heading
   invoiceSummeryElement.innerHTML += `
 <tr class="summery__titles">
   <th class="titles__desc">ITEM DESCRIPTION</th>
@@ -53,6 +62,7 @@ async function getOrder() {
   <th>TOTAL</th>
 </tr>`;
 
+  // inserting information
   let subPrice = 0;
   for (let i = 0; i < orderResponse[0].products.length; i++) {
     productPrice =
