@@ -1,10 +1,13 @@
-const API_URL = `http://23.88.41.248:3000/products?_start=0&_end=4`;
+const API_URL = `http://23.88.41.248:3000/products?_start=0&_end=4`; //"start" & "end" parameters changes the amount of products we fetch
 const frontpageProducts__btn = document.getElementsByClassName("frontpageProducts__btn")[0];
 const productContainer = document.getElementsByClassName("frontpageProducts__productContainer")[0];
+
+//button-click redirects to product list
 frontpageProducts__btn.addEventListener("click", function () {
     window.location.href = "/product_list"
 })
 
+//we get all the products with fetch
 async function getProducts() {
     let response = await fetch(API_URL);
     let json = await response.json();
@@ -15,17 +18,14 @@ async function getProducts() {
     })
 }
 
+//function for printing the products in to our productContainer
 function printFrontPageProducts(data) {
     const NEW_ITEM = document.createElement("article");
     NEW_ITEM.classList.add("frontpageProduct");
     NEW_ITEM.addEventListener("click", function (event) {
-        console.log(event.target);
-        if (event.target.classList.contains("cartStockContainer__btn")) {
-            addProduct(data.id)
-        } else {
-            window.location.href = `/product_details/?id=${data.id}`
-        }
+        window.location.href = `/product_details/?id=${data.id}`
     });
+    //all the html code we are gonna generate
     NEW_ITEM.innerHTML = `
     <img
       src="${data.images.default}"
