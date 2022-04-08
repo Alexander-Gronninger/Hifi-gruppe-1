@@ -131,17 +131,18 @@ async function addProduct(event) {
   }
 }
 
-function removeItem(event) {
-  let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
-  storageIDs.map((storageID) => {
-    if (storageID.id === event.target.dataset.id) {
-      console.log(storageIDs)
-      console.log(storageID)
-      console.log(storageIDs.delete('storageID'))
-      return { ...storageID };
-    } else return storageID;
-  });
-  localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
+async function removeItem(event) {
+  const elementRemoveBtns = Array.from(
+    document.querySelectorAll(".selectedProduct__removeBtn")
+  );
+  let newStorageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
 
-  event.target.parentElement.remove();
+  let i = elementRemoveBtns.indexOf(event.target);
+  console.log(i);
+  delete newStorageIDs[i];
+
+  console.log(newStorageIDs);
+
+  //localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
+  //event.target.parentElement.remove();
 }
