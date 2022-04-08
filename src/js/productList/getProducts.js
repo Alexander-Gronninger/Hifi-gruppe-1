@@ -72,14 +72,16 @@ function addProduct(id) {
   if (!localStorageCart) {
     //if the localstorage (cart) doesnt exist, create it with the selected product
     const singleProduct = localDatabase.find(product => product.id == id);
-    const product = [{ id: id, quantity: 1, color: singleProduct.colors[0], price: singleProduct.price }]
+    let productName = singleProduct.name + " " + singleProduct.brand;
+    const product = [{ id: id, quantity: 1, color: singleProduct.colors[0], price: singleProduct.price, name: productName }]
     localStorage.setItem("cart", JSON.stringify(product))
   } else {
     const singleProductThroughCart = localStorageCart.find(product => product.id == id);
     if (!singleProductThroughCart) {
       //if the localstorage exists but the product doesnt, then add it
       const singleProduct = localDatabase.find(product => product.id == id);
-      const product = { id: id, quantity: 1, color: singleProduct.colors[0], price: singleProduct.price }
+      let productName = singleProduct.name + " " + singleProduct.brand;
+      const product = { id: id, quantity: 1, color: singleProduct.colors[0], price: singleProduct.price, name: productName }
       localStorageCart.push(product)
       localStorage.setItem("cart", JSON.stringify(localStorageCart))
     } else {

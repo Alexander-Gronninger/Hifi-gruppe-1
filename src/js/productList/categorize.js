@@ -48,6 +48,7 @@ function getSelectedSortings() {
 
 
 function filter() {
+    console.log(activeValues)
     let productContainers = document.querySelectorAll(".product")
     productContainers.forEach(productContainer => productContainer.remove())
 
@@ -64,6 +65,34 @@ function filter() {
     })
 }
 
+
+
+
+
+document.body.onload = function () {
+    let param = new URLSearchParams(window.location.search);
+    let category = param.get("category")
+    if (category) {
+        Array.from(categorizerItems).forEach(function (dataCategory) {
+            if (dataCategory.dataset.value == category.replace("+", " ")) {
+                setTimeout(() => {
+                    console.log(dataCategory.dataset.value)
+                    dataCategory.parentElement.style.maxHeight = dataCategory.parentElement.scrollHeight + "px"
+                    dataCategory.closest("div").querySelector("img").style.transform = "rotateX(180deg)"
+                    dataCategory.children[0].classList.toggle("dropdown__checkboxChecked")
+                    activeValues = {
+                        brand: [],
+                        category: [dataCategory.dataset.value],
+                        colors: [],
+                        price: ["1", "799"]
+                    };
+                    filter()
+                }, 400);
+            }
+        })
+    }
+};
+
 setTimeout(() => {
     let highestProductPrice = 0;
     localDatabase.forEach(function (product) {
@@ -76,4 +105,4 @@ setTimeout(() => {
     upperRange.value = highestProductPrice;
     upperRange.max = highestProductPrice;
     lowerRange.max = highestProductPrice;
-}, 750);
+}, 700);
