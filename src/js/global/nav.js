@@ -17,11 +17,3 @@ navAboutElement.addEventListener("mouseover", function () {
     categoryDropdown.style.maxHeight = "0"
 })
 
-
-const footerShop = document.getElementById("footerShopElement")
-footerShop.addEventListener("mouseover", function () {
-    categoryDropdown.style.visibility = "visible"
-    categoryDropdown.scrollIntoView()
-    categoryDropdown.style.maxHeight = categoryDropdown.scrollHeight + "px"
-})
-
