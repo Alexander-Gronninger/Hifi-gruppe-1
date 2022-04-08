@@ -35,10 +35,10 @@
 
 .selectedProduct__removeBtn {
   margin-left: auto;
+  color: $primaryDetailColor;
 }
 
 .selectedProduct__name {
-  max-width: 80px;
   font-weight: 600;
   font-size: 11px;
   line-height: 15px;
@@ -49,7 +49,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
-  margin-left: 40px;
+  text-align: right;
 }
 
 .compare__infoBox {

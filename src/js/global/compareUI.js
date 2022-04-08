@@ -69,7 +69,7 @@ async function addProduct(event) {
               <img class="selectedProduct__image" src="${
                 response[0].images.default
               }" alt="${response[0].brand + " " + response[0].name}" />
-              <i class="selectedProduct__removeBtn fa-solid fa-x"></i>
+              <i class="selectedProduct__removeBtn fa-solid fa-xmark"></i>
               <p class="selectedProduct__name">${
                 response[0].brand + " " + response[0].name
               }</p>
@@ -102,11 +102,11 @@ async function addProduct(event) {
         <img class="selectedProduct__image" src="${
           response[0].images.default
         }" alt="${response[0].brand + " " + response[0].name}" />
-        <i class="selectedProduct__removeBtn fa-solid fa-x"></i>
+        <i class="selectedProduct__removeBtn fa-solid fa-xmark"></i>
         <p class="selectedProduct__name">${
           response[0].brand + " " + response[0].name
         }</p>
-        <p class="selectedProduct__price">${response[0].price}</p>
+        <p class="selectedProduct__price">&pound; ${response[0].price}</p>
       </div>`;
       // we create productID array for localStorage
       storageIDs = [
@@ -155,6 +155,10 @@ async function removeItem(event) {
   const elementRemoveBtns = Array.from(
     document.querySelectorAll(".selectedProduct__removeBtn")
   );
+
+  if (elementRemoveBtns.length == 1) {
+    compareContainer.style.display = "none";
+  }
   // we get local storage IDs
   let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
 
