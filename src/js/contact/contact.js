@@ -18,7 +18,11 @@ function handleSubmit(event) {
     }
 }
 
+
 function validateInput(element) {
+
+    var textarea = document.getElementById("message")
+
     if(element.toString().includes("HTMLButtonElement")) {
         return
     }
@@ -38,6 +42,14 @@ function validateInput(element) {
                 showError(element)
         }
     }
+
+    if (element.name === "message") {
+        hideError(element)
+        if (element.value.length < 1) {
+            showError(element)
+        }
+    }
+        
 }
 
 function showError(element) {
