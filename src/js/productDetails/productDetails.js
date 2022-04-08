@@ -20,6 +20,7 @@ let productID = searchParams.get("id");
 
 //globally declared variable
 let price = "";
+let productName = "";
 
 // get product details from database
 getProduct();
@@ -79,6 +80,8 @@ async function getProduct() {
 
   //change global variable, so we dont have to make another API call when we send price to storage
   price = response[0].price;
+  productName = response[0].name +" " + response[0].brand;
+  
 
   //product specs
   let tableSpecs = `
@@ -295,6 +298,7 @@ async function toStorage() {
         quantity: productAmountNumber,
         color: sessionStorage.getItem("color"),
         price: price,
+        name: productName
       },
     ];
   }

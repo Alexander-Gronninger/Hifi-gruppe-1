@@ -1,7 +1,8 @@
 @mixin whiteBackground(
   $max-width: 1124px,
   $padding: 30px,
-  $margin-block: 50px
+  $margin-block: 50px,
+  $margin-inline: auto
 ) {
   background-color: $secondaryBackgroundColor;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
@@ -10,7 +11,7 @@
   max-width: $max-width;
   padding: $padding;
   margin-block: $margin-block;
-  margin-inline: auto;
+  margin-inline: $margin-inline;
 }
 
 .g-whiteBackground {
