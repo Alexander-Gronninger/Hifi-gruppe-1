@@ -13,8 +13,8 @@ function handleSubmit(event) {
 
     if (success) {
         form.reset()
-        form.querySelector(".input__successMessage").style.display = "inline"
-        form.querySelector(".input__successMessage").style.marginRight = "100px";
+        form.querySelector(".submit__successMessage").style.display = "inline"
+        form.querySelector(".submit__successMessage").style.marginRight = "100px";
     }
 }
 

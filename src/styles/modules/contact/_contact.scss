@@ -26,7 +26,7 @@
     font-size: 14px;
 }
 
-.input__successMessage{
+.submit__successMessage{
     display: none;
     margin-left: 100px;
 }
@@ -48,14 +48,14 @@
     color: $tertiaryTextColor;
 }
  
-.contact__button{
+.contact__submit{
     display: flex;
     justify-content: flex-end;
     margin-right: 220px;
     padding-top: 25px;
     padding-bottom: 100px;
 }
-.contact__submit{
+.contact__submitButton{
     width: 135px;
     height: 45px;
     border-radius: 3.5px;
