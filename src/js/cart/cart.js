@@ -17,6 +17,7 @@ async function renderCart() {
   if (cart.length === 0) {
     // Replace title with cart is empty title
     $cartTitle.textContent = "Your cart is empty";
+    $cartTitle.classList.add("cart__empty");
 
     // When cart is empty replace go to payment with go to see all products button
     $cartButton.textContent = "See all products";
