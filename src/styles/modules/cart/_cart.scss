@@ -1,3 +1,7 @@
+.cart__title {
+  color: $secondaryTextColor;
+}
+
 .cart__item {
   display: grid;
   grid-template-columns: 220px 1fr auto 1fr auto;
@@ -66,6 +70,10 @@
 .cart__content {
   max-width: 1124px;
   margin-inline: auto;
+}
+
+.item__price {
+  font-size: 1rem;
 }
 
 .item__delete {
