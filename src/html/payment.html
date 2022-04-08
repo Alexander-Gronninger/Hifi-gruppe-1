@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/styles.css" />
     <script src="/js/payment/paymentFormValidation.js" defer></script>
+    <script src="/js/payment/overviewinfo.js" defer></script>
 
     <!--font awesome link-->
     <script
@@ -18,6 +19,8 @@
   <body>
     @@include("./partials/nav.html", {"activeCart": "tools__link--active"})
     <main>
+      <div class="wrapper paymentcontainer">
+        
       <section class="paymentform">
         <h1 class="paymentform__title">Your info</h1>
         <form class="paymentform__form" action="">
@@ -58,6 +61,17 @@
           <input type="text" id="form__phonenr" class="form__input form__big" />
         </form>
       </section>
+      <div class="container__payment">
+          <section class="payment__overview ">
+            <h2 class="overview__title">Payment overview</h2>
+            <ul class="overview__productinfo">
+              
+              
+            </ul>
+          </section>
+          <button class="payment__button g-button">Checkout</button>
+        </div>
+    </div>
     </main>
     @@include("./partials/footer.html")
   </body>
