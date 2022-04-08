@@ -5,33 +5,39 @@ const productMainGrid__element =
 async function getProducts() {
   let response = await fetch(API_URL);
   let json = await response.json();
-  console.log(json);
   localDatabase = json;
 
   json.forEach(function (productData) {
-    printProduct(productData)
-  })
+    printProduct(productData);
+  });
+  // runs compareUI javascript, as it needs an up to date list of all products listed
+  loadElements();
 }
 
+import loadElements from "/js/global/compareUI.js";
 
 export function printProduct(data) {
   const NEW_ITEM = document.createElement("article");
+  NEW_ITEM.dataset.id = data.id;
   NEW_ITEM.classList.add("product");
   NEW_ITEM.addEventListener("click", function (event) {
-    console.log(event.target);
     if (event.target.classList.contains("cartStockContainer__btn")) {
-      addProduct(data.id)
+      addProduct(data.id);
+    } else if (
+      event.target.classList.contains("product__compareBtn") ||
+      event.target.classList.contains("compareBtn__icon")
+    ) {
     } else {
-      window.location.href = `/product_details/?id=${data.id}`
+      window.location.href = `/product_details/?id=${data.id}`;
     }
   });
-  NEW_ITEM.innerHTML = `<a class="product__compareBtn" href=""
+  NEW_ITEM.innerHTML = `<p class="product__compareBtn"
     >Compare
     <img
       class="compareBtn__icon"
       src="/images/sliders.svg"
       alt="Compare icon"
-  /></a>
+  /></p>
   <img
     src="${data.images.default}"
     alt="Picture of ${data.name}."
@@ -65,29 +71,45 @@ export function printProduct(data) {
 export default getProducts;
 export let localDatabase;
 
-
-
 function addProduct(id) {
   let localStorageCart = JSON.parse(localStorage.getItem("cart"));
   if (!localStorageCart) {
     //if the localstorage (cart) doesnt exist, create it with the selected product
-    const singleProduct = localDatabase.find(product => product.id == id);
+    const singleProduct = localDatabase.find((product) => product.id == id);
     let productName = singleProduct.name + " " + singleProduct.brand;
-    const product = [{ id: id, quantity: 1, color: singleProduct.colors[0], price: singleProduct.price, name: productName }]
-    localStorage.setItem("cart", JSON.stringify(product))
+    const product = [
+      {
+        id: id,
+        quantity: 1,
+        color: singleProduct.colors[0],
+        price: singleProduct.price,
+        name: productName,
+      },
+    ];
+    localStorage.setItem("cart", JSON.stringify(product));
   } else {
-    const singleProductThroughCart = localStorageCart.find(product => product.id == id);
+    const singleProductThroughCart = localStorageCart.find(
+      (product) => product.id == id
+    );
     if (!singleProductThroughCart) {
       //if the localstorage exists but the product doesnt, then add it
-      const singleProduct = localDatabase.find(product => product.id == id);
+      const singleProduct = localDatabase.find((product) => product.id == id);
       let productName = singleProduct.name + " " + singleProduct.brand;
-      const product = { id: id, quantity: 1, color: singleProduct.colors[0], price: singleProduct.price, name: productName }
-      localStorageCart.push(product)
-      localStorage.setItem("cart", JSON.stringify(localStorageCart))
+      const product = {
+        id: id,
+        quantity: 1,
+        color: singleProduct.colors[0],
+        price: singleProduct.price,
+        name: productName,
+      };
+      localStorageCart.push(product);
+      localStorage.setItem("cart", JSON.stringify(localStorageCart));
     } else {
       //if the localstorage exists and the product is there, then add one to the quantity
-      localStorageCart[localStorageCart.indexOf(singleProductThroughCart)].quantity = (singleProductThroughCart.quantity + 1);
-      localStorage.setItem("cart", JSON.stringify(localStorageCart))
+      localStorageCart[
+        localStorageCart.indexOf(singleProductThroughCart)
+      ].quantity = singleProductThroughCart.quantity + 1;
+      localStorage.setItem("cart", JSON.stringify(localStorageCart));
     }
   }
 }
