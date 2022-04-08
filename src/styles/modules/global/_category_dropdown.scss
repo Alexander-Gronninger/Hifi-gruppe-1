@@ -1,11 +1,16 @@
+#navShopElement:hover .categoryDropdown{
+  max-height:100%;
+  visibility: visible;
+}
+
 .categoryDropdown {
   z-index: 10000;
   position: absolute;
   box-shadow: (0px 4px 10px rgba(0, 0, 0, 0.1));
   background-color: #ffffff;
-  transform: translateY(2.26rem);
+  transform: translateY(2rem);
   overflow: hidden;
-  transition: max-height 0.35s ease;
+  transition: max-height 0.5s ease;
   visibility: hidden;
   max-height: 0px;
   display: flex;
