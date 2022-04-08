@@ -37,14 +37,10 @@
 }
 
 .paymentform__form {
-  background-color: $primaryTextColor;
   display: grid;
   grid-template-columns: 55% 45%;
-  column-gap: 6%;
-  max-width: 635px;
-  width: 100%;
-  padding-top: 40px;
-  padding-left: 61px;
-  padding-right: 61px;
-  padding-bottom: 51px;
+
+  
+  margin-inline: unset;
+  @include whiteBackground($max-width: 635px, $margin-inline:unset )
 }

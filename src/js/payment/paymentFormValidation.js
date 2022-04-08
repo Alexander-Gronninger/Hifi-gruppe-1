@@ -1,4 +1,7 @@
 const inputFields = document.querySelectorAll(".form__input");
+const labelStars = document.getElementsByClassName("form__star")
+
+console.log(labelStars)
 
 let regexname = /^[a-z ,.'-]+$/i;
 let regexmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -14,54 +17,60 @@ function validate(e) {
     if (!regexname.test(this.value)) {
       e.preventDefault();
       this.style.border = "2px solid red";
-      //alert("Please enter your name");
+      labelStars[0].style.display = "inline-block";
     } else {
       this.style.border = "none";
+      labelStars[0].style.display = "none";
     }
   }
   if (this.id == "form__city") {
     if (this.value == null || this.value == "") {
       e.preventDefault();
       this.style.border = "2px solid red";
-      //alert("Please enter your city");
+      labelStars[1].style.display = "inline-block";
     } else {
       this.style.border = "none";
+      labelStars[1].style.display = "none";
     }
   }
   if (this.id == "form__postalcode") {
     if (!regexzip.test(this.value)) {
       e.preventDefault();
       this.style.border = "2px solid red";
-      //alert("Please enter your ZIP");
+      labelStars[2].style.display = "inline-block";
     } else {
       this.style.border = "none";
+      labelStars[2].style.display = "none";
     }
   }
   if (this.id == "form__address") {
     if (this.value == null || this.value == "") {
       e.preventDefault();
       this.style.border = "2px solid red";
-      //alert("Please enter your name");
+      labelStars[3].style.display = "inline-block";
     } else {
       this.style.border = "none";
+      labelStars[3].style.display = "none";
     }
   }
   if (this.id == "form__useremail") {
     if (!regexmail.test(this.value)) {
       e.preventDefault();
       this.style.border = "2px solid red";
-      //alert("Please enter your email");
+      labelStars[4].style.display = "inline-block";
     } else {
       this.style.border = "none";
+      labelStars[4].style.display = "none";
     }
   }
   if (this.id == "form__phonenr") {
     if (!regexnumber.test(this.value)) {
       e.preventDefault();
       this.style.border = "2px solid red";
-      //alert("Please enter your phone number");
+      labelStars[5].style.display = "inline-block";
     } else {
       this.style.border = "none";
+      labelStars[5].style.display = "none";
     }
   }
 }

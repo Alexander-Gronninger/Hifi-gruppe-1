@@ -24,12 +24,16 @@
 @import "modules/global/inputField";
 @import "modules/global/button";
 @import "modules/global/breadcrumb";
+@import "modules/global/category_dropdown";
+@import "modules/global/form__star";
+@import "modules/global/counter";
 
 //index
 @import "modules/index/companyinfo";
 
-//paymentform
+//payment
 @import "modules/payment/paymentform";
+@import "modules/payment/overview";
 
 // product_list
 @import "modules/productList/addToCart__button";
@@ -46,13 +50,14 @@
 @import "modules/productDetails/productDetails";
 // faq
 @import "modules/faq/faq";
+//cart
+@import "modules/cart/cart";
 
 // ourHistory
 @import "modules/ourHistory/ourHistory";
 
-//contact
-@import "modules/contact/contact";
-
+//invoice
+@import "modules/invoice/invoice";
 
 ///////////// states /////////////
 
