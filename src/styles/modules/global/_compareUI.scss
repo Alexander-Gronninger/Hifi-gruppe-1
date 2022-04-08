@@ -35,7 +35,11 @@
 
 .selectedProduct__removeBtn {
   margin-left: auto;
-  color: $primaryDetailColor;
+  color: $tertiaryIconColor;
+}
+
+.selectedProduct__removeBtn:hover {
+  color: $tertiaryTextColor;
 }
 
 .selectedProduct__name {
@@ -95,10 +99,16 @@
   display: flex;
   @include button($width: 100%, $height: 100%);
   align-items: center;
+  justify-content: space-between;
 }
 
 .compareButton__text {
   font-weight: 400;
   font-size: 14px;
   line-height: 32px;
+}
+
+// needs to be a icon not an image
+.compareBtn__icon{
+  color: $primaryTextColor;
 }

@@ -121,19 +121,17 @@ async function addProduct(event) {
       );
       // arrays start a 0, but .length doesn't account for that
       elementRemoveBtns[elementRemoveBtns.length - 1].dataset.id = productID;
-    }
-    // if ID has been set, add it to localStorage
-    if (productID != "") {
-      localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
+
+      // hiding the infobox
+      const infoBox = document.querySelector(".compare__infoBox");
+      if (productContainers.length == 2) {
+        infoBox.style.display = "none";
+      }
     }
   }
-
-  // hiding the infobox
-  const infoBox = document.querySelector(".compare__infoBox");
-  console.log(infoBox);
-  console.log(productContainers.length);
-  if (productContainers.length == 2) {
-    infoBox.style.display = "none";
+  // if ID has been set, add it to localStorage
+  if (productID != "") {
+    localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
   }
 
   // arraying all x buttons so we can put eevntListeners on them
