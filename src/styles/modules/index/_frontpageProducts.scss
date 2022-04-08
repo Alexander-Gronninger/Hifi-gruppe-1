@@ -20,24 +20,8 @@
       row-gap: 1rem;
    }
 
-   &__productBtn {
-      transition: all ease 0.2s;
-      padding: 0.5rem 10%;
-      font-size: 0.875rem;
-      width: 50%;
-      margin: 0 auto;
-
-      &:hover {
-         scale: 1.1;
-         background-color: #fff;
-         outline: 2px solid $primaryButtonColor;
-         color: $primaryButtonColor;
-      }
-   }
-
    &__btn {
       transition: all ease 0.2s;
-      font-size: 0.875rem;
 
       &:hover {
          scale: 1.1;
@@ -46,6 +30,8 @@
          color: $primaryButtonColor;
       }
    }
+
+
 }
 
 .frontpageProduct {
@@ -68,4 +54,39 @@
    &:hover {
       box-shadow: inset 0 0 0 3px #e6e6e6;
    }
+
+   &__heading {
+      font-weight: 700;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      text-align: center;
+      transition: all 0.2s ease;
+
+      &:hover {
+         transform: scale(1.02);
+      }
+   }
+
+   &__productBtn {
+      transition: all ease 0.2s;
+      padding: 0.5rem 10%;
+      font-size: 0.875rem;
+      width: 50%;
+      margin: 0 auto;
+
+      &:hover {
+         scale: 1.1;
+         background-color: #fff;
+         outline: 2px solid $primaryButtonColor;
+         color: $primaryButtonColor;
+      }
+   }
+
+   &__price {
+      font-weight: 700;
+      font-size: 24px;
+      text-align: center;
+      margin: 1rem 0;
+   }
+
 }

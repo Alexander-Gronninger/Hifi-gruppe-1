@@ -32,9 +32,9 @@ function printFrontPageProducts(data) {
       alt="Picture of ${data.name}."
       class="product__img"
     />
-    <h2 class="product__heading">${data.brand} ${data.name}</h2>
-    <strong class="product__price">£ ${data.price}</strong>
-      <button class="frontpageProducts__productBtn btn g-button">Read more</button>`;
+    <h2 class="frontpageProduct__heading">${data.brand} ${data.name}</h2>
+    <strong class="frontpageProduct__price">£ ${data.price}</strong>
+      <button class="frontpageProduct__productBtn g-button">Read more</button>`;
     productContainer.appendChild(NEW_ITEM);
 }
 
