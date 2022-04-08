@@ -19,7 +19,8 @@
   <body>
     @@include("./partials/nav.html", {"activeCart": "tools__link--active"})
     <main>
-      <div class="wrapper">
+      <div class="wrapper paymentcontainer">
+        
       <section class="paymentform">
         <h1 class="paymentform__title">Your info</h1>
         <form class="paymentform__form" action="">
@@ -61,15 +62,15 @@
         </form>
       </section>
       <div class="container__payment">
-      <section class="payment__overview ">
-        <h2 class="overview__title">Payment overview</h2>
-        <ul class="overview__productinfo">
-          
-          
-        </ul>
-      </section>
-      <button class="payment__button g-button">Checkout</button>
-    </div>
+          <section class="payment__overview ">
+            <h2 class="overview__title">Payment overview</h2>
+            <ul class="overview__productinfo">
+              
+              
+            </ul>
+          </section>
+          <button class="payment__button g-button">Checkout</button>
+        </div>
     </div>
     </main>
     @@include("./partials/footer.html")
