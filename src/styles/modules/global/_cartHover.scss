@@ -35,18 +35,13 @@ nav .cart__item {
   grid-template-areas:
     "item__delete item__img item__info"
     ". item__counter item__price";
-  justify-content: flex-start;
-  align-items: flex-start;
+    justify-content: center;
 }
 
 nav .cart__items section{
   width: 100%;
   padding: 15px 0px;
   border-bottom: 1px solid #d2d2d2;
-}
-
-nav .cart__items section:last-child{
-  border-bottom: 1px solid transparent;
 }
 
 nav .cart .item__img {
@@ -68,6 +63,7 @@ nav .cart .item__stock {
 nav .cart .item__price {
   grid-area: item__price;
   text-align: right;
+  padding-top: 17px;
 }
 
 nav .cart .item__delete {
@@ -79,6 +75,7 @@ nav .cart .item__delete {
 
 nav .cart .counter{
   grid-area: item__counter;
+  margin-top: 17px;
 }
 
 nav .cart__item {
@@ -106,7 +103,7 @@ nav .cart__subTotal {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 100px 0px 20px;
+  padding: 100px 0px 15px;
 }
 
 nav .cart button {
