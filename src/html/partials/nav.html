@@ -36,54 +36,45 @@
         <p class="cart__amount">99+</p>
       </a>
 
-      <div class="shoppingDropdown">
-        <h2 class="cartTitle">CART <span>($ items)</span></h2>
-        <ul>
-          <article class="shoppingDropdown_item">
-            <button class="cartRemove"><i class="fa-solid fa-x"></i></button>
-            <div class="shoppingDropdown_product">
-              <div class="shoppingDropdown_productTop">
-                <img
-                  class="productImage"
-                  src="../images/hojtalere/harbeth_hl7es2.jpg"
-                  alt=""
-                />
-                <div>
-                  <h2 class="productName">Placeholder</h2>
-                  <p class="cartStockContainer__availability">
-                    In Stock <span class="availability__icon"></span>
-                  </p>
-                </div>
-              </div>
-              <div class="shoppingDropdown_productBottom">
-                <div class="shoppingDropdown_productAmount">
-                  <button class="counter__minus">
-                    <i class="fa-solid fa-minus"></i>
-                  </button>
-                  <p class="counter__amount"></p>
-                  <button class="counter__plus">
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-                <div class="productPrice">
-                  <p>$Price</p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </ul>
+      <main class="cart">
+        <div class="cart__content">
+          <h1 class="cart__title">Cart</h1>
+          <article class="cart__items">
 
-        <div class="shoppingDropdown_overview">
-          <div class="shoppingDropdown_overviewSum">
-            <p>Sum:</p>
-            <p>$Price</p>
-          </div>
-          <div class="shoppingDropdown_overviewButtons">
-            <a href="#" class="g-button">Go to cart</a>
-            <a href="#" class="g-button">Go to payment</a>
+            <section class="empty__cart">
+              <h2>Your cart is empty.</h2>
+            </section>
+            <section class="cart__item">
+              <a href="/product_details?id=700" class="item__imgContainer">
+                <img
+                  class="item__img"
+                  src="https://picsum.photos/id/1/500/300"
+                  alt=""
+                  title=""
+                />
+              </a>
+              <div class="item__info">
+                <a href="/product_details?id=700"
+                  ><h2 class="item__title">Auralic Aries G2.1 Streamer</h2></a
+                >
+                <p class="item__stock">
+                  <span class="stock__color"></span> few in stock
+                </p>
+              </div>
+              <!--@@//inc//lude("//cou//nter.html//")-->
+              <p class="item__price">£ 4,799.00</p>
+              <div class="item__delete"><i class="fa-solid fa-xmark"></i></div>
+            </section>-->
+          </article>
+          <p class="cart__subTotal">
+            Sub total<span class="cart__totalSubAmount">£299.00</span>
+          </p>
+          <div class="nav__cartButtons">
+            <button class="cart__button g-button">Go to cart</button>
+            <button class="cart__button g-button">Go to payment</button>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   </nav>
 </header>
