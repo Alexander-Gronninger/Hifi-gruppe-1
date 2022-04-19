@@ -14,10 +14,10 @@
   list-style: none;
   display: inline-block;
   vertical-align: middle;
-}
 
-.menu__item:not(:first-of-type) {
-  margin: 2rem 0;
+  &:not(:first-of-type) {
+    margin: 2rem 0;
+  }
 }
 
 .menu__link {
@@ -29,33 +29,33 @@
   padding: 0 15px;
   margin-inline: 5px;
   transition: color 0.2s ease-in-out;
-}
 
-.menu__link--active:after {
-  content: "";
-  position: absolute;
-  bottom: -0.3rem;
-  left: 0;
-  width: 100%;
-  border-bottom: 2px solid $primaryButtonColor;
-}
+  &--active:after {
+    content: "";
+    position: absolute;
+    bottom: -0.3rem;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid $primaryButtonColor;
+  }
 
-.menu__link:before {
-  content: "";
-  position: absolute;
-  bottom: -0.3rem;
-  width: 0;
-  border-bottom: solid 2px;
-  left: 0;
-  transition: width 0.2s ease-in-out;
-}
+  &:hover {
+    color: $primaryButtonColor;
+  }
 
-.menu__link:hover {
-  color: $primaryButtonColor;
-}
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -0.3rem;
+    width: 0;
+    border-bottom: solid 2px;
+    left: 0;
+    transition: width 0.2s ease-in-out;
+  }
 
-.menu__link:hover:before {
-  width: 100%;
+  &:hover:before {
+    width: 100%;
+  }
 }
 
 .menu__logo {
@@ -78,10 +78,10 @@
 .tools__searchIcon {
   color: $secondaryIconColor;
   cursor: pointer;
-}
 
-.tools__searchIcon:hover {
-  color: $primaryButtonColor;
+  &:hover {
+    color: $primaryButtonColor;
+  }
 }
 
 .tools__inputContainer,
@@ -102,33 +102,33 @@
   padding: 5px 8px;
   margin-inline: 12px;
   transition: color 0.2s ease-in-out;
-}
 
-.tools__link--active:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  border-bottom: 2px solid $primaryButtonColor;
-}
+  &--active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid $primaryButtonColor;
+  }
 
-.tools__link:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  border-bottom: solid 2px;
-  left: 0;
-  transition: width 0.2s ease-in-out;
-}
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    border-bottom: solid 2px;
+    left: 0;
+    transition: width 0.2s ease-in-out;
+  }
 
-.tools__link:hover {
-  color: $primaryButtonColor;
-}
+  &:hover {
+    color: $primaryButtonColor;
+  }
 
-.tools__link:hover:before {
-  width: 100%;
+  &:hover:before {
+    width: 100%;
+  }
 }
 
 .cart__amount {
