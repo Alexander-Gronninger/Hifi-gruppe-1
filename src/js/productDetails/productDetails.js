@@ -259,7 +259,7 @@ document
 async function toStorage() {
   // we get the amount of a given product
   const productAmountNumber =
-    document.querySelector(".counter__amount").innerHTML;
+    Number(document.querySelector(".counter__amount").innerHTML);
 
   // we fetch the cart, as we need to know it's length
   let items = JSON.parse(localStorage.getItem("cart")) || [];
@@ -282,7 +282,7 @@ async function toStorage() {
         // '...items' means it'll return all other items unmodified
         return {
           ...item,
-          quantity: Number(item.quantity) + Number(productAmountNumber),
+          quantity: item.quantity + productAmountNumber,
         };
         // and return the others
       } else return item;
