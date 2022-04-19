@@ -1,0 +1,29 @@
+.livechat__button{
+    appearance: none;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 200px;
+    bottom: 0px;
+    display: block;
+    height: 60px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0px;
+    line-height: 60px;
+    outline: none;
+    padding: 0px;
+    position: relative;
+    user-select: none;
+    z-index: 999;
+    border: none;
+    color: white;
+    cursor: pointer;
+    min-width: 60px;
+    transition: transform 200ms linear 0s;
+    -webkit-tap-highlight-color: transparent;
+    background-color: rgb(29, 46, 81);
+    transform-origin: calc(100% - 30px) center;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+    backface-visibility: hidden;
+}
