@@ -1,4 +1,4 @@
-const API_URL = `http://23.88.41.248:3000/products`;
+const API_URL = `https://hifi-jsonserver.herokuapp.com/products`;
 const productMainGrid__element =
   document.getElementsByClassName("productMain__grid")[0];
 
