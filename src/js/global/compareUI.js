@@ -21,7 +21,7 @@ async function loadElements() {
   }
 }
 
-const API_URL = `http://23.88.41.248:3000/products`; //Benjamins server
+const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
 
 // exporting function for use in getProducts.js
 export default loadElements;
