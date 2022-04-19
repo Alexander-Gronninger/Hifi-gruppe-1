@@ -16,7 +16,7 @@
   vertical-align: middle;
 }
 
-.menu__item:not(:first-of-type){
+.menu__item:not(:first-of-type) {
   padding: 2rem 0;
 }
 
@@ -34,7 +34,7 @@
 .menu__link--active:after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -0.3rem;
   left: 0;
   width: 100%;
   border-bottom: 2px solid $primaryButtonColor;
