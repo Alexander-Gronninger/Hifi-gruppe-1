@@ -1,4 +1,4 @@
-const API_URL = `http://23.88.41.248:3000`; //Benjamins server
+const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
 //const API_URL = `http://localhost:3000`; //lokal json server
 
 // getting all the elements
