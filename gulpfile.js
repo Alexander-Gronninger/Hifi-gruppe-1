@@ -37,6 +37,26 @@ function html() {
     .pipe(connect.reload());
 }
 
+function buildHtml() {
+  return gulp
+    .src("src/html/**/*.html")
+    .pipe(include())
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+      })
+    )
+    .pipe(
+      rename(function (path) {
+        if (path.basename != "index") {
+          path.dirname = path.dirname + "/" + path.basename;
+          path.basename = "index";
+        }
+      })
+    )
+    .pipe(gulp.dest("build"))
+}
+
 function css() {
   return gulp
     .src("src/styles/**/*.scss")
@@ -45,6 +65,12 @@ function css() {
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build/styles"))
     .pipe(connect.reload());
+}
+
+function buildCss() {
+  return gulp
+    .src("src/styles/**/*.scss")
+    .pipe(gulp.dest("build/styles"))
 }
 
 function js() {
@@ -57,12 +83,26 @@ function js() {
     .pipe(connect.reload());
 }
 
+function buildJs() {
+  return gulp
+    .src("src/js/**/*.js")
+    .pipe(uglifyjs())
+    .pipe(gulp.dest("build/js"))
+}
+
 function images() {
   return gulp
     .src("src/images/**/*")
     .pipe(imagemin())
     .pipe(gulp.dest("build/images"))
     .pipe(connect.reload());
+}
+
+function buildImages() {
+  return gulp
+    .src("src/images/**/*")
+    .pipe(imagemin())
+    .pipe(gulp.dest("build/images"))
 }
 
 function watchHTML() {
@@ -135,3 +175,5 @@ export const watcher = gulp.parallel([watchHTML, watchCSS, watchJS, watchIMG]);
 export { html, css, js, images, watchCSS, watchJS, watchIMG };
 //default is same as typing gulp
 export default gulp.parallel([watcher, server]);
+
+export const build = gulp.parallel([buildHtml, buildCss, buildJs, buildImages]);
