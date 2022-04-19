@@ -70,6 +70,7 @@ function css() {
 function buildCss() {
   return gulp
     .src("src/styles/**/*.scss")
+    .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest("build/styles"))
 }
 
