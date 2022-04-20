@@ -1,22 +1,39 @@
-.specs__table{
-    border-spacing: 0;
+.specs__table {
+  border-spacing: 0;
 }
 
 .spectable__value {
   border-left: 1px solid $secondaryDetailColor;
 }
 
+th.spectable__value {
+  font-weight: 700;
+  line-height: 40px;
+}
+
+th.spectable__value img {
+  max-width: 240px;
+  width: 100%;
+}
+
+.spectable__row {
+  height: 42px;
+}
+
 .spectable__row:nth-child(even) {
   background-color: $primaryDetailColor;
 }
 
-.spectable__key{
-  color:$secondaryIconColor;
+.spectable__key {
+  color: $secondaryIconColor;
   font-weight: 700;
+
 }
-.spectable__value{
-  /*filler*/
+.spectable__value {
+  font-weight: unset;
 }
-.spectable__key,.spectable__value {
-  font-size:14px;
+.spectable__key,
+.spectable__value {
+  font-size: 14px;
+  text-align: center;
 }
