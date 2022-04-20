@@ -80,8 +80,7 @@ async function getProduct() {
 
   //change global variable, so we dont have to make another API call when we send price to storage
   price = response[0].price;
-  productName = response[0].name +" " + response[0].brand;
-  
+  productName = response[0].brand + " " + response[0].name;
 
   //product specs
   let tableSpecs = `
@@ -122,10 +121,12 @@ async function getProduct() {
   for (let i = 0; i < Array.from(Object.keys(response[0].specs)).length; i++) {
     tableSpecs = `
   <tr>
-    <td class="table__name">${Array.from(Object.keys(response[0].specs))[i]
-      }</td>
-    <td class="table__value">${Array.from(Object.values(response[0].specs))[i]
-      }</td>
+    <td class="table__name">${
+      Array.from(Object.keys(response[0].specs))[i]
+    }</td>
+    <td class="table__value">${
+      Array.from(Object.values(response[0].specs))[i]
+    }</td>
   </tr>  `;
     specTable.innerHTML += tableSpecs;
   }
@@ -258,7 +259,7 @@ document
 async function toStorage() {
   // we get the amount of a given product
   const productAmountNumber =
-    document.querySelector(".counter__amount").innerHTML;
+    Number(document.querySelector(".counter__amount").innerHTML);
 
   // we fetch the cart, as we need to know it's length
   let items = JSON.parse(localStorage.getItem("cart")) || [];
@@ -281,7 +282,7 @@ async function toStorage() {
         // '...items' means it'll return all other items unmodified
         return {
           ...item,
-          quantity: Number(item.quantity) + Number(productAmountNumber),
+          quantity: item.quantity + productAmountNumber,
         };
         // and return the others
       } else return item;
@@ -298,10 +299,10 @@ async function toStorage() {
         quantity: productAmountNumber,
         color: sessionStorage.getItem("color"),
         price: price,
-        name: productName
+        name: productName,
       },
     ];
   }
   localStorage.setItem("cart", JSON.stringify(updatedItems));
-  console.log(updatedItems)
+  console.log(updatedItems);
 }
