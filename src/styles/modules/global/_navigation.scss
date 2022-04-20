@@ -1,5 +1,5 @@
 .header {
-  padding: 21px 34px;
+  padding: 0px 34px;
   background-color: $tertiaryBackgroundColor;
 }
 .navigation {
@@ -15,13 +15,18 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+.menu__item:not(:first-of-type){
+  padding: 2rem 0;
+}
+
 .menu__link {
   text-decoration: none;
   color: $primaryTextColor;
   cursor: pointer;
   display: block;
   position: relative;
-  padding: 5px 15px;
+  padding: 0 15px;
   margin-inline: 5px;
   transition: color 0.2s ease-in-out;
 }
@@ -38,13 +43,11 @@
 .menu__link:before {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -0.3rem;
   width: 0;
   border-bottom: solid 2px;
-}
-
-.menu__link:before {
   left: 0;
+  transition: width 0.2s ease-in-out;
 }
 
 .menu__link:hover {
@@ -53,10 +56,6 @@
 
 .menu__link:hover:before {
   width: 100%;
-}
-
-.menu__link:before {
-  transition: width 0.2s ease-in-out;
 }
 
 .menu__logo {
@@ -120,10 +119,8 @@
   bottom: 0;
   width: 0;
   border-bottom: solid 2px;
-}
-
-.tools__link:before {
   left: 0;
+  transition: width 0.2s ease-in-out;
 }
 
 .tools__link:hover {
@@ -132,10 +129,6 @@
 
 .tools__link:hover:before {
   width: 100%;
-}
-
-.tools__link:before {
-  transition: width 0.2s ease-in-out;
 }
 
 .cart__amount {
