@@ -4,7 +4,7 @@ const $cartTitle = document.querySelector(".cart__title");
 const $cartAmount = document.querySelector(".cart__amount");
 const $cartSubTotal = document.querySelector(".cart__totalSubAmount");
 const $cartSubTotalContainer = document.querySelector(".cart__subTotal");
-const API_URL = `http://23.88.41.248:3000/products`; //Benjamins server
+const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
 
 async function renderCart() {
   // Get raw cart data from localstorage
@@ -191,13 +191,13 @@ function onSubtractClick(e) {
       ? Object.assign(cart.slice(), {
           [cartProductIndex]: {
             ...cartProduct,
-            quantity: (cartProduct.quantity - 1).toString(),
+            quantity: (cartProduct.quantity - 1),
           },
         })
       : Object.assign(cart.slice(), {
           [cartProductIndex]: {
             ...cartProduct,
-            quantity: cartProduct.quantity.toString(),
+            quantity: cartProduct.quantity,
           },
         });
 
@@ -232,7 +232,7 @@ function onAddClick(e) {
   const newCart = Object.assign(cart.slice(), {
     [cartProductIndex]: {
       ...cartProduct,
-      quantity: (+cartProduct.quantity + 1).toString(),
+      quantity: (+cartProduct.quantity + 1),
     },
   });
 

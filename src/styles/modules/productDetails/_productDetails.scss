@@ -162,25 +162,6 @@
   font-weight: 400;
   margin-left: auto;
 }
-
-.details__minus,
-.details__plus {
-  font-size: 20px;
-  align-self: center;
-}
-
-.details__currentContainer {
-  width: 37px;
-  height: 37px;
-  background: $primaryIconColor;
-  border-radius: 3px;
-  margin: 0 12px;
-}
-
-.currentContainer__counter {
-  text-align: center;
-  line-height: 37px;
-}
 /* SPECS */
 .product__divider {
   margin-top: 85px;
