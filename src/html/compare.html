@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/js/compare/compare.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    @@include("./partials/nav.html", {"activeCart": "tools__link--active"})
+    <main>
+      <article class="wrapper">
+        <h1 class="paymentform__title">PRODUCT COMPARISON</h1>
+        <table class="g-whiteBackground specs__table">
+            <tr class="spectable__row">
+              <th class="spectable__key"></th>
+              <th class="spectable__value"><img src="/images/cd_afspillere/creek_classic_cd.jpg" alt="">Creek classic CD</th>
+              <th class="spectable__value"><img src="/images/cd_afspillere/creek_classic_cd.jpg" alt="">Creek classic CD</th>
+              <th class="spectable__value"><img src="/images/cd_afspillere/creek_classic_cd.jpg" alt="">Creek classic CD</th>
+          </tr>
+          <tr class="spectable__row">
+            <td class="spectable__key">SPECSFROMDATABASE</td>
+            <td class="spectable__value">ontheproduct0</td>
+            <td class="spectable__value">ontheproduct1</td>
+            <td class="spectable__value">ontheproduct2</td>
+          </tr>
+        </table>
+      </article>
+    </main>
+    @@include("./partials/footer.html")
+  </body>
+</html>
