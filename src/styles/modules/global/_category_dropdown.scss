@@ -1,5 +1,18 @@
-#navShopElement:hover .categoryDropdown{
-  max-height:100%;
+#navShopElement:hover .menu__link {
+  color: $primaryButtonColor;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -0.3rem;
+    border-bottom: solid 2px;
+    left: 0;
+    width: 100%;
+  }
+}
+
+#navShopElement:hover .categoryDropdown {
+  max-height: 100%;
   visibility: visible;
 }
 
@@ -8,7 +21,7 @@
   position: absolute;
   box-shadow: (0px 4px 10px rgba(0, 0, 0, 0.1));
   background-color: #ffffff;
-  transform: translateY(2rem);
+  top: 103.5px;
   overflow: hidden;
   transition: max-height 0.5s ease;
   visibility: hidden;
@@ -22,7 +35,7 @@
   }
 
   &__list {
-    color: #A39161;
+    color: #a39161;
     line-height: 2.5;
     font-size: 1rem;
     padding: 0 2.25rem;
@@ -40,76 +53,3 @@
     color: #000;
   }
 }
-
-
-// .categoryDropdown{
-//     position: absolute;
-//     color: red;
-//     transform: translateY(2.3rem);
-//     background-color: white;
-//     visibility: hidden;
-//     display: grid;
-//     grid-template-columns: repeat(6, 1fr);
-//     grid-template-rows: 1fr;
-//     left: 0;
-//     z-index: 1000;
-//     max-height: 0;
-//     transition: all 0.5s ease;
-//     overflow: hidden;
-//     box-shadow: (0px 4px 10px rgba(0, 0, 0, 0.1));
-//     border-radius: 0.1875rem;
-
-//     &__column{
-//       padding: 4rem 2rem;
-//     }
-// }
-
-// .column{
-//     margin:0 2rem;
-//     &__heading{
-//         padding-bottom: 1rem;
-//         font-size: 22.4px;
-//         font-weight: 600;
-//         color: $dropdownHeadingColor;
-//     }
-
-//     &__category{
-//         padding-bottom: 2rem;
-
-//     }
-
-
-//     &__link{
-//         text-decoration: none;
-//         color: $dropdownTextColor;
-//         cursor: pointer;
-//         display: inline-block;
-//         position: relative;
-//         margin: 1rem 0;
-//         transition: color 0.2s ease-in-out;
-//         &:before {
-//             content: "";
-//             position: absolute;
-//             bottom: 0;
-//             width: 0;
-//             border-bottom: solid 2px;
-//           }
-
-//           &:before {
-//             left: 0;
-//           }
-
-//           &:hover {
-//             color: $dropdownHeadingColor;
-//           }
-
-//           &:hover:before {
-//             width: 100%;
-//           }
-
-//           &:before {
-//             transition: width 0.2s ease-in-out;
-//           }
-//         }
-
-// }
