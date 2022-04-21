@@ -53,6 +53,11 @@ async function addProduct(event) {
     if (storageIDs.length != productContainers.length) {
       // if there are localStorage items
       if (storageIDs.length > 0) {
+        //removing infobox if we have 3 items
+        const infoBox = document.querySelector(".compare__infoBox");
+        if (storageIDs.length == 3){
+          infoBox.style.display = "none"
+        }
         // we show the UI, its hidden by default
         compareContainer.style.display = "grid";
         // for each localStorage item
@@ -158,11 +163,13 @@ async function removeItem(event) {
     compareContainer.style.display = "none";
   }
   // we get local storage IDs
-  let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
+  let storageIDs = JSON.parse(localStorage.getItem("compareIDs")) || [];
 
   // we set i to the index of the clicked item in the element array
   let i = elementRemoveBtns.indexOf(event.target);
   // we remove equivalent entry from storage array
+  console.log(i)
+  console.log(storageIDs)
   storageIDs.splice(i, 1);
 
   // we set localStorage to the updated array

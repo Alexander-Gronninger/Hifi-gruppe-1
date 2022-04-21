@@ -19,11 +19,6 @@
   z-index: 3;
 }
 
-.compare__selectedProduct:nth-of-type(5) {
-  grid-row: 1 / 2;
-  grid-column: 3 / 4;
-}
-
 .selectedProduct__image {
   grid-row: 1 / 4;
   margin: auto auto;
