@@ -1,15 +1,13 @@
-import "./styles.scss";
-import hifi_logo from "./images/logo.png";
+import navigation from "./components/navigation.js";
+import component from "./components/component.js";
 
-function component() {
+function index() {
   let element = document.createElement("div");
-  element.innerHTML = `<p>
-    Hello Webpack!</p>
-    <img src="${hifi_logo}" alt="logo">
-    `;
+  element.classList.add("wrapper");
+  element.appendChild(navigation());
+  element.appendChild(component());
   element.classList.add("styles.css");
 
   return element;
 }
-
-document.body.appendChild(component());
+document.body.appendChild(index());
