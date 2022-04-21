@@ -22,6 +22,9 @@ let productID = searchParams.get("id");
 let price = "";
 let productName = "";
 
+// setting dataset to the compare button, from URL id
+document.querySelector(".product__compareBtn").dataset.id = productID;
+
 // get product details from database
 getProduct();
 async function getProduct() {
@@ -130,7 +133,10 @@ async function getProduct() {
   </tr>  `;
     specTable.innerHTML += tableSpecs;
   }
+  // runs compareUI javascript, as it needs an up to date list of all products listed
+  loadElements();
 }
+import loadElements from "/js/global/compareUI.js";
 
 // changing product colors
 chooseColor();
@@ -258,8 +264,9 @@ document
 // async is required due to amount being able to change by javascript
 async function toStorage() {
   // we get the amount of a given product
-  const productAmountNumber =
-    Number(document.querySelector(".counter__amount").innerHTML);
+  const productAmountNumber = Number(
+    document.querySelector(".counter__amount").innerHTML
+  );
 
   // we fetch the cart, as we need to know it's length
   let items = JSON.parse(localStorage.getItem("cart")) || [];
