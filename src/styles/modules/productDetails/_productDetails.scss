@@ -13,10 +13,13 @@
   display: grid;
 }
 
-.product__background {
-  background: $secondaryBackgroundColor;
+.product__gallery_details {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.product__background {
+  background: $secondaryBackgroundColor;
   @include whiteBackground($margin-block: 0);
   margin-bottom: 50px;
 }
@@ -159,22 +162,56 @@
   font-weight: 400;
   margin-left: auto;
 }
-
-.details__minus,
-.details__plus {
-  font-size: 20px;
-  align-self: center;
+/* SPECS */
+.product__divider {
+  margin-top: 85px;
+  margin-bottom: 94px;
 }
 
-.details__currentContainer {
-  width: 37px;
-  height: 37px;
-  background: $primaryIconColor;
-  border-radius: 3px;
-  margin: 0 12px;
+.spec__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  margin-bottom: 48px;
 }
 
-.currentContainer__counter {
-  text-align: center;
-  line-height: 37px;
+.spec__table {
+  border-spacing: 0;
+  margin-bottom: 174px;
+  margin-left: 50px;
+}
+.table__name,
+.table__top,
+.table__bottom {
+  border-right: 1px solid $secondaryDetailColor;
+  width: 213px;
+}
+
+.table__name {
+  font-weight: 700;
+  padding-left: 62px;
+}
+
+.table__value {
+  width: 287px;
+  padding-left: 130px;
+}
+
+.table__value,
+.table__name {
+  font-size: 14px;
+  line-height: 19px;
+  height: 42px;
+}
+.table__value::first-letter,
+.table__name::first-letter {
+  text-transform: uppercase;
+}
+
+.spec__table tr:nth-child(even) {
+  background-color: $primaryDetailColor;
+}
+
+.spec__table tr:last-child {
+  background-color: $secondaryBackgroundColor;
 }

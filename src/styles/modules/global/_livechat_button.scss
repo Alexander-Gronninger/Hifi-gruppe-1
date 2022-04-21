@@ -1,0 +1,308 @@
+//livechat button
+.livechat__button {
+    right: 35px;
+    bottom: 20px;
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgb(0 0 0 / 10%);
+    cursor: pointer;
+    transition: transform 200ms linear 0s;
+    background-color: $secondaryBackgroundColor;
+    animation-duration: 250ms;
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        background-color: rgb(250, 250, 250);
+    }
+
+    &Img {
+        font-size: 40px;
+        color: $primaryButtonColor;
+        transition: all 0.5s;
+        transform: scale(0.8);
+    }
+}
+
+//livechat container
+
+.livechat__chat {
+    filter: drop-shadow(2px 4px 4px #00000025);
+    position: fixed;
+    right: 35px;
+    bottom: 100px;
+    z-index: 100;
+    background-color: $primaryBackgroundColor;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popout {
+    from {
+        transform: scale(0)
+    }
+
+    80% {
+        transform: scale(1.2)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.hideChat {
+    visibility: hidden;
+}
+
+//header section
+.chat__header {
+    background-color: $secondaryButtonColor;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__avatar {
+    max-width: 43px;
+    object-fit: contain;
+    margin-left: 21px;
+    border-radius: 50%;
+}
+
+
+.header__txtBox {
+    color: $secondaryBackgroundColor;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.txtBox__top {
+    font-size: 12px;
+    color: #000000;
+}
+
+.txtBox__bottom {
+    font-size: 14px;
+    color: $primaryBackgroundColor;
+    display: flex;
+    gap: 6px;
+}
+
+//header section txtBox__availability
+.txtBox__availability {
+    width: 9px;
+    height: 9px;
+    align-self: center;
+    border-radius: 50%;
+}
+
+.txtBox__availability--offline {
+    background-color: #FF0000;
+}
+
+.txtBox__availability--online {
+    background-color: #008000;
+}
+
+//messages
+.chat__messages {
+    height: 300px;
+    overflow-y: auto;
+    background-color: $primaryBackgroundColor;
+    display: flex;
+    gap: 27px;
+    flex-direction: column;
+    padding: 21px;
+}
+
+.messages {
+    position: relative;
+    background-color: $secondaryBackgroundColor;
+    width: 80%;
+    display: flex;
+    gap: 16px;
+    border-radius: 3px;
+    filter: drop-shadow(2px 4px 4px #00000025);
+    word-break: break-word;
+    white-space: pre-wrap;
+
+    &__avatar {
+        width: 22px;
+        object-fit: contain;
+        align-self: flex-start;
+        margin-top: 11px;
+        margin-left: 11px;
+        border-radius: 50%;
+    }
+
+    &__txt {
+        font-size: 12px;
+        padding: 11px 11px 11px 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 22px;
+        bottom: -8px;
+        height: 0;
+        width: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid $secondaryBackgroundColor;
+    }
+}
+
+.messages--left {
+    align-self: flex-start;
+}
+
+.messages--right {
+    align-self: flex-end;
+
+    &::after {
+        left: unset;
+        right: 22px;
+    }
+}
+
+//input field
+.msgForm {
+    &__top {
+        background-color: $secondaryBackgroundColor;
+        height: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 21px;
+    }
+
+    //submit btn
+    &__btn {
+        transition: background-color 0.3s;
+        width: 100%;
+        height: 64px;
+        border: none;
+        background-color: #FF6900;
+        color: $primaryBackgroundColor;
+        font-size: 14px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #e06914;
+        }
+    }
+}
+
+.icons__input {
+    display: none;
+}
+
+.icons__icon {
+    cursor: pointer;
+}
+
+.top__input {
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    width: 80%;
+    padding: 15px 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.top__icons {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    color: $tertiaryIconColor;
+}
+
+//loading animation
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    margin-left: 60px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: grey;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}

@@ -14,6 +14,7 @@
 @import "layout/productList/product";
 @import "layout/productList/productMain__grid";
 
+
 ///////////// modules /////////////
 
 // global
@@ -25,12 +26,18 @@
 @import "modules/global/button";
 @import "modules/global/breadcrumb";
 @import "modules/global/cartHover";
+@import "modules/global/category_dropdown";
+@import "modules/global/form__star";
+@import "modules/global/counter";
+@import "modules/global/livechat_button";
 
 //index
 @import "modules/index/companyinfo";
+@import "modules/index/_frontpageProducts.scss";
 
-//paymentform
+//payment
 @import "modules/payment/paymentform";
+@import "modules/payment/overview";
 
 // product_list
 @import "modules/productList/addToCart__button";
@@ -41,14 +48,25 @@
 @import "modules/productList/productMain__primaryHeading";
 @import "modules/productList/cartStockContainer__availability";
 @import "modules/productList/product__img";
+@import "modules/productList/categorizer";
 
 // product_details
 @import "modules/productDetails/productDetails";
 // faq
 @import "modules/faq/faq";
+//cart
+@import "modules/cart/cart";
 
 // ourHistory
 @import "modules/ourHistory/ourHistory";
+
+//compareUI
+@import "modules/global/compareUI";
+// contact
+@import "modules/contact/contact.scss";
+
+//invoice
+@import "modules/invoice/invoice";
 
 ///////////// states /////////////
 

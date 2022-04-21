@@ -9,13 +9,43 @@ import sassImport from "sass";
 import gulpSass from "gulp-sass";
 import rename from "gulp-rename";
 import include from "gulp-file-include";
+import htmlmin from "gulp-htmlmin";
+import sourcemaps from "gulp-sourcemaps";
 
 const sass = gulpSass(sassImport);
 
 function html() {
   return gulp
     .src("src/html/**/*.html")
+    .pipe(sourcemaps.init())
     .pipe(include())
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+      })
+    )
+    .pipe(
+      rename(function (path) {
+        if (path.basename != "index") {
+          path.dirname = path.dirname + "/" + path.basename;
+          path.basename = "index";
+        }
+      })
+    )
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("build"))
+    .pipe(connect.reload());
+}
+
+function buildHtml() {
+  return gulp
+    .src("src/html/**/*.html")
+    .pipe(include())
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+      })
+    )
     .pipe(
       rename(function (path) {
         if (path.basename != "index") {
@@ -25,23 +55,40 @@ function html() {
       })
     )
     .pipe(gulp.dest("build"))
-    .pipe(connect.reload());
 }
 
 function css() {
   return gulp
     .src("src/styles/**/*.scss")
+    .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build/styles"))
     .pipe(connect.reload());
+}
+
+function buildCss() {
+  return gulp
+    .src("src/styles/**/*.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(gulp.dest("build/styles"))
 }
 
 function js() {
   return gulp
     .src("src/js/**/*.js")
+    .pipe(sourcemaps.init())
     .pipe(uglifyjs())
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build/js"))
     .pipe(connect.reload());
+}
+
+function buildJs() {
+  return gulp
+    .src("src/js/**/*.js")
+    .pipe(uglifyjs())
+    .pipe(gulp.dest("build/js"))
 }
 
 function images() {
@@ -50,6 +97,13 @@ function images() {
     .pipe(imagemin())
     .pipe(gulp.dest("build/images"))
     .pipe(connect.reload());
+}
+
+function buildImages() {
+  return gulp
+    .src("src/images/**/*")
+    .pipe(imagemin())
+    .pipe(gulp.dest("build/images"))
 }
 
 function watchHTML() {
@@ -122,3 +176,5 @@ export const watcher = gulp.parallel([watchHTML, watchCSS, watchJS, watchIMG]);
 export { html, css, js, images, watchCSS, watchJS, watchIMG };
 //default is same as typing gulp
 export default gulp.parallel([watcher, server]);
+
+export const build = gulp.parallel([buildHtml, buildCss, buildJs, buildImages]);

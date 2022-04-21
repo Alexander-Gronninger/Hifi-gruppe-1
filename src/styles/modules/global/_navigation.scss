@@ -1,5 +1,5 @@
 .header {
-  padding: 21px 34px;
+  padding: 0px 34px;
   background-color: $tertiaryBackgroundColor;
 }
 .navigation {
@@ -10,53 +10,58 @@
   margin: 0 auto;
 }
 
+.navigation__menu {
+  display: flex;
+  height: 100%;
+}
+
 .menu__item {
   list-style: none;
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
+
+  &:first-of-type {
+    margin: 21px 0;
+  }
 }
+
 .menu__link {
   text-decoration: none;
   color: $primaryTextColor;
   cursor: pointer;
   display: block;
   position: relative;
-  padding: 5px 15px;
+  padding: 0 15px;
   margin-inline: 5px;
   transition: color 0.2s ease-in-out;
-}
 
-.menu__link--active:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  border-bottom: 2px solid $primaryButtonColor;
-}
+  align-self: center;
 
-.menu__link:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  border-bottom: solid 2px;
-}
+  &--active:after {
+    content: "";
+    position: absolute;
+    bottom: -0.3rem;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid $primaryButtonColor;
+  }
 
-.menu__link:before {
-  left: 0;
-}
+  &:hover {
+    color: $primaryButtonColor;
+  }
 
-.menu__link:hover {
-  color: $primaryButtonColor;
-}
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -0.3rem;
+    width: 0;
+    border-bottom: solid 2px;
+    left: 0;
+    transition: width 0.2s ease-in-out;
+  }
 
-.menu__link:hover:before {
-  width: 100%;
-}
-
-.menu__link:before {
-  transition: width 0.2s ease-in-out;
+  &:hover:before {
+    width: 100%;
+  }
 }
 
 .menu__logo {
@@ -79,10 +84,10 @@
 .tools__searchIcon {
   color: $secondaryIconColor;
   cursor: pointer;
-}
 
-.tools__searchIcon:hover {
-  color: $primaryButtonColor;
+  &:hover {
+    color: $primaryButtonColor;
+  }
 }
 
 .tools__inputContainer,
@@ -103,39 +108,33 @@
   padding: 5px 8px;
   margin-inline: 12px;
   transition: color 0.2s ease-in-out;
-}
 
-.tools__link--active:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  border-bottom: 2px solid $primaryButtonColor;
-}
+  &--active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid $primaryButtonColor;
+  }
 
-.tools__link:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  border-bottom: solid 2px;
-}
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    border-bottom: solid 2px;
+    left: 0;
+    transition: width 0.2s ease-in-out;
+  }
 
-.tools__link:before {
-  left: 0;
-}
+  &:hover {
+    color: $primaryButtonColor;
+  }
 
-.tools__link:hover {
-  color: $primaryButtonColor;
-}
-
-.tools__link:hover:before {
-  width: 100%;
-}
-
-.tools__link:before {
-  transition: width 0.2s ease-in-out;
+  &:hover:before {
+    width: 100%;
+  }
 }
 
 .cart__amount {
