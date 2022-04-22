@@ -33,11 +33,6 @@ function changeTitle(txt){
 if (searchParams) {
   getProducts()
   searchField.value = searchParams;
-  for (let i=1; i>0; i++){
-    for (let i=1; i>0; i++){
-      console.log("sut min lort")
-    }
-  }
 }
 
 
