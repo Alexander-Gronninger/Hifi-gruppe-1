@@ -2,8 +2,7 @@ const path = require("path")
 
 module.exports = {
     entry: {
-        index: "./src/index.js",
-        subpage: "./src/subpage.js"
+        index: "./src/components/index.js",
     },
     output: {
         filename: "[name].bundle.js",
@@ -29,7 +28,10 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: ['@babel/preset-env'],
+                        plugins: [
+                            ["@babel/transform-runtime"]
+                        ]
                     }
                 }
             },
