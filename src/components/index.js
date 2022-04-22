@@ -1,6 +1,7 @@
 //styles
 import "../styles/modules/index/companyinfo.scss";
 import "../styles/modules/index/frontpageProducts.scss";
+import "../styles/modules/productList/product__img.scss";
 
 import header from "./header.js";
 import livechat from "./livechat.js";

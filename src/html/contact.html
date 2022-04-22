@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--font awesome link-->
+  <script src="https://kit.fontawesome.com/377d53b4a7.js" crossorigin="anonymous"></script>
+
+  <title>Contact</title>
+  <link rel="stylesheet" href="/styles/styles.css" />
+</head>
+
+<body>
+  @@include("./partials/nav.html", {"activeContactUs": "menu__link--active"})
+  <div class="wrapper">
+    <h1 id="page__title">Get in touch with us</h1>
+    <main class="g-whiteBackground">
+      <form class="contact__form">
+        <div class="contact__input">
+          <label class="input__label" for="name">Full name <span style="color: red">*</span>
+          </label>
+          <input class="input__inputField g-inputField" type="text" id="name" name="name" />
+          <span class="input__errorMessage">Insert Name!</span>
+        </div>
+        <div class="contact__input">
+          <label class="input__label" for="email">Email <span style="color: red">*</span>
+          </label>
+          <input class="input__inputField g-inputField" type="email" name="email" id="email" />
+          <span class="input__errorMessage">Incorrect Email!</span>
+        </div>
+
+        <div class="contact__input">
+          <label class="input__label" for="subject">Subject <span style="color: red">*</span>
+          </label>
+          <input class="input__inputField g-inputField" type="text" name="subject" id="subject" />
+          <span class="input__errorMessage">Declare Subject!</span>
+        </div>
+        <div class="contact__input">
+          <label class="input__label" for="message">Message <span style="color: red">*</span>
+          </label>
+          <textarea class="g-inputField" name="message" type="text" id="message" cols="30" rows="10"
+            style="resize: none"></textarea>
+          <span class="input__errorMessage">Insert Message!</span>
+        </div>
+        <div class="contact__submit">
+          <span class="submit__successMessage">Your message has been sent</span>
+          <button type="submit" class="contact__submitButton g-button">
+            Submit
+          </button>
+        </div>
+      </form>
+      @@include("./partials/livechat_button.html")
+    </main>
+    <p class="contact__text">
+      Visit our sister companies
+      <a href="#" class="contact__link">Home Sound</a> and
+      <a href="#" class="contact__link">The Movie Rooms</a> part of the Hi-Fi
+      Corner Group.
+    </p>
+  </div>
+
+  @@include("./partials/footer.html")
+
+  <script src="/js/contact/contact.js" defer></script>
+</body>
+
+</html>
