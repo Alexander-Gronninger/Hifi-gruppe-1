@@ -22,7 +22,7 @@ async function getProducts() {
     filtered.forEach(product => printProduct(product))
     changeTitle(`Showing results for '${searchParams}'`)
   } else {
-    changeTitle(`John says no results`)
+    changeTitle(`There are no results for "${searchParams}"`)
   }
 }
 
@@ -34,7 +34,6 @@ if (searchParams) {
   getProducts()
   searchField.value = searchParams;
 }
-
 
 
 
