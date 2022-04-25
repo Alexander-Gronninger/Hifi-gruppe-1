@@ -18,6 +18,8 @@
 <body>
   @@include("./partials/nav.html", {"activeCart": "tools__link--active"})
   <main>
+    @@include("./partials/breadcrumb.html", {"activeInvoice":
+    "breadcrumb__item--active"})
     <div class="wrapper paymentcontainer">
       <section class="paymentform">
         <h1 class="paymentform__title">Your info</h1>
@@ -51,6 +53,43 @@
           Checkout
         </button>
       </div>
+      <section class="deliveryMethods">
+        <h1 class="deliveryMethods__heading">Select your prefered delivery method</h1>
+        <article class="deliveryCard">
+          <div class="deliveryCard__btnContainer">
+            <button class="deliveryCard__btn selectedDeliveryBtn">Home delivery</button>
+            <button class="deliveryCard__btn">Click-and-collect</button>
+            <button class="deliveryCard__btn">Post office</button>
+          </div>
+          <div class="deliveryCard__textContainer">
+            <h2 class="deliveryCard__textContainerHeading">Your order will be shipped to</h2>
+            <p class="deliveryCard__textContainerParagraph">61 Church St</p>
+            <p class="deliveryCard__textContainerParagraph">Berwick-upon-Tweed</p>
+            <p class="deliveryCard__textContainerParagraph">Northumberland</p>
+            <p class="deliveryCard__textContainerParagraph">TD15 1EE</p>
+            <p class="deliveryCard__textContainerParagraph">United Kingdom</p>
+          </div>
+        </article>
+      </section>
+      <section class="paymentMethods">
+        <h2 class="paymentMethods__heading">Choose payment method</h2>
+        <article class="paymentMethods__paymentOptions">
+          <div class="paymentMethod"><input type="radio" name="paymentMethod" id="">
+            <img src="/images/cardPayment.svg" alt="Payment Method Cards" class="cardMethod__img">
+            <label for="paymentMethod">Pay with credit card</label>
+          </div>
+          <hr class="paymentRow">
+          <div class="paymentMethod"><input type="radio" name="paymentMethod" id="">
+            <img src="/images/applepay.svg" alt="Payment Method Paypal" class="paymentMethods__img">
+            <label for="paymentMethod">Pay with Paypal</label>
+          </div>
+          <hr class="paymentRow">
+          <div class="paymentMethod"><input type="radio" name="paymentMethod" id="">
+            <img src="/images/paypal.svg" alt="Payment Method Apple Pay" class="paymentMethods__img">
+            <label for="paymentMethod">Pay with Apple Pay</label>
+          </div>
+        </article>
+      </section>
     </div>
     @@include("./partials/livechat_button.html")
   </main>
