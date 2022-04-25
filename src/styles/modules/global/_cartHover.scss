@@ -28,6 +28,13 @@ nav .cart {
   transition: opacity .4s linear;
 }
 
+nav .cart__empty{
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 0px 0px 80px;
+}
+
 nav .cart__item {
   display: grid;
   grid-template-columns: auto 1fr 2fr;

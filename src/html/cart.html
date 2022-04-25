@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/styles/styles.css" />
-  <script src="/js/cart/cart.js" defer></script>
 
   <!--font awesome link-->
   <script src="https://kit.fontawesome.com/377d53b4a7.js" crossorigin="anonymous"></script>
 
+  <script src="/js/cart/cart.js" defer></script>
   <title>Document</title>
 </head>
 
 <body>
-  @@include("./partials/nav.html", {"activeCart": "tools__link--active"})
+  @@include("./partials/cart_nav.html", {"activeCart": "tools__link--active"})
   <div class="wrapper">
     <main class="cart">
       @@include("./partials/breadcrumb.html", {"activeCart":
