@@ -143,6 +143,10 @@ nav .cart .nav__cartSubTotal{
   justify-content: space-between;
 }
 
+nav .cart__empty button{
+  display: none;
+}
+
 nav .cart:hover,
 nav .tools__cart:hover ~ .cart {
   opacity: 100%;
