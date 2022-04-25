@@ -4,7 +4,8 @@ const $cartTitle = document.querySelector(".cart__title");
 const $cartAmount = document.querySelector(".cart__amount");
 const $cartSubTotal = document.querySelector(".cart__totalSubAmount");
 const $cartSubTotalContainer = document.querySelector(".cart__subTotal");
-const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
+const CART_API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
+const gButtonCall = document.querySelectorAll(".g-button");
 
 async function renderCart() {
   // Get raw cart data from localstorage
@@ -40,7 +41,7 @@ async function renderCart() {
   Promise.all(
     // Fetch localstorage cart items from database
     cart.map((item) =>
-      fetch(`${API_URL}?id_like=${item.id}`).then(function (response) {
+      fetch(`${CART_API_URL}?id_like=${item.id}`).then(function (response) {
         if (response.status !== 200) {
           return [];
         }

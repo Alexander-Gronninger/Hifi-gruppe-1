@@ -3,7 +3,7 @@
 }
 
 nav .cart::before {
-  z-index: 10;
+  z-index: 0;
   position: absolute;
   display: block;
   content: "";
@@ -16,8 +16,8 @@ nav .cart::before {
 }
 
 nav .cart {
-  display: none;
-  z-index: 9;
+  opacity: 0%;
+  z-index: -1;
   position: absolute;
   padding: 12px;
   top: 50px;
@@ -25,6 +25,7 @@ nav .cart {
   background-color: white;
   height: auto;
   width: 310px;
+  transition: opacity .4s linear;
 }
 
 nav .cart__item {
@@ -36,6 +37,7 @@ nav .cart__item {
     "item__delete item__img item__info"
     ". item__counter item__price";
     justify-content: center;
+    box-shadow: none;
 }
 
 nav .cart__items section{
@@ -86,6 +88,7 @@ nav .cart h1 {
   font-size: 14px;
   font-weight: bold;
 }
+
 nav .cart .item__title{
   font-size: 12px;
 }
@@ -115,6 +118,10 @@ nav .cart button:active {
   opacity: 50%;
 }
 
+nav .cart__button{
+  margin: 0px;
+}
+
 nav .cart .g-button {
   font-size: 14px;
 }
@@ -131,5 +138,6 @@ nav .cart .nav__cartSubTotal{
 
 nav .cart:hover,
 nav .tools__cart:hover ~ .cart {
-  display: block;
+  opacity: 100%;
+  z-index: 10;
 }

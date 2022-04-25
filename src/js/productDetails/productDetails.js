@@ -305,4 +305,5 @@ async function toStorage() {
   }
   localStorage.setItem("cart", JSON.stringify(updatedItems));
   console.log(updatedItems);
+  renderCart();
 }
