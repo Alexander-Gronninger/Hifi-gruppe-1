@@ -15,7 +15,10 @@ async function getProducts() {
   let response = await fetch(API_URL);
   let json = await response.json();
   let searchValue = searchParams.toLowerCase()
-  let filtered = json.filter(product => product.name.toLowerCase().includes(searchValue) || product.brand.toLowerCase().includes(searchValue) || product.category.toLowerCase().includes(searchValue))
+
+  console.log(json)
+
+  let filtered = json.filter(product => (product.brand + " " + product.name).toLowerCase().includes(searchValue) || product.category.toLowerCase().includes(searchValue))
   console.log(filtered);
 
   if (filtered.length > 0){
