@@ -85,8 +85,8 @@ function initMap() {
             button.classList.add("map__btn")
             button.textContent = "Select this";
 
-            button.addEventListener("click", () =>{
-                nameAddress[0].scrollIntoView({ block:"center" });
+            button.addEventListener("click", () => {
+                nameAddress[0].scrollIntoView({ block: "center" });
                 changeTxt(postalOffices[index].name, postalOffices[index].address)
             })
 
@@ -109,7 +109,7 @@ function initMap() {
         const map = document.getElementById("map")
         console.log(map)
         map.addEventListener("mousedown", function (evt) {
-            if (!evt.target.classList.contains("map__btn")){
+            if (!evt.target.classList.contains("map__btn")) {
                 document.querySelectorAll(".officeBox").forEach(function (box) {
                     box.style.visibility = "hidden"
                 })
@@ -134,19 +134,39 @@ map.style.visibility = "hidden";
 map.style.position = "absolute";
 map.style.top = "0";
 
-deliveryBtnss.forEach((element)=>{
-    element.addEventListener("click", function(){
+deliveryBtnss.forEach((element) => {
+    element.addEventListener("click", function () {
         document.querySelector(".selectedDeliveryBtn").classList.remove("selectedDeliveryBtn")
         element.classList.add("selectedDeliveryBtn")
-        
-        if(element.innerHTML === "Post office" || element.innerHTML === "Click-and-collect"){
+
+        if (element.innerHTML === "Post office") {
             map.style.visibility = "visible"
             map.style.position = "relative";
             map.style.top = "unset";
-        } else{
+        } 
+        else if (element.innerHTML === "Click-and-collect") {
             map.style.visibility = "hidden;"
             map.style.position = "absolute";
             map.style.top = "-2000px";
+            nameAddress[0].innerHTML = `<div class="clickandcollectContainer"><input type="radio" name="clickandcollect"><label class="clickandcollectLabel" for="clickandcollect"><strong>Edinburgh</strong><br>
+            2 Joppa Rd,Edinburgh, EH15 2EU <br>
+            Monday to Friday: 10:00am - 5:30pm <br>
+            Saturday: 10:00am - 5:30pm <br>
+            Sunday: Closed</label></div>
+            <div class="clickandcollectContainer"><input type="radio" name="clickandcollect"><label class="clickandcollectLabel" for="clickandcollect"><strong>Falkirk</strong><br>
+            44 Cow Wynd, Falkirk, Central Region, FK1 1PU <br>
+            Monday to Friday: 10:00am - 5:30pm <br>
+            Saturday - By appointment only <br>
+            Sunday: Closed</label></div>`
+            nameAddress[1].textContent = ""
+        }
+        else {
+            map.style.visibility = "hidden;"
+            map.style.position = "absolute";
+            map.style.top = "-2000px";
+            nameAddress[0].textContent = "Name: 61 Church St"
+            nameAddress[1].textContent = "Address: Berwick-upon-Tweed"
         }
     })
 })
+

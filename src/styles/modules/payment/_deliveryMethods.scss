@@ -52,4 +52,15 @@
 
 #map{
     border-radius: 2px;
-  }
+}
+
+.clickandcollectContainer{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.clickandcollectLabel{
+    margin-top: -2px;
+}
