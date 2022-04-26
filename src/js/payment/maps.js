@@ -47,13 +47,6 @@ const postalOffices = [
 
 ]
 
-let userCords = navigator.geolocation.getCurrentPosition(getPos);
-
-function getPos(position) {
-    console.log("Latitude: " + position.coords.latitude +
-    " </br> Longitude: " + position.coords.longitude);
-}
-
 // Initialize and add the map
 function initMap() {
     // The location of Uluru
