@@ -1,3 +1,6 @@
+const $navCartButton = document.querySelector(".cart__button");
+const $navPaymentButton = document.querySelector(".nav__paymentButton");
+const $navButtonSection = document.querySelector(".nav__cartButtons");
 const $productsContainer = document.querySelector(".cart__items");
 const $cartButton = document.querySelector(".cart__button");
 const $cartTitle = document.querySelector(".cart__title");
@@ -19,6 +22,8 @@ async function renderCart() {
     // Replace title with cart is empty title
     $cartTitle.textContent = "Your cart is empty";
     $cartTitle.classList.add("cart__empty");
+    $navPaymentButton.classList.add("cart__empty");
+    $navButtonSection.classList.add("cart__empty");
 
     // When cart is empty replace go to payment with go to see all products button
     $cartButton.textContent = "See all products";
@@ -38,11 +43,18 @@ async function renderCart() {
   if (cart.length > 0) {
     $cartTitle.textContent = "Cart";
     $cartTitle.classList.remove("cart__empty");
+    $navPaymentButton.classList.remove("cart__empty");
+    $navButtonSection.classList.remove("cart__empty");
     $cartButton.textContent = "Go to cart";
     $cartButton.addEventListener("click", () => {
       window.location.href = "/cart";
     });
+    $cartSubTotalContainer.style.display = "inline-block";
   }
+
+  $navPaymentButton.addEventListener("click", () => {
+    window.location.href = "/payment";
+  });
 
   let productsContainerHTML = "";
   let cartAmount = 0;

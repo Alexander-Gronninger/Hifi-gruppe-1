@@ -24,15 +24,8 @@ nav .cart {
   right: -20px;
   background-color: white;
   height: auto;
-  width: 310px;
+  width: 330px;
   transition: opacity .4s linear;
-}
-
-nav .cart__empty{
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 0px;
-  padding: 0px 0px 80px;
 }
 
 nav .cart__item {
@@ -45,6 +38,13 @@ nav .cart__item {
     ". item__counter item__price";
     justify-content: center;
     box-shadow: none;
+}
+
+nav .cart__items{
+  padding-left: 5px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: visible;
 }
 
 nav .cart__items section{
@@ -61,6 +61,7 @@ nav .cart .item__img {
 }
 
 nav .cart .item__info {
+  margin-left: 0px;
   grid-area: item__info;
 }
 
@@ -102,7 +103,6 @@ nav .cart .item__title{
 
 nav .cart .cart__title {
   font-size: 24px;
-  text-transform: uppercase;
 }
 
 nav .cart .empty__cart{
@@ -113,7 +113,7 @@ nav .cart__subTotal {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 100px 0px 15px;
+  padding: 15px 0px 15px;
 }
 
 nav .cart button {
@@ -135,20 +135,36 @@ nav .cart .g-button {
 
 nav .cart .nav__cartSubTotal{
   display: flex;
-  align-content: flex-end;
+  padding-bottom: 0px;
 }
 
 .nav__cartButtons{
   display: flex;
   justify-content: space-between;
+  gap: 15px;
 }
 
-nav .cart__empty button{
+nav .nav__cartButtons.cart__empty{
+  flex-direction: row-reverse;
+  padding: 0px 0px 0px;
+  margin-bottom: 0px;
+}
+
+nav h1.cart__empty{
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0px 0px 0px;
+  margin-bottom: 80px;
+}
+
+.nav__cartButtons .cart__empty{
   display: none;
 }
 
 nav .cart:hover,
-nav .tools__cart:hover ~ .cart {
+nav .tools__cart:hover ~ .cart,
+nav .cart:active,
+nav .tools__cart:active ~ .cart {
   opacity: 100%;
   z-index: 10;
 }
