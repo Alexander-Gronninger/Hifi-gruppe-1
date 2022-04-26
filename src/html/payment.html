@@ -61,13 +61,11 @@
             <button class="deliveryCard__btn">Click-and-collect</button>
             <button class="deliveryCard__btn">Post office</button>
           </div>
+          <div id="map"></div>
           <div class="deliveryCard__textContainer">
             <h2 class="deliveryCard__textContainerHeading">Your order will be shipped to</h2>
-            <p class="deliveryCard__textContainerParagraph">61 Church St</p>
-            <p class="deliveryCard__textContainerParagraph">Berwick-upon-Tweed</p>
-            <p class="deliveryCard__textContainerParagraph">Northumberland</p>
-            <p class="deliveryCard__textContainerParagraph">TD15 1EE</p>
-            <p class="deliveryCard__textContainerParagraph">United Kingdom</p>
+            <p class="deliveryCard__textContainerParagraph deliveryCard__name">Name: 61 Church St</p>
+            <p class="deliveryCard__textContainerParagraph">Address: Berwick-upon-Tweed</p>
           </div>
         </article>
       </section>
@@ -94,6 +92,12 @@
     @@include("./partials/livechat_button.html")
   </main>
   @@include("./partials/footer.html")
+  <script src="/js/payment/maps.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+    defer
+  ></script>
+  <script src="/js/payment/delivery.js"></script>
 </body>
 
 </html>
