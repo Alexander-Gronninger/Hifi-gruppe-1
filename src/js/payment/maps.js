@@ -146,7 +146,7 @@ deliveryBtnss.forEach((element)=>{
         } else{
             map.style.visibility = "hidden;"
             map.style.position = "absolute";
-            map.style.top = "0";
+            map.style.top = "-2000px";
         }
     })
 })
