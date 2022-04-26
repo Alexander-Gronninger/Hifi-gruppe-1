@@ -19,7 +19,7 @@ function gatherinfo(event){
         
     }
     console.log(orderdata);
-    fetch("https://hifi-jsonserver.herokuapp.com",{
+    fetch("https://hifi-jsonserver.herokuapp.com/orders",{
         method: "POST",
         headers:{
             "Content-Type": "application/json; charset=UTF-8",
