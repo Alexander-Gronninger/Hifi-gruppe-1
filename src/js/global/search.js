@@ -9,17 +9,13 @@ let searchParams = queries.get("search")
 const productMainGrid__element = document.getElementsByClassName("productMain__grid")[0];
 const searchField = document.querySelector('.tools__input')
 
-
-
 async function getProducts() {
   let response = await fetch(API_URL);
   let json = await response.json();
   let searchValue = searchParams.toLowerCase()
 
-  console.log(json)
 
-  let filtered = json.filter(product => (product.brand + " " + product.name).toLowerCase().includes(searchValue) || product.category.toLowerCase().includes(searchValue))
-  console.log(filtered);
+  let filtered = json.filter(product => (product.brand + " " + product.name + " " + product.colors).toLowerCase().includes(searchValue) || product.category.toLowerCase().includes(searchValue))
 
   if (filtered.length > 0){
     filtered.forEach(product => printProduct(product))
@@ -38,6 +34,13 @@ if (searchParams) {
   searchField.value = searchParams;
 }
 
+
+if ((window.location.href).includes("search_results")){
+  if (searchField.value.length < 1){
+    document.querySelector("footer").style.marginTop = "9rem";
+    changeTitle("No results because your dumbass didn't write nothing.")
+  }
+}
 
 
 
