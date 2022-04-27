@@ -17,42 +17,85 @@
     <div class="wrapper">
       <main>
         <h1 id="page__title">Create an account</h1>
-        <section class="section__login whiteBackground">
-          <h2 class="login__title">Registered Customers</h2>
-          <p class="login__text">
-            If you have an account, sign in with your email address.
-          </p>
+        <form class="section__createAccount whiteBackground">
+          <h2 class="createAccount__title">Create new customer account</h2>
 
-          <label class="login__label" for="email"
+          <label class="createAccount__label" for="firstName"
+            >First name<span class="required" title="Reqired field"
+              >*</span
+            ></label
+          >
+          <input
+            class="createAccount__input g-inputField"
+            type="text"
+            id="firstName"
+          />
+
+          <label class="createAccount__label" for="lastName"
+            >Last Name<span class="required" title="Reqired field"
+              >*</span
+            ></label
+          >
+          <input
+            class="createAccount__input g-inputField"
+            type="text"
+            id="lastName"
+          />
+
+          <label class="createAccount__label" for="email"
             >Email<span class="required" title="Reqired field">*</span></label
           >
-          <input class="login__input" type="email" id="email" />
+          <input
+            class="createAccount__input g-inputField"
+            type="email"
+            id="email"
+          />
 
-          <label class="login__label" for="password"
+          <label class="createAccount__label" for="password1"
             >Password<span class="required" title="Reqired field"
               >*</span
             ></label
           >
-          <input class="login__input" type="text" id="password" />
+          <input
+            class="createAccount__input g-inputField"
+            type="text"
+            id="password1"
+          />
 
-          <div class="login__checkboxInput">
-            <input class="login__checkbox" type="checkbox" id="remember-me" />
-            <label class="login__checkboxLabel" for="remember-me"
-              >Remember me</label
+          <label class="createAccount__label" for="password2"
+            >Repeat password<span class="required" title="Reqired field"
+              >*</span
+            ></label
+          >
+          <input
+            class="createAccount__input g-inputField"
+            type="text"
+            id="password2"
+          />
+
+          <div class="createAccount__checkboxInput">
+            <input class="createAccount__checkbox" type="checkbox" id="gdpr" />
+            <label class="createAccount__checkboxLabel" for="gdpr"
+              >By using this form you agree with the storage and handling of
+              your data by this website.</label
+            >
+          </div>
+          <div class="createAccount__checkboxInput">
+            <input
+              class="createAccount__checkbox"
+              type="checkbox"
+              id="newsletter"
+            />
+            <label class="createAccount__checkboxLabel" for="newsletter"
+              >Sign up for newsletter</label
             >
           </div>
 
-          <button class="login__button g-button">Sign in</button>
-          <a class="login__link" href="">Forgot your password?</a>
-        </section>
-        <section class="section__newUser whiteBackground">
-          <h2 class="newUser__title">New Customer</h2>
-          <p class="newUser__text">
-            Creating an account has many benefits: check out faster, track
-            orders and more.
-          </p>
-          <button class="newUser__button">Create an account</button>
-        </section>
+          <button type="submit" class="createAccount__button g-button">
+            Sign in
+          </button>
+        </form>
+
         @@include("./partials/livechat_button.html")
       </main>
     </div>
