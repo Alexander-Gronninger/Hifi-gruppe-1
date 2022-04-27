@@ -341,13 +341,13 @@ function productList() {
   //JAVASCRIPT
   //declaring variables
   let activeValues;
-  let categorizerItems = document.getElementsByClassName("categoryItem");
+  let categorizerItems = element.querySelector(".categoryItem");
 
-  let minValue = document.getElementById("minValue");
-  let maxValue = document.getElementById("maxValue");
-  let lowerRange = document.getElementById("lower");
-  let upperRange = document.getElementById("upper");
-  let priceSliders = document.querySelectorAll(".price-field input");
+  let minValue = element.querySelector("#minValue");
+  let maxValue = element.querySelector("#maxValue");
+  let lowerRange = element.querySelector("#lower");
+  let upperRange = element.querySelector("#upper");
+  let priceSliders = element.querySelectorAll(".price-field input");
 
   priceSliders.forEach(function (slider) {
     slider.addEventListener("change", getSelectedSortings);
@@ -386,7 +386,7 @@ function productList() {
 
   function filter() {
     console.log(activeValues);
-    let productContainers = document.querySelectorAll(".product");
+    let productContainers = element.querySelectorAll(".product");
     productContainers.forEach((productContainer) => productContainer.remove());
 
     //filterting the products
@@ -452,7 +452,7 @@ function productList() {
     lowerRange.max = highestProductPrice;
   }, 700);
 
-  const dropdownElements = document.querySelectorAll(".dropdown");
+  const dropdownElements = element.querySelectorAll(".dropdown");
   for (let i = 0; i < dropdownElements.length; i++) {
     dropdownElements[i]
       .querySelector(".dropdown__text")
@@ -472,7 +472,7 @@ function productList() {
   }
   const API_URL = `https://hifi-jsonserver.herokuapp.com/products`;
   const productMainGrid__element =
-    document.getElementsByClassName("productMain__grid")[0];
+    element.querySelector(".productMain__grid")[0];
 
   async function getProducts() {
     let response = await fetch(API_URL);
@@ -580,11 +580,11 @@ function productList() {
       }
     }
   }
-  var lowerSlider = document.querySelector("#lower");
-  var upperSlider = document.querySelector("#upper");
+  var lowerSlider = element.querySelector("#lower");
+  var upperSlider = element.querySelector("#upper");
 
-  document.querySelector("#maxValue").value = upperSlider.value;
-  document.querySelector("#minValue").value = lowerSlider.value;
+  element.querySelector("#maxValue").value = upperSlider.value;
+  element.querySelector("#minValue").value = lowerSlider.value;
 
   var lowerVal = parseInt(lowerSlider.value);
   var upperVal = parseInt(upperSlider.value);
@@ -593,26 +593,26 @@ function productList() {
     lowerVal = parseInt(lowerSlider.value);
     upperVal = parseInt(upperSlider.value);
     if (upperVal < lowerVal + 100) {
-      document.querySelector("#minValue").value = parseInt(this.value);
+      element.querySelector("#minValue").value = parseInt(this.value);
       lowerSlider.value = upperVal - 100;
       if (lowerVal == lowerSlider.min) {
         upperSlider.value = 100;
       }
     }
-    document.querySelector("#maxValue").value = this.value;
+    element.querySelector("#maxValue").value = this.value;
   };
 
   lowerSlider.oninput = function () {
     lowerVal = parseInt(lowerSlider.value);
     upperVal = parseInt(upperSlider.value);
     if (lowerVal > upperVal - 100) {
-      document.querySelector("#maxValue").value = parseInt(this.value);
+      element.querySelector("#maxValue").value = parseInt(this.value);
       upperSlider.value = lowerVal + 100;
       if (upperVal == upperSlider.max) {
         lowerSlider.value = parseInt(upperSlider.max) - 100;
       }
     }
-    document.querySelector("#minValue").value = this.value;
+    element.querySelector("#minValue").value = this.value;
   };
   function printProduct(data) {
     const NEW_ITEM = document.createElement("article");
@@ -651,6 +651,8 @@ function productList() {
       </div>`;
   }
   getProducts();
+
+  return element;
 }
 
 document.body.appendChild(productList());
