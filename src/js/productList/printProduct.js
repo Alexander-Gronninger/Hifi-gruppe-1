@@ -1,19 +1,19 @@
 export function printProduct(data) {
-    const NEW_ITEM = document.createElement("article");
-    NEW_ITEM.dataset.id = data.id;
-    NEW_ITEM.classList.add("product");
-    NEW_ITEM.addEventListener("click", function (event) {
-      if (event.target.classList.contains("cartStockContainer__btn")) {
-        addProduct(data.id);
-      } else if (
-        event.target.classList.contains("product__compareBtn") ||
-        event.target.classList.contains("compareBtn__icon")
-      ) {
-      } else {
-        window.location.href = `/product_details/?id=${data.id}`;
-      }
-    });
-    NEW_ITEM.innerHTML = `<p class="product__compareBtn"
+  const NEW_ITEM = document.createElement("article");
+  NEW_ITEM.dataset.id = data.id;
+  NEW_ITEM.classList.add("product");
+  NEW_ITEM.addEventListener("click", function (event) {
+    if (event.target.classList.contains("cartStockContainer__btn")) {
+      addProduct(data.id);
+    } else if (
+      event.target.classList.contains("product__compareBtn") ||
+      event.target.classList.contains("compareBtn__icon")
+    ) {
+    } else {
+      window.location.href = `/product_details/?id=${data.id}`;
+    }
+  });
+  NEW_ITEM.innerHTML = `<p class="product__compareBtn"
       >Compare
       <img
         class="compareBtn__icon"

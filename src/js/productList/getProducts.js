@@ -114,4 +114,4 @@ function addProduct(id) {
   }
 }
 
-export { printProduct }
+export { printProduct };
