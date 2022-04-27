@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <!-- <script src="/js/javascript.js" defer></script> -->
+
+  <!--font awesome link-->
+  <script src="https://kit.fontawesome.com/377d53b4a7.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  @@include("./partials/nav.html")
+  <main>
+
+    <div class="wrapper">
+      <section class="searchResults">
+        <h2 id="page__title" class="searchResults__title">Search Results</h2>
+        <div class="productMain__grid"></div>
+      </section>
+    </div>
+    @@include("./partials/livechat_button.html")
+  </main>
+  @@include("./partials/footer.html")
+  <script src="/js/global/search.js" type="module"></script>
+</body>
+
+</html>

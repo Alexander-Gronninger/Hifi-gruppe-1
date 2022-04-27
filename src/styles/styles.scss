@@ -30,6 +30,7 @@
 @import "modules/global/counter";
 @import "modules/global/livechat_button";
 @import "modules/global/required";
+@import "modules/global/searchResults";
 
 //index
 @import "modules/index/companyinfo";
@@ -38,6 +39,9 @@
 //payment
 @import "modules/payment/paymentform";
 @import "modules/payment/overview";
+@import "modules/payment/deliveryMethods";
+@import "modules/payment/paymentMethods";
+@import "modules/payment/maps";
 
 // product_list
 @import "modules/productList/addToCart__button";

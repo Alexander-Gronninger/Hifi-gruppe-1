@@ -42,5 +42,5 @@
 
   
   margin-inline: unset;
-  @include whiteBackground($max-width: 635px, $margin-inline:unset )
+  @include whiteBackground($max-width: 635px, $margin-inline:unset, $margin-block:20px )
 }

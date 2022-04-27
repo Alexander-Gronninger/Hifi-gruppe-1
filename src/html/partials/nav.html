@@ -65,15 +65,18 @@
     </ul>
     <div class="navigation__tools">
       <div class="tools__inputContainer">
+        <form action="/search_results" class="searchForm" method="get">
         <input
           class="tools__input"
           type="text"
           placeholder="Search product..."
           id="tools__input"
+          name="search"
         />
         <label for="tools__input"
-          ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
-        ></label>
+          ><button class="navSubmitBtn" type="submit"><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
+        ></button></label>
+      </form>
       </div>
 
       <a href="" class="tools__link @@activeUser"

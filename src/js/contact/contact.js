@@ -1,4 +1,5 @@
 var form = document.getElementsByClassName("contact__form")[0]
+const stars = document.querySelectorAll(".required")
 var success = true
 
 form.addEventListener("submit", handleSubmit)
@@ -28,25 +29,31 @@ function validateInput(element) {
     }
 
     if (element.type === "text") {
+        element.closest("div").querySelector("span").style.display = "none"
         hideError(element)
         if (element.value.length < 1) {
+            element.closest("div").querySelector("span").style.display = "inline-block"
             showError(element)
         }
     }
 
     if (element.type === "email") {
+        element.closest("div").querySelector("span").style.display = "none"
         hideError(element)
         if (element.value.length < 1
             || !element.value.includes(".")
             || !element.value.includes("@")) {
                 showError(element)
+                element.closest("div").querySelector("span").style.display = "inline-block"
         }
     }
 
     if (element.name === "message") {
+        element.closest("div").querySelector("span").style.display = "none"
         hideError(element)
         if (element.value.length < 1) {
             showError(element)
+            element.closest("div").querySelector("span").style.display = "inline-block"
         }
     }
         
