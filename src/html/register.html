@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--font awesome link-->
+  <script src="https://kit.fontawesome.com/377d53b4a7.js" crossorigin="anonymous"></script>
+
+  <title>Contact</title>
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <script src="/js/register/creatingUser.js" defer></script>
+</head>
+
+<body>
+  @@include("./partials/nav.html", {"activeUser": "menu__link--active"})
+  <main class="wrapper">
+    <h1 id="page__title">CREATE AN ACCOUNT</h1>
+    <div class="g-whiteBackground">
+      <!-- register form -->
+      <form action="POST" class="registerForm">
+        <h2 class="registerForm__title">CREATE A NEW CUSTOMER ACCOUNT</h2>
+        <hr>
+        <h3>Personal Information</h3>
+        <!-- name -->
+        <div class="registerForm__field">
+          <label class="registerForm__label" for="name">First name <span title="Required field"
+              class="required">*</span>
+          </label>
+          <input class="registerForm__input g-inputField" type="text" id="name" name="name" />
+          <p></p>
+        </div>
+        <!-- surname -->
+        <div class="registerForm__field">
+          <label class="registerForm__label" for="surname">Last name <span title="Required field"
+              class="required">*</span>
+          </label>
+          <input class="registerForm__input g-inputField" type="text" id="surname" name="surname" />
+          <p></p>
+        </div>
+        <!-- email -->
+        <div class="registerForm__field">
+          <label class="registerForm__label" for="email">Email <span title="Required field" class="required">*</span>
+          </label>
+          <input class="registerForm__input g-inputField" type="email" id="email" name="email" />
+          <p></p>
+        </div>
+        <!-- password -->
+        <div class="registerForm__field">
+          <label class="registerForm__label" for="password">Password <span title="Required field"
+              class="required">*</span>
+          </label>
+          <input class="registerForm__input g-inputField" type="password" id="password" name="password" />
+          <p></p>
+        </div>
+        <!-- confirm password -->
+        <div class="registerForm__field">
+          <label class="registerForm__label" for="confirmPassword">Confirm Password <span title="Required field"
+              class="required">*</span>
+          </label>
+          <input class="registerForm__input g-inputField" type="password" id="confirmPassword" name="confirmPassword" />
+          <p></p>
+        </div>
+        <!-- checkboxes -->
+        <div class="registerForm__boxes">
+          <label class="container">By using this form you agree with the storage and handling of your data by this
+            website.
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Sign Up for Newsletter
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <button type="submit" class="g-button">Create an Account</button>
+      </form>
+    </div>
+  </main>
+
+  @@include("./partials/livechat_button.html")
+  @@include("./partials/footer.html")
+
+</body>
+
+</html>

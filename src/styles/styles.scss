@@ -14,7 +14,6 @@
 @import "layout/productList/product";
 @import "layout/productList/productMain__grid";
 
-
 ///////////// modules /////////////
 
 // global
@@ -63,6 +62,9 @@
 
 // ourHistory
 @import "modules/ourHistory/ourHistory";
+
+// register (creating user)
+@import "modules/register/form";
 
 //compareUI
 @import "modules/global/compareUI";
