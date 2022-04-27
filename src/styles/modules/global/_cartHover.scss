@@ -1,0 +1,135 @@
+.navigation__tools {
+  position: relative;
+}
+
+nav .cart::before {
+  z-index: 10;
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  top: -5px;
+  right: 43px;
+}
+
+nav .cart {
+  display: none;
+  z-index: 9;
+  position: absolute;
+  padding: 12px;
+  top: 50px;
+  right: -20px;
+  background-color: white;
+  height: auto;
+  width: 310px;
+}
+
+nav .cart__item {
+  display: grid;
+  grid-template-columns: auto 1fr 2fr;
+  grid-template-rows: 40px 40px;
+  gap: 10px;
+  grid-template-areas:
+    "item__delete item__img item__info"
+    ". item__counter item__price";
+  justify-content: center;
+}
+
+nav .cart__items section {
+  width: 100%;
+  padding: 15px 0px;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+nav .cart .item__img {
+  grid-area: item__img;
+  width: 80px;
+  height: 40px;
+  object-fit: cover;
+}
+
+nav .cart .item__info {
+  grid-area: item__info;
+}
+
+nav .cart .item__stock {
+  grid-area: item__stock;
+  font-size: 10px;
+}
+
+nav .cart .item__price {
+  grid-area: item__price;
+  text-align: right;
+  padding-top: 17px;
+}
+
+nav .cart .item__delete {
+  grid-area: item__delete;
+  padding-right: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+nav .cart .counter {
+  grid-area: item__counter;
+  margin-top: 17px;
+}
+
+nav .cart__item {
+  width: 100%;
+}
+
+nav .cart h1 {
+  font-size: 14px;
+  font-weight: bold;
+}
+nav .cart .item__title {
+  font-size: 12px;
+}
+
+nav .cart .cart__title {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+nav .cart .empty__cart {
+  color: grey;
+}
+
+nav .cart__subTotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0px 15px;
+}
+
+nav .cart button {
+  z-index: 10; //do not touch, ellers kan knappen ikke klikkes
+  border: none;
+}
+
+nav .cart button:active {
+  opacity: 50%;
+}
+
+nav .cart .g-button {
+  font-size: 14px;
+}
+
+nav .cart .nav__cartSubTotal {
+  display: flex;
+  align-content: flex-end;
+}
+
+.nav__cartButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .cart:hover,
+nav .tools__cart:hover ~ .cart {
+  display: block;
+}
