@@ -145,8 +145,9 @@ async function chooseColor() {
   let color = "";
 
   // by default 'this' is window, so we need to check for that and set color as the first color button color
-  if (this.classList == undefined) {
+  if (this == undefined) {
     color = productColors.children[0].children[1].innerHTML;
+    console.log("success");
   }
 
   // 'this' isn't class undefined, meaning 'this' can only be one of the color changing buttons, so we grab the color from it
@@ -192,8 +193,8 @@ async function chooseColor() {
   // changing the image to the first image of the selected color
   productImage.src = response[0].images[color][0];
 
-  // if 'this' classlist isnt undefined then we must have clicked one of the color buttons
-  if (this.classList != undefined) {
+  // if 'this' isnt undefined then we must have clicked one of the color buttons
+  if (this != undefined) {
     // so we remove --current from the --current element
     document
       .querySelector(".color__icon--current")
