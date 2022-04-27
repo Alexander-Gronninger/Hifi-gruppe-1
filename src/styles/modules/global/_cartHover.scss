@@ -20,12 +20,12 @@ nav .cart {
   z-index: -1;
   position: absolute;
   padding: 12px;
-  top: 50px;
+  top: 80px;
   right: -20px;
   background-color: white;
   height: auto;
   width: 330px;
-  transition: opacity .4s linear;
+  transition: opacity 0.2s ease-in-out;
 }
 
 nav .cart__item {
@@ -162,6 +162,7 @@ nav h1.cart__empty{
 }
 
 nav .cart:hover,
+nav .navigation__tools li:hover,
 nav .tools__cart:hover ~ .cart,
 nav .cart:active,
 nav .tools__cart:active ~ .cart {
