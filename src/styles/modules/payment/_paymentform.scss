@@ -37,5 +37,5 @@
   grid-template-columns: 54% 45%;
 
 
-  @include whiteBackground($max-width: 634px, $margin-inline:unset, $margin-block: 0 50px)
+  @include whiteBackground($max-width: 634px, $margin-inline:unset, $margin-block: unset)
 }
