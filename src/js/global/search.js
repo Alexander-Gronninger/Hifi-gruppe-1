@@ -17,7 +17,7 @@ async function getProducts() {
 
   let filtered = json.filter(product => (product.brand + " " + product.name + " " + product.colors).toLowerCase().includes(searchValue) || product.category.toLowerCase().includes(searchValue))
 
-  if (filtered.length > 0){
+  if (filtered.length > 0) {
     filtered.forEach(product => printProduct(product))
     changeTitle(`Showing results for '${searchParams}'`)
   } else {
@@ -25,7 +25,7 @@ async function getProducts() {
   }
 }
 
-function changeTitle(txt){
+function changeTitle(txt) {
   document.querySelector('#page__title').textContent = txt;
 }
 
@@ -35,10 +35,10 @@ if (searchParams) {
 }
 
 
-if ((window.location.href).includes("search_results")){
-  if (searchField.value.length < 1){
+if ((window.location.href).includes("search_results")) {
+  if (searchField.value.length < 1) {
     document.querySelector("footer").style.marginTop = "9rem";
-    changeTitle("No results because your dumbass didn't write nothing.")
+    changeTitle("There are no results because you didn't search for anything. Try searching for one of our products")
   }
 }
 
