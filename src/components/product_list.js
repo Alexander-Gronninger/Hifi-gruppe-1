@@ -340,6 +340,7 @@ function productList() {
 
   //JAVASCRIPT
   //declaring variables
+  let localDatabase;
   let activeValues;
   let categorizerItems = element.querySelector(".categoryItem");
 
@@ -471,8 +472,7 @@ function productList() {
       });
   }
   const API_URL = `https://hifi-jsonserver.herokuapp.com/products`;
-  const productMainGrid__element =
-    element.querySelector(".productMain__grid")[0];
+  const productMainGrid__element = element.querySelector(".productMain__grid");
 
   async function getProducts() {
     let response = await fetch(API_URL);
@@ -482,8 +482,6 @@ function productList() {
     json.forEach(function (productData) {
       printProduct(productData);
     });
-    // runs compareUI javascript, as it needs an up to date list of all products listed
-    loadElements();
   }
 
   function printProduct(data) {
@@ -535,6 +533,7 @@ function productList() {
       stockIcons.parentElement.innerHTML += "In Stock";
     }
 
+    console.log(NEW_ITEM);
     productMainGrid__element.appendChild(NEW_ITEM);
   }
 
