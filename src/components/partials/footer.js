@@ -1,6 +1,6 @@
 function footer() {
   let element = document.createElement("footer");
-  element.classList.add("blackFooter")
+  element.classList.add("blackFooter");
   element.innerHTML = `
     <div class="flexBox footerTop">
       <div>
@@ -69,7 +69,7 @@ function footer() {
       </div>
     </div>
     `;
-    return element;
+  return element;
 }
 
 export default footer;

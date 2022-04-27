@@ -1,5 +1,3 @@
-
-
 function header() {
   let element = document.createElement("header");
   element.classList.add("header");
@@ -90,7 +88,7 @@ function header() {
       </div>
     </nav>
 `;
-return element;
+  return element;
 }
 
 export default header;
