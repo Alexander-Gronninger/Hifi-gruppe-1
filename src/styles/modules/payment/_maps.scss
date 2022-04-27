@@ -1,0 +1,51 @@
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+}
+
+#map > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(3) > div:nth-child(3){
+    overflow:visible;
+    width:1px;
+}
+
+.officeBox{
+    width:200px;
+    background-color: #FFFFFF;
+    padding:1rem;
+    transform:translate(-40%, 0%);
+    box-shadow: 6px 10px 54px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 6px 10px 54px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 6px 10px 54px 0px rgba(0,0,0,0.15);
+    display:flex;
+    flex-direction: column;
+    cursor:default;
+}
+
+.officeBox strong{
+    font-size:0.8rem;
+    padding-bottom:0.3rem;
+}
+
+.officeBox p{
+    font-size:0.7rem;
+    padding-bottom:0.8rem;
+}
+
+.officeBox button{
+    background-color:$primaryButtonColor;
+    padding:6px;
+    font-size:0.65rem;
+    color:#ffffff;
+    border:none;
+    border: 2px solid $primaryButtonColor;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    cursor:pointer;
+}
+
+.officeBox button:hover{
+    background-color: #ffffff;
+    border: 2px solid $primaryButtonColor;
+    color:#000000;
+}

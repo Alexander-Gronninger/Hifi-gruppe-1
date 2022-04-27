@@ -19,14 +19,17 @@
 
 // global
 @import "modules/global/navigation";
+@import "modules/global/cartHover";
 @import "modules/global/footer";
 @import "modules/global/whiteBackground";
 @import "modules/global/inputField";
 @import "modules/global/button";
 @import "modules/global/breadcrumb";
+@import "modules/global/cartHover";
 @import "modules/global/category_dropdown";
 @import "modules/global/form__star";
 @import "modules/global/counter";
+@import "modules/global/livechat_button";
 
 //index
 @import "modules/index/companyinfo";
@@ -35,6 +38,9 @@
 //payment
 @import "modules/payment/paymentform";
 @import "modules/payment/overview";
+@import "modules/payment/deliveryMethods";
+@import "modules/payment/paymentMethods";
+@import "modules/payment/maps";
 
 // product_list
 @import "modules/productList/addToCart__button";
