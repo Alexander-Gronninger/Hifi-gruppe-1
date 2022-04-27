@@ -23,27 +23,33 @@
             If you have an account, sign in with your email address.
           </p>
 
-          <label class="login__label" for="email"
-            >Email<span class="required" title="Reqired field">*</span></label
-          >
-          <input class="login__input" type="email" id="email" />
-
-          <label class="login__label" for="password"
-            >Password<span class="required" title="Reqired field"
-              >*</span
-            ></label
-          >
-          <input class="login__input" type="text" id="password" />
-
-          <div class="login__checkboxInput">
-            <input class="login__checkbox" type="checkbox" id="remember-me" />
-            <label class="login__checkboxLabel" for="remember-me"
-              >Remember me</label
+          <form class="login__form" action="#">
+            <label class="login__label" for="email"
+              >Email<span class="required" title="Reqired field">*</span></label
             >
-          </div>
+            <input class="login__input g-inputField" type="email" id="email" />
 
-          <button class="login__button g-button">Sign in</button>
-          <a class="login__link" href="">Forgot your password?</a>
+            <label class="login__label" for="password"
+              >Password<span class="required" title="Reqired field"
+                >*</span
+              ></label
+            >
+            <input
+              class="login__input g-inputField"
+              type="text"
+              id="password"
+            />
+
+            <div class="login__checkboxInput">
+              <input class="login__checkbox" type="checkbox" id="remember-me" />
+              <label class="login__checkboxLabel" for="remember-me"
+                >Remember me</label
+              >
+            </div>
+
+            <button class="login__button g-button">Sign in</button>
+            <a class="login__link" href="">Forgot your password?</a>
+          </form>
         </section>
         <section class="section__newUser whiteBackground">
           <h2 class="newUser__title">New Customer</h2>

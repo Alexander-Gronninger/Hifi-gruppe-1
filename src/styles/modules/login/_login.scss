@@ -15,6 +15,10 @@
   margin-bottom: 30px;
 }
 
+.login__form {
+  max-width: 510px;
+}
+
 .login__label,
 .login__checkbox {
   display: block;
@@ -24,10 +28,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-}
-
-.login__input {
-  @include inputField($max-width: 500px);
 }
 
 .login__link,
