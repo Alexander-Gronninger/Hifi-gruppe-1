@@ -36,7 +36,8 @@ nav .cart__item {
   grid-template-areas:
     "item__delete item__img item__info"
     ". item__counter item__price";
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: none;
 }
 
@@ -57,12 +58,16 @@ nav .cart .item__img {
   grid-area: item__img;
   width: 80px;
   height: 40px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 nav .cart .item__info {
   margin-left: 0px;
   grid-area: item__info;
+}
+
+nav .cart .item__info a{
+  font-size: 12px;
 }
 
 nav .cart .item__stock {
@@ -74,6 +79,7 @@ nav .cart .item__price {
   grid-area: item__price;
   text-align: right;
   padding-top: 17px;
+  margin-left: auto;
 }
 
 nav .cart .item__delete {

@@ -38,9 +38,9 @@ async function renderCart() {
   if (cart.length > 0) {
     $cartTitle.textContent = "Cart";
     $cartTitle.classList.remove("cart__empty");
-    $cartButton.textContent = "Go to cart";
+    $cartButton.textContent = "Go to payment";
     $cartButton.addEventListener("click", () => {
-      window.location.href = "/cart";
+      window.location.href = "/payment";
     });
   }
 

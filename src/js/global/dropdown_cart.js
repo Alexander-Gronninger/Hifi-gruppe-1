@@ -49,7 +49,7 @@ async function renderCart() {
     $cartButton.addEventListener("click", () => {
       window.location.href = "/cart";
     });
-    $cartSubTotalContainer.style.display = "inline-block";
+    $cartSubTotalContainer.style.display = "flex";
   }
 
   $navPaymentButton.addEventListener("click", () => {
@@ -161,6 +161,18 @@ async function renderCart() {
       $cartAmount.textContent = "99+";
     } else {
       $cartAmount.textContent = cartAmount;
+    }
+
+    if (cartAmount === 1) {
+      $cartTitle.textContent = "Cart (1 item)";
+    }
+
+    if (cartAmount > 1 && cartAmount < 100) {
+      $cartTitle.textContent = `Cart (${cartAmount} items)`;
+    }
+
+    if (cartAmount > 99) {
+      $cartTitle.textContent = "Cart (99+ items)";
     }
 
     // Set sub total price
