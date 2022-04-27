@@ -35,10 +35,10 @@ nav .cart__item {
   grid-template-areas:
     "item__delete item__img item__info"
     ". item__counter item__price";
-    justify-content: center;
+  justify-content: center;
 }
 
-nav .cart__items section{
+nav .cart__items section {
   width: 100%;
   padding: 15px 0px;
   border-bottom: 1px solid #d2d2d2;
@@ -73,7 +73,7 @@ nav .cart .item__delete {
   text-align: center;
 }
 
-nav .cart .counter{
+nav .cart .counter {
   grid-area: item__counter;
   margin-top: 17px;
 }
@@ -86,7 +86,7 @@ nav .cart h1 {
   font-size: 14px;
   font-weight: bold;
 }
-nav .cart .item__title{
+nav .cart .item__title {
   font-size: 12px;
 }
 
@@ -95,7 +95,7 @@ nav .cart .cart__title {
   text-transform: uppercase;
 }
 
-nav .cart .empty__cart{
+nav .cart .empty__cart {
   color: grey;
 }
 
@@ -119,12 +119,12 @@ nav .cart .g-button {
   font-size: 14px;
 }
 
-nav .cart .nav__cartSubTotal{
+nav .cart .nav__cartSubTotal {
   display: flex;
   align-content: flex-end;
 }
 
-.nav__cartButtons{
+.nav__cartButtons {
   display: flex;
   justify-content: space-between;
 }
