@@ -10,18 +10,22 @@
   margin: 0 auto;
 }
 
-.navigation__tools{
+.navigation__tools {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 103.6px;
 }
 
-.navigation__tools li{
+.navigation__tools .li__toolsLink {
+  list-style-type: none;
+  align-items: center;
+}
+
+.navigation__tools .ul__toolsLink {
   height: 100%;
   display: flex;
   align-items: center;
-  list-style-type: none;
 }
 
 .navigation__menu {

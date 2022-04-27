@@ -36,19 +36,19 @@ nav .cart__item {
   grid-template-areas:
     "item__delete item__img item__info"
     ". item__counter item__price";
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: none;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: none;
 }
 
-nav .cart__items{
+nav .cart__items {
   padding-left: 5px;
   max-height: 400px;
   overflow-y: auto;
   overflow-x: visible;
 }
 
-nav .cart__items section{
+nav .cart__items section {
   width: 100%;
   padding: 15px 0px;
   border-bottom: 1px solid #d2d2d2;
@@ -66,8 +66,12 @@ nav .cart .item__info {
   grid-area: item__info;
 }
 
-nav .cart .item__info a{
+nav .cart .item__info {
   font-size: 12px;
+}
+
+nav .cart .item__info .item__stock {
+  font-size: 10px;
 }
 
 nav .cart .item__stock {
@@ -89,7 +93,7 @@ nav .cart .item__delete {
   text-align: center;
 }
 
-nav .cart .counter{
+nav .cart .counter {
   grid-area: item__counter;
   margin-top: 17px;
 }
@@ -103,7 +107,7 @@ nav .cart h1 {
   font-weight: bold;
 }
 
-nav .cart .item__title{
+nav .cart .item__title {
   font-size: 12px;
 }
 
@@ -111,7 +115,7 @@ nav .cart .cart__title {
   font-size: 24px;
 }
 
-nav .cart .empty__cart{
+nav .cart .empty__cart {
   color: grey;
 }
 
@@ -131,7 +135,7 @@ nav .cart button:active {
   opacity: 50%;
 }
 
-nav .cart__button{
+nav .cart__button {
   margin: 0px;
 }
 
@@ -139,36 +143,36 @@ nav .cart .g-button {
   font-size: 14px;
 }
 
-nav .cart .nav__cartSubTotal{
+nav .cart .nav__cartSubTotal {
   display: flex;
   padding-bottom: 0px;
 }
 
-.nav__cartButtons{
+.nav__cartButtons {
   display: flex;
   justify-content: space-between;
   gap: 15px;
 }
 
-nav .nav__cartButtons.cart__empty{
+nav .nav__cartButtons.cart__empty {
   flex-direction: row-reverse;
   padding: 0px 0px 0px;
   margin-bottom: 0px;
 }
 
-nav h1.cart__empty{
+nav h1.cart__empty {
   font-size: 14px;
   font-weight: bold;
   padding: 0px 0px 0px;
   margin-bottom: 80px;
 }
 
-.nav__cartButtons .cart__empty{
+.nav__cartButtons .cart__empty {
   display: none;
 }
 
 nav .cart:hover,
-nav .navigation__tools li:hover,
+nav .navigation__tools .ul__toolsLink:hover,
 nav .tools__cart:hover ~ .cart,
 nav .cart:active,
 nav .tools__cart:active ~ .cart {
