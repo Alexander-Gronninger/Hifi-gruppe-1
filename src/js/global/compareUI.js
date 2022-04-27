@@ -101,7 +101,6 @@ async function addProduct(event) {
     } else if (productID != "") {
       // we show the UI, its hidden by default
       compareContainer.style.display = "grid";
-
       compareContainer.innerHTML += `
       <div class="compare__selectedProduct">
         <img class="selectedProduct__image" src="${
@@ -168,8 +167,6 @@ async function removeItem(event) {
   // we set i to the index of the clicked item in the element array
   let i = elementRemoveBtns.indexOf(event.target);
   // we remove equivalent entry from storage array
-  console.log(i)
-  console.log(storageIDs)
   storageIDs.splice(i, 1);
 
   // we set localStorage to the updated array

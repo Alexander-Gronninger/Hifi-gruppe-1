@@ -23,7 +23,7 @@ let price = "";
 let productName = "";
 
 // setting dataset to the compare button, from URL id
-document.querySelector(".product__compareBtn").dataset.id = productID;
+document.querySelector(".productContainer").dataset.id = productID;
 
 // get product details from database
 getProduct();

@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/styles.css" />
-    <script src="/js/productDetails/productDetails.js" type="module" defer></script>
+    <script
+      src="/js/productDetails/productDetails.js"
+      type="module"
+      defer
+    ></script>
     <script src="/js/global/counter.js" defer></script>
     <script src="/js/global/compareUI.js" type="module" defer></script>
 
@@ -23,7 +27,7 @@
       <div class="wrapper">
         <article class="productContainer">
           <h1 class="pageTitle" id="page__title">PRODUCT</h1>
-          <p class="product__compareBtn" href="">
+          <p class="product__compareBtn">
             Compare
             <img
               class="compareBtn__icon"
@@ -103,9 +107,9 @@
           <!-- end of whitebackground -->
         </article>
         <!--end of productWrapper -->
+        @@include("./partials/compareUI.html")
       </div>
       <!--end of wrapper-->
-      @@include("./partials/compareUI.html")
     </main>
     @@include("./partials/footer.html")
   </body>
