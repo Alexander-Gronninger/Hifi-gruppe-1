@@ -191,7 +191,7 @@ function onSubtractClick(e) {
       ? Object.assign(cart.slice(), {
           [cartProductIndex]: {
             ...cartProduct,
-            quantity: (cartProduct.quantity - 1),
+            quantity: cartProduct.quantity - 1,
           },
         })
       : Object.assign(cart.slice(), {
@@ -232,7 +232,7 @@ function onAddClick(e) {
   const newCart = Object.assign(cart.slice(), {
     [cartProductIndex]: {
       ...cartProduct,
-      quantity: (+cartProduct.quantity + 1),
+      quantity: +cartProduct.quantity + 1,
     },
   });
 
