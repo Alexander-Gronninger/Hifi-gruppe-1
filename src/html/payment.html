@@ -18,6 +18,8 @@
 <body>
   @@include("./partials/nav.html", {"activeCart": "tools__link--active"})
   <main>
+    @@include("./partials/breadcrumb.html", {"activeInvoice":
+    "breadcrumb__item--active"})
     <div class="wrapper paymentcontainer">
       <section class="paymentform">
         <h1 class="paymentform__title">Your info</h1>
@@ -33,9 +35,7 @@
           <input type="text" id="form__postalcode" class="form__input form__small" />
 
           <label for="form__address" class="form__label form__big">Address<span class="form__star">*</span></label>
-          <input type="text" id="form__address" class="form__input form__big" />
-
-          <label for="form__useremail" class="form__label form__big">Email<span class="form__star">*</span></label>
+          <input type="text" id="form__address" class="form__input form__big" />          <label for="form__useremail" class="form__label form__big">Email<span class="form__star">*</span></label>
           <input type="text" id="form__useremail" class="form__input form__big" />
 
           <label for="form__phonenr" class="form__label form__big">Phone nr.<span class="form__star">*</span></label>
@@ -51,10 +51,51 @@
           Checkout
         </button>
       </div>
+      <section class="deliveryMethods">
+        <h1 class="deliveryMethods__heading">Select your prefered delivery method</h1>
+        <article class="deliveryCard">
+          <div class="deliveryCard__btnContainer">
+            <button class="deliveryCard__btn selectedDeliveryBtn">Home delivery</button>
+            <button class="deliveryCard__btn">Click-and-collect</button>
+            <button class="deliveryCard__btn">Post office</button>
+          </div>
+          <div id="map"></div>
+          <div class="deliveryCard__textContainer">
+            <h2 class="deliveryCard__textContainerHeading">Your order will be shipped to</h2>
+            <p class="deliveryCard__textContainerParagraph deliveryCard__name">Name: 61 Church St</p>
+            <p class="deliveryCard__textContainerParagraph">Address: Berwick-upon-Tweed</p>
+          </div>
+        </article>
+      </section>
+      <section class="paymentMethods">
+        <h2 class="paymentMethods__heading">Choose payment method</h2>
+        <article class="paymentMethods__paymentOptions">
+          <div class="paymentMethod"><input type="radio" name="paymentMethod">
+            <img src="/images/cardPayment.svg" alt="Payment Method Cards" class="cardMethod__img">
+            <label for="paymentMethod">Pay with credit card</label>
+          </div>
+          <hr class="paymentRow">
+          <div class="paymentMethod"><input type="radio" name="paymentMethod">
+            <img src="/images/applepay.svg" alt="Payment Method Paypal" class="paymentMethods__img">
+            <label for="paymentMethod">Pay with Paypal</label>
+          </div>
+          <hr class="paymentRow">
+          <div class="paymentMethod"><input type="radio" name="paymentMethod">
+            <img src="/images/paypal.svg" alt="Payment Method Apple Pay" class="paymentMethods__img">
+            <label for="paymentMethod">Pay with Apple Pay</label>
+          </div>
+        </article>
+      </section>
     </div>
     @@include("./partials/livechat_button.html")
   </main>
   @@include("./partials/footer.html")
+  <script src="/js/payment/maps.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+    defer
+  ></script>
+  <script src="/js/payment/delivery.js"></script>
 </body>
 
 </html>
