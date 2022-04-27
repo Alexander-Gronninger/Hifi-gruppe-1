@@ -3,6 +3,7 @@ import "../styles/modules/index/companyinfo.scss";
 import "../styles/modules/index/frontpageProducts.scss";
 import "../styles/modules/productList/product__img.scss";
 
+//js
 import header from "./partials/header.js";
 import livechat from "./partials/livechat.js";
 import footer from "./partials/footer.js";
