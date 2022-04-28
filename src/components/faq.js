@@ -1,0 +1,437 @@
+//styles
+import "../styles/modules/faq/faq.scss";
+
+//js
+import header from "./partials/header.js";
+import livechat from "./partials/livechat.js";
+import footer from "./partials/footer.js";
+
+function faq() {
+  let element = document.createElement("div");
+  element.className = "wrapper";
+
+  // HTML
+  element.appendChild(header());
+  element.innerHTML += `<main>
+  <h1 id="page__title">FAQ</h1>
+  <article class="faq whiteBackground">
+    <p class="faq__text faq__text--largeText">
+      Here at Hi-Fi Corner, our trained product specialists aim to provide
+      the right product for you. We take great care with all of our orders
+      to ensure you are fully happy with the product.
+    </p>
+
+    <p class="faq__text">
+      We aim to resolve any problems to your satisfaction. Please contact
+      us directly, if, for any reason, you have an issue with your order,
+      your product or any other service provided. OUR GUARANTEE All items
+      excluding ex-display and secondhand goods are covered by at least 12
+      months warranty; this is detailed on your receipt. Any secondhand or
+      ex-display product is covered by at least 3 months warranty as noted
+      in the original listing. Hi-Fi Corner cannot guarantee against any
+      misuse (i.e. blown speakers etc.), commercial use, wear and tear,
+      erosion of parts, loss of data stored on any form of writeable/hard
+      drive devices, dead pixels of an amount not covered by the
+      manufacturer’s specifications or where you have not allowed repairs
+      of goods to be carried out by authorised agents. If it has been more
+      than 30 days since you have received a product and discovered a
+      fault, we will still repair the goods free of charge or, if you
+      prefer, replace them provided that you report the fault within 12
+      months of purchase. If we are unable to repair or replace the
+      item(s) we will provide you with a full refund instead.
+    </p>
+    <p class="faq__text">
+      Please note that if it is after the initial 30 days of purchase you
+      must be able to certify the fault was present upon delivery and not
+      by misuse.
+    </p>
+
+    <section id="section__refunds">
+      <h2 class="faq__subTitle">Refunds</h2>
+      <p class="faq__text">
+        Once your returned item is received and inspected, we will send
+        you an email or phone call to notify you that we have received
+        your returned item.We will also notify you of the approval or
+        rejection of your refund.
+      </p>
+      <p class="faq__text">
+        If you are approved, then your refund will be processed, and a
+        credit will automatically be applied to your original method of
+        payment, within 3 working days. Please note we require an email
+        address or contact number to arrange a refund that was purchased
+        over the phone. There are certain situations where only partial
+        refunds are granted or we cannot refund you; Any item not in its
+        original condition, is damaged or missing parts for reasons not
+        due to our error. Any damage that has been caused by misuse, such
+        as a speaker drive unit being blown or water being introduced to
+        the unit, or that has been damaged due to poor packing. Any item
+        that is returned more than 30 days after delivery. In any
+        instance, we will notify you as soon as possible to resolve this
+        matter.
+      </p>
+      <p class="faq__text">
+        If you haven’t received a refund after confirmation, first check
+        your bank account again. Then contact your credit card company, it
+        may take some time before your refund is officially posted. Next
+        contact your bank. There is often some processing time of a couple
+        of days before a refund is posted. If you have done all of this
+        and you still have not received your refund after 7 days, please
+        contact us at sales@hificorner.co.uk.
+      </p>
+    </section>
+    <section id="section__shipping">
+      <h2 class="faq__subTitle">Shipping</h2>
+      <p class="faq__text">
+        To return your product, you should mail your product to: 2 Joppa
+        Road, Mackenzie House, Edinburgh, EH15 2EU. If you would like to
+        return an item, please note that we cannot arrange a collection of
+        the item without additional cost; you will be responsible for
+        ensuring the product reaches us. Shipping costs are
+        non-refundable. If you receive a refund, the cost of return
+        shipping will be deducted from your refund. Depending on where you
+        live, the time it may take for your exchanged product to reach you
+        may vary. We will process the refund when the item arrives with
+        us.
+      </p>
+      <p class="faq__text">
+        If you are shipping an item over £100, we would advise using a
+        trackable shipping service or purchasing shipping insurance. We
+        cannot guarantee that we will receive your returned item.
+      </p>
+    </section>
+    <section id="section__delivery">
+      <h2 class="faq__subTitle">Delivery</h2>
+      <p class="faq__text">
+        Please check the condition of all products delivered as soon as
+        they are received. This does not affect your statutory rights. If
+        there is a problem we would like to deal with this as soon as
+        possible to alleviate any inconvenience to yourself. As soon as we
+        have delivered the goods to you, you will be responsible for them
+        and any damage occasioned whilst in your possession. The majority
+        of goods we send will require you to sign for them upon delivery.
+        If you are not able to sign for a delivery, we will do our utmost
+        to contact you to arrange when it is convenient to redeliver. Our
+        responsibility for everything other than damage due to our
+        negligence will end at the time the carrier tried to delivery the
+        goods to you. If your product is visibly damaged in transit,
+        please sign for the delivery as ‘damaged’ and let us know as soon
+        as possible.
+      </p>
+      <p class="faq__text">
+        Goods that are usually in stock supplied within the UK will
+        normally be delivered within 1 – 3 working days of acceptance of
+        order.
+      </p>
+      <p class="faq__text">
+        All orders in the UK over £99 will be sent free of charge.
+        Delivery time 1-3 working days.
+      </p>
+      <p class="faq__text">
+        For EU countries please contact us for a shipping quote prior to
+        purchase.
+      </p>
+      <p class="faq__text">
+        All other countries outwith the UK and EU please email us for
+        delivery charges.
+      </p>
+      <p class="faq__text">
+        Custom charges may apply to goods delivered outwith the UK. The
+        Buyer is responsible for the payment of these charges.
+      </p>
+      <p class="faq__text">
+        You shall use reasonable endeavours to meet any date agreed for
+        delivery. In any event time of delivery shall not be of the
+        essence and we shall not be liable for any losses, costs, damages
+        or expenses incurred by you or any third party arising directly or
+        indirectly out of any failure to meet any estimated delivery date.
+      </p>
+      <p class="faq__text">
+        Delivery of the Goods shall be made to your address specified in
+        the order and you shall make all arrangements necessary to take
+        delivery of the Goods whenever they are tendered for delivery.
+        Risk in the Goods shall pass to you upon delivery of the Goods, or
+        where you fail to take delivery at the agreed time, at the time
+        delivery was attempted. Title in the Goods shall not pass to you
+        until payment of the price has been made in full.
+      </p>
+    </section>
+    <section id="section__returns">
+      <h2 class="faq__subTitle">Returns process/your statutory rights</h2>
+      <p class="faq__text">
+        If you wish to return goods purchased online or over the phone,
+        you should notify Hi-Fi Corner of your intention to do so within
+        14 days of the date of receipt.
+      </p>
+      <p class="faq__text">
+        You then have an additional 14 days to return the goods from this
+        notification date (goods must be returned within 28 days). We will
+        in such circumstances refund you the cost of your order, excluding
+        postage or delivery cost. However, if goods are not returned "as
+        new" due to excessive handling on your part, or with components
+        missing (including packing materials and manuals) we may make a
+        reasonable deduction for this. Please do not send your product
+        back to the manufacturer. We kindly ask that to make the refund
+        process easier, that you include your receipt or proof of purchase
+        and a cover letter detailing briefly why the item is being
+        returned. We cannot refund the cost of delivery fees if there was
+        an additional charge, only the cost of the goods themselves. We
+        will process the refund when the item arrives with us. If you are
+        shipping an item over £100, we would advise using a trackable
+        shipping service or purchasing shipping insurance. We cannot
+        guarantee that we will receive your returned item.
+      </p>
+      <p class="faq__text">
+        Please contact us before attempting to return your goods. For
+        purchases bought in-store, you can also drop in and be refunded
+        instantly.
+      </p>
+    </section>
+    <section id="section__sales">
+      <h2 class="faq__subTitle">Sale items</h2>
+      <p class="faq__text">
+        Only regularly priced items may be refunded, unfortunately
+        clearance, special order and outlet items cannot be refunded
+        unless they are found to be faulty on arrival. For more details
+        about returning secondhand or sale items, please contact
+        sales@hificorner.co.uk.
+      </p>
+    </section>
+    <section id="section__exchanges">
+      <h2 class="faq__subTitle">Exchanges</h2>
+      <p class="faq__text">
+        We can only replace items if they are defective or damaged. If you
+        need to exchange the product for the same item due to a fault,
+        please first send us an email at sales@hificorner.co.uk and once
+        approved, send your item to:
+      </p>
+      <p class="faq__text">
+        Hi-Fi Corner, 2 Joppa Road, Mackenzie House, Portobello,
+        Edinburgh, EH15 2EU.
+      </p>
+      <p class="faq__text">
+        Please also include the proof of purchase and a cover letter
+        detailing the reason for exchange.
+      </p>
+    </section>
+    <section id="section__privacyPolicy">
+      <h2 class="faq__subTitle">Privacy Policy</h2>
+
+      <p class="faq__text">
+        This privacy policy sets out how this website uses and protects
+        any information that you give Hi-Fi Corner while using this
+        website. Hi-Fi Corner is committed to ensuring that your privacy
+        is protected. Should we ask you to provide certain information by
+        which you can be identified when using this website, then you can
+        be assured that it will only be used in accordance with this
+        privacy statement. We may change this policy from time to time by
+        updating this page. You should check this page from time to time
+        to ensure that you are happy with any changes.
+      </p>
+      <p class="faq__text">
+        It is our policy to conform to the General Data Protection
+        Regulation (GDPR) as of 25th May 2018.
+      </p>
+      <p class="faq__text">
+        We would like to inform you about your data that we hold and its
+        retention and use.
+      </p>
+      <p class="faq__text">
+        More information can be found about GDPR and what it means here.
+      </p>
+      <p class="faq__text">
+        Our data is kept secure and is restricted to your address, phone
+        number and/or email.
+      </p>
+      <p class="faq__text">
+        We do not store any payment details for security purposes and will
+        not share this with any third-party organisation. Unless legally
+        required, we will not share any of your personal data. If you have
+        agreed for us to use your email you will be added to our customer
+        database.
+      </p>
+      <p>We use this database to;</p>
+      <ul class="faq__list">
+        <li>inform you in the low risk of a product recall</li>
+        <li>
+          contact you about your order status, enquiry or appointment
+        </li>
+        <li>send a digital copy of your proof of purchase</li>
+        <li>provide you with tracking details of an order</li>
+        <li>invite you to promotions and special offers</li>
+      </ul>
+
+      <p class="faq__text">
+        If you do not wish to receive promotional material such as offers,
+        newsletters, special discounts or announcements, you can
+        unsubscribe at any time through the 'Unsubscribe' link in any
+        promotional emails.
+      </p>
+      <p class="faq__text">
+        Your address is retained for your product guaranteed warranty and
+        for verifying payment methods and shipments. We may also use your
+        email or phone number when you contact us to confirm
+        appointments.Please email us should you wish to have your details
+        amended or deleted at any time, or if you have any further
+        queries.
+      </p>
+
+      <h3 class="faq__subSubTitle">What we collect</h3>
+      <p>We may collect the following information:</p>
+      <ul class="faq__list">
+        <li>name</li>
+        <li>contact information including email address</li>
+        <li>
+          demographic information such as postcode, preferences and
+          interests
+        </li>
+        <li>
+          other information relevant to customer surveys and/or offers
+        </li>
+      </ul>
+      <p class="faq__text">
+        For the exhaustive list of cookies we collect see the List of
+        cookies we collect section.
+      </p>
+
+      <h3 class="faq__subSubTitle">
+        What we do with the information we gather
+      </h3>
+      <p>
+        We require this information to understand your needs and provide
+        you with a better service, and in particular for the following
+        reasons:
+      </p>
+      <ul class="faq__list">
+        <li>Internal record keeping.</li>
+        <li>
+          We may use the information to improve our products and services.
+        </li>
+        <li>
+          We may periodically send promotional emails about new products,
+          special offers or other information which we think you may find
+          interesting using the email address which you have provided.
+        </li>
+        <li>
+          From time to time, we may also use your information to contact
+          you for market research purposes. We may contact you by email,
+          phone, fax or mail. We may use the information to customise the
+          website according to your interests.
+        </li>
+      </ul>
+
+      <h3 class="faq__subSubTitle">Security</h3>
+
+      <p class="faq__text">
+        We are committed to ensuring that your information is secure. In
+        order to prevent unauthorised access or disclosure, we have put in
+        place suitable physical, electronic and managerial procedures to
+        safeguard and secure the information we collect online.
+      </p>
+    </section>
+
+    <section id="section__termsConditions">
+      <h2 class="faq__subTitle">Terms & Conditions</h2>
+      <h3 class="faq__subSubTitle">Definitions</h3>
+      <ul>
+        <li>
+          “Buyer” means the individual or organisation who buys or agrees
+          to buy the Goods from the Seller;
+        </li>
+        <li>
+          Consumer” shall have the meaning ascribed in section 12 of the
+          Unfair Contract Terms Act 1977;
+        </li>
+        <li>
+          “Contract” means the contract between the Seller and the Buyer
+          for the sale and purchase of Goods incorporating these Terms and
+          Conditions;
+        </li>
+        <li>
+          “Goods” means the articles that the Buyer agrees to buy from the
+          Seller;
+        </li>
+        <li>“Seller” means Hi-Fi Corner (Edinburgh Ltd)</li>
+        <li>
+          “Terms and Conditions” means the terms and conditions of sale
+          set out in this agreement and any special terms and conditions
+          agreed in writing by the Seller;
+        </li>
+        <li>“Website” means hificorner.co.uk</li>
+      </ul>
+
+      <h3 class="faq__subSubTitle">Conditions</h3>
+      <p class="faq__text">
+        Nothing in these Terms and Conditions shall affect the Buyer’s
+        statutory rights as a Consumer. These Terms and Conditions shall
+        apply to all contracts for the sale of Goods by the Seller to the
+        Buyer and shall prevail over any other documentation or
+        communication from the Buyer. Acceptance of delivery of the Goods
+        shall be deemed conclusive evidence of the Buyer’s acceptance of
+        these Terms and Conditions. Any variation to these Terms and
+        Conditions (including any special terms and conditions agreed
+        between the parties) shall be inapplicable unless agreed in
+        writing by the Seller. Any complaints should be addressed to the
+        Seller’s address above.
+      </p>
+
+      <h3 class="faq__subSubTitle">Ordering</h3>
+      <p class="faq__text">
+        All orders for Goods shall be deemed to be an offer by the Buyer
+        to purchase Goods pursuant to these Terms and Conditions and are
+        subject to acceptance by the Seller. The Seller may choose not to
+        accept an order for any reason. Where Goods that are normally in
+        stock are ordered by the Buyer but are not available from stock
+        the Buyer shall be notified and given the option to either wait
+        until the Goods are available from stock or cancel the order and
+        receive a full refund within 28 days.
+      </p>
+
+      <h3 class="faq__subSubTitle">Trade description</h3>
+      <p class="faq__text">
+        All effort has been made to ensure that photography, descriptions
+        and details are correct and accurate. Due to constraints in
+        digital reproduction, differences in web browsers and monitor
+        displays, colour and texture reproduction of products may differ
+        slightly from actual products. All measurements are approximate.
+        The Seller will not be liable for any consequential loss or damage
+        arising should the Buyer rely on the accuracy of the digitally
+        reproduced images contained within the Website. The Seller shall
+        not be held liable for any mistakes or omissions to any
+        information given.
+      </p>
+
+      <h3 class="faq__subSubTitle">Price and payment</h3>
+      <p class="faq__text">
+        The price of the Goods shall be that stipulated on the Website.
+        The price is INCLUSIVE of VAT. The price EXCLUDES delivery
+        charges. The total purchase price, including VAT and delivery
+        charges, if any, will be displayed in the Buyer’s shopping cart
+        prior to confirming the order. After the order is received the
+        Seller shall confirm by email the details, description and price
+        for the Goods together with information on the right to cancel.
+        Payment of the price plus VAT and delivery charges must be made in
+        full before dispatch or ordering of the Goods.
+      </p>
+
+      <h3 class="faq__subSubTitle">Rights of seller</h3>
+      <p class="faq__text">
+        The Seller reserves the right to periodically update prices on the
+        Website, which cannot be guaranteed for any period of time. The
+        Seller shall make every effort to ensure prices are correct at the
+        point at which the Buyer places an order. The Seller reserves the
+        right to withdraw any Goods from the Website at any time. The
+        Seller shall not be liable to anyone for withdrawing any Goods
+        from the Website or for refusing to process an order.
+      </p>
+    </section>
+  </article>
+</main>`;
+  element.appendChild(livechat());
+  element.appendChild(footer());
+
+  // JAVASCRIPT
+
+  return element;
+}
+
+document.body.appendChild(faq());

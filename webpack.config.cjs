@@ -4,6 +4,9 @@ module.exports = {
   entry: {
     index: "./src/components/index.js",
     product_list: "./src/components/product_list.js",
+    cart: "./src/components/cart.js",
+    contact: "./src/components/contact.js",
+    faq: "./src/components/faq.js",
   },
   output: {
     filename: "[name].bundle.js",

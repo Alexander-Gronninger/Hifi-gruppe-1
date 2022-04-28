@@ -1,9 +1,9 @@
-const $productsContainer = document.querySelector(".cart__items");
-const $cartButton = document.querySelector(".cart__button");
-const $cartTitle = document.querySelector(".cart__title");
-const $cartAmount = document.querySelector(".cart__amount");
-const $cartSubTotal = document.querySelector(".cart__totalSubAmount");
-const $cartSubTotalContainer = document.querySelector(".cart__subTotal");
+const $productsContainer = element.querySelector(".cart__items");
+const $cartButton = element.querySelector(".cart__button");
+const $cartTitle = element.querySelector(".cart__title");
+const $cartAmount = element.querySelector(".cart__amount");
+const $cartSubTotal = element.querySelector(".cart__totalSubAmount");
+const $cartSubTotalContainer = element.querySelector(".cart__subTotal");
 const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
 
 async function renderCart() {
@@ -116,19 +116,19 @@ async function renderCart() {
     $productsContainer.innerHTML = productsContainerHTML.trim();
 
     // Add eventListeners to minus icon on counter
-    $subtractButtons = document.querySelectorAll(".counter__minus");
+    $subtractButtons = element.querySelectorAll(".counter__minus");
     $subtractButtons.forEach((button) =>
       button.addEventListener("click", (e) => onSubtractClick(e))
     );
 
     // Add eventListeners to plus icon on counter
-    $addButtons = document.querySelectorAll(".counter__plus");
+    $addButtons = element.querySelectorAll(".counter__plus");
     $addButtons.forEach((button) =>
       button.addEventListener("click", (e) => onAddClick(e))
     );
 
     // Add eventListeners to delete icon on card
-    $deleteButtons = document.querySelectorAll(".item__delete");
+    $deleteButtons = element.querySelectorAll(".item__delete");
     $deleteButtons.forEach((button) =>
       button.addEventListener("click", (e) => removeProductFromCart(e))
     );
