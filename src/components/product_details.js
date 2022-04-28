@@ -1,5 +1,6 @@
 //styles
 import "../styles/modules/productDetails/productDetails.scss";
+import "../styles/modules/global/compareUI.scss";
 
 //js
 import header from "./partials/header.js";
@@ -125,6 +126,9 @@ function productDetails() {
   //globally declared variable
   let price = "";
   let productName = "";
+
+  // setting dataset to the compare button, from URL id
+  element.querySelector(".productContainer").dataset.id = productID;
 
   // get product details from database
   getProduct();

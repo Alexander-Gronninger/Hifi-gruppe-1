@@ -63,8 +63,6 @@ function compareUI() {
       await fetch(API_URL + `?id_like=${productID}`)
     ).json();
 
-    console.log(productID);
-
     // array of all product comparison containers, so we can index them
     productContainers = Array.from(
       document.querySelectorAll(".compare__selectedProduct")
