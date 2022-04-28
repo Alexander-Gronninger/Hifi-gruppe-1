@@ -32,37 +32,91 @@ submitBtn.addEventListener("click", (event) => {
     delErrors() // Deletes all errors
 
     // Validate name
-    // if (form.name.value.length <= 0) {
-    //     showError(form.name.nextElementSibling, "You need to input your first name.")
-    //     return
-    // }
+    if (form.name.value.length <= 0) {
+        showError(form.name, "You need to input your first name.")
+        return
+    } else {
+        delStar(form.name)
+    }
 
     // Validate surname
-    // if (form.surname.value.length <= 0) {
-    //     showError(form.name.nextElementSibling, "You need to input your surname.")
-    //     return
-    // }
+    if (form.surname.value.length <= 0) {
+        showError(form.surname, "You need to input your surname.")
+        return
+    } else {
+        delStar(form.surname)
+    }
+
+    // Validate phone
+    if (form.phone.value.length == 0) {
+        showError(form.phone, "Please input your phone number.")
+        return
+    } else {
+        delStar(form.phone)
+    }
 
     // Validate mail
     if (form.email.value.length <= 0) {
-        showError(form.email.nextElementSibling, "You need to input your email.")
+        showError(form.email, "You need to input your email.")
         return
     } else if (!form.email.value.match(regXpEmail)) {
-        showError(form.email.nextElementSibling, "That's not an correct email...")
+        showError(form.email, "That's not an correct email...")
+        return
+    } else if (userExists(form.email.value, null)["email"] == true) { // This is true if email exists
+        showError(form.email, "That email address is already in use.")
+    } else {
+        delStar(form.email)
+    }
+
+    // Validate password
+    if (form.password.value.length == 0) {
+        showError(form.password, "Write a password, please :)")
+        return
+    } else if (!form.password.value.length > 7) {
+        showError(form.password, "Your password needs at least 8 characters.")
         return
     } else {
-        // If email exists
-        if (userExists(form.email.value, null)["email"] == true) // This is true if email exists
-            showError(form.email.nextElementSibling, "That email address is already in use.")
+        delStar(form.password)
+    }
+
+    // Validate confirm password
+    if (form.confirmPassword.value.length == 0) {
+        showError(form.confirmPassword, "Confirm your password, please :)")
+        return
+    } else if (form.password.value != form.confirmPassword.value) {
+        showError(form.confirmPassword, "Your passwords don't match...!")
+        return
+    } else {
+        delStar(form.confirmPassword)
+    }
+
+    // Validate checkbox (agree)
+    if (form.checkboxAgree.checked != true) {
+        form.checkboxAgree.closest("label").style.color = "red";
+        return
     }
 
 
+    //createUser({...form}) // spread operator
+    createUser({
+        firstName: form.name.value,
+        lastName: form.surname.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        password: form.password.value,
+        newsletter: form.checkboxNewsletter.checked
+    })
 })
 
 // Shows the correct error msg
 function showError(element, txt) {
-    element.style.display = "block";
-    element.textContent = txt;
+    element.focus()
+    element.nextElementSibling.style.display = "block";
+    element.nextElementSibling.textContent = txt;
+}
+
+function delStar(element) {
+    element.previousElementSibling.children[0].style.display = "none";
 }
 
 // Hides all error messages
@@ -76,29 +130,54 @@ function delErrors() {
 // -------------------------- POSTS DATA TO JSON-SERVER ----------------------------
 
 // This creates a new customer with the given data
-function createUser() {
+function createUser(data) {
 
+    // The userdata object going to be pushed to database with given info from data parametre
     const userinfo = {
-        username: "benjamin",
-        password: "adgangskode",
+        name: `${data.firstName} ${data.lastName}`,
+        password: data.password,
         address: {
-            street: "Pulsen",
-            number: "8",
-            apartment: "-",
-            zip_code: "4000",
-            city: "Roskilde",
-            country: "Denmark"
+            street: "",
+            number: "",
+            apartment: "",
+            zip_code: "",
+            city: "",
+            country: ""
         },
-        phone: "88888888",
-        email: "dinfarsmail@gmail.com"
+        phone: data.phone,
+        email: data.email,
+        wantsNewsletter: data.newsletter
 
     }
-    console.log(userinfo);
+
+
+    // Posts the userinfo object to database
     fetch(API_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
         },
         body: JSON.stringify(userinfo),
-    }).then(response => console.log(response));
+    }).then((response) => {
+        console.log(response)
+        if (response.status == (201 || 200)) {
+            return response.json()
+        } else {
+            const formTitle = document.querySelector("#formTitle")
+            formTitle.textContent = "Our servers are down, try again later og chat with John in the meantime."
+            formTitle.style.color = "red";
+            formTitle.scrollIntoView({ block: "center" })
+        }
+    }).then(data => {
+        setCookie("userToken", data.id, 365)
+        window.location.href = "/profile"
+    })
+
+}
+
+// This sets an cookie
+function setCookie(cookieName, data, expireDays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (expireDays * 24 * 60 * 60 * 1000));
+    document.cookie = `${cookieName}=${data};expires=${d};path=/`;
 }

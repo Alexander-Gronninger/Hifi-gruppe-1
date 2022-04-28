@@ -21,9 +21,7 @@
     <div class="g-whiteBackground">
       <!-- register form -->
       <form action="POST" class="registerForm">
-        <h2 class="registerForm__title">CREATE A NEW CUSTOMER ACCOUNT</h2>
-        <hr>
-        <h3>Personal Information</h3>
+        <h2 id="formTitle">CREATE NEW CUSTOMER ACCOUNT</h2>
         <!-- name -->
         <div class="registerForm__field">
           <label class="registerForm__label" for="name">First name <span title="Required field"
@@ -38,6 +36,13 @@
               class="required">*</span>
           </label>
           <input class="registerForm__input g-inputField" type="text" id="surname" name="surname" />
+          <p></p>
+        </div>
+        <!-- phone -->
+        <div class="registerForm__field">
+          <label class="registerForm__label" for="email">Phone <span title="Required field" class="required">*</span>
+          </label>
+          <input class="registerForm__input g-inputField" type="tel" id="phone" name="phone" />
           <p></p>
         </div>
         <!-- email -->
@@ -65,13 +70,14 @@
         </div>
         <!-- checkboxes -->
         <div class="registerForm__boxes">
-          <label class="container">By using this form you agree with the storage and handling of your data by this
+          <label class="container">By using this form you agree with the storage and handling of
+            your data by this
             website.
-            <input type="checkbox" checked="checked">
+            <input type="checkbox" name="checkboxAgree">
             <span class="checkmark"></span>
           </label>
           <label class="container">Sign Up for Newsletter
-            <input type="checkbox">
+            <input name="checkboxNewsletter" type="checkbox">
             <span class="checkmark"></span>
           </label>
         </div>

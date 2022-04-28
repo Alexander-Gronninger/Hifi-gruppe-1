@@ -10,16 +10,10 @@
     font-size: 24px;
     font-weight: 600;
   }
-  & hr {
-    margin-top: 10px;
-    margin-bottom: 24px;
-    max-width: 430px;
-    width: 100%;
-  }
-  & h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 12px;
+  & h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
   }
   &__label {
     font-weight: 600;
@@ -36,8 +30,10 @@
 .container {
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
   position: relative;
   padding-left: 24px;
+  gap: 12px;
   margin-bottom: 15px;
   cursor: pointer;
   font-size: 16px;
