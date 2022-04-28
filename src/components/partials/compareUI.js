@@ -16,22 +16,27 @@ function compareUI() {
     </div>
   `;
 
+  console.log("compareUI javascript loading");
+
   // variables for various DOM elements, need to be global but have to declare in async function as they are JS generated
   let productContainers = "";
   let compareButtonElements = "";
   let productID = "";
 
-  const compareContainer = document.querySelector(".compare");
+  const compareContainer = element.querySelector(".compare");
 
   // loadElements is run from productList/getProducts.js every time the product list is loaded / updated
+  loadElements();
   async function loadElements() {
     productContainers = Array.from(
-      document.querySelectorAll(".compare__selectedProduct")
+      element.querySelectorAll(".compare__selectedProduct")
     );
 
     compareButtonElements = Array.from(
-      document.querySelectorAll(".product__compareBtn")
+      element.querySelectorAll(".product__compareBtn")
     );
+
+    console.log(compareButtonElements);
 
     // eventListener for all the compare buttons
     for (let i = 0; i < compareButtonElements.length; i++) {
@@ -62,7 +67,7 @@ function compareUI() {
 
     // array of all product comparison containers, so we can index them
     productContainers = Array.from(
-      document.querySelectorAll(".compare__selectedProduct")
+      element.querySelectorAll(".compare__selectedProduct")
     );
     // fetching localStorage list of compared items, OR making empty array
     let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
@@ -97,7 +102,7 @@ function compareUI() {
             // we add dataset to the remove buttons, so we can identify which product is being removed
             // this is needed down the road to remove it from localStorage as well as the UI
             const elementRemoveBtns = Array.from(
-              document.querySelectorAll(".selectedProduct__removeBtn")
+              element.querySelectorAll(".selectedProduct__removeBtn")
             );
             // arrays start a 0, but .length doesn't account for that
             elementRemoveBtns[elementRemoveBtns.length - 1].dataset.id =
@@ -136,13 +141,13 @@ function compareUI() {
         ];
         // we add the productID of the added product to the remove button
         const elementRemoveBtns = Array.from(
-          document.querySelectorAll(".selectedProduct__removeBtn")
+          element.querySelectorAll(".selectedProduct__removeBtn")
         );
         // arrays start a 0, but .length doesn't account for that
         elementRemoveBtns[elementRemoveBtns.length - 1].dataset.id = productID;
 
         // hiding the infobox
-        const infoBox = document.querySelector(".compare__infoBox");
+        const infoBox = element.querySelector(".compare__infoBox");
         if (productContainers.length == 2) {
           infoBox.style.display = "none";
         }
@@ -155,7 +160,7 @@ function compareUI() {
 
     // arraying all x buttons so we can put eevntListeners on them
     const elementRemoveBtns = Array.from(
-      document.querySelectorAll(".selectedProduct__removeBtn")
+      element.querySelectorAll(".selectedProduct__removeBtn")
     );
 
     for (let i = 0; i < elementRemoveBtns.length; i++) {
@@ -165,12 +170,12 @@ function compareUI() {
 
   async function removeItem(event) {
     // showing the infobox
-    const infoBox = document.querySelector(".compare__infoBox");
+    const infoBox = element.querySelector(".compare__infoBox");
     infoBox.style.display = "grid";
 
     // we need array of buttons so we can tell which one was clicked
     const elementRemoveBtns = Array.from(
-      document.querySelectorAll(".selectedProduct__removeBtn")
+      element.querySelectorAll(".selectedProduct__removeBtn")
     );
 
     if (elementRemoveBtns.length == 1) {
@@ -192,5 +197,4 @@ function compareUI() {
 
   return element;
 }
-
 export default compareUI;

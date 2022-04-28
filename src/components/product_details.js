@@ -16,13 +16,13 @@ function productDetails() {
   element.innerHTML += `<div class="wrapper">
   <article class="productContainer">
     <h1 class="pageTitle" id="page__title">PRODUCT</h1>
-    <a class="product__compareBtn" href=""
+    <p class="product__compareBtn"
       >Compare
       <img
         class="compareBtn__icon"
         src="/images/sliders.svg"
         alt="Compare icon"
-    /></a>
+    /></p>
     <div class="product__background">
       <div class="product__gallery_details">
         <div class="product__gallery">
@@ -427,4 +427,6 @@ function productDetails() {
   return element;
 }
 
+import loadElements from "./partials/compareUI.js";
+loadElements();
 document.body.appendChild(productDetails());
