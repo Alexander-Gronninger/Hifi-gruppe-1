@@ -333,8 +333,8 @@ function productList() {
         </div>
       </article>
     </section>
-    ${compareUI()}
     </main>`;
+  //${compareUI()}
   element.appendChild(livechat());
   element.appendChild(footer());
 

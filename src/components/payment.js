@@ -9,7 +9,8 @@ import "../styles/modules/payment/paymentMethods.scss";
 import header from "./partials/header.js";
 import livechat from "./partials/livechat.js";
 import footer from "./partials/footer.js";
-import maps from "https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly";
+// not sure how to get this working with webpack
+//import maps from "https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly";
 
 function payment() {
   let element = document.createElement("main");

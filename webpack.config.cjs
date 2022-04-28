@@ -7,10 +7,10 @@ module.exports = {
     contact: "./src/components/contact.js",
     faq: "./src/components/faq.js",
     invoice: "./src/components/invoice.js",
-    ourHistory: "./src/components/our_history.js",
+    our_history: "./src/components/our_history.js",
     payment: "./src/components/payment.js",
     product_list: "./src/components/product_list.js",
-    product_detail: "./src/components/product_detail.js",
+    product_details: "./src/components/product_details.js",
   },
   output: {
     filename: "[name].bundle.js",

@@ -101,22 +101,23 @@ function productDetails() {
   element.appendChild(footer());
   element.appendChild(compareUI());
 
-  // JAVASCRIPTconst API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
+  // JAVASCRIPT
+  const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
   //const API_URL = `http://localhost:3000/products`; //lokal json server
 
-  const productTitle = document.querySelector(".details__title");
-  const productImage = document.querySelector(".gallery__image");
-  const productType = document.querySelector(".details__type");
-  const productDescription = document.querySelector(".details__description");
-  const productColors = document.querySelector(".details__colors");
-  const galleryDotsContainer = document.querySelector(".gallery__dots");
+  const productTitle = element.querySelector(".details__title");
+  const productImage = element.querySelector(".gallery__image");
+  const productType = element.querySelector(".details__type");
+  const productDescription = element.querySelector(".details__description");
+  const productColors = element.querySelector(".details__colors");
+  const galleryDotsContainer = element.querySelector(".gallery__dots");
 
-  const arrowLeft = document.querySelector(".gallery__leftarrow");
-  const arrowRight = document.querySelector(".gallery__rightarrow");
+  const arrowLeft = element.querySelector(".gallery__leftarrow");
+  const arrowRight = element.querySelector(".gallery__rightarrow");
 
-  const productPrice = document.querySelector(".price__amount");
+  const productPrice = element.querySelector(".price__amount");
 
-  const specTable = document.querySelector(".spec__table tbody");
+  const specTable = element.querySelector(".spec__table tbody");
 
   let searchParams = new URLSearchParams(window.location.search);
   let productID = searchParams.get("id");
@@ -160,12 +161,12 @@ function productDetails() {
       </div>`;
         productColors.innerHTML += colorContainer;
       }
-      let colorIconElements = document.querySelectorAll(".color__icon");
+      let colorIconElements = element.querySelectorAll(".color__icon");
       colorIconElements[i].style.backgroundColor = response[0].colors[i];
     }
 
     // in stock
-    let stockIcons = document.querySelector(".availability__icon");
+    let stockIcons = element.querySelector(".availability__icon");
     if (response[0].stock < 2) {
       stockIcons.style.backgroundColor = "red";
       stockIcons.parentElement.innerHTML += "No Stock";
@@ -178,7 +179,7 @@ function productDetails() {
     }
 
     //event listener on color buttons
-    const colorContainers = document.querySelectorAll(".color__container");
+    const colorContainers = element.querySelectorAll(".color__container");
     colorContainers.forEach((test) => {
       test.addEventListener("click", chooseColor);
     });
@@ -250,7 +251,7 @@ function productDetails() {
     let color = "";
 
     // by default 'this' is window, so we need to check for that and set color as the first color button color
-    if (this.classList == undefined) {
+    if (this == undefined) {
       color = productColors.children[0].children[1].innerHTML;
     }
 
@@ -298,7 +299,7 @@ function productDetails() {
     productImage.src = response[0].images[color][0];
 
     // if 'this' classlist isnt undefined then we must have clicked one of the color buttons
-    if (this.classList != undefined) {
+    if (this != undefined) {
       // so we remove --current from the --current element
       document
         .querySelector(".color__icon--current")
@@ -328,7 +329,7 @@ function productDetails() {
       .classList.remove("gallery__dot--current");
 
     // we select all gallery dots
-    let galleryDots = document.querySelectorAll(".gallery__dot");
+    let galleryDots = element.querySelectorAll(".gallery__dot");
 
     // we determine which of the arrows were clicked
     if (this.classList.contains("gallery__rightarrow")) {
@@ -364,7 +365,7 @@ function productDetails() {
 
   //localStorage - we have yet to make it so multiple items can be added after eachother
   // eventlistener on the "add to cart" button
-  document
+  element
     .querySelector(".details__addToCartBtn")
     .addEventListener("click", toStorage);
 
@@ -372,7 +373,7 @@ function productDetails() {
   async function toStorage() {
     // we get the amount of a given product
     const productAmountNumber = Number(
-      document.querySelector(".counter__amount").innerHTML
+      element.querySelector(".counter__amount").innerHTML
     );
 
     // we fetch the cart, as we need to know it's length
