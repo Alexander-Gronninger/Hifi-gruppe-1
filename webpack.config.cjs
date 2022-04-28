@@ -14,12 +14,12 @@ module.exports = {
   },
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "webpack_build"),
   },
   devtool: "inline-source-map",
   devServer: {
     static: {
-      directory: path.join(__dirname, "build"),
+      directory: path.join(__dirname, "webpack_build"),
     },
     port: 8080,
   },

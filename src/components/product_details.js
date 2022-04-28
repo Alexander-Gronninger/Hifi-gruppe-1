@@ -97,9 +97,9 @@ function productDetails() {
   <!--end of productWrapper -->
 </div>
 <!--end of wrapper-->`;
+  element.appendChild(compareUI());
   element.appendChild(livechat());
   element.appendChild(footer());
-  element.appendChild(compareUI());
 
   // JAVASCRIPT
   const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
@@ -428,5 +428,5 @@ function productDetails() {
 }
 
 import loadElements from "./partials/compareUI.js";
-loadElements();
 document.body.appendChild(productDetails());
+loadElements();
