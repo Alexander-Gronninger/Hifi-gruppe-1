@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <!--font awesome link-->
+    <script
+      src="https://kit.fontawesome.com/377d53b4a7.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Profile</title>
+  </head>
+  <body>
+    @@include("./partials/nav.html", {"activeUser": "tools__link--active"})
+    <div class="wrapper">
+      <main class="main__profile">
+        <div class="user__subNavigation">
+          <h2 class="subNavigation__item subNavigation__item--active">
+            Profile
+          </h2>
+          <h2 class="subNavigation__item">Orders</h2>
+        </div>
+
+        <div class="profile">
+          <p class="profile__text">Check and update your information</p>
+          <div class="profile__item name">
+            <i class="fa-solid fa-user profile__icon"></i>
+            <div>
+              <p class="profile__titles">Name</p>
+              <p>John Doe</p>
+            </div>
+            <div class="profile__edit"><i class="fa-solid fa-pen"></i></div>
+          </div>
+          <!-- - - - - - - - - - - - - - - - - - --->
+          <div class="hrule"></div>
+          <!-- - - - - - - - - - - - - - - - - - --->
+          <div class="profile__item phone">
+            <i class="fa-solid fa-phone profile__icon"></i>
+            <div>
+              <p class="profile__titles">Phone number</p>
+              <p>7875 149753</p>
+            </div>
+            <div class="profile__edit"><i class="fa-solid fa-pen"></i></div>
+          </div>
+          <!-- - - - - - - - - - - - - - - - - - --->
+          <div class="hrule"></div>
+          <!-- - - - - - - - - - - - - - - - - - --->
+          <div class="profile__item mail">
+            <i class="fa-solid fa-envelope profile__icon"></i>
+            <div>
+              <p class="profile__titles">Mail</p>
+              <p>johndoe@hotmail.com</p>
+            </div>
+            <div class="profile__edit"><i class="fa-solid fa-pen"></i></div>
+          </div>
+          <!-- - - - - - - - - - - - - - - - - - --->
+          <div class="hrule"></div>
+          <!-- - - - - - - - - - - - - - - - - - --->
+          <div class="profile__item password">
+            <i class="fa-solid fa-lock profile__icon"></i>
+            <div>
+              <p class="profile__titles">Password</p>
+              <p>***********</p>
+            </div>
+            <div class="profile__edit"><i class="fa-solid fa-pen"></i></div>
+          </div>
+          <!-- - - - - - - - - - - - - - - - - - --->
+          <div class="hrule"></div>
+          <!-- - - - - - - - - - - - - - - - - - --->
+          <div class="profile__item address">
+            <i class="fa-solid fa-location-dot profile__icon"></i>
+            <div>
+              <p class="profile__titles">Address</p>
+              <p>
+                61 Church St<br />
+                Berwick-upon-Tweed<br />
+                Northumberland<br />
+                TD15 1EE<br />
+                United Kingdom
+              </p>
+            </div>
+            <div class="profile__edit"><i class="fa-solid fa-pen"></i></div>
+          </div>
+        </div>
+
+        @@include("./partials/livechat_button.html")
+      </main>
+    </div>
+    @@include("./partials/footer.html")
+  </body>
+</html>
