@@ -46,13 +46,18 @@ async function addProduct(event) {
     document.querySelectorAll(".compare__selectedProduct")
   );
   // fetching localStorage list of compared items, OR making empty array
-  let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
+  let storageIDs = JSON.parse(localStorage.getItem("compareIDs")) || [];
   // if there are less than 3 items currently in comparison UI, we can add a new item
   if (productContainers.length < 3 || storageIDs.length < 3) {
     // if the amount of items in the HTML is not the same as the amount of items in localStorage
     if (storageIDs.length != productContainers.length) {
       // if there are localStorage items
       if (storageIDs.length > 0) {
+        //removing infobox if we have 3 items
+        const infoBox = document.querySelector(".compare__infoBox");
+        if (storageIDs.length == 3){
+          infoBox.style.display = "none"
+        }
         // we show the UI, its hidden by default
         compareContainer.style.display = "grid";
         // for each localStorage item
@@ -96,7 +101,6 @@ async function addProduct(event) {
     } else if (productID != "") {
       // we show the UI, its hidden by default
       compareContainer.style.display = "grid";
-
       compareContainer.innerHTML += `
       <div class="compare__selectedProduct">
         <img class="selectedProduct__image" src="${
@@ -131,7 +135,7 @@ async function addProduct(event) {
   }
   // if ID has been set, add it to localStorage
   if (productID != "") {
-    localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
+    localStorage.setItem("compareIDs", JSON.stringify(storageIDs));
   }
 
   // arraying all x buttons so we can put eevntListeners on them
@@ -158,7 +162,7 @@ async function removeItem(event) {
     compareContainer.style.display = "none";
   }
   // we get local storage IDs
-  let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
+  let storageIDs = JSON.parse(localStorage.getItem("compareIDs")) || [];
 
   // we set i to the index of the clicked item in the element array
   let i = elementRemoveBtns.indexOf(event.target);
@@ -166,7 +170,7 @@ async function removeItem(event) {
   storageIDs.splice(i, 1);
 
   // we set localStorage to the updated array
-  localStorage.setItem("storageIDs", JSON.stringify(storageIDs));
+  localStorage.setItem("compareIDs", JSON.stringify(storageIDs));
   // we remove the product comparison that was clicked on
   event.target.parentElement.remove();
 }
