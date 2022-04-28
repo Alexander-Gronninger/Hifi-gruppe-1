@@ -3,10 +3,14 @@ const path = require("path");
 module.exports = {
   entry: {
     index: "./src/components/index.js",
-    product_list: "./src/components/product_list.js",
     cart: "./src/components/cart.js",
     contact: "./src/components/contact.js",
     faq: "./src/components/faq.js",
+    invoice: "./src/components/invoice.js",
+    ourHistory: "./src/components/our_history.js",
+    payment: "./src/components/payment.js",
+    product_list: "./src/components/product_list.js",
+    product_detail: "./src/components/product_detail.js",
   },
   output: {
     filename: "[name].bundle.js",
