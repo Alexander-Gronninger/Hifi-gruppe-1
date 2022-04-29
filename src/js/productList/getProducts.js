@@ -10,6 +10,8 @@ async function getProducts() {
   json.forEach(function (productData) {
     printProduct(productData);
   });
+  // runs compareUI javascript, as it needs an up to date list of all products listed
+  loadElements();
 }
 
 import loadElements from "/js/global/compareUI.js";
@@ -64,9 +66,6 @@ function printProduct(data) {
   }
 
   productMainGrid__element.appendChild(NEW_ITEM);
-
-  // runs compareUI javascript, as it needs an up to date list of all products listed
-  loadElements();
 }
 
 export default getProducts;
