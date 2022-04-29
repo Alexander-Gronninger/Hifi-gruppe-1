@@ -2,18 +2,18 @@ function compareUI() {
   let element = document.createElement("article");
   element.classList.add("compare");
   element.innerHTML = `
-    <div class="compare__infoBox">
-      <div class="infoBox__arrow"></div>
-      <p class="infoBox__text">You can compare up to 3 products</p>
-    </div>
-    <div class="compare__compareButton">
-      <p class="compareButton__text">Compare &nbsp;</p>
-      <img
-        class="compareBtn__icon"
-        src="/images/slidersWhite.svg"
-        alt="Compare icon"
-      />
-    </div>
+  <div class="compare__infoBox">
+    <div class="infoBox__arrow"></div>
+    <p class="infoBox__text">You can compare up to 3 products</p>
+  </div>
+  <a class="compare__compareButton" href="/compare/">
+    <p class="compareButton__text">Compare &nbsp;</p>
+    <img
+      class="compareBtn__icon"
+      src="/images/slidersWhite.svg"
+      alt="Compare icon"
+    />
+  </a>
   `;
 
   // variables for various DOM elements, need to be global but have to declare in async function as they are JS generated
@@ -25,7 +25,6 @@ function compareUI() {
 
   // loadElements is run from productList/getProducts.js every time the product list is loaded / updated
   async function loadElements() {
-    console.log("loading elements...");
     productContainers = Array.from(
       document.querySelectorAll(".compare__selectedProduct")
     );

@@ -8,6 +8,7 @@ import "../styles/modules/productList/product__img.scss";
 import "../styles/modules/productList/product.scss";
 import "../styles/modules/productList/productCard__txt.scss";
 import "../styles/modules/productList/productMain__primaryHeading.scss";
+import "../styles/modules/global/compareUI.scss";
 
 //js
 import header from "./partials/header.js";
@@ -334,7 +335,7 @@ function productList() {
       </article>
     </section>
     </main>`;
-  //${compareUI()}
+  element.appendChild(compareUI());
   element.appendChild(livechat());
   element.appendChild(footer());
 
@@ -473,18 +474,20 @@ function productList() {
   }
   const API_URL = `https://hifi-jsonserver.herokuapp.com/products`;
   const productMainGrid__element = element.querySelector(".productMain__grid");
+  console.log(productMainGrid__element);
 
   async function getProducts() {
     let response = await fetch(API_URL);
     let json = await response.json();
     localDatabase = json;
 
-    json.forEach(function (productData) {
-      printProduct(productData);
+    json.forEach(function (data) {
+      printProduct(data);
     });
   }
 
   function printProduct(data) {
+    console.log("Printing product...");
     const NEW_ITEM = document.createElement("article");
     NEW_ITEM.dataset.id = data.id;
     NEW_ITEM.classList.add("product");
@@ -649,9 +652,11 @@ function productList() {
         </p>
       </div>`;
   }
-  getProducts();
 
+  getProducts();
   return element;
 }
 
+import loadElements from "./partials/compareUI.js";
 document.body.appendChild(productList());
+loadElements();
