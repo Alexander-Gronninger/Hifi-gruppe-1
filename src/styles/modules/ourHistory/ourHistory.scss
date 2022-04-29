@@ -1,0 +1,51 @@
+@import "../../globalstyles.scss";
+
+.ourHistory {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.ourHistory__section {
+  display: flex;
+  gap: 30px;
+}
+
+.ourHistory__textContent,
+.ourHistory__img {
+  flex: 1;
+  place-self: center;
+}
+
+.ourHistory__textContent {
+  text-align: center;
+}
+
+.ourHistory__title,
+.ourHistory__subTitle {
+  margin-bottom: 5px;
+}
+
+.ourHistory__title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.ourHistory__subTitle {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: $tertiaryTextColor;
+}
+
+.ourHistory__text:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.ourHistory__text {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.ourHistory__textBold {
+  font-weight: 600;
+}
