@@ -152,3 +152,51 @@
 .navSubmitBtn {
   border: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .header{
+    padding: 0;
+  }
+  .navigation{
+    display: flex;
+    flex-direction: column;
+    &__menu{
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+   }
+  .menu{
+    &__link{
+      padding: 0;
+      text-align: center;
+      
+    }    
+
+    &__item{
+      &:first-of-type{
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    &__logo{
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .navigation__tools{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 3rem;
+  }
+  .tools__link{
+    margin: 0 auto;
+  }
+
+
+
+}
