@@ -143,6 +143,8 @@ deliveryBtnss.forEach((element) => {
             map.style.visibility = "visible"
             map.style.position = "relative";
             map.style.top = "unset";
+            nameAddress[1].textContent = ""
+            nameAddress[0].innerHTML = ""
         } 
         else if (element.innerHTML === "Click-and-collect") {
             map.style.visibility = "hidden;"
