@@ -87,14 +87,3 @@
     margin: 1rem 0;
   }
 }
-
-@media only screen and (max-width: 600px) {
-  .frontpageProducts__headingContainer{
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .frontpageProducts__productContainer{
-    flex-direction: column;
-    gap: 3rem;
-  }
-}
