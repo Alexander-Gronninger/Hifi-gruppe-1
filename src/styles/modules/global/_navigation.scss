@@ -1,6 +1,7 @@
 .header {
   padding: 0px 34px;
   background-color: $tertiaryBackgroundColor;
+  
 }
 .navigation {
   display: flex;
@@ -156,6 +157,8 @@
 @media only screen and (max-width: 600px) {
   .header{
     padding: 0;
+    display: flex;
+    justify-content: center;
   }
   .navigation{
     display: flex;
@@ -167,7 +170,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 1rem;
     }
 
    }
