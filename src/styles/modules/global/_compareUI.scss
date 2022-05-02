@@ -107,3 +107,7 @@
 .compareBtn__icon {
   color: $primaryTextColor;
 }
+
+.disabledLink {
+  pointer-events: none;
+}

@@ -27,13 +27,14 @@ th.spectable__value img {
 .spectable__key {
   color: $secondaryIconColor;
   font-weight: 700;
-
+  text-align: left;
+  padding-left: 15px;
 }
 .spectable__value {
   font-weight: unset;
+  text-align: center;
 }
 .spectable__key,
 .spectable__value {
   font-size: 14px;
-  text-align: center;
 }

@@ -21,7 +21,6 @@ async function loadElements() {
   }
 }
 
-let compareLink = document.querySelector(".compare__compareButton");
 const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
 
 // exporting function for use in getProducts.js
@@ -176,20 +175,17 @@ async function removeItem(event) {
   localStorage.setItem("compareIDs", JSON.stringify(storageIDs));
   // we remove the product comparison that was clicked on
   event.target.parentElement.remove();
+
+  checkCompareAmount();
 }
 
-function checkCompareAmount() {
+async function checkCompareAmount() {
+  let compareLink = document.querySelector(".compare__compareButton");
   // we get local storage IDs
-  let storageIDs = JSON.parse(localStorage.getItem("storageIDs")) || [];
-  console.log("compareLink enable/disable running...");
-
-  console.log(compareLink);
-
-  if (storageIDs.length < 2) {
-    event.preventDefault();
-    console.log("disabling compareLink");
+  let storageIDs = JSON.parse(localStorage.getItem("compareIDs")) || [];
+  if (storageIDs.length == 1) {
+    compareLink.classList.add("disabledLink");
   } else {
-    compareLink.disabled = false;
-    console.log("enable compareLink");
+    compareLink.classList.remove("disabledLink");
   }
 }

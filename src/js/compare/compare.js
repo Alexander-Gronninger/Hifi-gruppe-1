@@ -28,6 +28,8 @@ async function getProductsToCompare() {
     specArray = [...new Set([...specArray, ...productSpecs])];
   }
 
+  let addMoreProductsElement = `<a href="../product_list/">Compare more products</a>`;
+
   // putting the elements in with the right data, if the data can't be found mark it with
   // ? is optional chaining, only in front of a . (chaining)
   tableElement.innerHTML += `
@@ -35,33 +37,33 @@ async function getProductsToCompare() {
   <tr class="spectable__row">
     <th class="spectable__key"></th>
     <th class="spectable__value"><img src="${
-      (productsArray[0] && productsArray[0].images.default) || "EMPTY IMAGE"
+      (productsArray[0] && productsArray[0].images.default) || ""
     }"alt="${
-    (productsArray[0] && productsArray[0].images.default) || "EMPTY IMAGE"
+    (productsArray[0] && productsArray[0].images.default) || ""
   }"><br>${
     (productsArray[0] &&
       productsArray[0].brand + " " + productsArray[0]?.name) ||
-    "EMPTY NAME"
+    addMoreProductsElement
   }</th>
     <th class="spectable__value"><img src="${
-      (productsArray[1] && productsArray[1].images.default) || "EMPTY IMAGE"
+      (productsArray[1] && productsArray[1].images.default) || ""
     }" alt="${
     (productsArray[1] &&
       productsArray[1].brand + " " + productsArray[1]?.name) ||
-    "EMPTY IMAGE"
+    ""
   }"><br>${
     (productsArray[1] &&
       productsArray[1].brand + " " + productsArray[1]?.name) ||
-    "EMPTY NAME"
+    addMoreProductsElement
   }</th>
     <th class="spectable__value"><img src="${
-      (productsArray[2] && productsArray[2].images.default) || "EMPTY IMAGE"
+      (productsArray[2] && productsArray[2].images.default) || ""
     }" alt="${
-    (productsArray[2] && productsArray[2].images.default) || "EMPTY IMAGE"
+    (productsArray[2] && productsArray[2].images.default) || ""
   }"><br>${
     (productsArray[2] &&
       productsArray[2].brand + " " + productsArray[2].name) ||
-    "EMPTY NAME"
+    addMoreProductsElement
   }</th>
 </tr>`;
   console.log(specArray);
