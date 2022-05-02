@@ -1,5 +1,5 @@
-//const API_URL = "https://hifi-jsonserver.herokuapp.com/customers";
-const API_URL = "http://23.88.41.248:3000/customers"; //only for testing
+const API_URL = "https://hifi-jsonserver.herokuapp.com/customers";
+//const API_URL = "http://23.88.41.248:3000/customers"; //only for testing
 
 // Fetches the current customers, so we get quick access to data
 let database;
