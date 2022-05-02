@@ -45,11 +45,26 @@
     </ul>
     <div class="navigation__tools">
       <div class="tools__inputContainer">
-        <input class="tools__input" type="text" placeholder="Search product..." id="tools__input" />
-        <label for="tools__input"><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i></label>
+        <form action="/search_results" class="searchForm" method="get">
+          <input
+            class="tools__input"
+            type="text"
+            placeholder="Search product..."
+            id="tools__input"
+            name="search"
+          />
+          <label for="tools__input"
+            ><button class="navSubmitBtn" type="submit">
+              <i
+                class="tools__searchIcon fa-solid fa-magnifying-glass"
+              ></i></button
+          ></label>
+        </form>
       </div>
 
-      <a href="" class="tools__link @@activeUser"><i class="tools__icon fa-solid fa-user"></i></a>
+      <a href="" class="tools__link @@activeUser"
+        ><i class="tools__icon fa-solid fa-user"></i
+      ></a>
       <ul class="ul__toolsLink">
         <li class="li__toolsLink">
           <a href="/cart" class="tools__link tools__cart @@activeCart"><i
