@@ -102,3 +102,12 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.registerForm__field input {
+  margin-bottom: 10px;
+}
+
+.registerForm__field p {
+  margin-bottom: 1rem;
+  color: red;
+}

@@ -64,6 +64,7 @@ submitBtn.addEventListener("click", (event) => {
         return
     } else if (userExists(form.email.value, null)["email"] == true) { // This is true if email exists
         showError(form.email, "That email address is already in use.")
+        return
     } else {
         delStar(form.email)
     }
