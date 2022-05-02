@@ -1,14 +1,14 @@
 let formElement = document.querySelector(".paymentform__form");
 
 formElement.addEventListener("submit", gatherinfo);
-console.log(document.cookie);
-
-let userID = getCookie("userToken");
-console.log(userID.matches(/(d+)/));
 
 function gatherinfo(event) {
   event.preventDefault();
   console.log(event.target);
+
+  // we get the cookie(getCookie seems to not work), splitting it to an array on =, and selects user number
+  let userIDCookie = document.cookie.split("=");
+  let userID = userIDCookie[1];
 
   let orderdata = {
     costumerName: event.target.form__name.value,
