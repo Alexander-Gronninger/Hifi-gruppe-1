@@ -1,89 +1,58 @@
 <header class="header">
-    <nav class="navigation">
-      <ul class="navigation__menu">
-        <li class="menu__item menu__logo">
-          <a href="/"><img src="/images/logo.png" alt="" /></a>
-        </li>
-        <li class="menu__item" id="navShopElement">
-          <a class="menu__link @@activeShop" href="/product_list">SHOP</a>
-          <div class="categoryDropdown">
-            <h2 class="categoryDropdown__header">Browse Categories</h2>
-            <ul class="categoryDropdown__list">
-              <li class="list__item">
-                <a class="list__link" href="/product_list?category=cd+player"
-                  >CD Players</a
-                >
-              </li>
-              <li class="list__item">
-                <a class="list__link" href="/product_list?category=dvd+player"
-                  >DVD Players</a
-                >
-              </li>
-              <li class="list__item">
-                <a class="list__link" href="/product_list?category=preamp"
-                  >Preamps</a
-                >
-              </li>
-              <li class="list__item">
-                <a class="list__link" href="/product_list?category=speaker"
-                  >Speakers</a
-                >
-              </li>
-              <li class="list__item">
-                <a class="list__link" href="/product_list?category=turntable"
-                  >Turntables</a
-                >
-              </li>
-              <li class="list__item">
-                <a
-                  class="list__link"
-                  href="/product_list?category=integrated+amplifier"
-                  >Integrated Amplifiers</a
-                >
-              </li>
-              <li class="list__item">
-                <a
-                  class="list__link"
-                  href="/product_list?category=power+amplifier"
-                  >Power Amplifiers</a
-                >
-              </li>
-              <li class="list__item">
-                <a class="list__link" href="/product_list?category=tube+amplifier"
-                  >Tube Amplifiers</a
-                >
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link @@activeAboutUs" href="/our_history">ABOUT US</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link @@activeContactUs" href="/contact">CONTACT US</a>
-        </li>
-      </ul>
-      <div class="navigation__tools">
-        <div class="tools__inputContainer">
-          <input
-            class="tools__input"
-            type="text"
-            placeholder="Search product..."
-            id="tools__input"
-          />
-          <label for="tools__input"
-            ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
-          ></label>
+  <nav class="navigation">
+    <ul class="navigation__menu">
+      <li class="menu__item menu__logo">
+        <a href="/"><img src="/images/logo.png" alt="" /></a>
+      </li>
+      <li class="menu__item" id="navShopElement">
+        <a class="menu__link @@activeShop" href="/product_list">SHOP</a>
+        <div class="categoryDropdown">
+          <h2 class="categoryDropdown__header">Browse Categories</h2>
+          <ul class="categoryDropdown__list">
+            <li class="list__item">
+              <a class="list__link" href="/product_list?category=cd+player">CD Players</a>
+            </li>
+            <li class="list__item">
+              <a class="list__link" href="/product_list?category=dvd+player">DVD Players</a>
+            </li>
+            <li class="list__item">
+              <a class="list__link" href="/product_list?category=preamp">Preamps</a>
+            </li>
+            <li class="list__item">
+              <a class="list__link" href="/product_list?category=speaker">Speakers</a>
+            </li>
+            <li class="list__item">
+              <a class="list__link" href="/product_list?category=turntable">Turntables</a>
+            </li>
+            <li class="list__item">
+              <a class="list__link" href="/product_list?category=integrated+amplifier">Integrated Amplifiers</a>
+            </li>
+            <li class="list__item">
+              <a class="list__link" href="/product_list?category=power+amplifier">Power Amplifiers</a>
+            </li>
+            <li class="list__item">
+              <a class="list__link" href="/product_list?category=tube+amplifier">Tube Amplifiers</a>
+            </li>
+          </ul>
         </div>
-  
-        <a href="" class="tools__link @@activeUser"
-          ><i class="tools__icon fa-solid fa-user"></i
-        ></a>
-        <a href="/cart" class="tools__link tools__cart @@activeCart"
-          ><i class="tools__icon fa-solid fa-cart-shopping"></i>
-          <p class="cart__amount"></p>
-        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link @@activeAboutUs" href="/our_history">ABOUT US</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link @@activeContactUs" href="/contact">CONTACT US</a>
+      </li>
+    </ul>
+    <div class="navigation__tools">
+      <div class="tools__inputContainer">
+        <input class="tools__input" type="text" placeholder="Search product..." id="tools__input" />
+        <label for="tools__input"><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i></label>
       </div>
-    </nav>
-  </header>
-  
+
+      <a href="" class="tools__link @@activeUser"><i class="tools__icon fa-solid fa-user"></i></a>
+      <a href="/cart" class="tools__link tools__cart @@activeCart"><i class="tools__icon fa-solid fa-cart-shopping"></i>
+        <p class="cart__amount"></p>
+      </a>
+    </div>
+  </nav>
+</header>
