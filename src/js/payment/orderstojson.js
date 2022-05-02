@@ -1,6 +1,10 @@
 let formElement = document.querySelector(".paymentform__form");
 
 formElement.addEventListener("submit", gatherinfo);
+console.log(document.cookie);
+
+let userID = getCookie("userToken");
+console.log(userID.matches(/(d+)/));
 
 function gatherinfo(event) {
   event.preventDefault();
@@ -13,11 +17,9 @@ function gatherinfo(event) {
     costumerAddress: event.target.form__address.value,
     costumerEmail: event.target.form__useremail.value,
     costumerPhone: event.target.form__phonenr.value,
-    products: [
-      JSON.parse(localStorage.getItem("cart"))
-    ]
-
-  }
+    customerID: userID,
+    products: [JSON.parse(localStorage.getItem("cart"))],
+  };
   console.log(orderdata);
   fetch("https://hifi-jsonserver.herokuapp.com", {
     method: "POST",
@@ -25,5 +27,5 @@ function gatherinfo(event) {
       "Content-Type": "application/json; charset=UTF-8",
     },
     body: JSON.stringify(orderdata),
-  }).then(response => console.log(response));
+  }).then((response) => console.log(response));
 }
