@@ -1,40 +1,47 @@
+import "../../styles/modules/global/footer.scss"
+
 function footer() {
   let element = document.createElement("footer");
   element.classList.add("blackFooter");
   element.innerHTML = `
-    <div class="flexBox footerTop">
-      <div>
-        <ul class="footer">
-          <li class="footer__list-item">
-            <a class="blackFooter__a" href="/">Home</a>
-          </li>
-          <li class="footer__list-item">
-            <a class="blackFooter__a" href="/product_list">Shop</a>
-          </li>
-          <li class="footer__list-item">
-            <a class="blackFooter__a" href="/our_history">About us</a>
-          </li>
-        </ul>
-      </div>
-  
-      <div>
-        <ul class="footer">
-          <li class="footer__list-item">
-            <a class="blackFooter__a" href="/faq/#section__refunds">Returns and Refunds</a>
-          </li>
-          <li class="footer__list-item">
-            <a class="blackFooter__a" href="/faq/#section__delivery">Delivery</a>
-          </li>
-          <li class="footer__list-item">
-            <a class="blackFooter__a" href="/faq/#section__privacyPolicy">Privacy Policy</a>
-          </li>
-          <li class="footer__list-item">
-            <a class="blackFooter__a" href="/faq/#section__termsConditions">Terms & Conditions</a>
-          </li>
-        </ul>
-      </div>
-  
-      <div class="firstRow">
+  <div class="flexBox footerTop">
+    <div class="footerSection">
+      <span class="mobileDropdown">Navigation <i class="fa-solid fa-chevron-down"></i></span>
+      <ul class="footer">
+        <li class="footer__list-item">
+          <a class="blackFooter__a" href="/">Home</a>
+        </li>
+        <li class="footer__list-item">
+          <a class="blackFooter__a" href="/product_list">Shop</a>
+        </li>
+        <li class="footer__list-item">
+          <a class="blackFooter__a" href="/our_history">About us</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footerSection">
+      <span class="mobileDropdown">Policies <i class="fa-solid fa-chevron-down"></i></span>
+      <ul class="footer">
+        <li class="footer__list-item">
+          <a class="blackFooter__a" href="/faq/#section__refunds">Returns and Refunds</a>
+        </li>
+        <li class="footer__list-item">
+          <a class="blackFooter__a" href="/faq/#section__delivery">Delivery</a>
+        </li>
+        <li class="footer__list-item">
+          <a class="blackFooter__a" href="/faq/#section__privacyPolicy">Privacy Policy</a>
+        </li>
+        <li class="footer__list-item">
+          <a class="blackFooter__a" href="/faq/#section__termsConditions">Terms & Conditions</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div>
+      <span class="mobileDropdown">Navigation <i class="fa-solid fa-chevron-down"></i></span>
+      <div class="firstRow footerSection">
         <h2>Contact</h2>
         <p>2 Joppa Rd, Edinburgh, EH1 2EU</p>
         <p class="blackFooter__p">
@@ -52,22 +59,23 @@ function footer() {
         <a class="blackFooter__a" href="#"><i class="blackFooter__i fa-brands fa-instagram-square"></i></a>
       </div>
     </div>
-  
-    <div class="flexBox footerBottom">
-      <div>
-        <i class="footerBottom__i fa-brands fa-cc-stripe"></i>
-        <i class="footerBottom__i fa-brands fa-cc-visa"></i>
-        <i class="footerBottom__i fa-brands fa-cc-mastercard"></i>
-        <p class="blackFooter__p">
-          Hi Fi Corner (Edinburgh) Ltd is registered in Scotland. No: SC049298.
-          Registered office: 2 Joppa Rd, Edinburgh EH15 2EU
-        </p>
-      </div>
-  
-      <div>
-        <p>Built by WU07 :)</p>
-      </div>
+  </div>
+
+  <div class="flexBox footerBottom">
+    <div>
+      <i class="footerBottom__i fa-brands fa-cc-stripe"></i>
+      <i class="footerBottom__i fa-brands fa-cc-visa"></i>
+      <i class="footerBottom__i fa-brands fa-cc-mastercard"></i>
+      <p class="blackFooter__p">
+        Hi Fi Corner (Edinburgh) Ltd is registered in Scotland. No: SC049298.
+        Registered office: 2 Joppa Rd, Edinburgh EH15 2EU
+      </p>
     </div>
+
+    <div>
+      <p>Built by WU07 :)</p>
+    </div>
+  </div>
     `;
   return element;
 }

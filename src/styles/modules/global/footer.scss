@@ -55,3 +55,30 @@
 .footerBottom__i {
   font-size: 57px;
 }
+
+.mobileDropdown {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .flexBox.footerTop {
+    flex-direction: column;
+  }
+  .footerSection ul {
+    border-top: 2px solid white;
+  }
+  .firstRow {
+    border-top: 2px solid white;
+  }
+  .mobileDropdown {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    margin-top: 1rem;
+    &:hover {
+      background-color: red;
+    }
+  }
+}
