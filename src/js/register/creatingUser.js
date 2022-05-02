@@ -181,3 +181,14 @@ function setCookie(cookieName, data, expireDays) {
     d.setTime(d.getTime() + (expireDays * 24 * 60 * 60 * 1000));
     document.cookie = `${cookieName}=${data};expires=${d};path=/`;
 }
+
+// function deleteShit() {
+//     // Posts the userinfo object to database
+//     fetch("https://hifi-jsonserver.herokuapp.com/customers/1", {
+//         method: "DELETE",
+//         headers: {
+//             "Content-Type": "application/json; charset=UTF-8",
+//         }
+//     })
+// }
+// deleteShit()
