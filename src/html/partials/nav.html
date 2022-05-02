@@ -65,15 +65,21 @@
     </ul>
     <div class="navigation__tools">
       <div class="tools__inputContainer">
-        <input
-          class="tools__input"
-          type="text"
-          placeholder="Search product..."
-          id="tools__input"
-        />
-        <label for="tools__input"
-          ><i class="tools__searchIcon fa-solid fa-magnifying-glass"></i
-        ></label>
+        <form action="/search_results" class="searchForm" method="get">
+          <input
+            class="tools__input"
+            type="text"
+            placeholder="Search product..."
+            id="tools__input"
+            name="search"
+          />
+          <label for="tools__input"
+            ><button class="navSubmitBtn" type="submit">
+              <i
+                class="tools__searchIcon fa-solid fa-magnifying-glass"
+              ></i></button
+          ></label>
+        </form>
       </div>
 
       <a href="" class="tools__link @@activeUser"
@@ -83,12 +89,11 @@
         ><i class="tools__icon fa-solid fa-cart-shopping"></i>
         <p class="cart__amount"></p>
       </a>
-      
+
       <main class="cart">
         <div class="cart__content">
           <h1 class="cart__title">Cart</h1>
           <article class="cart__items">
-
             <section class="empty__cart">
               <h2>Your cart is empty.</h2>
             </section>
@@ -113,7 +118,6 @@
               <p class="item__price">£ 4,799.00</p>
               <div class="item__delete"><i class="fa-solid fa-xmark"></i></div>
             </section>-->
-
           </article>
           <p class="cart__subTotal">
             Sub total<span class="cart__totalSubAmount">£299.00</span>

@@ -1,6 +1,7 @@
 # Hifi-gruppe-1
 
 # gulp_concat
+
 # TO START PROJECT
 
 Make sure to have nodejs and gulp installed
@@ -21,7 +22,6 @@ Reduces image sizes
 Creates a live server
 
 Runs all of the above when files are saved, and reloads in the browser
-
 
 # Definition of done
 
