@@ -55,8 +55,8 @@ async function addProduct(event) {
       if (storageIDs.length > 0) {
         //removing infobox if we have 3 items
         const infoBox = document.querySelector(".compare__infoBox");
-        if (storageIDs.length == 3){
-          infoBox.style.display = "none"
+        if (storageIDs.length == 3) {
+          infoBox.style.display = "none";
         }
         // we show the UI, its hidden by default
         compareContainer.style.display = "grid";

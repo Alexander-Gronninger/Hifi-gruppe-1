@@ -36,21 +36,29 @@ async function getProductsToCompare() {
     <th class="spectable__key"></th>
     <th class="spectable__value"><img src="${
       (productsArray[0] && productsArray[0].images.default) || "EMPTY IMAGE"
-    }"alt=""><br>${
+    }"alt="${
+    (productsArray[0] && productsArray[0].images.default) || "EMPTY IMAGE"
+  }"><br>${
     (productsArray[0] &&
       productsArray[0].brand + " " + productsArray[0]?.name) ||
     "EMPTY NAME"
   }</th>
     <th class="spectable__value"><img src="${
       (productsArray[1] && productsArray[1].images.default) || "EMPTY IMAGE"
-    }" alt=""><br>${
+    }" alt="${
+    (productsArray[1] &&
+      productsArray[1].brand + " " + productsArray[1]?.name) ||
+    "EMPTY IMAGE"
+  }"><br>${
     (productsArray[1] &&
       productsArray[1].brand + " " + productsArray[1]?.name) ||
     "EMPTY NAME"
   }</th>
     <th class="spectable__value"><img src="${
       (productsArray[2] && productsArray[2].images.default) || "EMPTY IMAGE"
-    }" alt=""><br>${
+    }" alt="${
+    (productsArray[2] && productsArray[2].images.default) || "EMPTY IMAGE"
+  }"><br>${
     (productsArray[2] &&
       productsArray[2].brand + " " + productsArray[2].name) ||
     "EMPTY NAME"
