@@ -1,37 +1,49 @@
 <section class="livechat__chat hideChat">
-    <div class="chat__header">
-        <img class="header__avatar" src="/images/john.jpg" alt="Live chat avatar">
-        <span class="header__txtBox">
-            <p class="txtBox__top">Chatting with</p>
-            <p class="txtBox__bottom">John Bot<span class="txtBox__availability txtBox__availability--online"></span>
-            </p>
-        </span>
+  <div class="chat__header">
+    <img class="header__avatar" src="/images/john.jpg" alt="Live chat avatar" />
+    <span class="header__txtBox">
+      <p class="txtBox__top">Chatting with</p>
+      <p class="txtBox__bottom">
+        John Bot<span
+          class="txtBox__availability txtBox__availability--online"
+        ></span>
+      </p>
+    </span>
+  </div>
+  <ul class="chat__messages">
+    <li class="messages messages--left">
+      <img
+        class="messages__avatar"
+        src="/images/john.jpg"
+        alt="Live chat avatar"
+      />
+      <p class="messages__txt">
+        Hello, I'm here,<br />What can I help you with?
+      </p>
+    </li>
+  </ul>
+  <form class="msgForm" action="">
+    <div class="msgForm__top">
+      <input class="top__input" placeholder="Write a message..." type="text" />
+      <span class="top__icons">
+        <label for="icons__file">
+          <i class="icons__icon fa-solid fa-paperclip"></i>
+        </label>
+        <input
+          type="file"
+          class="icons__input"
+          name="icons__file"
+          id="icons__file"
+        />
+        <i class="icons__icon fa-solid fa-face-smile top__emoji"></i>
+      </span>
     </div>
-    <ul class="chat__messages">
-        <li class="messages messages--left">
-            <img class="messages__avatar" src="/images/john.jpg" alt="Live chat avatar">
-            <p class="messages__txt">Hello, I'm here,<br>What can I help you with?</p>
-        </li>
-    </ul>
-    <form class="msgForm" action="">
-        <div class="msgForm__top">
-            <input class="top__input" placeholder="Write a message..." type="text">
-            <span class="top__icons">
-                <label for="icons__file">
-                    <i class="icons__icon fa-solid fa-paperclip"></i>
-                </label>
-                <input type="file" class="icons__input" name="icons__file" id="icons__file">
-                <i class="icons__icon fa-solid fa-face-smile top__emoji"></i>
-            </span>
-        </div>
-        <button class="msgForm__btn" type="submit">Send</button>
-    </form>
+    <button class="msgForm__btn" type="submit">Send</button>
+  </form>
 </section>
 
-
 <button class="livechat__button">
-    <i class="livechat__buttonImg fa-solid fa-comment"></i>
+  <i class="livechat__buttonImg fa-solid fa-comment"></i>
 </button>
-
 
 <script src="/js/global/livechat_button.js"></script>
