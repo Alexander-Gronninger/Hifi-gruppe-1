@@ -5,3 +5,14 @@
   justify-content: center;
   gap: 1.6rem;
 }
+@media only screen and (max-width: 600px) {
+  .productMain__grid{
+    display: flex;
+flex-direction: column;
+align-items: center;
+}
+.productMain__primaryHeading{
+  margin: 15rem auto;
+}
+}
+
