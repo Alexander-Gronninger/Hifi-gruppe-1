@@ -12,16 +12,20 @@
 }
 
 .subNavigation__item {
+  cursor: pointer;
   flex: 1;
   text-align: center;
   background-color: $primaryDetailColor;
   padding: 10px;
-  font-weight: 400;
 
   &--active {
     background-color: $quaternaryDetailColor;
     color: $tertiaryDetailColor;
   }
+}
+
+.subNavigation__title {
+  font-weight: 400;
 }
 
 .profile {
@@ -48,6 +52,7 @@
   }
 
   &__edit {
+    cursor: pointer;
     place-self: center end;
     font-size: 1.15rem;
 
@@ -85,6 +90,7 @@
   }
 
   &__open {
+    cursor: pointer;
     place-self: center end;
     font-size: 1.15rem;
 

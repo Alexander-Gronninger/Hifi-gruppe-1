@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/js/profile/profile.js" defer></script>
+
     <!--font awesome link-->
     <script
       src="https://kit.fontawesome.com/377d53b4a7.js"
@@ -17,10 +19,15 @@
     <div class="wrapper">
       <main class="main__profile">
         <div class="user__subNavigation">
-          <h2 class="subNavigation__item subNavigation__item--active">
-            Profile
-          </h2>
-          <h2 class="subNavigation__item">Orders</h2>
+          <a
+            href="/profile"
+            class="subNavigation__item subNavigation__item--active"
+            ><h2 class="subNavigation__title">Profile</h2></a
+          >
+
+          <a href="/orders" class="subNavigation__item"
+            ><h2 class="subNavigation__title">Orders</h2></a
+          >
         </div>
 
         <div class="profile">
@@ -29,9 +36,11 @@
             <i class="fa-solid fa-user profile__icon"></i>
             <div>
               <p class="profile__titles">Name</p>
-              <p>John Doe</p>
+              <p class="profile__name"></p>
             </div>
-            <div class="profile__edit"><i class="fa-solid fa-pen"></i></div>
+            <div class="profile__edit" title="Edit name">
+              <i class="fa-solid fa-pen"></i>
+            </div>
           </div>
           <!-- - - - - - - - - - - - - - - - - - --->
           <div class="hrule"></div>
@@ -40,9 +49,11 @@
             <i class="fa-solid fa-phone profile__icon"></i>
             <div>
               <p class="profile__titles">Phone number</p>
-              <p>7875 149753</p>
+              <p class="profile__phone"></p>
             </div>
-            <div class="profile__edit"><i class="fa-solid fa-pen"></i></div>
+            <div class="profile__edit" title="Edit phone number">
+              <i class="fa-solid fa-pen"></i>
+            </div>
           </div>
           <!-- - - - - - - - - - - - - - - - - - --->
           <div class="hrule"></div>
@@ -51,9 +62,11 @@
             <i class="fa-solid fa-envelope profile__icon"></i>
             <div>
               <p class="profile__titles">Mail</p>
-              <p>johndoe@hotmail.com</p>
+              <p class="profile__mail"></p>
             </div>
-            <div class="profile__edit"><i class="fa-solid fa-pen"></i></div>
+            <div class="profile__edit" title="Edit mail">
+              <i class="fa-solid fa-pen"></i>
+            </div>
           </div>
           <!-- - - - - - - - - - - - - - - - - - --->
           <div class="hrule"></div>
@@ -64,7 +77,9 @@
               <p class="profile__titles">Password</p>
               <p>***********</p>
             </div>
-            <div class="profile__edit"><i class="fa-solid fa-pen"></i></div>
+            <div class="profile__edit" title="Edit password">
+              <i class="fa-solid fa-pen"></i>
+            </div>
           </div>
           <!-- - - - - - - - - - - - - - - - - - --->
           <div class="hrule"></div>
@@ -73,7 +88,7 @@
             <i class="fa-solid fa-location-dot profile__icon"></i>
             <div>
               <p class="profile__titles">Address</p>
-              <p>
+              <p class="profile__address">
                 61 Church St<br />
                 Berwick-upon-Tweed<br />
                 Northumberland<br />
@@ -81,7 +96,9 @@
                 United Kingdom
               </p>
             </div>
-            <div class="profile__edit"><i class="fa-solid fa-pen"></i></div>
+            <div class="profile__edit" title="Edit address">
+              <i class="fa-solid fa-pen"></i>
+            </div>
           </div>
         </div>
 
