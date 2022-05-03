@@ -10,6 +10,24 @@
   margin: 0 auto;
 }
 
+.navigation__tools {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 103.6px;
+}
+
+.navigation__tools .li__toolsLink {
+  list-style-type: none;
+  align-items: center;
+}
+
+.navigation__tools .ul__toolsLink {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .navigation__menu {
   display: flex;
   height: 100%;
@@ -147,4 +165,8 @@
   position: absolute;
   top: -2px;
   left: 18px;
+}
+
+.navSubmitBtn {
+  border: none;
 }

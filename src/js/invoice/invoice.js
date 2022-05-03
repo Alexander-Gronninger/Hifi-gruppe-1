@@ -30,7 +30,7 @@ async function getOrder() {
   let customerResponse = await (
     await fetch(API_URL + `/customers/?id_like=${orderResponse[0].customerId}`)
   ).json();
-  
+
   // inserting information into HTML
   customerNameElement.innerHTML = customerResponse[0].username;
   customerAddressElement.innerHTML =
@@ -51,7 +51,9 @@ async function getOrder() {
   orderCurrencyElement.innerHTML = orderResponse[0].currency;
 
   // table content needs to be inside tbody element
-  const invoiceSummeryElement = document.querySelector(".invoice__summery tbody");
+  const invoiceSummeryElement = document.querySelector(
+    ".invoice__summery tbody"
+  );
 
   // putting in table heading
   invoiceSummeryElement.innerHTML += `
@@ -72,13 +74,15 @@ async function getOrder() {
 
     invoiceSummeryElement.innerHTML += `
     <tr class="summery__item">
-      <td class="item__productName">${orderResponse[0].products[i].productName} - ${
-      orderResponse[0].products[i].color
-    }</td>
+      <td class="item__productName">${
+        orderResponse[0].products[i].productName
+      } - ${orderResponse[0].products[i].color}</td>
       <td class="item__productPrice">&pound; ${
         orderResponse[0].products[i].productPrice
       }</td>
-      <td class="item__productAmount">${orderResponse[0].products[i].productAmount}</td>
+      <td class="item__productAmount">${
+        orderResponse[0].products[i].productAmount
+      }</td>
       <td class="item__productTotal">&pound; ${
         orderResponse[0].products[i].productAmount *
         orderResponse[0].products[i].productPrice

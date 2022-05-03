@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/js/cart/cart.js" defer></script>
+    <!--font awesome link-->
+    <script
+      src="https://kit.fontawesome.com/377d53b4a7.js"
+      crossorigin="anonymous"
+    ></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/styles/styles.css" />
-  <script src="/js/cart/cart.js" defer></script>
-
-  <!--font awesome link-->
-  <script src="https://kit.fontawesome.com/377d53b4a7.js" crossorigin="anonymous"></script>
-
-  <title>Document</title>
-</head>
+    <title>Document</title>
+  </head>
 
 <body>
-  @@include("./partials/nav.html", {"activeCart": "tools__link--active"})
-  <div class="wrapper">
-    <main class="cart">
-      @@include("./partials/breadcrumb.html", {"activeCart":
-      "breadcrumb__item--active"})
-      <div class="cart__content">
-        <h1 class="cart__title">Cart</h1>
-        <article class="cart__items">
-          <!-- <section class="cart__item">
+    @@include("./partials/cart_nav.html", {"activeCart": "tools__link--active"})
+    <div class="wrapper">
+      <main class="cart">
+        @@include("./partials/breadcrumb.html", {"activeCart":
+        "breadcrumb__item--active"})
+        <div class="cart__content">
+          <h1 class="cart__title">Cart</h1>
+          <article class="cart__items">
+            <!-- <section class="cart__item">
               <a href="/product_details?id=700" class="item__imgContainer">
                 <img
                   class="item__img"
@@ -45,16 +46,15 @@
               <p class="item__price">£ 4,799.00</p>
               <div class="item__delete"><i class="fa-solid fa-xmark"></i></div>
             </section> -->
-        </article>
-        <p class="cart__subTotal">
-          Sub total<span class="cart__totalSubAmount">£299.00</span>
-        </p>
-        <button class="cart__button g-button">Go to payment</button>
-      </div>
-      @@include("./partials/livechat_button.html")
-    </main>
-  </div>
-  @@include("./partials/footer.html")
-</body>
-
+          </article>
+          <p class="cart__subTotal">
+            Sub total<span class="cart__totalSubAmount">£299.00</span>
+          </p>
+          <button class="cart__button g-button">Go to payment</button>
+        </div>
+        @@include("./partials/livechat_button.html")
+      </main>
+    </div>
+    @@include("./partials/footer.html")
+  </body>
 </html>
