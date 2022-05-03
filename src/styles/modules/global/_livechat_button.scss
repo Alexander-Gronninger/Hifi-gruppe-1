@@ -305,3 +305,10 @@
     transform: translate(24px, 0);
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .livechat__button{
+    right:unset;
+    left: 35px;
+  }
+}

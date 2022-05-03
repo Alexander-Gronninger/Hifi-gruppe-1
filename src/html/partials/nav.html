@@ -1,3 +1,4 @@
+<script src="/js/nav.js"></script>
 <header class="header">
   <nav class="navigation">
     <ul class="navigation__menu">
@@ -50,11 +51,12 @@
             </li>
             <li class="list__item">
               <a class="list__link" href="/product_list?category=tube+amplifier"
-                >Tube Amplifiers</a
+              >Tube Amplifiers</a
               >
             </li>
+            
           </ul>
-        </div>
+        </div>            
       </li>
       <li class="menu__item">
         <a class="menu__link @@activeAboutUs" href="/our_history">ABOUT US</a>
@@ -63,8 +65,16 @@
         <a class="menu__link @@activeContactUs" href="/contact">CONTACT US</a>
       </li>
     </ul>
+    <button class="burger">
+      <i class="fa-solid fa-bars menuIcon"></i>
+    </button>
+    <li class="mobileLogo">
+      <a href="/"><img src="/images/logo.png" alt="" /></a>
+    </li>
     <div class="navigation__tools">
+      
       <div class="tools__inputContainer">
+        
         <form action="/search_results" class="searchForm" method="get">
           <input
             class="tools__input"
@@ -80,16 +90,17 @@
               ></i></button
           ></label>
         </form>
+        
       </div>
-
+      
       <a href="" class="tools__link @@activeUser"
-        ><i class="tools__icon fa-solid fa-user"></i
-      ></a>
-      <a href="/cart" class="tools__link tools__cart @@activeCart"
+      ><i class="tools__icon fa-solid fa-user"></i
+        ></a>
+        <a href="/cart" class="tools__link tools__cart @@activeCart"
         ><i class="tools__icon fa-solid fa-cart-shopping"></i>
         <p class="cart__amount"></p>
       </a>
-
+      
       <main class="cart">
         <div class="cart__content">
           <h1 class="cart__title">Cart</h1>
@@ -100,15 +111,15 @@
             <!--<section class="cart__item">
               <a href="/product_details?id=700" class="item__imgContainer">
                 <img
-                  class="item__img"
-                  src="https://picsum.photos/id/1/500/300"
-                  alt=""
-                  title=""
+                class="item__img"
+                src="https://picsum.photos/id/1/500/300"
+                alt=""
+                title=""
                 />
               </a>
               <div class="item__info">
                 <a href="/product_details?id=700"
-                  ><h2 class="item__title">Auralic Aries G2.1 Streamer</h2></a
+                ><h2 class="item__title">Auralic Aries G2.1 Streamer</h2></a
                 >
                 <p class="item__stock">
                   <span class="stock__color"></span> few in stock
