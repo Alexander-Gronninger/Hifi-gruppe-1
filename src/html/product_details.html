@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/js/productDetails/productDetails.js" defer></script>
+    <script src="/js/global/counter.js" defer></script>
+    <script src="js/global/compareUI.js" type="module" defer></script>
+
+    <!--font awesome link-->
+    <script
+      src="https://kit.fontawesome.com/377d53b4a7.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    @@include("./partials/nav.html", {"activeShop": "menu__link--active"})
+    <main>
+      <div class="wrapper">
+        <article class="productContainer">
+          <h1 class="pageTitle" id="page__title">PRODUCT</h1>
+          <a class="product__compareBtn" href=""
+            >Compare
+            <img
+              class="compareBtn__icon"
+              src="/images/sliders.svg"
+              alt="Compare icon"
+          /></a>
+          <div class="product__background">
+            <div class="product__gallery_details">
+              <div class="product__gallery">
+                <img
+                  class="gallery__image"
+                  src="printedfromurl.png"
+                  alt="shittyextension"
+                />
+                <i class="gallery__leftarrow fa-solid fa-chevron-left"></i>
+                <i class="gallery__rightarrow fa-solid fa-chevron-right"></i>
+                <div class="gallery__dots"></div>
+              </div>
+              <article class="product__details">
+                <h2 class="details__title">productnameprintedfrom data</h2>
+                <p class="details__type">PRODUKT TYPE</p>
+                <p class="details__description">
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data
+                </p>
+                <p class="details__description">
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data product beskrivelse
+                  printed from data product beskrivelse printed from data
+                  product beskrivelse printed from data
+                </p>
+                <div class="details__colors"></div>
+                <div class="details__price">
+                  <h3 class="price__amount">£price printed from database.00</h3>
+                  <p
+                    class="cartStockContainer__availability details__stockStatus"
+                  >
+                    <span class="availability__icon"></span>
+                  </p>
+                </div>
+                <div class="details__cartUI">
+                  <div class="counter">
+                    <div class="counter__minus">
+                      <i class="fa-solid fa-minus"></i>
+                    </div>
+                    <div class="counter__amountContainer">
+                      <p class="counter__amount">1</p>
+                    </div>
+                    <div class="counter__plus">
+                      <i class="fa-solid fa-plus"></i>
+                    </div>
+                  </div>
+                  <button class="details__addToCartBtn g-button">
+                    Add to cart
+                  </button>
+                </div>
+              </article>
+              <!--end of product__details-->
+            </div>
+            <hr class="product__divider" />
+            <div class="product__spec">
+              <h3 class="spec__title">PRODUCT SPECIFICATIONS</h3>
+              <table class="spec__table">
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <!-- end of whitebackground -->
+        </article>
+        <!--end of productWrapper -->
+      </div>
+      <!--end of wrapper-->
+      @@include("./partials/livechat_button.html")
+    </main>
+    @@include("./partials/footer.html")
+  </body>
+</html>
