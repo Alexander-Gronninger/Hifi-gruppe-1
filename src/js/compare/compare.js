@@ -28,7 +28,7 @@ async function getProductsToCompare() {
     specArray = [...new Set([...specArray, ...productSpecs])];
   }
 
-  let addMoreProductsElement = `<a href="../product_list/">Compare more products</a>`;
+  let addMoreProductsElement = `<a class="spectable__link" href="../product_list/">Compare more products</a>`;
 
   // putting the elements in with the right data, if the data can't be found mark it with
   // ? is optional chaining, only in front of a . (chaining)
@@ -81,13 +81,23 @@ async function getProductsToCompare() {
                 style: "currency",
                 currency: "GBP",
               })) ||
-            "0.00"
+            "&ndash;"
           }</td>
           <td class="spectable__value">${
-            (productsArray[1] && productsArray[1][spec]) || "0.00"
+            (productsArray[1] &&
+              Number(productsArray[0][spec]).toLocaleString("en-UK", {
+                style: "currency",
+                currency: "GBP",
+              })) ||
+            "&ndash;"
           }</td>
           <td class="spectable__value">${
-            (productsArray[2] && productsArray[2][spec]) || "0.00"
+            (productsArray[2] &&
+              Number(productsArray[0][spec]).toLocaleString("en-UK", {
+                style: "currency",
+                currency: "GBP",
+              })) ||
+            "&ndash;"
           }</td>
         </tr>
         `;
