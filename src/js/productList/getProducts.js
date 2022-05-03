@@ -113,6 +113,7 @@ function addProduct(id) {
       localStorage.setItem("cart", JSON.stringify(localStorageCart));
     }
   }
+  renderCart();
 }
 
 export { printProduct };
