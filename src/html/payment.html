@@ -8,6 +8,7 @@
     <script src="/js/payment/paymentFormValidation.js" defer></script>
     <script src="/js/payment/overviewinfo.js" defer></script>
     <script src="/js/payment/orderstojson.js" defer></script>
+    <script src="../js/global/dropdown_cart.js" defer></script>
 
     <!--font awesome link-->
     <script
@@ -27,30 +28,34 @@
           <h1 class="paymentform__title">Your info</h1>
           <form class="paymentform__form" action="" id="checkout">
             <label for="form__name" class="form__label form__big"
-              >Full name<span class="form__star">*</span></label
+              >Full name<span title="Required field" class="form__star required"
+                >*</span
+              ></label
             >
-            <input
-              type="text"
-              id="form__name"
-              class="form__big form__input g-inputField"
-            />
+            <input type="text" id="form__name" class="form__input form__big" />
 
             <label for="form__city" class="form__label form__medium"
-              >City<span class="form__star">*</span></label
+              >City<span title="Required field" class="form__star required"
+                >*</span
+              ></label
             >
             <label for="form__postalcode" class="form__label form__small"
-              >Postal code<span class="form__star">*</span></label
+              >Postalcode<span
+                title="Required field"
+                class="form__star required"
+                >*</span
+              ></label
             >
 
             <input
               type="text"
               id="form__city"
-              class="form__input form__medium g-inputField"
+              class="form__input form__medium"
             />
             <input
               type="text"
               id="form__postalcode"
-              class="form__input form__small g-inputField"
+              class="form__input form__small"
             />
 
             <label for="form__address" class="form__label form__big"
@@ -59,7 +64,7 @@
             <input
               type="text"
               id="form__address"
-              class="form__input form__big g-inputField"
+              class="form__input form__big"
             />
             <label for="form__useremail" class="form__label form__big"
               >Email<span class="form__star">*</span></label
@@ -67,16 +72,18 @@
             <input
               type="text"
               id="form__useremail"
-              class="form__input form__big g-inputField"
+              class="form__input form__big"
             />
 
             <label for="form__phonenr" class="form__label form__big"
-              >Phone nr.<span class="form__star">*</span></label
+              >Phone nr.<span title="Required field" class="form__star required"
+                >*</span
+              ></label
             >
             <input
               type="text"
               id="form__phonenr"
-              class="form__input form__big g-inputField"
+              class="form__input form__big"
             />
           </form>
         </section>
@@ -137,7 +144,7 @@
             <div class="paymentMethod">
               <input type="radio" name="paymentMethod" />
               <img
-                src="/images/applepay.svg"
+                src="/images/paypal.svg"
                 alt="Payment Method Paypal"
                 class="paymentMethods__img"
               />
@@ -147,7 +154,7 @@
             <div class="paymentMethod">
               <input type="radio" name="paymentMethod" />
               <img
-                src="/images/paypal.svg"
+                src="/images/applepay.svg"
                 alt="Payment Method Apple Pay"
                 class="paymentMethods__img"
               />

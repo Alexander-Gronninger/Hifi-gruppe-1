@@ -16,7 +16,7 @@ async function getProducts() {
 
 import loadElements from "/js/global/compareUI.js";
 
-export function printProduct(data) {
+function printProduct(data) {
   const NEW_ITEM = document.createElement("article");
   NEW_ITEM.dataset.id = data.id;
   NEW_ITEM.classList.add("product");
@@ -112,4 +112,7 @@ function addProduct(id) {
       localStorage.setItem("cart", JSON.stringify(localStorageCart));
     }
   }
+  renderCart();
 }
+
+export { printProduct };
