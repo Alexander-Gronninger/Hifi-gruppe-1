@@ -1,5 +1,5 @@
-//const API_URL = `https://hifi-jsonserver.herokuapp.com/`; //Benjamins server
-const API_URL = `http://localhost:3000/`; //lokal json server
+//const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
+const API_URL = `http://localhost:3000`; //lokal json server
 
 let formElement = document.querySelector(".paymentform__form");
 
@@ -22,7 +22,6 @@ async function gatherinfo(event) {
     (current.getMonth() + 1) +
     "-" +
     current.getDate();
-  console.log(cDate);
 
   let orderdata = {
     id: orderID,
@@ -73,11 +72,3 @@ async function gatherinfo(event) {
 
   //window.location.href = "/../invoice?id=" + orderID;
 }
-
-fetch(API_URL, {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json; charset=UTF-8",
-  },
-  body: JSON.stringify(orderdata),
-});
