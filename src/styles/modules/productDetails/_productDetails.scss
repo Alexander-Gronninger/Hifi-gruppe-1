@@ -215,3 +215,54 @@
 .spec__table tr:last-child {
   background-color: $secondaryBackgroundColor;
 }
+
+@media screen and (max-width: 1024px) {
+  .product__gallery {
+    grid-template-rows: auto 15px;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product__background {
+    padding: 50px 30px;
+  }
+
+  .product__gallery_details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product__gallery {
+    grid-template-columns: 40px 1fr 40px;
+    gap: 10px 0px;
+  }
+
+  .spec__title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .spec__table {
+    margin-left: 0px;
+    margin: 0px auto;
+    margin-bottom: 50px;
+  }
+
+  .table__name,
+  .table__top,
+  .table__bottom {
+    width: 30%;
+    padding-left: 5%;
+  }
+
+  .table__value {
+    width: 50%;
+    padding-left: 5%;
+  }
+
+  .product__details {
+    padding-right: 0px;
+    padding: 20px 0px;
+  }
+}

@@ -15,3 +15,10 @@
   width: 2rem;
   transition: all ease 0.2s;
 }
+
+@media screen and (max-width: 1024px) {
+  .productDetails__compare {
+    margin-bottom: 20px;
+    margin-right: 20px;
+  }
+}
