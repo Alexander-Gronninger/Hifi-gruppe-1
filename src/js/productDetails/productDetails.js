@@ -265,8 +265,9 @@ document
 // async is required due to amount being able to change by javascript
 async function toStorage() {
   // we get the amount of a given product
-  const productAmountNumber =
-    Number(document.querySelector(".details__cartUI .counter__amount").innerHTML);
+  const productAmountNumber = Number(
+    document.querySelector(".details__cartUI .counter__amount").innerHTML
+  );
 
   // we fetch the cart, as we need to know it's length
   let items = JSON.parse(localStorage.getItem("cart")) || [];
