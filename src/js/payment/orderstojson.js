@@ -1,5 +1,5 @@
-//const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
-const API_URL = `http://localhost:3000`; //lokal json server
+const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
+//const API_URL = `http://localhost:3000`; //lokal json server
 
 let formElement = document.querySelector(".paymentform__form");
 
@@ -28,8 +28,6 @@ async function gatherinfo(event) {
     orderDate: cDate,
     currency: "GDP",
     costumerName: event.target.form__name.value,
-    costumerCity: event.target.form__city.value,
-    costumerZip: event.target.form__postalcode.value,
     billingAddress: {
       zipcode: event.target.form__postalcode.value,
       city: event.target.form__city.value,
@@ -38,7 +36,8 @@ async function gatherinfo(event) {
     costumerEmail: event.target.form__useremail.value,
     costumerPhone: event.target.form__phonenr.value,
     customerID: userID,
-    products: [JSON.parse(localStorage.getItem("cart"))],
+    deliveryFee: "100",
+    products: JSON.parse(localStorage.getItem("cart")),
   };
 
   // WIP inserting billingAddress to customers address info

@@ -43,9 +43,9 @@ async function getOrder() {
     " " +
     orderResponse[0].billingAddress.city +
     " " +
-    orderResponse[0].billingAddress.zip_code;
-  customerPhoneElement.innerHTML = orderResponse[0].phone;
-  customerEmailElement.innerHTML = orderResponse[0].email;
+    orderResponse[0].billingAddress.zipcode;
+  customerPhoneElement.innerHTML = orderResponse[0].costumerPhone;
+  customerEmailElement.innerHTML = orderResponse[0].costumerEmail;
   orderNumberElement.innerHTML = orderResponse[0].id;
   orderDateElement.innerHTML = orderResponse[0].orderDate;
   orderCurrencyElement.innerHTML = orderResponse[0].currency;
@@ -65,27 +65,29 @@ async function getOrder() {
 </tr>`;
 
   // inserting information
+  console.log(orderResponse[0].products[0]);
   let subPrice = 0;
   for (let i = 0; i < orderResponse[0].products.length; i++) {
+    console.log(i);
     productPrice =
-      orderResponse[0].products[i].productPrice *
-      orderResponse[0].products[i].productAmount;
+      orderResponse[0].products[i].price *
+      orderResponse[0].products[i].quantity;
     subPrice = productPrice + subPrice;
 
     invoiceSummeryElement.innerHTML += `
     <tr class="summery__item">
-      <td class="item__productName">${
-        orderResponse[0].products[i].productName
-      } - ${orderResponse[0].products[i].color}</td>
+      <td class="item__productName">${orderResponse[0].products[i].name} - ${
+      orderResponse[0].products[i].color
+    }</td>
       <td class="item__productPrice">&pound; ${
-        orderResponse[0].products[i].productPrice
+        orderResponse[0].products[i].price
       }</td>
       <td class="item__productAmount">${
-        orderResponse[0].products[i].productAmount
+        orderResponse[0].products[i].quantity
       }</td>
       <td class="item__productTotal">&pound; ${
-        orderResponse[0].products[i].productAmount *
-        orderResponse[0].products[i].productPrice
+        orderResponse[0].products[i].quantity *
+        orderResponse[0].products[i].price
       }</td>
     </tr>`;
   }
