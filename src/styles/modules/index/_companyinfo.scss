@@ -48,3 +48,28 @@
 .companyinfo__openingHours {
   color: $primaryTextColor;
 }
+
+@media (max-width: 1024px) {
+  .companyinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15% 7.5%;
+  }
+
+  .companyinfo__about {
+    margin-left: 0px;
+    max-width: 300px;
+  }
+
+  .openingHours__title {
+    margin-bottom: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  .companyinfo {
+    padding: 15%;
+  }
+}

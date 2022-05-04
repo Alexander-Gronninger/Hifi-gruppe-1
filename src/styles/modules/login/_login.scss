@@ -24,6 +24,20 @@
   display: block;
 }
 
+.login__error {
+  color: red;
+  margin-bottom: 0.5rem;
+  display: none;
+}
+
+.login__label {
+  margin-top: 0.7rem;
+}
+
+.login__input.g-inputField {
+  margin-bottom: 0.2rem;
+}
+
 .login__checkboxInput {
   display: flex;
   align-items: center;

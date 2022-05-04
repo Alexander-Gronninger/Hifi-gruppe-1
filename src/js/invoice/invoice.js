@@ -1,5 +1,5 @@
-const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
-//const API_URL = `http://localhost:3000`; //lokal json server
+//const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
+const API_URL = `http://localhost:3000`; //lokal json server
 
 // getting all the elements
 const customerNameElement = document.querySelector(".customerInfo__name");
@@ -34,16 +34,12 @@ async function getOrder() {
   // inserting information into HTML
   customerNameElement.innerHTML = customerResponse[0].username;
   customerAddressElement.innerHTML =
-    customerResponse[0].address.apartment +
+    customerResponse[0].billingaddress.address +
     " " +
-    customerResponse[0].address.number +
+    customerResponse[0].billingaddress.city +
     " " +
-    customerResponse[0].address.street +
-    " " +
-    customerResponse[0].address.city +
-    " " +
-    customerResponse[0].address.zip_code;
-  customerCountryElement.innerHTML = customerResponse[0].address.country;
+    customerResponse[0].billingaddress.zip_code;
+  customerCountryElement.innerHTML = "ERROR";
   customerPhoneElement.innerHTML = customerResponse[0].phone;
   customerEmailElement.innerHTML = customerResponse[0].email;
   orderNumberElement.innerHTML = orderResponse[0].order_number;

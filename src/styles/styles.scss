@@ -18,13 +18,13 @@
 
 // global
 @import "modules/global/navigation";
-@import "modules/global/cartHover";
 @import "modules/global/footer";
 @import "modules/global/whiteBackground";
 @import "modules/global/inputField";
 @import "modules/global/button";
 @import "modules/global/breadcrumb";
 @import "modules/global/cartHover";
+@import "modules/cart/cart";
 @import "modules/global/category_dropdown";
 @import "modules/global/form__star";
 @import "modules/global/counter";
@@ -64,9 +64,6 @@
 // ourHistory
 @import "modules/ourHistory/ourHistory";
 
-// register (creating user)
-@import "modules/register/form";
-
 //compareUI
 @import "modules/global/compareUI";
 
@@ -81,6 +78,12 @@
 
 // Profile
 @import "modules/profile/profile_orders";
+
+// Register
+@import "modules/register/form";
+
+//compare
+@import "modules/compare/compare";
 
 ///////////// states /////////////
 
