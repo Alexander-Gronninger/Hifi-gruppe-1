@@ -8,3 +8,11 @@
   border-radius: 0.1875rem;
   max-width: 280px;
 }
+
+@media only screen and (max-width: 600px) {
+  .product{
+    margin: 2rem auto;
+    text-align: center;
+    width:100%;
+  }
+  }
