@@ -1,5 +1,5 @@
-//const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
-const API_URL = `http://localhost:3000`; //lokal json server
+const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
+//const API_URL = `http://localhost:3000`; //lokal json server
 
 // getting all the elements
 const customerNameElement = document.querySelector(".customerInfo__name");
