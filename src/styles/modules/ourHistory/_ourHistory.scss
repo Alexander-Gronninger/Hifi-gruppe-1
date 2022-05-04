@@ -47,3 +47,11 @@
 .ourHistory__textBold {
   font-weight: 600;
 }
+
+@media (max-width: 1024px) {
+  .ourHistory__section {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 7.5%;
+  }
+}

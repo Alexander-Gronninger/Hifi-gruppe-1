@@ -64,9 +64,6 @@
 // ourHistory
 @import "modules/ourHistory/ourHistory";
 
-// register (creating user)
-@import "modules/register/form";
-
 //compareUI
 @import "modules/global/compareUI";
 
@@ -81,6 +78,9 @@
 
 // Profile
 @import "modules/profile/profile_orders";
+
+//compare
+@import "modules/compare/compare";
 
 ///////////// states /////////////
 

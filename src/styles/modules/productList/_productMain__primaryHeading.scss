@@ -3,3 +3,9 @@
   margin: 2rem 0;
   color: $tertiaryIconColor;
 }
+@media only screen and (max-width: 600px) {
+.productMain__primaryHeading{
+  margin: 2rem auto;
+  text-align: center;
+}
+}
