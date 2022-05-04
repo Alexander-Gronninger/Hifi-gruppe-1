@@ -1,8 +1,9 @@
 .header {
   padding: 0px 34px;
   background-color: $tertiaryBackgroundColor;
-  
+
 }
+
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -75,13 +76,15 @@
   padding: 6px;
   margin-right: 20px;
 }
+
 .tools__input {
   border: none;
   outline: none;
-  width: 200px;
+  max-width: 200px;
   background-color: $primaryDetailColor;
   font-size: 0.8em;
 }
+
 .tools__searchIcon {
   color: $secondaryIconColor;
   cursor: pointer;
@@ -154,109 +157,133 @@
   border: none;
 }
 
-.burger{
+.burger {
   display: none;
 }
 
-.mobileLogo{
+.mobileLogo {
   display: none;
 }
 
 @media only screen and (max-width: 600px) {
-  .mobileLogo{
-    display: block;
+  .mobileLogo {
+    display: flex;
+    flex-shrink: 0;
     max-width: 60px;
     margin-top: 1rem;
   }
-  .categoryDropdown{
-    visibility: hidden !important; 
+
+  .categoryDropdown {
+    visibility: hidden !important;
   }
+
   .burger {
     display: block;
+    right: 35px;
+    bottom: 20px;
+    height: 70px;
+    width: 70px;
     position: fixed;
     z-index: 9999999;
-    bottom: 30px;
-    right: 35px;
-    padding: 4px;
     border: none;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgb(0 0 0 / 10%);
     cursor: pointer;
-    user-select: none;
-    background: none;
-}
-.navigation__menu{
-  position: fixed;
-  transform: translateX(100%);
-  transition: transform 0.2s;
-  bottom: 0;
-  height: 100vh;
-  z-index: 9999;
-  right: 0;       
-  width: 80%;
-  text-align: center;
-  background-color: $tertiaryBackgroundColor;
-  display: flex;
-  flex-direction: column;
-}
-.showMenu {
-  transform: translateY(0);
-}
+    transition: transform 200ms linear 0s;
+    background-color: $secondaryBackgroundColor;
+    animation-duration: 250ms;
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
 
-.menuIcon{
-  color: #ff6900;
-  font-size: 3rem;
-}
-  .header{
+    &:hover {
+      transform: scale(1.1);
+      background-color: rgb(250, 250, 250);
+    }
+  }
+
+  .navigation__menu {
+    position: fixed;
+    transform: translateX(100%);
+    transition: transform 0.2s;
+    bottom: 0;
+    z-index: 9999;
+    right: 0;
+    width: 80%;
+    text-align: center;
+    background-color: $tertiaryBackgroundColor;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .showMenu {
+    transform: translateY(0);
+  }
+
+  .menuIcon {
+    color: #ff6900;
+    font-size: 40px;
+  }
+
+  .header {
     padding: 0;
     display: flex;
     justify-content: center;
   }
-  .navigation{
-    display: flex;
-    gap: 2rem;
-    
 
-   }
-  .menu{
-    &__link{
+  .navigation {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tools__inputContainer {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .menu {
+    &__link {
       padding: 0;
       text-align: center;
-      font-size:2rem;
+      font-size: 2rem;
       margin: 0 auto;
-      
-    }    
 
-    &__item{
-      &:first-of-type{
-        margin:1rem auto;
+    }
+
+    &__item {
+      &:first-of-type {
+        margin: 1rem auto;
         padding: 0;
         border: none;
       }
-      &:nth-of-type(2){
+
+      &:nth-of-type(2) {
         border-top: 1px solid $primaryButtonColor
       }
+
       padding: 2em 2em 2em 2em;
       border-bottom: 1px solid $primaryButtonColor;
     }
 
-    &__logo{
-      margin:0;
+    &__logo {
+      margin: 0;
       padding: 0;
       height: 80px;
     }
   }
 
-  .navigation__tools{
+  .navigation__tools {
     display: flex;
     flex-direction: row;
-    margin:1rem 0;
+    margin: 1rem 0;
     align-items: center;
-    gap: 2rem ;
+    gap: 1rem;
   }
-  .tools__link{
+
+  .tools__link {
     margin: 0 auto;
   }
 
-  .tools__inputContainer{
+  .tools__inputContainer {
     margin: 1rem 0 0 0;
   }
 
