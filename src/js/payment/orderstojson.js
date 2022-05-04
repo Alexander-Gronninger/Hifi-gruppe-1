@@ -53,7 +53,7 @@ async function gatherinfo(event) {
     });
   } */
 
-  fetch(API_URL, {
+  fetch(API_URL + "/orders", {
     method: "POST",
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
@@ -61,5 +61,5 @@ async function gatherinfo(event) {
     body: JSON.stringify(orderdata),
   });
 
-  window.location.href = "/../invoice?id=" + orderID;
+  //window.location.href = "/../invoice?id=" + orderID;
 }
