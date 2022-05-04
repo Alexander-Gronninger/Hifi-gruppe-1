@@ -275,11 +275,11 @@
       }
 
       &:nth-of-type(2) {
-        border-top: 1px solid $primaryButtonColor
+        border-top: 2px solid $primaryButtonColor
       }
 
       padding: 2em 2em 2em 2em;
-      border-bottom: 1px solid $primaryButtonColor;
+      border-bottom: 2px solid $primaryButtonColor;
     }
 
     &__logo {
