@@ -34,6 +34,8 @@ async function getProduct() {
   productImage.alt = response[0].brand + " " + response[0].name;
   productType.innerHTML = response[0].category;
 
+  document.title += " " + response[0].brand + " " + response[0].name;
+
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! UNCOMMENT ONCE PRODUCTS HAVE ACTUAL DESCRIPTIONS IN DATABASE
   //productDescription.innerHTML = response[0].description;
   productPrice.innerHTML = "£ " + response[0].price;
@@ -265,8 +267,9 @@ document
 // async is required due to amount being able to change by javascript
 async function toStorage() {
   // we get the amount of a given product
-  const productAmountNumber =
-    Number(document.querySelector(".details__cartUI .counter__amount").innerHTML);
+  const productAmountNumber = Number(
+    document.querySelector(".details__cartUI .counter__amount").innerHTML
+  );
 
   // we fetch the cart, as we need to know it's length
   let items = JSON.parse(localStorage.getItem("cart")) || [];

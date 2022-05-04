@@ -15,7 +15,6 @@ frontpageProducts__btn.addEventListener("click", function () {
 async function getProducts() {
   let response = await fetch(API_URL);
   let json = await response.json();
-  console.log(json);
 
   json.forEach(function (productData) {
     printFrontPageProducts(productData);

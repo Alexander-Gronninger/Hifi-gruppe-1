@@ -21,7 +21,6 @@
 .product__background {
   background: $secondaryBackgroundColor;
   @include whiteBackground($margin-block: 0);
-  margin-bottom: 50px;
 }
 
 .product__gallery {
