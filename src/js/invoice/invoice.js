@@ -1,5 +1,5 @@
-//const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
-const API_URL = `http://localhost:3000`; //lokal json server
+const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
+//const API_URL = `http://localhost:3000`; //lokal json server
 
 // getting all the elements
 const customerNameElement = document.querySelector(".customerInfo__name");
@@ -27,24 +27,28 @@ async function getOrder() {
     await fetch(API_URL + `/orders/?id_like=${orderID}`)
   ).json();
   // fetching customer info
-  let customerResponse = await (
-    await fetch(API_URL + `/customers/?id_like=${orderResponse[0].customerId}`)
-  ).json();
+  if (orderResponse.customerId) {
+    let customerResponse = await (
+      await fetch(
+        API_URL + `/customers/?id_like=${orderResponse[0].customerId}`
+      )
+    ).json();
+    return customerResponse;
+  }
 
   // inserting information into HTML
-  customerNameElement.innerHTML = customerResponse[0].username;
+  customerNameElement.innerHTML = orderResponse[0].costumerName;
   customerAddressElement.innerHTML =
-    customerResponse[0].billingaddress.address +
+    orderResponse[0].billingAddress.address +
     " " +
-    customerResponse[0].billingaddress.city +
+    orderResponse[0].billingAddress.city +
     " " +
-    customerResponse[0].billingaddress.zip_code;
-  customerCountryElement.innerHTML = "ERROR";
-  customerPhoneElement.innerHTML = customerResponse[0].phone;
-  customerEmailElement.innerHTML = customerResponse[0].email;
-  orderNumberElement.innerHTML = orderResponse[0].order_number;
+    orderResponse[0].billingAddress.zip_code;
+  customerPhoneElement.innerHTML = orderResponse[0].phone;
+  customerEmailElement.innerHTML = orderResponse[0].email;
+  orderNumberElement.innerHTML = orderResponse[0].id;
   orderDateElement.innerHTML = orderResponse[0].orderDate;
-  orderCurrencyElement.innerHTML = orderResponse[0].currency;
+  orderCurrencyElement.innerHTML = "GDP";
 
   // table content needs to be inside tbody element
   const invoiceSummeryElement = document.querySelector(
