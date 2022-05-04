@@ -24,15 +24,12 @@
         <form class="login__form" action="#">
           <label class="login__label" for="email">Email<span class="required" title="Reqired field">*</span></label>
           <input class="login__input g-inputField" type="email" id="email" name="email" />
+          <p class="login__error">Not good email</p>
 
           <label class="login__label" for="password">Password<span class="required"
               title="Reqired field">*</span></label>
-          <input class="login__input g-inputField" type="text" id="password" name="password" />
-
-          <div class="login__checkboxInput">
-            <input class="login__checkbox" type="checkbox" id="remember-me" />
-            <label class="login__checkboxLabel" for="remember-me">Remember me</label>
-          </div>
+          <input class="login__input g-inputField" type="password" id="password" name="password" />
+          <p class="login__error">Not good password</p>
 
           <button name="submit" class="login__button g-button">Sign in</button>
           <a class="login__link" href=""
