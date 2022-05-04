@@ -88,3 +88,56 @@
 .cart__empty {
   margin-bottom: 350px;
 }
+
+@media screen and (max-width: 1024px) {
+  .cart__content {
+    margin: 5%;
+  }
+  .cart__item {
+    width: auto;
+    grid-template-columns: 150px 2fr auto 1fr auto;
+  }
+
+  .item__info {
+    margin-left: 0px;
+    place-self: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cart__item {
+    justify-content: space-evenly;
+    grid-template-columns: 25px 1fr 1fr;
+    grid-template-areas:
+      "delete imgContainer imgContainer"
+      ". info info"
+      ". counter price";
+    gap: 15px 0px;
+  }
+
+  .item__delete {
+    place-self: start;
+    padding-top: 20px;
+    grid-area: delete;
+  }
+
+  .item__info {
+    grid-area: info;
+  }
+
+  .item__imgContainer {
+    grid-area: imgContainer;
+  }
+
+  .cart__items .counter {
+    grid-area: counter;
+  }
+
+  .item__price {
+    grid-area: price;
+  }
+
+  .cart__button {
+    margin: 15px 0px 60px auto;
+  }
+}
