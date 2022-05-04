@@ -6,6 +6,9 @@ const $cartSubTotal = document.querySelector(".cart__totalSubAmount");
 const $cartSubTotalContainer = document.querySelector(".cart__subTotal");
 const CART_API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
 const gButtonCall = document.querySelectorAll(".g-button");
+let productsContainerHTML = "";
+let cartAmount = 0;
+let cartSubTotal = 0;
 
 async function renderCart() {
   // Get raw cart data from localstorage
@@ -19,6 +22,7 @@ async function renderCart() {
     // Replace title with cart is empty title
     $cartTitle.textContent = "Your cart is empty";
     $cartTitle.classList.add("cart__empty");
+    $cartAmount.textContent = 0;
 
     // When cart is empty replace go to payment with go to see all products button
     $cartButton.textContent = "See all products";
@@ -43,10 +47,6 @@ async function renderCart() {
       window.location.href = "/payment";
     });
   }
-
-  let productsContainerHTML = "";
-  let cartAmount = 0;
-  let cartSubTotal = 0;
 
   Promise.all(
     // Fetch localstorage cart items from database
