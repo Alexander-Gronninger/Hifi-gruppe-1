@@ -2,9 +2,10 @@
   $width: unset,
   $max-width: unset,
   $height: unset,
-  $background-color: $primaryButtonColor
+  $background-color: $primaryButtonColor,
+  $display: block
 ) {
-  display: block;
+  display: $display;
   background-color: $background-color;
   color: $primaryTextColor;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
