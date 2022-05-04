@@ -36,7 +36,7 @@ async function gatherinfo(event) {
     costumerEmail: event.target.form__useremail.value,
     costumerPhone: event.target.form__phonenr.value,
     customerID: userID,
-    deliveryFee: "100",
+    deliveryFee: 100,
     products: JSON.parse(localStorage.getItem("cart")),
   };
 

@@ -92,10 +92,10 @@ async function getOrder() {
     </tr>`;
   }
   let vatPrice = subPrice * 0.2;
-  let totalPrice = subPrice + vatPrice + orderResponse[0].deliveryPrice;
+  let totalPrice = subPrice + vatPrice + orderResponse[0].deliveryFee;
   subPriceElement.innerHTML = "&pound; " + subPrice;
   vatPriceElement.innerHTML = "&pound; " + vatPrice;
   deliveryPriceElement.innerHTML =
-    "&pound; &nbsp;" + orderResponse[0].deliveryPrice;
+    "&pound; &nbsp;" + orderResponse[0].deliveryFee;
   totalPriceElement.innerHTML = "&pound; " + totalPrice;
 }
