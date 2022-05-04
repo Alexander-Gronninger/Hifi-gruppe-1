@@ -141,15 +141,18 @@ deliveryBtnss.forEach((element) => {
       .classList.remove("selectedDeliveryBtn");
     element.classList.add("selectedDeliveryBtn");
 
-    if (element.innerHTML === "Post office") {
-      map.style.visibility = "visible";
-      map.style.position = "relative";
-      map.style.top = "unset";
-    } else if (element.innerHTML === "Click-and-collect") {
-      map.style.visibility = "hidden;";
-      map.style.position = "absolute";
-      map.style.top = "-2000px";
-      nameAddress[0].innerHTML = `<div class="clickandcollectContainer"><input type="radio" name="clickandcollect"><label class="clickandcollectLabel" for="clickandcollect"><strong>Edinburgh</strong><br>
+        if (element.innerHTML === "Post office") {
+            map.style.visibility = "visible"
+            map.style.position = "relative";
+            map.style.top = "unset";
+            nameAddress[1].textContent = ""
+            nameAddress[0].innerHTML = ""
+        } 
+        else if (element.innerHTML === "Click-and-collect") {
+            map.style.visibility = "hidden;"
+            map.style.position = "absolute";
+            map.style.top = "-2000px";
+            nameAddress[0].innerHTML = `<div class="clickandcollectContainer"><input type="radio" name="clickandcollect"><label class="clickandcollectLabel" for="clickandcollect"><strong>Edinburgh</strong><br>
             2 Joppa Rd,Edinburgh, EH15 2EU <br>
             Monday to Friday: 10:00am - 5:30pm <br>
             Saturday: 10:00am - 5:30pm <br>
