@@ -59,9 +59,6 @@ btn.onclick = (event) => {
     if (password.value.length === 0) {
         error(password, "Please provide a password...")
         return
-    } else if (password.value.length < 5) {
-        error(password, "That ain't a proper password...")
-        return
     } else {
         password.previousElementSibling.children[0].style.display = "none"
     }
