@@ -13,25 +13,25 @@
   grid-template-columns: 6fr 4fr;
 }
 
-.invoice__companySalesInfo,
+.invoice__deliveryInfo,
 .invoice__customerInfo {
   grid-column: 1 / 2;
 }
 
-.companySalesInfo__name,
+.deliveryInfo__name,
 .customerInfo__name {
   font-weight: 700;
   font-size: 12px;
   line-height: 16px;
 }
 
-.companySalesInfo__address {
+.deliveryInfo__address {
   font-size: 12px;
   line-height: 18px;
   font-style: normal;
 }
 
-.customerInfo__title {
+.deliveryInfo__title {
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
@@ -43,7 +43,9 @@
 .customerInfo__address,
 .customerInfo__country,
 .customerInfo__phone,
-.customerInfo__email {
+.customerInfo__email,
+.deliveryInfo__phone,
+.deliveryInfo__email {
   font-size: 12px;
   line-height: 18px;
   font-style: normal;
