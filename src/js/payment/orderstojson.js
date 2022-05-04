@@ -1,5 +1,5 @@
-const API_URL = `https://hifi-jsonserver.herokuapp.com`; //Benjamins server
-//const API_URL = `http://localhost:3000`; //lokal json server
+//const API_URL = `https://hifi-jsonserver.herokuapp.com/`; //Benjamins server
+const API_URL = `http://localhost:3000/`; //lokal json server
 
 let formElement = document.querySelector(".paymentform__form");
 
@@ -14,10 +14,20 @@ async function gatherinfo(event) {
 
   let ordersFetch = await (await fetch(API_URL + `/orders/`)).json();
   let orderID = Number(ordersFetch.length) + 1;
-  console.log(orderID);
+
+  let current = new Date();
+  let cDate =
+    current.getFullYear() +
+    "-" +
+    (current.getMonth() + 1) +
+    "-" +
+    current.getDate();
+  console.log(cDate);
 
   let orderdata = {
     id: orderID,
+    orderDate: cDate,
+    currency: "GDP",
     costumerName: event.target.form__name.value,
     costumerCity: event.target.form__city.value,
     costumerZip: event.target.form__postalcode.value,
@@ -61,5 +71,13 @@ async function gatherinfo(event) {
     body: JSON.stringify(orderdata),
   });
 
-  window.location.href = "/../invoice?id=" + orderID;
+  //window.location.href = "/../invoice?id=" + orderID;
 }
+
+fetch(API_URL, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+  },
+  body: JSON.stringify(orderdata),
+});

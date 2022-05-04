@@ -48,7 +48,7 @@ async function getOrder() {
   customerEmailElement.innerHTML = orderResponse[0].email;
   orderNumberElement.innerHTML = orderResponse[0].id;
   orderDateElement.innerHTML = orderResponse[0].orderDate;
-  orderCurrencyElement.innerHTML = "GDP";
+  orderCurrencyElement.innerHTML = orderResponse[0].currency;
 
   // table content needs to be inside tbody element
   const invoiceSummeryElement = document.querySelector(
