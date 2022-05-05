@@ -69,5 +69,7 @@ async function gatherinfo(event) {
     body: JSON.stringify(orderdata),
   });
 
-  //window.location.href = "/../invoice?id=" + orderID;
+  setTimeout(() => {
+    window.location.href = "/../invoice?id=" + orderID;
+  }, 500);
 }
