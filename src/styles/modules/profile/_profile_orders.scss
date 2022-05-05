@@ -69,7 +69,7 @@
 .orders {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  -gap: 50px;
   padding: 20px 60px 60px;
 
   &__text {
@@ -79,6 +79,12 @@
   &__item {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    padding-block: 50px;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $secondaryDetailColor;
+    }
   }
 
   &__icon {
@@ -102,9 +108,11 @@
     align-items: center;
     justify-content: center;
   }
-}
 
-.hrule {
-  height: 1px;
-  background-color: $secondaryDetailColor;
+  &__orderNumber,
+  &__orderDate,
+  &__orderTotalPrice,
+  &__orderItems {
+    font-weight: 400;
+  }
 }
