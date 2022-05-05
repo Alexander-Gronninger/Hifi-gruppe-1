@@ -47,7 +47,7 @@ async function getOrder() {
   customerPhoneElement.innerHTML = orderResponse[0].costumerPhone;
   customerEmailElement.innerHTML = orderResponse[0].costumerEmail;
   orderNumberElement.innerHTML = orderResponse[0].id;
-  orderDateElement.innerHTML = orderResponse[0].orderDate;
+  orderDateElement.innerHTML = orderResponse[0].date;
   orderCurrencyElement.innerHTML = orderResponse[0].currency;
 
   // table content needs to be inside tbody element
@@ -91,8 +91,10 @@ async function getOrder() {
       }</td>
     </tr>`;
   }
+  let deliveryFee = (orderResponse[0] && orderResponse[0].deliveryFee) || 0;
+  console.log(deliveryFee);
   let vatPrice = subPrice * 0.2;
-  let totalPrice = subPrice + vatPrice + orderResponse[0].deliveryFee;
+  let totalPrice = subPrice + vatPrice + deliveryFee;
   subPriceElement.innerHTML = "&pound; " + subPrice;
   vatPriceElement.innerHTML = "&pound; " + vatPrice;
   deliveryPriceElement.innerHTML =
