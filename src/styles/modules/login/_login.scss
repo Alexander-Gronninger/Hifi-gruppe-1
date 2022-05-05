@@ -1,0 +1,63 @@
+.login__title,
+.newUser__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.newUser__title,
+.newUser__text {
+  text-align: center;
+}
+
+.login__text,
+.newUser__text {
+  font-size: 0.875rem;
+  margin-bottom: 30px;
+}
+
+.login__form {
+  max-width: 510px;
+}
+
+.login__label,
+.login__checkbox {
+  display: block;
+}
+
+.login__error {
+  color: red;
+  margin-bottom: 0.5rem;
+  display: none;
+}
+
+.login__label {
+  margin-top: 0.7rem;
+}
+
+.login__input.g-inputField {
+  margin-bottom: 0.2rem;
+}
+
+.login__checkboxInput {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.login__link,
+.login__checkboxLabel {
+  font-size: 0.875rem;
+}
+.login__checkbox {
+  background-color: $primaryBackgroundColor;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login__button {
+  margin: 50px 0 15px 0;
+}
+
+.newUser__button {
+  @include button($width: 195px);
+  margin-inline: auto;
+}
