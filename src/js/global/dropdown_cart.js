@@ -24,6 +24,7 @@ async function renderCart() {
     $cartTitle.classList.add("cart__empty");
     $navPaymentButton.classList.add("cart__empty");
     $navButtonSection.classList.add("cart__empty");
+    $cartAmount.textContent = 0;
 
     // When cart is empty replace go to payment with go to see all products button
     $cartButton.textContent = "See all products";
