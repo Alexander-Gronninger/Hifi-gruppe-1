@@ -1,8 +1,6 @@
 const inputFields = document.querySelectorAll(".form__input");
 const labelStars = document.getElementsByClassName("form__star");
 
-console.log(labelStars);
-
 let regexname = /^[a-z ,.'-]+$/i;
 let regexmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 let regexzip = /^([0-9]{4}|[0-9]{6})$/;
