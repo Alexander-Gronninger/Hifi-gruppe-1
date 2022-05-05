@@ -47,8 +47,10 @@ async function getOrder() {
   customerPhoneElement.innerHTML = orderResponse[0].costumerPhone;
   customerEmailElement.innerHTML = orderResponse[0].costumerEmail;
   orderNumberElement.innerHTML = orderResponse[0].id;
-  orderDateElement.innerHTML = orderResponse[0].date;
-  orderCurrencyElement.innerHTML = orderResponse[0].currency;
+  orderDateElement.innerHTML = orderResponse[0].orderDate;
+
+  let currency = (orderResponse[0] && orderResponse[0].currency) || "GDP";
+  orderCurrencyElement.innerHTML = currency;
 
   // table content needs to be inside tbody element
   const invoiceSummeryElement = document.querySelector(
@@ -65,10 +67,8 @@ async function getOrder() {
 </tr>`;
 
   // inserting information
-  console.log(orderResponse[0].products[0]);
   let subPrice = 0;
   for (let i = 0; i < orderResponse[0].products.length; i++) {
-    console.log(i);
     productPrice =
       orderResponse[0].products[i].price *
       orderResponse[0].products[i].quantity;
@@ -97,7 +97,6 @@ async function getOrder() {
   let totalPrice = subPrice + vatPrice + deliveryFee;
   subPriceElement.innerHTML = "&pound; " + subPrice;
   vatPriceElement.innerHTML = "&pound; " + vatPrice;
-  deliveryPriceElement.innerHTML =
-    "&pound; &nbsp;" + orderResponse[0].deliveryFee;
+  deliveryPriceElement.innerHTML = "&pound; &nbsp;" + deliveryFee;
   totalPriceElement.innerHTML = "&pound; " + totalPrice;
 }
