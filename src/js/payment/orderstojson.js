@@ -18,9 +18,9 @@ async function gatherinfo(event) {
   let current = new Date();
   let cDate =
     current.getFullYear() +
-    "-" +
+    "/" +
     (current.getMonth() + 1) +
-    "-" +
+    "/" +
     current.getDate();
 
   let orderdata = {
