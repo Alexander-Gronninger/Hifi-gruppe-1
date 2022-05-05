@@ -1,14 +1,6 @@
-// https://hifi-jsonserver.herokuapp.com/customers
-
 const API_URL = "https://hifi-jsonserver.herokuapp.com/orders";
 const userID = getCookie("userToken");
-
-// const $userFullName = document.querySelector(".profile__name");
-// const $userPhone = document.querySelector(".profile__phone");
-// const $userMail = document.querySelector(".profile__mail");
-// const $userAddress = document.querySelector(".profile__address");
 const $orderContainer = document.querySelector(".orders");
-console.log($orderContainer);
 
 function getCookie(cookieName) {
   let result = undefined;
@@ -34,10 +26,9 @@ async function getProfile() {
     .then((orders) => {
       orders.map((order) => {
         let totalPrice = 0;
-        order["products"][0].map((item) => {
+        order["products"].map((item) => {
           totalPrice += item.quantity * item.price;
         });
-        console.log("date: ", order.id);
 
         const test = document.createElement("div");
         test.classList.add("orders__item");
@@ -48,13 +39,13 @@ async function getProfile() {
                   Ordernumber: <span class="orders__orderNumber">${order.id}</span>
               </p>
               <p class="orders__titles">
-                  Date: <span class="orders__orderDate">${order.date}</span>
+                  Date: <span class="orders__orderDate">${order.orderDate}</span>
               </p>
               <p class="orders__titles">
                   Total: <span class="orders__orderTotalPrice">£ ${totalPrice}</span>
               </p>
               <p class="orders__titles">
-                  Items: <span class="orders__orderItems">${order["products"][0].length}</span>
+                  Items: <span class="orders__orderItems">${order["products"].length}</span>
               </p>
           </div>
           <a href="/invoice/?id=${order.id}" class="orders__open">
