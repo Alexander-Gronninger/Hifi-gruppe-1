@@ -1,4 +1,6 @@
-const API_URL = `https://hifi-jsonserver.herokuapp.com/products?_start=0&_end=4`; //"start" & "end" parameters changes the amount of products we fetch
+const API_URL = `https://hifi-jsonserver.herokuapp.com/products?_start=0&_end=4`; //Benjamins server
+//const API_URL = `http://localhost:3000/products?_start=0&_end=4`; //lokal json server
+
 const frontpageProducts__btn = document.getElementsByClassName(
   "frontpageProducts__btn"
 )[0];

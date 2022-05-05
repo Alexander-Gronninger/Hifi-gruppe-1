@@ -1,6 +1,7 @@
 import { printProduct } from "../productList/getProducts.js";
 
-const API_URL = `https://hifi-jsonserver.herokuapp.com/products`;
+const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
+//const API_URL = `http://localhost:3000/products`; //lokal json server
 
 const queries = new URLSearchParams(window.location.search);
 let searchParams = queries.get("search");

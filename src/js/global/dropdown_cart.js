@@ -1,3 +1,6 @@
+const CART_API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
+//const CART_API_URL = `http://localhost:3000/products`; //lokal json server
+
 const $navCartButton = document.querySelector(".cart__button");
 const $navPaymentButton = document.querySelector(".nav__paymentButton");
 const $navButtonSection = document.querySelector(".nav__cartButtons");
@@ -7,7 +10,6 @@ const $cartTitle = document.querySelector(".cart__title");
 const $cartAmount = document.querySelector(".cart__amount");
 const $cartSubTotal = document.querySelector(".cart__totalSubAmount");
 const $cartSubTotalContainer = document.querySelector(".cart__subTotal");
-const CART_API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
 const gButtonCall = document.querySelectorAll(".g-button");
 
 async function renderCart() {

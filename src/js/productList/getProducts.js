@@ -1,4 +1,5 @@
-const API_URL = `https://hifi-jsonserver.herokuapp.com/products`;
+const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
+//const API_URL = `http://localhost:3000/products`; //lokal json server
 const productMainGrid__element =
   document.getElementsByClassName("productMain__grid")[0];
 

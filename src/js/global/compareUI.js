@@ -1,3 +1,6 @@
+const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
+//const API_URL = `http://localhost:3000/products`; //lokal json server
+
 // variables for various DOM elements, need to be global but have to declare in async function as they are JS generated
 let productContainers = "";
 let compareButtonElements = "";
@@ -20,8 +23,6 @@ async function loadElements() {
     compareButtonElements[i].addEventListener("click", addProduct);
   }
 }
-
-const API_URL = `https://hifi-jsonserver.herokuapp.com/products`; //Benjamins server
 
 // exporting function for use in getProducts.js
 export default loadElements;
