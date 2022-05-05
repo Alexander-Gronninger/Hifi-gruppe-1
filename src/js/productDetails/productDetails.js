@@ -22,6 +22,9 @@ let productID = searchParams.get("id");
 let price = "";
 let productName = "";
 
+// setting dataset to the compare button, from URL id
+document.querySelector(".productContainer").dataset.id = productID;
+
 // get product details from database
 getProduct();
 async function getProduct() {
@@ -30,6 +33,8 @@ async function getProduct() {
   productImage.src = response[0].images.default;
   productImage.alt = response[0].brand + " " + response[0].name;
   productType.innerHTML = response[0].category;
+
+  document.title += " " + response[0].brand + " " + response[0].name;
 
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! UNCOMMENT ONCE PRODUCTS HAVE ACTUAL DESCRIPTIONS IN DATABASE
   //productDescription.innerHTML = response[0].description;
@@ -130,7 +135,10 @@ async function getProduct() {
   </tr>  `;
     specTable.innerHTML += tableSpecs;
   }
+  // runs compareUI javascript, as it needs an up to date list of all products listed
+  loadElements();
 }
+import loadElements from "/js/global/compareUI.js";
 
 // changing product colors
 chooseColor();
@@ -139,8 +147,9 @@ async function chooseColor() {
   let color = "";
 
   // by default 'this' is window, so we need to check for that and set color as the first color button color
-  if (this.classList == undefined) {
+  if (this == undefined) {
     color = productColors.children[0].children[1].innerHTML;
+    console.log("success");
   }
 
   // 'this' isn't class undefined, meaning 'this' can only be one of the color changing buttons, so we grab the color from it
@@ -186,8 +195,8 @@ async function chooseColor() {
   // changing the image to the first image of the selected color
   productImage.src = response[0].images[color][0];
 
-  // if 'this' classlist isnt undefined then we must have clicked one of the color buttons
-  if (this.classList != undefined) {
+  // if 'this' isnt undefined then we must have clicked one of the color buttons
+  if (this != undefined) {
     // so we remove --current from the --current element
     document
       .querySelector(".color__icon--current")
@@ -258,8 +267,9 @@ document
 // async is required due to amount being able to change by javascript
 async function toStorage() {
   // we get the amount of a given product
-  const productAmountNumber =
-    Number(document.querySelector(".details__cartUI .counter__amount").innerHTML);
+  const productAmountNumber = Number(
+    document.querySelector(".details__cartUI .counter__amount").innerHTML
+  );
 
   // we fetch the cart, as we need to know it's length
   let items = JSON.parse(localStorage.getItem("cart")) || [];

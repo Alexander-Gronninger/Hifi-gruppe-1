@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/js/orders/orders.js" defer></script>
+    <script src="../js/global/dropdown_cart.js" defer></script>
+    <!--font awesome link-->
+    <script
+      src="https://kit.fontawesome.com/377d53b4a7.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Orders</title>
+  </head>
+  <body>
+    @@include("./partials/nav.html", {"activeUser": "tools__link--active"})
+    <div class="wrapper">
+      <main class="main__orders">
+        <div class="user__subNavigation">
+          <a href="/profile" class="subNavigation__item"
+            ><h2 class="subNavigation__title">Profile</h2></a
+          >
+
+          <a
+            href="/orders"
+            class="subNavigation__item subNavigation__item--active"
+            ><h2 class="subNavigation__title">Orders</h2></a
+          >
+        </div>
+
+        <div class="orders">
+          <p class="orders__text">See your orders</p>
+        </div>
+
+        @@include("./partials/livechat_button.html")
+      </main>
+    </div>
+    @@include("./partials/footer.html")
+  </body>
+</html>

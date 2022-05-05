@@ -27,28 +27,30 @@ async function getOrder() {
     await fetch(API_URL + `/orders/?id_like=${orderID}`)
   ).json();
   // fetching customer info
-  let customerResponse = await (
-    await fetch(API_URL + `/customers/?id_like=${orderResponse[0].customerId}`)
-  ).json();
+  if (orderResponse.customerId) {
+    let customerResponse = await (
+      await fetch(
+        API_URL + `/customers/?id_like=${orderResponse[0].customerId}`
+      )
+    ).json();
+    return customerResponse;
+  }
 
   // inserting information into HTML
-  customerNameElement.innerHTML = customerResponse[0].username;
+  customerNameElement.innerHTML = orderResponse[0].costumerName;
   customerAddressElement.innerHTML =
-    customerResponse[0].address.apartment +
+    orderResponse[0].billingAddress.address +
     " " +
-    customerResponse[0].address.number +
+    orderResponse[0].billingAddress.city +
     " " +
-    customerResponse[0].address.street +
-    " " +
-    customerResponse[0].address.city +
-    " " +
-    customerResponse[0].address.zip_code;
-  customerCountryElement.innerHTML = customerResponse[0].address.country;
-  customerPhoneElement.innerHTML = customerResponse[0].phone;
-  customerEmailElement.innerHTML = customerResponse[0].email;
-  orderNumberElement.innerHTML = orderResponse[0].order_number;
+    orderResponse[0].billingAddress.zipcode;
+  customerPhoneElement.innerHTML = orderResponse[0].costumerPhone;
+  customerEmailElement.innerHTML = orderResponse[0].costumerEmail;
+  orderNumberElement.innerHTML = orderResponse[0].id;
   orderDateElement.innerHTML = orderResponse[0].orderDate;
-  orderCurrencyElement.innerHTML = orderResponse[0].currency;
+
+  let currency = (orderResponse[0] && orderResponse[0].currency) || "GDP";
+  orderCurrencyElement.innerHTML = currency;
 
   // table content needs to be inside tbody element
   const invoiceSummeryElement = document.querySelector(
@@ -68,32 +70,33 @@ async function getOrder() {
   let subPrice = 0;
   for (let i = 0; i < orderResponse[0].products.length; i++) {
     productPrice =
-      orderResponse[0].products[i].productPrice *
-      orderResponse[0].products[i].productAmount;
+      orderResponse[0].products[i].price *
+      orderResponse[0].products[i].quantity;
     subPrice = productPrice + subPrice;
 
     invoiceSummeryElement.innerHTML += `
     <tr class="summery__item">
-      <td class="item__productName">${
-        orderResponse[0].products[i].productName
-      } - ${orderResponse[0].products[i].color}</td>
+      <td class="item__productName">${orderResponse[0].products[i].name} - ${
+      orderResponse[0].products[i].color
+    }</td>
       <td class="item__productPrice">&pound; ${
-        orderResponse[0].products[i].productPrice
+        orderResponse[0].products[i].price
       }</td>
       <td class="item__productAmount">${
-        orderResponse[0].products[i].productAmount
+        orderResponse[0].products[i].quantity
       }</td>
       <td class="item__productTotal">&pound; ${
-        orderResponse[0].products[i].productAmount *
-        orderResponse[0].products[i].productPrice
+        orderResponse[0].products[i].quantity *
+        orderResponse[0].products[i].price
       }</td>
     </tr>`;
   }
+  let deliveryFee = (orderResponse[0] && orderResponse[0].deliveryFee) || 0;
+  console.log(deliveryFee);
   let vatPrice = subPrice * 0.2;
-  let totalPrice = subPrice + vatPrice + orderResponse[0].deliveryPrice;
+  let totalPrice = subPrice + vatPrice + deliveryFee;
   subPriceElement.innerHTML = "&pound; " + subPrice;
   vatPriceElement.innerHTML = "&pound; " + vatPrice;
-  deliveryPriceElement.innerHTML =
-    "&pound; &nbsp;" + orderResponse[0].deliveryPrice;
+  deliveryPriceElement.innerHTML = "&pound; &nbsp;" + deliveryFee;
   totalPriceElement.innerHTML = "&pound; " + totalPrice;
 }

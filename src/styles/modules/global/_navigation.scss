@@ -1,7 +1,6 @@
 .header {
   padding: 0px 34px;
   background-color: $tertiaryBackgroundColor;
-
 }
 
 .navigation {
@@ -264,7 +263,6 @@
       text-align: center;
       font-size: 2rem;
       margin: 0 auto;
-
     }
 
     &__item {
@@ -275,7 +273,7 @@
       }
 
       &:nth-of-type(2) {
-        border-top: 2px solid $primaryButtonColor
+        border-top: 2px solid $primaryButtonColor;
       }
 
       padding: 2em 2em 2em 2em;
@@ -304,6 +302,4 @@
   .tools__inputContainer {
     margin: 1rem 0 0 0;
   }
-
-
 }
