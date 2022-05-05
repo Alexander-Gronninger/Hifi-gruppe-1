@@ -14,13 +14,20 @@ async function gatherinfo(event) {
 
   let ordersFetch = await (await fetch(API_URL + `/orders/`)).json();
   let orderID = Number(ordersFetch.length) + 1;
-  console.log(orderID);
+
+  let current = new Date();
+  let cDate =
+    current.getFullYear() +
+    "-" +
+    (current.getMonth() + 1) +
+    "-" +
+    current.getDate();
 
   let orderdata = {
     id: orderID,
+    orderDate: cDate,
+    currency: "GDP",
     costumerName: event.target.form__name.value,
-    costumerCity: event.target.form__city.value,
-    costumerZip: event.target.form__postalcode.value,
     billingAddress: {
       zipcode: event.target.form__postalcode.value,
       city: event.target.form__city.value,
@@ -29,7 +36,8 @@ async function gatherinfo(event) {
     costumerEmail: event.target.form__useremail.value,
     costumerPhone: event.target.form__phonenr.value,
     customerID: userID,
-    products: [JSON.parse(localStorage.getItem("cart"))],
+    deliveryFee: 100,
+    products: JSON.parse(localStorage.getItem("cart")),
   };
 
   // WIP inserting billingAddress to customers address info
@@ -61,5 +69,7 @@ async function gatherinfo(event) {
     body: JSON.stringify(orderdata),
   });
 
-  window.location.href = "/../invoice?id=" + orderID;
+  setTimeout(() => {
+    window.location.href = "/../invoice?id=" + orderID;
+  }, 500);
 }
