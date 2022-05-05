@@ -35,11 +35,11 @@ async function getProfile() {
       if (data.address["street"] === "") {
         $userAddress.textContent = "Empty";
       } else {
-        // $userAddress.innerHTML = `
-        //     ${data.address["street"]} ${data.address["number"]}
-        //     <br>${data.address["zip_code"]} ${data.address["city"]}
-        //     <br>${data.address[""]}
-        //     `;
+        $userAddress.innerHTML = `
+            ${data.address["street"]}
+            <br>${data.address["zip_code"]} ${data.address["city"]}
+            <br>${data.address["country"]}
+            `;
       }
     });
 }
