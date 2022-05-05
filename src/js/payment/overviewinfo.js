@@ -21,6 +21,5 @@ overviewUl.innerHTML += `
     <li class="productinfo__price">£4.00</li>
     <li class="productinfo__vat">VAT</li>
     <li class="productinfo__price">£${vatForItems}</li>
-    <li class="productinfo__total">Total price <span class="total__bold">£${
-      totalPriceOfItems + vatForItems + deliveryFee
-    }</span></li>`;
+    <li class="productinfo__total">Total price <span class="total__bold">£${totalPriceOfItems + vatForItems + deliveryFee
+  }</span></li>`;

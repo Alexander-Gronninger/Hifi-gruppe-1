@@ -110,7 +110,6 @@ function initMap() {
     });
 
     const map = document.getElementById("map");
-    console.log(map);
     map.addEventListener("mousedown", function (evt) {
       if (!evt.target.classList.contains("map__btn")) {
         document.querySelectorAll(".officeBox").forEach(function (box) {
